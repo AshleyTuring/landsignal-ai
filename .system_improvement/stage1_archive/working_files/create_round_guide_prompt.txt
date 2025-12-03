@@ -1,0 +1,39 @@
+# CREATE COLLABORATIVE ROUND GUIDE
+
+Create a guide that maps patterns to the v3.2.0 collaborative exploration rounds.
+
+## FORMAT
+
+```markdown
+## Collaborative Round Guide 🔄
+
+Maps patterns to exploration rounds in the v3.2.0 workflow:
+
+### Round 2: Precedent Analysis
+**Goal:** Which patterns help replicate successful planning applications?
+- Pattern 1: Expired/Stalled Planning (find similar approved schemes)
+- Pattern 5: High-Density/Intensification (PTAL matching)
+- [etc.]
+
+### Round 3: Regulation-Driven
+**Goal:** Which patterns exploit regulatory drivers and deadlines?
+- Pattern 7: Permitted Development
+- Pattern 8: Regulation-Driven Opportunities
+- [etc.]
+
+### Round 4: Structural Arbitrage
+**Goal:** Which patterns exploit physical characteristics and constraints?
+- Pattern 6: Airspace Development
+- Pattern 9: Green Belt/Strategic Land
+- [etc.]
+
+### Round 5: Behavioral/Motivation
+**Goal:** Which patterns exploit seller motivation and market timing?
+- Pattern 2: Motivated Seller
+- Pattern 13: Time/Information Arbitrage (Advanced Workflow)
+- [etc.]
+```
+
+## OUTPUT
+
+Output ONLY the round guide section, ready to insert into FILTER_PATTERNS.md.

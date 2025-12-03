@@ -1,0 +1,2650 @@
+# Technical & Business Case Iteration Task
+
+## Context
+You previously reviewed approaches and identified technical and business case issues. Other LLMs disagreed with some of your assessments.
+
+## Your Task
+**Reconsider your positions** based on the disagreement analysis below. You may:
+1. **Maintain your position** (with additional evidence)
+2. **Change your position** (if you were mistaken)
+3. **Clarify your position** (if misunderstood)
+
+## What to Focus On
+- Factual correctness (filter existence, units, syntax)
+- Business case viability (capital, ROI, implementation feasibility)
+- Evidence-based reasoning (cite sources)
+- Technical and financial precision (not strategic preference)
+
+## Output Format
+### Updated Assessment (Technical & Business Case)
+
+**Approaches I'm changing my assessment on:**
+- Approach [X]: Was [STATUS], now [STATUS] because [evidence]
+
+**Approaches I'm maintaining my assessment on:**
+- Approach [Y]: Still [STATUS] because [evidence]
+
+**Clarifications:**
+- [Any misunderstandings to clear up]
+
+
+## DISAGREEMENT ANALYSIS
+
+# DISAGREEMENT ANALYSIS REPORT
+
+After analyzing all four critique files (Critique_Claude, Critique_Codex, Critique_Gemini, Critique_Grok), I have identified **technical and business case disagreements** per your instructions.
+
+---
+
+## DISAGREEMENTS_FOUND: YES
+
+---
+
+### Disagreement #1
+
+**Type:** Filter existence / Syntax validity
+
+**Approaches:** Claude - Approach A (Precedent Replication - Slough Focus)
+
+**Positions:**
+
+- **LLM Claude (Critique_Claude):** Filter 2 `Proposal: contains "retail" OR "commercial"` is **INVALID** - OR operator not supported in single filter line. Severity: HIGH - core filter broken. Status: **CONDITIONAL**
+
+- **LLM Codex (Critique_Codex):** Filters "look syntactically coherent" but notes "Range filters rely on single-line AND... can be flaky in long prompts." Does NOT flag the OR operator as invalid. Status: **CONDITIONAL** (for different reasons - range filters)
+
+- **LLM Gemini (Critique_Gemini):** Filter 2 uses **INVALID syntax**. "According to LEARNINGS_DATABASE.md, this syntax is not supported and will cause the filter to fail or produce incorrect results." Status: **CONDITIONAL**
+
+- **LLM Grok (Critique_Grok):** "All filters exist and syntax is correct per AvailableFiltersInSearchLand_ACTUAL.md." Status: **VALID** - NO issues identified
+
+**Impact:** Critical
+
+**Requires iteration:** YES
+
+**Analysis:** Three LLMs (Claude, Gemini, and implicitly Codex) agree the OR operator is problematic, while Grok considers the entire approach valid with correct syntax. This is a factual dispute about filter syntax support.
+
+---
+
+### Disagreement #2
+
+**Type:** Filter existence
+
+**Approaches:** Claude - Approach D (Legacy Holdings + Edge of Settlement)
+
+**Positions:**
+
+- **LLM Claude (Critique_Claude):** Filter 1 `No latest sold date: Yes` - Filter NOT in AvailableFilters (documentation gap). "Used in SearchLand Presets #18, #69 but NOT in AvailableFiltersInSearchLand_ACTUAL.md." Status: Uncertain - needs empirical test. Severity: MEDIUM. Status: **CONDITIONAL**
+
+- **LLM Codex (Critique_Codex):** "If EPC coverage is thin, use 'No latest sold date' + low application count + land use to proxy legacy holdings." Treats filter as **available/usable**. Status: **CONDITIONAL** (for different reasons - boundary filters)
+
+- **LLM Gemini (Critique_Gemini):** "Filter 1 (`No latest sold date: Yes`) refers to a filter that is **not officially documented** in AvailableFiltersInSearchLand_ACTUAL.md, making its behavior unconfirmed." Status: **CONDITIONAL**
+
+- **LLM Grok (Critique_Grok):** "'No latest sold date: Yes' **not documented** in AvailableFiltersInSearchLand_ACTUAL.md (exists in LEARNINGS_DATABASE.md presets but **needs empirical test**)." Status: **CONDITIONAL**
+
+**Impact:** Minor (three LLMs acknowledge uncertainty; Codex assumes availability)
+
+**Requires iteration:** NO (all agree it needs testing, but Codex doesn't flag it as uncertain)
+
+**Analysis:** This is a minor factual dispute about filter documentation/existence. Three LLMs explicitly flag it as undocumented; Codex treats it as available without noting the documentation gap.
+
+---
+
+### Disagreement #3
+
+**Type:** Syntax validity / Technical correctness
+
+**Approaches:** Claude - Approach C (Airspace Rights Acquisition)
+
+**Positions:**
+
+- **LLM Claude (Critique_Claude):** Filter 1 `A building in the title has flat roof: Yes` - **CONFIRMED EXISTS** (AvailableFilters line 203). "Codex initially questioned flat roof filter existence - **Resolved**." Status: **VALID**
+
+- **LLM Codex (Critique_Codex):** "PTAL only works in London... 'Flat roof' and 'Max building height on title (m)' **need confirmation; risk of non-existent filters**." Status: **CONDITIONAL**
+
+- **LLM Gemini (Critique_Gemini):** "All filters, including the key `A building in the title has flat roof: Yes`, are **confirmed to exist**." Status: **VALID**
+
+- **LLM Grok (Critique_Grok):** "'A building in the title has flat roof' **exists** per AvailableFiltersInSearchLand_ACTUAL.md." Status: **VALID**
+
+**Impact:** Minor
+
+**Requires iteration:** NO (Codex's concern was addressed by other LLMs confirming existence)
+
+**Analysis:** Codex questions filter existence; three other LLMs confirm it exists in documentation. This is a factual dispute about filter availability.
+
+---
+
+### Disagreement #4
+
+**Type:** Capital feasibility / Deal structure validity
+
+**Approaches:** Grok - Approach A (Slough Mixed-Use Precedent Replication)
+
+**Positions:**
+
+- **LLM Claude (Critique_Claude):** "Capital Structure Concern: Implementation says 'option agreements (£10k-£20k)' but capital breakdown shows '£150k acquisition' - These are **contradictory strategies**. Resolution: Precedent-based = auto-valid per task instructions (business case not assessed)." Status: **CONDITIONAL** - notes contradiction but doesn't assess business case
+
+- **LLM Codex (Critique_Codex):** No capital structure concerns raised. Status: **CONDITIONAL** (for different reason - filter confirmation)
+
+- **LLM Gemini (Critique_Gemini):** "The 'Capital Required' section budgets for a `£150,000 (acquisition)`, while the 'Implementation Strategy' describes using low-cost `option agreements (£10k-£20k)`. These are **mutually exclusive capital strategies**, making the **business case logically incoherent** as written." Status: **CONDITIONAL** - business case validity issue
+
+- **LLM Grok (Critique_Grok):** "Capital (£150k-£200k) and ROI feasible. Implementation viable with options. However... Capital contradicts implementation (option vs. acquisition); **clarify structure**." Status: **CONDITIONAL**
+
+**Impact:** Minor (three LLMs flag contradiction; none call it invalid since precedent-based approaches are auto-valid per instructions)
+
+**Requires iteration:** YES (requires clarification of capital structure)
+
+**Analysis:** Three LLMs agree on the capital structure contradiction. Codex doesn't mention it. This is a business case implementation dispute about whether the capital plan is coherent.
+
+---
+
+### Disagreement #5
+
+**Type:** Syntax validity
+
+**Approaches:** Grok - Approach C (HMO License Deadline Exploitation)
+
+**Positions:**
+
+- **LLM Claude (Critique_Claude):** "EPC rating: is one of [E, F, G]" - **Valid syntax** for list-based enum. "✅ EPC rating: is one of [E, F, G] (Grok C) - Valid syntax for list-based enum." Status: **VALID**
+
+- **LLM Codex (Critique_Codex):** Not mentioned in critique (approach not individually analyzed in detail)
+
+- **LLM Gemini (Critique_Gemini):** "The `EPC rating` filter is missing the required square brackets `[]` around its list of values... `EPC rating: is one of E, F, G` is **invalid syntax** due to missing brackets." Suggests fix: `EPC rating: is one of [E, F, G]`. Status: **CONDITIONAL**
+
+- **LLM Grok (Critique_Grok):** "Filters exist with correct operators ('is one of [E, F, G]' **valid** for EPC per LEARNINGS_DATABASE.md)." Status: **VALID**
+
+**Impact:** Minor
+
+**Requires iteration:** NO
+
+**Analysis:** Gemini identifies missing brackets in the EPC filter, while Claude and Grok confirm the syntax IS correct with brackets. This appears to be a **reading error by Gemini** - the original approach likely already has brackets, which Claude and Grok confirm as valid. Two LLMs say valid, one says invalid due to missing brackets.
+
+---
+
+### Disagreement #6
+
+**Type:** Filter existence
+
+**Approaches:** Codex - Approach A (Slough Mixed-Use Precedent Intensification)
+
+**Positions:**
+
+- **LLM Claude (Critique_Claude):** Filter 2 `Decision: is equal to Approved` - **Filter DOES NOT EXIST**. "Exhaustive search of AvailableFilters confirms no 'Decision' or 'Planning Status' filter... **UNEXECUTABLE**." Status: **INVALID** - Severity: CRITICAL
+
+- **LLM Codex (Critique_Codex):** Not explicitly validated in self-critique (filter list unavailable during analysis)
+
+- **LLM Gemini (Critique_Gemini):** "`Decision: is equal to Approved`. This filter **does not exist** in SearchLand... the prompt is **unexecutable** as written." Status: **INVALID**
+
+- **LLM Grok (Critique_Grok):** "'Decision: is equal to Approved' **does not exist** per AvailableFiltersInSearchLand_ACTUAL.md (no planning status filter)." Status: **INVALID**
+
+**Impact:** Critical
+
+**Requires iteration:** YES
+
+**Analysis:** All three LLMs that assessed this (Claude, Gemini, Grok) agree the filter does not exist. **Universal agreement = NOT a disagreement.** Codex didn't self-validate due to missing reference materials.
+
+---
+
+## SUMMARY
+
+**Total Disagreements Identified:** 5
+
+**Critical Disagreements:** 2
+1. Claude A - OR operator syntax (Disagreement #1)
+2. Grok A - Capital structure contradiction (Disagreement #4)
+
+**Minor Disagreements:** 3
+3. Claude D - "No latest sold date" filter existence (Disagreement #2)
+4. Claude C - Flat roof filter existence (Disagreement #3)
+5. Grok C - EPC rating bracket syntax (Disagreement #5)
+
+---
+
+## RECOMMENDATIONS
+
+### Immediate Resolution Required:
+
+1. **Claude A (OR syntax):** Requires iteration - 3/4 LLMs say invalid, 1 says valid
+2. **Grok A (Capital structure):** Requires clarification - 3/4 LLMs flag contradiction
+
+### Documentation/Empirical Testing:
+
+3. **Claude D (No latest sold date):** Test empirically - 3/4 LLMs flag as undocumented
+4. **Claude C (Flat roof):** Resolved - 3/4 LLMs confirm exists (Codex concern overruled)
+5. **Grok C (EPC brackets):** Likely reading error by Gemini - 2 LLMs confirm valid syntax
+
+---
+
+**End of Disagreement Analysis**
+
+## YOUR ORIGINAL CRITIQUE
+
+
+## REFERENCE MATERIALS (ALL CONTENT INCLUDED BELOW)
+
+## REFERENCE: SearchLand Available Filters (CRITICAL - Use ONLY These)
+
+# SearchLand Available Filters
+
+**Source:** Direct from SearchLand interface (HTML parsed)  
+ 
+**IMPORTANT:** ⚠️ CRITICAL: If the constrained value or permitted filter value is not in here you can still use the filter and assume what the filter value could be. This is a living document and will be updated as we use each filter - dont be afraid of using filters. 
+
+---
+
+##  Filter Operators for List-Based Filters
+
+**Many SearchLand filters use predefined value lists (not free text).** These filters have specific operators:
+
+### Available Operators for List-Based Filters:
+
+| Operator | Logic | Example |
+|----------|-------|---------|
+| **contains any** | OR (implicit) - matches if ANY selected value is present | `Use class: contains any [E, C3]` |
+| **contains all** | AND (implicit) - matches only if ALL selected values present | `Use class: contains all [E, C3]` |
+| **does not contain** | Exclusion - excludes if value is present | `Use class: does not contain [B2]` |
+| **is equal to** | Exact match - only this specific value | `Use class: is equal to [E]` |
+
+### ❌ INVALID Syntax (DO NOT USE):
+
+```
+❌ Use class: contains 'E' OR Use class: contains 'Mixed'
+❌ Property type: 'Commercial' OR 'Residential'
+❌ Use class: E AND C3
+```
+
+**You CANNOT use boolean operators (`OR`, `AND`, `NOT`) within a single filter line.**
+
+### ✅ CORRECT Syntax:
+
+```
+✅ Use class: contains any [E - Commercial Business and Service, C3 - Dwellinghouses]
+✅ Property type: contains any [Commercial, Mixed Use]
+✅ Use class: does not contain [B2 - General industrial]
+```
+
+### List-Based Filters (Use operators above):
+- **Use class** (predefined planning classes)
+- **Property type** (Commercial, Residential, Mixed Use, etc.)
+- **Property classification** (separate taxonomy from Use class)
+- **Tenure** (Freehold, Leasehold, etc.)
+- **Ownership type** (Corporate, Individual, etc.)
+- Any filter showing checkbox options in the UI
+
+### Text/Numeric Filters (Use comparison operators):
+- **Title address:** `contains`, `does not contain` (free text)
+- **Proposal:** `contains` (free text keyword search)
+- **Title area (acres):** `is greater than`, `is less than`, `is equal to` (numeric)
+- **Price:** `is greater than`, `is less than` (numeric)
+
+---
+
+## Title Basic Information
+
+- Tenure [LIST-BASED] - See "Ownership & Tenure" section below
+- Title address
+- **Title area (acres)** ⚠️ NOT sqmt - must convert
+- Number of addresses
+- Ownership type [LIST-BASED] - See "Ownership & Tenure" section below
+- Last updated by Land Registry date
+
+## Ownership & Tenure
+
+### Ownership type ✓ [LIST-BASED]
+**Operator:** `is one of` (checkbox selection - implicit OR)
+
+**Available Values:**
+- Corporate
+- Council
+- Housing Association
+- Company
+- Private owner
+
+**Example Usage:**
+```
+✅ Ownership type: is one of [Corporate, Company]
+✅ Ownership type: is one of [Council, Housing Association]
+❌ Ownership type: 'Corporate' OR 'Company'  // INVALID - no OR operators
+```
+
+### Tenure ✓ [LIST-BASED]
+**Operator:** `is one of` (checkbox selection - implicit OR)
+
+**Available Values:**
+- Leasehold
+- Freehold
+- Pending first registration
+- Caution against first registration
+- Rentcharge
+
+**Example Usage:**
+```
+✅ Tenure: is one of [Freehold]
+✅ Tenure: is one of [Leasehold, Freehold]
+❌ Tenure: 'Freehold' OR 'Leasehold'  // INVALID - no OR operators
+```
+
+## Property Type
+
+### Property type ✓ [LIST-BASED]
+**Operators:** `contains all`, `contains any`, `does not contain`
+
+**Available Values:**
+- Detached
+- Semi-Detached
+- Terraced
+- Flat
+- Commercial
+
+**Example Usage:**
+```
+✅ Property type: contains any [Detached, Semi-Detached]
+✅ Property type: contains all [Commercial, Flat]
+✅ Property type: does not contain [Terraced]
+❌ Property type: 'Commercial' OR 'Residential'  // INVALID - no OR operators
+```
+
+**Note:** This is different from "Property classification" - both filters exist but serve different purposes.
+
+---
+
+## Title Measurements
+
+- **Title area (acres)** ⚠️ ONLY IN ACRES
+- **Developed area (sqft)** ⚠️ NOT sqmt - square FEET
+- Developed area percentage
+- **Undeveloped area (acres)**
+- Percentage of road on title
+- Majority of title is road
+
+## Building Measurements
+
+- Max building height on title (m) ✓
+- Max number of building floors on title ✓
+- Maximum height of roof in the title (m)
+- A building in the title has flat roof ✓
+- Number of buildings on title
+- Property floor area (sqft) ⚠️ Square FEET, not metres
+
+### Building Details (sqft - square FEET)
+- Total building sqft on title
+- Total domestic sqft on title
+- Total non-domestic sqft on title
+- Total public building sqft on title
+- Total ground floor sqft on title
+- Total retail ground floor sqft on title
+
+## Planning Applications
+
+- Proposal ✓ (keyword search)
+- No. of applications
+- Applications in the last 5 years ✓
+- Max number of dwellings applied for ✓
+- Last application submitted ✓
+
+⚠️ **CRITICAL MISSING:** No "Planning Status" filter (no Expired/Lapsed option)
+⚠️ **WORKAROUND:** Must use date ranges + proposal keywords
+
+## Use Class
+
+### Use class ✓ [LIST-BASED]
+**Operators:** `contains any`, `contains all`, `does not contain`, `is equal to`
+
+**Available Values:**
+- B2 - General industrial
+- B8 - Storage or distribution
+- C1 - Hotels
+- C2 - Residential institutions
+- C2A - Secure Residential Institution
+- C3 - Dwellinghouses
+- C3(a) - Dwellinghouses
+- C3(b) - Dwellinghouses
+- C3(c) - Dwellinghouses
+- C4 - HMO
+- E - Commercial, Business and Service
+- E(a) - Display or Retail sale of goods
+- E(b) - Sale of food and drink
+- E(c)(i) - Financial constants
+- E(c)(ii) - Professional constants
+- E(c)(iii) - Other commercial constants
+- E(d) - Indoor sport
+- E(e) - Provision of medical or health constants
+- E(f) - Creche, day nursery or day centre
+- E(g)(i) - Offices to carry out any operational or administrative functions
+- E(g)(ii) - Research and development of products or processes
+- E(g)(iii) - Industrial processes
+- F1(a) - Provision of education
+- F1(b) - Display of works of art
+- F1(c) - Museums
+- F1(d) - Public libraries
+- F1(e) - Public halls
+- F1(f) - Public worship or religious instruction
+- F1(g) - Law courts
+- F2(a) - Shops (mostly) selling essential goods
+- F2(b) - Halls or meeting places
+- F2(c) - Areas or places for outdoor sport
+- F2(d) - Indoor or outdoor swimming pools or skating rinks
+- Outside of the defined classes
+
+**Example Usage:**
+```
+✅ Use class: contains any [E - Commercial Business and Service, C3 - Dwellinghouses]
+✅ Use class: does not contain [B2 - General industrial]
+❌ Use class: contains 'E' OR Use class: contains 'Mixed'  // INVALID - no OR operators
+```
+
+### Property classification ✓ [LIST-BASED]
+**Operators:** `contains any`, `contains all`, `does not contain`, `exactly matches`
+**Note:** Separate taxonomy from "Use class" - values cannot be mixed between these two filters
+
+**Available Values:** (~500+ values organized in hierarchical categories)
+
+**Major Categories:**
+- Commercial (Agricultural, Farm, Fishery, Fish Farming, Fish Hatchery, Fish Processing, Oyster/Mussel Bed, Horticulture, Smallholding, Vineyard, Watercress Bed, Slaughter House/Abattoir, Ancillary Building Commercial, Community Services, Law Court, Prison, HM Detention Centre, HM Prison Service, Secure Residential Accommodation, Public/Village Hall/Other Community Facility, Youth Recreational/Social Club, Public Convenience, Cemetery/Crematorium/Graveyard, Columbarium, Crematorium, Chapel Of Rest, Cemetery, Military Cemetery, Mortuary, Church Hall/Religious Meeting Place/Hall, Community Service Centre/Office, Public Household Waste Recycling Centre (HWRC), Recycling Site, CCTV, Job Centre)
+- Education (College, Further Education, Higher Education, Children's Nursery/Crèche, Preparatory/First/Primary/Infant/Junior/Middle School, First School, Infant School, Junior School, Middle School, Non State Primary/Preparatory School, Primary School, Secondary/High School, Non State Secondary School, Secondary School, University, Special Needs Establishment, Other Educational Establishment)
+- Hotel/Motel/Boarding/Guest House (Boarding/Guest House/Bed And Breakfast/Youth Hostel, Youth Hostel, Holiday Let/Accommodation/Short-Term Let Other Than CH01, Hotel/Motel)
+- Industrial (Factory/Manufacturing, Aircraft Works, Boat Building, Brick Works, Brewery, Cider Manufacture, Chemical Works, Cement Works, Dairy Processing, Distillery, Flour Mill, Food Processing, Glassworks, Manufacturing, Oast House, Oil Refining, Pottery Manufacturing, Paper Mill, Printing Works, Sugar Refinery, Steel Works, Timber Mill, Winery, Shipyard)
+- Mineral/Ore Working/Quarry/Mine (Mineral Mining/Active, Mineral Distribution/Storage, Mineral Processing, Oil/Gas Extraction/Active, Mineral Quarrying/Open Extraction/Active)
+- Workshop/Light Industrial (Servicing Garage, Warehouse/Store/Storage Depot, Crop Handling/Storage, Postal Sorting/Distribution, Solid Fuel Storage, Timber Storage, Wholesale Distribution, Solid Fuel Distribution, Timber Distribution, Recycling Plant, Incinerator/Waste Transfer Station, Maintenance Depot)
+- Leisure (Amusements, Leisure Pier, Holiday/Campsite, Camping, Caravanning, Holiday Accommodation, Holiday Centre, Youth Organisation Camp, Library, Reading Room, Museum/Gallery, Art Centre/Gallery, Aviation Museum, Heritage Centre, Industrial Museum, Military Museum, Maritime Museum, Science Museum, Transport Museum, Indoor/Outdoor Leisure/Sporting Activity/Centre, Athletics Facility, Bowls Facility, Cricket Facility, Curling Facility, Diving/Swimming Facility, Equestrian Sports Facility, Football Facility, Fishing/Angling Facility, Golf Facility/Golf courses, Gliding Facility, Greyhound Racing Facility, Hockey Facility, Horse Racing Facility, Historic Vessel/Aircraft/Vehicle, Activity/Leisure/Sports Centre, Model Sports Facility, Motor Sports Facility, Playing Field, Racquet Sports Facility, Rugby Facility, Recreation Ground, Shinty Facility, Skateboarding Facility, Civilian Firing Facility, Tenpin Bowling Facility, Public Tennis Court, Water Sports Facility, Winter Sports Facility, Wildlife Sports Facility, Cycling Sports Facility, Bingo Hall/Cinema/Conference/Exhibition Centre/Theatre/Concert Hall, Cinema, Entertainment Complex, Conference/Exhibition Centre, Theatre, Zoo/Theme Park, Amusement Park, Aquatic Attraction, Model Village Site, Wildlife/Zoological Park, Beach Hut (Recreational, Non-Residential Use Only), Licensed Private Members' Club, Recreational/Social Club, Arena/Stadium, Stadium, Showground)
+- Medical (Dentist, General Practice Surgery/Clinic, Health Centre, Health Care Services, Hospital/Hospice, Hospice, Hospital, Medical/Testing/Research Laboratory, Professional Medical Service, Assessment/Development Services)
+- Animal Centre (Cattery/Kennel, Animal Services, Animal Quarantining, Equestrian, Horse Racing/Breeding Stable, Commercial Stabling/Riding, Vet/Animal Medical Treatment, Animal/Bird/Marine Sanctuary, Animal Sanctuary, Marine Sanctuary)
+- Office (Office/Work Studio, Embassy/High Commission/Consulate, Film Studio, Central Government Service, Local Government Service)
+- Broadcasting (TV/Radio)
+- Retail (Bank/Financial Service, Retail Service Agent, Post Office, Market (Indoor/Outdoor), Fish Market, Fruit/Vegetable Market, Livestock Market, Petrol Filling Station, Public House/Bar/Nightclub, Restaurant/Cafeteria, Shop/Showroom, Garden Centre, Other Licensed Premise/Vendor, Fast Food Outlet/Takeaway (Hot/Cold), Automated Teller Machine (ATM))
+- Storage Land (General Storage Land, Builders' Yard)
+- Transport (Airfield/Airstrip/Airport/Air Transport Infrastructure Facility, Airfield, Air Transport Infrastructure Services, Airport, Air Passenger Terminal, Helicopter Station, Heliport/Helipad, Bus Shelter, Car/Coach/Commercial Vehicle/Taxi Parking/Park And Ride Site, Public Park And Ride, Public Car Parking, Public Coach Parking, Public Commercial Vehicle Parking, Goods Freight Handling/Terminal, Air Freight Terminal, Container Freight, Road Freight Transport, Rail Freight Transport, Marina, Mooring, Railway Asset, Station/Interchange/Terminal/Halt, Bus/Coach Station, Railway Station, Vehicular Rail Terminal, Transport Track/Way, Cliff Railway, Chair Lift/Cable Car/Ski Tow, Monorail, Vehicle Storage, Boat Storage, Bus/Coach Depot, Transport Related Infrastructure, Aqueduct, Lock, Weir, Weighbridge/Load Gauge, Overnight Lorry Park, Harbour/Port/Dock/Dockyard/Slipway/Landing Stage/Pier/Jetty/Pontoon/Terminal/Berthing/Quay, Passenger Ferry Terminal, Non-Tanker Nautical Berthing, Nautical Refuelling Facility, Slipway, Ship Passenger Terminal, Tanker Berthing, Vehicular Ferry Terminal)
+- Utility (Electricity Sub-Station, Landfill, Power Station/Energy Production, Electricity Distribution Facility, Electricity Production Facility, Wind Farm, Wind Turbine, Pump House/Pumping Station/Water Tower, Water Controlling/Pumping, Water Distribution/Pumping, Water Quality Monitoring, Water Storage, Waste Water Distribution/Pumping, Telecommunication, Telecommunications Mast, Telephone Exchange, Water/Waste Water/Sewage Treatment Works, Waste Water Treatment, Water Treatment, Gas/Oil Storage/Distribution, Gas Governor, Gas Holder, Oil Terminal, Other Utility Use, Cable Terminal Station, Observatory, Radar Station, Satellite Earth Station, Waste Management, Telephone Box, Other Public Telephones, Dam)
+- Emergency/Rescue Service (Police/Transport Police/Station, Police Training, Fire Station, Fire Service Training, Ambulance Station, Air Sea Rescue/Air Ambulance, Lifeboat Services/Station, Coastguard Rescue/Lookout/Station, Mountain Rescue Station, Lighthouse, Police Box/Kiosk)
+- Information (Advertising Hoarding, Tourist Information Signage, Visitor Information, Traffic Information Signage)
+- Land (Agricultural, Grazing Land, Permanent Crop/Crop Rotation, Orchard, Ancillary Building Land, Aviary/Dovecot/Cage, Bandstand, Pavilion/Changing Room, Sports Viewing Structure, Burial Ground, Historic/Disused Cemetery/Graveyard, Development, Development Site, Commercial Construction Site, Community Construction Site, Residential Construction Site, Transport Construction Site, Forestry, Forest/Arboretum/Pinetum (Managed/Unmanaged), Arboretum, Woodland, Allotment, Amenity, Landscaped Roundabout, Verge/Central Reservation, Natural Central Reservation, Natural Verge, Maintained Amenity Land, Maintained Surfaced Area, Made Central Reservation, Pavement, Open Space, Heath/Moorland, Park, Public Park/Garden, Public Open Space/Nature Reserve, Playground, Play Area, Paddling Pool, Private Park/Garden, Unused Land, Vacant/Derelict Land)
+- Water (Lake/Reservoir, Balancing Pond, Buried Reservoir, Named Pond, Dew Pond, Decoy Pond, Static Water, Waterway, Drain, Leats/Races)
+- Military (Army, Army Military Storage, Army Military Range, Army Site, Army Military Training, Ancillary Building Military, Military Target, Air Force, Air Force Military Storage, Air Force Military Range, Air Force Site, Air Force Military Training, Defence Estates, Navy, Naval Military Storage, Naval Military Range, Naval Site, Naval Military Training)
+- Other (Ordnance Survey Only) (Aid To Navigation, Aid To Aeronautical Navigation, Aeronautical Navigation Beacon/Light, Landing Light, Signal Square, Wind Sock/Wind Tee, Aid To Nautical Navigation, Daymark, Fog Horn Warning, Nautical Navigation Beacon/Light, Aid To Road Navigation, Guide Post, Coastal Protection/Flood Prevention, Boulder Wall/Sea Wall, Flood Gate/Flood Sluice Gate/Flood Valve, Groyne, Rip-Rap, Emergency Support, Beach Office/First Aid Facility, Emergency Telephone (Non Motorway), Fire Alarm Structure/Fire Observation Tower/Fire Beater Facility, Emergency Equipment Point/Emergency Siren/Warning Flag, Lifeguard Facility, Life/Belt/Buoy/Float/Jacket/Safety Rope, Street Furniture, Agricultural Support Objects, Fish Ladder/Lock/Pen/Trap, Livestock Pen/Dip, Currick, Slurry Bed/Pit, Historical Site/Object, Historic Structure/Object, Industrial Support, Adit/Incline/Level, Caisson/Dry Dock/Grid, Channel/Conveyor/Conduit/Pipe, Chimney/Flue, Crane/Hoist/Winch/Material Elevator, Flare Stack, Hopper/Silo/Cistern/Tank, Grab/Skip/Other Industrial Waste Machinery/Discharging, Kiln/Oven/Smelter, Manhole/Shaft, Industrial Overflow/Sluice/Valve/Valve Housing, Cooling Tower, Solar Panel/Waterwheel, Telephone Pole/Post, Electricity Distribution Pole/Pylon, Significant Natural Object, Boundary/Significant/Historic Tree/Pollard, Boundary/Significant Rock/Boulder, Natural Hole (Blow/Shake/Swallow), Ornamental/Cultural Object, Mausoleum/Tomb/Grave, Simple Ornamental Object, Maze, Sport/Leisure Support, Butt/Hide, Gallop/Ride, Miniature Railway, Royal Mail Infrastructure, Postal Box, Postal Delivery Box/Pouch, PO Box, Additional Mail/Packet Addressee, Scientific/Observation Support, Meteorological Station/Equipment, Radar/Satellite Infrastructure, Telescope/Observation Infrastructure/Astronomy, Transport Support, Cattle Grid/Ford, Elevator/Escalator/Steps, Footbridge/Walkway, Pole/Post/Bollard (Restricting Vehicular Access), Subway/Underpass, Customs Inspection Facility, Lay-By, Level Crossing, Mail Pick Up, Railway Pedestrian Crossing, Railway Buffer, Rail Drag, Rail Infrastructure Services, Rail Kilometre Distance Marker, Railway Lighting, Rail Mile Distance Marker, Railway Turntable, Rail Weighbridge, Rail Signalling, Railway Traverse, Goods Tramway, Road Drag, Vehicle Dip, Road Turntable, Road Mile Distance Marker, Road Kilometre Distance Marker, Road Infrastructure Services, Unsupported Site, Cycle Parking Facility, Picnic/Barbeque Site, Travelling Persons Site, Shelter (Not Including Bus Shelter))
+- Parent Shell (Property Shell, Street Record)
+- Residential (Ancillary Building Residential, Car Park Space, Allocated Parking, Dwelling, Caravan, Detached, Semi-Detached, Terraced, Self Contained Flat (Includes Maisonette/Apartment), House Boat, Sheltered Accommodation, Privately Owned Holiday Caravan/Chalet, Garage, Lock-Up Garage/Garage Court, House In Multiple Occupation, HMO Parent, HMO Bedsit/Other Non Self Contained Accommodation, HMO Not Further Divided, Residential Institution, Care/Nursing Home, Communal Residence, Non-Commercial Lodgings, Religious Community, Residential Education)
+- Unclassified (Awaiting Classification, Pending Internal Investigation)
+- Dual Use
+- Object of Interest (Archaeological Dig Site, Monument, Obelisk/Milestone/Standing Stone, Obelisk, Standing Stone, Memorial/Market Cross, Statue, Castle/Historic Ruin, Other Structure, Boundary Stone, Cascade/Fountain, Permanent Art Display/Sculpture, Windmill (Inactive), Stately Home, Underground Feature, Cave, Pothole/Natural Hole, Other Underground Feature, Cellar, Disused Mine, Mineral Mining/Inactive, Oil And/Gas Extraction/Inactive, Mineral Quarrying And/Open Extraction/Inactive, Well/Spring, Spring, Well, Place Of Worship, Abbey, Cathedral, Church, Chapel, Gurdwara, Kingdom Hall, Lych Gate, Mosque, Minster, Stupa, Synagogue, Temple)
+
+**Example Usage:**
+```
+✅ Property classification: contains any [Commercial, Residential]
+✅ Property classification: contains all [Development Site, Residential Construction Site]
+✅ Property classification: does not contain [Military, Prison]
+✅ Property classification: exactly matches [Hotel/Motel]
+❌ Property classification: 'Commercial' OR 'Residential'  // INVALID - no OR operators
+```
+
+**⚠️ CRITICAL:** Do NOT mix "Property classification" values with "Use class" values - they are separate taxonomies.
+
+---
+
+### Building use group ✓ [LIST-BASED]
+**Operators:** `contains any`, `contains all`, `does not contain`
+
+**Available Values:** (17 high-level categories)
+- Agriculture Or Aquaculture
+- Attraction, Sports or Activity
+- Commercial Activity: Logistics Or Manufacturing
+- Commercial Activity: Other
+- Commercial Activity: Retail
+- Construction
+- Education
+- Government Services
+- Medical or Emergency Services
+- Mixed Use
+- Religious Worship and Funeral Services
+- Residential Accommodation
+- Temporary Or Holiday Accommodation
+- Transport
+- Unknown
+- Utility Or Environmental Protection
+
+**Example Usage:**
+```
+✅ Building use group: contains any [Mixed Use, Commercial Activity: Other]
+✅ Building use group: does not contain [Agriculture Or Aquaculture, Utility Or Environmental Protection]
+✅ Building use group: contains all [Residential Accommodation, Mixed Use]
+❌ Building use group: 'Mixed Use' OR 'Commercial'  // INVALID - no OR operators
+```
+
+**Note:** This is a high-level grouping - less granular than "Use class" but more specific than "Property type".
+
+### Other Use Class Filters:
+- VOA entry on the title
+- VOA property description
+
+## Constraints
+
+### Planning Constraints
+
+#### Planning constraints ✓ [LIST-BASED]
+**Operators:** `contains any`, `contains all`, `does not contain`
+
+**Available Values:** (34 constraint types)
+- National Landscapes (AONB)
+- Flood Zone 2
+- Flood Zone 3
+- Housing Zones
+- National Parks
+- SAC (Special Areas of Conservation)
+- CROW (Countryside and Rights of Way)
+- Country Parks
+- Site Allocations
+- World heritage sites
+- Local Nature Reserves
+- Areas Of Intensification
+- SIL (Strategic Industrial Locations)
+- LSIS (Locally Significant Industrial Sites)
+- Green Belt
+- Listed Building(s) in plot
+- Listed Building(s) 50m Buffer
+- Conservation Area
+- Designated Open Space
+- Town Center Boundaries
+- SSSI (Sites of Special Scientific Interest)
+- Parks and Gardens
+- Opportunity Areas
+- Ancient Woodland
+- Central Activities Zone
+- RAMSAR (Wetlands)
+- Scheduled Monuments
+- Battlefields
+- National Nature Reserves
+- SPA (Special Protection Areas)
+- Built up areas
+- Nutrient Neutrality
+- Tree Preservation Order (TPO)
+
+**Example Usage:**
+```
+✅ Planning constraints: does not contain [Green Belt, Conservation Area]  // Avoid major blockers
+✅ Planning constraints: contains any [Housing Zones, Opportunity Areas]  // Seek policy support
+✅ Planning constraints: does not contain [Flood Zone 3, SSSI]  // Exclude flood risk & protected sites
+✅ Planning constraints: contains all [Housing Zones, Built up areas]  // Urban housing policy areas
+❌ Planning constraints: NOT 'Green Belt'  // INVALID - use 'does not contain'
+```
+
+**Strategic Use Cases:**
+- **Exclusions (Avoid):** Green Belt, Conservation Area, Listed Building(s) in plot, Flood Zone 3, SSSI, Ancient Woodland
+- **Opportunities (Seek):** Housing Zones, Opportunity Areas, Areas Of Intensification, Site Allocations
+- **Negotiable:** Flood Zone 2 (mitigation possible), Listed Building(s) 50m Buffer, Town Center Boundaries
+- **Policy Support:** Central Activities Zone (London), SIL/LSIS (industrial conversion opportunities)
+
+**Performance/Notes:**
+- Fast filter - indexed field
+- Use "Percentage of plot un-constrained" to find sites with minimal constraint coverage
+- Some constraints are absolute blockers (Green Belt, SSSI), others are negotiable
+- "Built up areas" is POSITIVE - indicates urban context (not a constraint to avoid)
+
+#### Other Constraint Filters:
+- Percentage of plot un-constrained ✓
+- Area of plot un-constrained (acres)
+- Contains public rights of way
+- Protected from flooding
+
+### Environmental Constraints (all in acres)
+- Area of title not covered by Ancient Woodland (acres)
+- Area of title not covered by Areas of Outstanding Natural Beauty (acres)
+- Area of title not covered by Conservation Areas (acres)
+- Area of title not covered by Country Parks (acres)
+- Area of title not covered by Flood Zone 2 (acres)
+- Area of title not covered by Flood Zone 3 (acres)
+- Area of title not covered by Green Belt land (acres)
+- Area of title not covered by Local Nature Reserves (acres)
+- Area of title not covered by National Nature Reserves (acres)
+- Area of title not covered by National Parks (acres)
+- Area of title not covered by Ramsar Wetlands (acres)
+- Area of title not covered by Registered Battlefields (acres)
+- Area of title not covered by Registered Parks and Gardens (acres)
+- Area of title not covered by Scheduled Monuments (acres)
+- Area of title not covered by Sites of Special Scientific Interest (acres)
+- Area of title not covered by Special Areas of Conservation (acres)
+- Area of title not covered by Special Protection Areas (acres)
+- Area of title not covered by World Heritage Sites (acres)
+- Area of title within 50m of a Listed Building (acres)
+
+### Percentage Coverage (%)
+- Percentage of title covered by Ancient Woodland
+- Percentage of title covered by Areas of Outstanding Natural Beauty (AONB)
+- Percentage of title covered by Areas of Tree Preservation Order (TPO)
+- Percentage of title covered by Conservation Areas
+- Percentage of title covered by Flood Zone 2
+- Percentage of title covered by Flood Zone 3
+- Percentage of title covered by Green Belt land
+- Percentage of title covered by hard standings
+- Percentage of title subject to Article 4 Directions
+
+### Other Constraints
+- Article 4
+- Coal authority constraints
+- Surface water flooding risk level
+- Surface water flooding risk level (climate change adjusted)
+- Agricultural land classification
+- Chance of radon gas
+- Has safeguarded air space for
+- Radar interference development height (m)
+- Irreplaceable habitats
+
+## Transport & Proximity
+
+### Transport Accessibility
+
+#### TFL Public Transport Accessibility Level (PTAL) ✓ [LIST-BASED]
+**Operators:** `contains any`, `contains all`, `does not contain`, `exactly matches`
+
+**Available Values:**
+- 0 (Worst)
+- 1a
+- 1b
+- 2
+- 3
+- 4
+- 5
+- 6a
+- 6b (Best)
+
+**Example Usage:**
+```
+✅ PTAL: contains any [6a, 6b (Best)]
+✅ PTAL: is greater than or equal to [4]
+✅ PTAL: does not contain [0 (Worst), 1a, 1b]
+❌ PTAL: '6a' OR '6b'  // INVALID - no OR operators
+```
+
+**Note:** Higher PTAL values indicate better public transport accessibility. London-specific metric.
+
+- Nearby adopted roads
+
+### Distance Filters (all in metres)
+- Distance to nearest A road (m)
+- Distance to nearest B road (m)
+- Distance to nearest minor road (m)
+- Distance to nearest motorway (m)
+- Distance to nearest Train Station (m)
+- Distance to nearest Bus Stop (m)
+- Distance to nearest Rapid Transit Stop/Station (m)
+
+### Distance to Services
+- Distance to nearest hospital (m)
+- Distance to nearest school (m)
+- Distance to nearest GP (m)
+- Distance to nearest care home (m)
+- Distance to nearest clinic (m)
+- Distance to nearest dentist (m)
+- Distance to nearest pharmacy (m)
+- Distance to nearest optician (m)
+- Distance to nearest social care facility (m)
+- Distance to nearest residential address (m)
+
+### Distance to Boundaries/Areas
+- Distance to nearest adopted settlement boundary (m)
+- Distance to nearest emerging settlement boundary (m)
+- Distance to nearest built up area (m)
+
+### Distance to Infrastructure
+- Distance to nearest Substation (m)
+- Distance to nearest Green Rated Substation (m) ✓
+- Distance to nearest Amber Rated Substation (m)
+- Distance to nearest Red Rated Substation (m)
+- Distance to nearest Power Line (m)
+- Distance to nearest EV Chargepoint (m)
+- Distance to nearest HMO (m)
+
+## Commercial Sales
+
+- Commercial sales average price
+- Number of commercial sales currently on market
+- Commercial sales sector
+- Commercial sales sub sector
+
+## Commercial Lettings
+
+- Commercial lettings average rent per annum
+- Number of commercial lettings currently on market
+- Commercial lettings number of leases on title
+- Commercial lettings sector
+- Commercial lettings sub sector
+- Commercial lettings status availability
+- Commercial lettings tenant names
+
+## Rightmove Sales Listings
+
+- **Sales listing currently on the market** ✓
+- **Sales listing price** ✓
+- **Sales listing status** ✓
+  - Available
+  - Under Offer
+  - Reserved
+  - Invisible
+  - Sold Subject to Contract
+  - Sold Subject to Conclusion of Missives
+  - Sale Completed
+- Sales listing property type
+- Sales listing number of bedrooms
+- Sales listing number of bathrooms
+- Sales listing number of living rooms
+- Sales listing year property built
+- Sales listing is retirement property
+- Sales listing is under auction
+
+⚠️ **MISSING:** "Listed for >12 months" filter NOT available
+⚠️ **MISSING:** "Price reduced" filter NOT available
+⚠️ **WORKAROUND:** Must use combinations of status and manual screening
+
+## Rightmove Rental Listings
+
+- Rental listing currently on the market
+- Rental listing price per month
+- Rental listing status
+- Rental listing property type
+- Rental listing number of bedrooms
+- Rental listing number of bathrooms
+- Rental listing number of living rooms
+- Rental listing year property built
+- Rental listing is retirement property
+
+## EPC (Energy Performance Certificate)
+
+- Property floor area (sqft)
+- Latest EPC inspection date ✓
+- Latest EPC number of habitable rooms
+- **EPC rating** ✓
+- **Energy efficiency** ✓
+- Number of EPC records on title
+
+### EPC Components
+- EPC tenure
+- EPC main heating fuel
+- EPC floor energy efficiency
+- EPC walls energy efficiency
+- EPC roof energy efficiency
+- EPC main heating energy efficiency
+- EPC main heating controls energy efficiency
+- EPC lighting energy efficiency
+- EPC windows energy efficiency
+- All EPC recommendations ✓
+
+### EPC Descriptions
+- EPC hot water description
+- EPC floor description
+- EPC windows description
+- EPC roof description
+- EPC second heat description
+- EPC main heating description
+- EPC lighting description
+- EPC walls description
+- EPC main heating controls description
+
+## Company Information
+
+- Company name
+- Company Reg No.
+- Company Incorporated Overseas
+- Country Incorporated
+- SIC codes
+- Date added to the register
+- Ultimate parent company name
+- Ultimate parent company number
+- Number of directors at company
+- Number of titles owned by company
+- Number of mortgages charges associated with company
+- Company status
+
+## Sold Price (Price Paid Data)
+
+- **Latest sold price** ✓
+- **Latest sold date** ✓
+- **Latest price per sqmt** ✓
+- Avg sold price in last 5 years ✓
+- Number of price paid records on title
+- Property type
+- Contains new build
+
+## Leasehold Information
+
+- Lease start date
+- Lease end date ✓
+- Lease length (years)
+- Number of leaseholds on the freehold ✓
+- Maximum leasehold expiry date on freehold
+
+## HMO (House in Multiple Occupation)
+
+- Has an HMO ✓
+- HMO License Expiry Date
+- HMO License Holder Name
+- HMO Maximum Occupancy
+
+## Terrain & Elevation
+
+- Maximum Elevation of Title (m)
+- Minimum Elevation of Title (m)
+- Average Elevation of Title (m)
+
+### Gradient (%)
+- Percentage of Title With Flat Gradient
+- Percentage of Title With Gentle Gradient
+- Percentage of Title With Moderate Gradient
+- Percentage of Title With Steep Gradient
+- Percentage of Title With Very Steep Gradient
+
+### Aspect/Direction (%)
+- Percentage of Title Facing Northerly
+- Percentage of Title Facing North Easterly
+- Percentage of Title Facing Easterly
+- Percentage of Title Facing South Easterly
+- Percentage of Title Facing Southerly
+- Percentage of Title Facing South Westerly
+- Percentage of Title Facing Westerly
+- Percentage of Title Facing North Westerly
+
+## Land Allocation & Policy
+
+- Site allocation type ✓
+- Land Availability Assessment (SHLAA) ✓
+- In adopted settlement ✓
+- In emerging settlement ✓
+- Percentage of title in adopted settlement
+- Percentage of title in emerging settlement
+- Neighbouring Local Planning Authorities of
+
+⚠️ **MISSING:** "Tall Building Policy Zone" NOT a direct filter
+⚠️ **MISSING:** "Housing Delivery Test" NOT a filter
+⚠️ **WORKAROUND:** Must know geography and filter by authority manually
+
+## Green Belt Review Ratings
+
+- Overall rating of overlapping Green Belt Review
+- Setting rating of overlapping Green Belt Review
+- Sprawl rating of overlapping Green Belt Review
+- Merge rating of overlapping Green Belt Review
+- Safeguarding rating of overlapping Green Belt Review
+- Regeneration rating of overlapping Green Belt Review
+
+## Building Status
+
+- Building on title is derelict ✓
+- Building on title is under construction ✓
+- Building on title is inactive ✓
+- Building on title has solar panels
+- Title has prebuild addresses
+- Title has historic addresses
+- Title has unoccupied addresses
+- Period buildings on title were built
+
+## Demographics (Nearby Area)
+
+- Population density (number of people per km2)
+- Percentage of area aged 65 or above
+- Percentage of area aged 85 or above
+- Median age nearby
+- Average household deprivation level nerby
+- Typical household size nearby
+- Average number of cars or vans per Household
+- Mean gross annual household income (unequivalised) (£)
+- Mean net annual household income (unequivalised) (£)
+
+### Typical Characteristics
+- Most common ethnic group nearby
+- Most common country of birth nearby
+- Most common religion nearby
+- Most common economic activity nearby
+- Most common socio-economic classification for area
+- Most common number of bedrooms in households nearby
+- Typical resident persona for area (high level/mid level/low level)
+- Typical length of residence in area
+- Typical urban setting description
+
+## Footfall & Traffic
+
+- Average footfall count passing title daily ✓
+- Average vehicle count passing title daily ✓
+
+## Environmental Data
+
+### Solar/Energy
+- Global Horizontal Irradiation kWh/m2 per year
+- Global Tilted Irradiation kWh/m2 per year
+- Direct Normal Irradiation kWh/m2 per year
+- Diffuse Horizontal Irradiation kWh/m2 per year
+- Specific photovoltaic power output kWh/m2 per year
+- Optimum Tilt of PV Modules (°)
+
+### Climate
+- Air Temperature (°C)
+
+### Natural Environment
+- National Character Area
+- Neighbouring National Character Areas of
+- Operational Catchment Area
+- Waterbody Catchment Area
+- Local Nature Recovery Strategy Area
+
+### Habitats & Biodiversity
+- Habitat type
+- Habitat group
+- Total number of habitats on title
+- Total area habitat units
+- Total linear hedgerow units
+- Total linear watercourse units
+
+## Care Homes
+
+- Has extra care housing
+- Has nursing care home
+- Has resident care home
+- Has shared lives
+- Number of care homes
+- Number of active care homes
+- Latest overall rating
+- Distance to nearest good/outstanding/inadequate/requires improvement elderly care home (m)
+- Average minimum fees per week
+- Average bedroom occupancy rating nearby
+
+## Class MA Specific
+
+- **Percentage profit (Class MA only)** ✓
+
+## Accommodation
+
+- Accommodation Type
+- Main heating type nearby
+
+## Valuation
+
+- Land value
+- Land value transaction date
+- Sum of all units
+
+---
+
+## CRITICAL FINDINGS (2025-01-19)
+
+### ❌ Filters That DON'T Exist:
+
+1. **"Planning Status: Expired/Lapsed"** - Major issue for Filter 2
+2. **"Listed for >12 months"** - Can't directly filter stale listings
+3. **"Price reduced"** - Can't directly filter motivated sellers
+4. **"Tall Building Policy Zone"** - Must know geography manually
+5. **"Housing Delivery Test results"** - Must research separately
+
+### ⚠️ Unit Mismatches:
+
+1. **Title area** = ACRES only (not sqmt)
+   - 800 sqmt = 0.198 acres
+   - 2,500 sqmt = 0.618 acres
+
+2. **Building areas** = Square FEET (not sqmt)
+   - Must convert: 1 sqft = 0.0929 sqm
+   - Or: 1 sqm = 10.764 sqft
+
+3. **Distances** = Metres ✓ (correct)
+4. **Height** = Metres ✓ (correct)
+
+### ✓ Filters That DO Exist (Good News):
+
+1. Proposal (keyword search) ✓
+2. Max building height (m) ✓
+3. PTAL levels ✓
+4. Last application submitted (date range) ✓
+5. Building status (derelict, inactive, construction) ✓
+6. Latest sold date ✓
+7. EPC ratings ✓
+8. Sales listing status ✓
+9. Use class ✓
+10. Ownership type ✓
+
+---
+
+## Workarounds for Missing Filters:
+
+### For "Expired Planning":
+Use combination of:
+- Last application submitted: >2 years ago
+- Proposal: contains keywords
+- Max dwellings applied for: >0
+- Building on title is inactive (proxy for stalled development)
+
+### For "Listed >12 months":
+- Manual screening required
+- OR use "Sales listing status: Available" + old "Latest sold date"
+- Imperfect proxy
+
+### For "Tall Building Policy":
+- Must research local policies manually
+- Filter by specific boroughs/authorities
+- Use PTAL as proxy (high PTAL areas more likely to support tall buildings)
+
+### For "Housing Delivery Test":
+- Research HDT results separately
+- Filter by specific local authorities that failed
+- Not directly filterable in SearchLand
+
+---
+
+
+## REFERENCE: LEARNINGS_DATABASE.md
+
+# SearchLand AI Implementation Learnings Database
+
+**Purpose:** Universal, reusable knowledge about how SearchLand AI actually implements filters
+**Scope:** Technical implementation details, NOT geography-specific results
+**Status:** Living document - update after each project discovers new behaviors. If the filter value is not document you can make some assumption about it's expected behaviour and create a filter based on that. We will test your assumption and document any discrepancies here. 
+
+---
+
+## ⚠️ CRITICAL: List-Based Filter Operators (MOST COMMON ERROR)
+
+**ISSUE:** LLMs frequently write invalid syntax for filters with predefined value lists (Use class, Property type, etc.)
+
+### The Problem
+
+SearchLand filters with **predefined value lists** (shown as checkboxes in UI) use specific operators:
+- `contains any` (OR logic - matches if ANY value is present)
+- `contains all` (AND logic - requires ALL values)
+- `does not contain` (exclusion)
+- `is equal to` (exact match)
+
+**You CANNOT use boolean operators (`OR`, `AND`, `NOT`) within a single filter line.**
+
+### ❌ INVALID Examples (DO NOT USE):
+
+```
+❌ Use class: contains 'E' OR Use class: contains 'Mixed'
+   // SearchLand does not support OR operators within a filter line
+
+❌ Use class: contains 'E' AND Use class: contains 'C3'
+   // SearchLand does not support AND operators within a filter line
+
+❌ Property type: 'Commercial' OR 'Residential'
+   // Wrong syntax - no OR operators
+
+❌ Use class: E AND C3
+   // Wrong syntax - no AND operators
+```
+
+**Why This Fails:**
+- SearchLand's AI prompt parser does not recognize `OR`/`AND`/`NOT` as operators
+- It treats the entire string as a literal search term
+- The filter will return zero results or unexpected matches
+
+### ✅ CORRECT Examples:
+
+```
+✅ Use class: contains any [E - Commercial Business and Service, C3 - Dwellinghouses]
+   // Correct: Multiple values in single filter with "contains any" operator
+   // This matches properties with EITHER E OR C3 (implicit OR)
+
+✅ Use class: contains all [E - Commercial Business and Service, C3 - Dwellinghouses]
+   // Correct: Requires BOTH E AND C3 to be present (implicit AND)
+
+✅ Use class: does not contain [B2 - General industrial]
+   // Correct: Excludes properties with B2 use class
+
+✅ Property type: contains any [Commercial, Mixed Use, Residential]
+   // Correct: Matches any of these property types
+
+✅ Tenure: is equal to [Freehold]
+   // Correct: Exact match for single value
+```
+
+### List-Based Filters (Use operators above):
+- **Use class** - Planning use classes (E, C3, B2, etc.)
+- **Property type** - Commercial, Residential, Mixed Use, etc.
+- **Property classification** - Separate taxonomy from Use class
+- **Tenure** - Freehold, Leasehold, etc.
+- **Ownership type** - Corporate, Individual, etc.
+- **Any filter showing checkbox options in UI**
+
+### Syntax Pattern:
+
+```
+[Filter name]: [operator] [comma-separated list of values in square brackets]
+```
+
+**Examples:**
+```
+Use class: contains any [E, C3, C4]
+Property type: does not contain [Agricultural]
+Tenure: is equal to [Freehold]
+```
+
+### Common Corrections:
+
+| ❌ Incorrect | ✅ Correct |
+|-------------|-----------|
+| `Use class: contains 'E' OR 'C3'` | `Use class: contains any [E, C3]` |
+| `Property type: 'Commercial' OR 'Mixed'` | `Property type: contains any [Commercial, Mixed Use]` |
+| `Use class: NOT 'B2'` | `Use class: does not contain [B2]` |
+| `Tenure: 'Freehold' OR 'Leasehold'` | `Tenure: contains any [Freehold, Leasehold]` |
+
+---
+
+## Filter Syntax & Boolean Logic
+
+### ✅ What Works
+
+**Text Search - AND Logic:**
+```
+Proposal: contains "mixed-use" AND "storey"
+```
+- SearchLand AI supports AND within a single text field
+- Case-insensitive matching
+- Partial word matching (e.g., "storey" matches "8-storey", "multi-storey")
+
+**Numeric - Compound Ranges:**
+```
+Title area (acres): is greater than 0.2 AND less than 2
+```
+- Supports AND for numeric ranges in single filter line
+- Creates inclusive lower bound, exclusive upper bound by default
+
+**Enum - Multiple Selection:**
+```
+TFL Public Transport Accessibility Level (PTAL): is one of 4, 5, 6a, 6b
+```
+- Accepts comma-separated list for enum fields
+- Must use exact values from dropdown (case-sensitive)
+
+### ❌ What Doesn't Work
+
+**OR Logic in Single Filter:**
+```
+❌ Building on title is derelict: is equal to Yes OR Building on title is inactive: is equal to Yes
+```
+- SearchLand AI does NOT support OR within a single filter line
+- **Workaround:** Create separate filter groups with OR relationship at group level
+
+**Boolean Operators in List-Based Filters:**
+```
+❌ Use class: contains 'E' OR Use class: contains 'C3'
+❌ Property type: 'Commercial' OR 'Residential'
+```
+- List-based filters do NOT support `OR`, `AND`, `NOT` operators within a single filter line
+- **Correct:** `Use class: contains any [E - Commercial Business and Service, C3 - Dwellinghouses]`
+- Use `contains any` for OR logic, `contains all` for AND logic
+
+**Non-existent Filters:**
+```
+❌ Planning Status: is equal to "Expired"
+❌ Price reduced: is equal to Yes
+❌ Listed for more than 12 months: is equal to Yes
+```
+- These filters do NOT exist in SearchLand (verified 2025-01-19)
+- **Workarounds:** Use proxy combinations (see Filter Patterns section)
+
+---
+
+## Unit Conventions (CRITICAL)
+
+### Area Measurements
+
+**Title Area - ACRES ONLY:**
+```
+✅ Title area (acres): is greater than 0.2
+❌ Title area (sqm): [DOES NOT EXIST]
+```
+
+**Building Areas - SQUARE FEET ONLY:**
+```
+✅ Developed area (sqft): is greater than 10000
+❌ Developed area (sqm): [DOES NOT EXIST]
+```
+
+**Conversion Reference:**
+```
+1 acre = 43,560 sqft = 4,047 sqm
+0.2 acres = 8,712 sqft = 809 sqm
+0.5 acres = 21,780 sqft = 2,023 sqm
+1 acre = 43,560 sqft = 4,047 sqm
+2 acres = 87,120 sqft = 8,094 sqm
+
+Common building sizes:
+8,000 sqft = 743 sqm = 0.18 acres
+10,000 sqft = 929 sqm = 0.23 acres
+50,000 sqft = 4,645 sqm = 1.15 acres
+100,000 sqft = 9,290 sqm = 2.30 acres
+```
+
+### Height & Distance - METRES
+
+```
+✅ Max building height on title (m): is greater than 15
+✅ Distance to nearest Train Station (m): is less than 1000
+```
+
+**Height Reference:**
+```
+Typical storey height: 3-4m per storey
+8-storey building: 24-32m (typically 25-30m to roof)
+12m max height: ~3-4 storeys
+15m max height: ~4-5 storeys
+25m max height: ~7-9 storeys
+```
+
+**Building Height - Auto-Conversion Behavior ⚠️**
+```
+Discovered: 2025-11-24 (Project: MixedUse-8Storey-2M-v20, Approach E)
+
+BEHAVIOR:
+SearchLand AI may auto-convert between height metrics:
+- "Max building height on title (m): is less than 12" 
+  → May create "Max number of building floors on title: is less than 4"
+- Conversion assumes ~3m per floor
+- Both filters exist separately in SearchLand
+
+Available Height Filters:
+✅ Max building height on title (m) - absolute height in metres
+✅ Max number of building floors on title - storey count
+✅ Number of building floors in title - actual floor count
+
+RECOMMENDATION:
+- If you want floors, specify floors (more reliable parsing)
+- If you want metres, specify metres (but verify which filter was created)
+- Always check SearchLand UI to confirm which filter was applied
+
+Example:
+# If you want 3-4 storey buildings:
+✅ Max number of building floors on title: is less than 4  (explicit, reliable)
+⚠️ Max building height on title (m): is less than 12  (may auto-convert to floors)
+
+Conversion Reference:
+12m ≈ 3-4 floors
+15m ≈ 4-5 floors  
+18m ≈ 5-6 floors
+25m ≈ 7-9 floors
+(Assumes 3-4m per storey)
+```
+
+---
+
+## Filter Interpretation & Behavior
+
+### "Building on title is inactive"
+```
+Includes:
+- Derelict buildings
+- Abandoned structures
+- Not currently in use
+- May include: Buildings under construction (varies)
+
+Does NOT include:
+- Occupied buildings with no recent activity
+- Vacant land with no building
+```
+
+### "Applications in the last 5 years"
+```
+Behavior:
+- Counts ALL application types (approved, refused, withdrawn, pending)
+- Includes amendments to existing permissions
+- "= 0" means ZERO applications (very restrictive)
+
+Typical results by strictness:
+- "= 0": Extremely restrictive (often 0-5 results per LPA)
+- "< 3": Moderately restrictive
+- "< 5": Broader search
+```
+
+### "Sales listing currently on the market"
+```
+Shows ONLY:
+- Live Rightmove listings
+- Current asking prices
+
+Does NOT show:
+- Off-market properties
+- Withdrawn listings
+- Expired listings
+- Properties marketed on other platforms only
+
+For off-market opportunities: Use "Latest sold date" filters instead
+```
+
+### "Proposal" Text Search
+```
+Behavior:
+- Searches planning application proposal descriptions
+- Partial matching (e.g., "mixed" matches "mixed-use")
+- Case-insensitive
+- Matches across entire proposal text
+
+Best practices:
+- Use specific keywords: "storey", "mixed-use", "residential"
+- Avoid overly generic terms: "development", "construction"
+- Combine multiple keywords with AND for precision
+```
+
+### "Latest sold date" vs "Sales listing price"
+```
+"Latest sold date": 
+- Historical transaction data
+- Includes off-market sales
+- Good proxy for corporate ownership length
+
+"Sales listing price":
+- Current market listings ONLY
+- Requires "Sales listing currently on the market: is equal to Yes"
+- Excludes off-market opportunities
+```
+
+### "Ownership type: Company"
+```
+Behavior:
+- Identifies corporate ownership
+- Excludes individual/personal ownership
+- Good indicator for:
+  - Institutional sellers
+  - Portfolio divestment opportunities
+  - Potentially motivated sellers (if held long-term)
+```
+
+### "Sui Generis" Use Class - Display Name Clarification
+```
+Discovered: 2025-11-24 (Project: MixedUse-8Storey-2M-v20, Approach E)
+
+BEHAVIOR:
+When you filter for "Sui Generis" use class, SearchLand displays it as:
+"Use class contains any: E - Commercial, Business and Se... , Outside of the defined classes"
+
+CLARIFICATION:
+- "Outside of the defined classes" = Sui Generis
+- Sui Generis = Uses that don't fit into standard use classes (E, C3, B2, etc.)
+- Examples: Car showrooms, petrol stations, nightclubs, launderettes, taxi businesses, 
+  scrap yards, casinos, theatres, amusement arcades, hostels, motor vehicle repair
+
+Filter correctly parses when you use:
+✅ Use class: contains any [E - Commercial Business and Service, Sui Generis]
+
+Display in SearchLand UI:
+"Use class contains any: E - Commercial, Business and Se... , Outside of the defined classes"
+
+Note: This is just a display difference - the filter works correctly.
+```
+
+### "Company status" ⚠️ STRONG MOTIVATION SIGNAL
+```
+Discovered: 2025-11-19 (User: ashsubband)
+
+Available values include:
+- Active (normal trading company)
+- Liquidation ⚠️ VERY STRONG motivation signal
+- Dissolved
+- In Administration
+- [Other statuses - see SearchLand dropdown]
+
+CRITICAL INSIGHT:
+"Company status: is one of Liquidation" = FORCED SALE scenario
+- Company legally obligated to sell assets
+- Liquidator motivated to complete quickly
+- Often discounted pricing
+- Strong negotiating position for buyer
+
+Usage Example:
+1. Ownership type: is equal to Company
+2. Company status: is one of Liquidation
+3. [Additional filters for property type/size]
+
+Performance:
+- Highly targeted (few results)
+- Very strong motivation signal (forced sale)
+- Excellent for negotiating favorable terms
+
+Combine with:
+- Derelict/inactive buildings (double motivation)
+- Long hold period (non-core asset)
+- Price caps (realistic expectations)
+
+Related: See FILTER_PATTERNS.md → Pattern 2D (Liquidation/Administration Sales)
+```
+
+---
+
+## Motivation Signals (from SearchLand Presets Analysis)
+
+### "HMO License Expiry Date" ⚠️ REGULATION-DRIVEN MOTIVATION
+```
+Discovered: 2025-11-19 (Source: Presets #12, #35, #47)
+
+REGULATION = FORCED ACTION:
+- Expired HMO license = illegal to operate
+- Owner must: Renew (expensive £1k-£3k + compliance) OR Sell (motivated)
+- Renewal requires: Safety certs, planning compliance, local authority approval
+- Some areas have Article 4 restrictions (can't renew)
+
+Usage Examples:
+Preset #12: HMO Expired Licenses
+1. Currently has HMO: Yes
+2. HMO License Expiry Date: before [current date]
+3. Freehold tenure
+
+Preset #47: HMO Opportunities (conversion)
+1. 8-12 habitable rooms
+2. C3 dwellinghouses only
+3. Latest sold date: before [10+ years ago]
+4. Low EPC (motivation signal)
+
+Performance:
+- Highly targeted (few properties per LPA)
+- Strong motivation (cannot operate legally)
+- Time-sensitive (expiry creates urgency)
+
+Combine with:
+- Low EPC (needs work anyway)
+- Long hold period (tired landlord)
+- NOT Article 4 (can renew if they want)
+
+Related: FILTER_PATTERNS.md → Pattern 8A (Regulation-Driven)
+```
+
+### "Lease end date" ⚠️ CASH FLOW ENDING = MOTIVATION
+```
+Discovered: 2025-11-19 (Source: Presets #17, #41, #46, #66, #68, #78)
+
+INCOME CLIFF = SELLER MOTIVATION:
+- Lease expiring = no rental income soon
+- Owner must: Find new tenant OR Sell
+- Shorter timeline = stronger motivation (6-12 months most motivated)
+
+Usage Examples:
+Preset #17: Commercial Expiring Leases
+1. B2/B8/E use class
+2. Lease end date: before 31/12/2026
+3. Last application: before 01/09/2020 (stale property)
+
+Preset #46: High Footfall Retail Expiring
+1. Lease end date: 30/09/2025 to 30/09/2026 (1 year window)
+2. 6,000+ daily footfall (prime location)
+3. E(a) retail
+
+Preset #68: Offices No C3 No Lease
+1. E(g)(i) offices
+2. NOT C3 (can convert)
+3. Lease ended OR no leaseholds (vacant)
+
+Performance:
+- Moderate targeting (varies by market)
+- Timing matters (6-12 months optimal)
+- Vacant = strongest signal (already no income)
+
+Combine with:
+- Long hold period (owner wants out)
+- Low EPC (needs refurb)
+- Stale planning (no recent activity)
+
+Related: FILTER_PATTERNS.md → Pattern 8B (Lease Expiry Opportunities)
+```
+
+### "EPC rating" (Low) ⚠️ IMPROVEMENT/REGULATION MOTIVATION
+```
+Discovered: 2025-11-19 (Source: Presets #2, #20, #36, #47, #67, #69)
+
+LOW EPC = FORCED INVESTMENT OR SALE:
+- EPC E-G = below regulations (private rented: min E from 2020)
+- Cannot legally rent until improved
+- Improvement costs: £5k-£50k depending on property
+- Owner must: Spend money OR Sell
+
+Usage Examples:
+Preset #2: Run Down Homes
+1. EPC: G, E, F, D
+2. C3 dwellinghouses only
+3. Less than 30% developed (land value)
+4. Detached (more improvement potential)
+
+Preset #20: Unsold Poor EPC
+1. EPC: E, F, G
+2. Latest sold date: before 01/07/2004 (20+ year hold!)
+3. Private owner
+
+Preset #36: ECO4 Solar Install
+1. EPC: E, F, G
+2. 5+ addresses (multi-unit)
+3. Private owner (eligible for ECO4 grants)
+
+Preset #67: Offices Low EPC
+1. EPC: D, E, F, G
+2. E commercial use
+3. Office type
+
+Performance:
+- Very broad (many properties)
+- Must combine with other signals
+- G/F = strongest motivation (cannot rent)
+
+Combine with:
+- Long hold period
+- No recent sales
+- Private owner (not professional landlord)
+
+Insight: E-G for rental = illegal, D = borderline, improvement required
+
+Related: FILTER_PATTERNS.md → Pattern 8C (EPC Compliance Opportunities)
+```
+
+### "No latest sold date" ⚠️ NEVER SOLD = VERY LONG HOLD
+```
+Discovered: 2025-11-19 (Source: Presets #18, #69)
+
+NEVER SOLD = INHERITED/LEGACY HOLDING:
+- Property never transacted in Land Registry records
+- Likely: Inherited, family land, very old ownership
+- Motivation: Non-professional owner, may not know value, estate planning
+
+Usage Examples:
+Preset #18: Edge of Settlement
+1. No latest sold date
+2. Private owner
+3. Edge of settlement (land promotion opportunity)
+4. Less than 1 application in 5 years (no activity)
+
+Preset #69: Older Houses Outdoor Space
+1. No latest sold date
+2. Less than 1 application in 5 years
+3. Private owner
+4. Low EPC (E, F, G)
+5. 1,000-4,500 sqmt (large plot)
+
+Performance:
+- Rare signal (only pre-LR computerization or inheritance)
+- Very strong for land opportunities
+- Often unexpected motivation (estate planning, downsizing)
+
+Combine with:
+- Low activity (no planning apps)
+- Edge of settlement (promotion opportunity)
+- Large plot (infill potential)
+- Private owner (not professional)
+
+Insight: These are "hidden gems" - owners may not be actively marketing
+
+Related: FILTER_PATTERNS.md → Pattern 2E (Never-Sold Legacy Holdings)
+```
+
+### "Less than 1 application in last 5 years" ⚠️ NO ACTIVITY = STALE
+```
+Discovered: 2025-11-19 (Source: Presets #18, #29, #47, #69, #77)
+
+NO PLANNING ACTIVITY = STALE/PASSIVE OWNER:
+- No planning applications for 5+ years
+- Owner not actively developing
+- May indicate: Tired landlord, passive holding, wants out
+
+Usage Examples:
+Preset #29: Car Parks
+1. Less than 1 application in last 5 years
+2. Car park use class
+3. Less than 5% developed
+
+Preset #77: Shops with Tops
+1. Less than 1 application in last 5 years
+2. E/E(a)/E(b) commercial ground floor
+3. 6m+ building height (airspace potential)
+
+Performance:
+- Broad filter (many properties)
+- Must combine with other signals
+- Indicates passive/unmotivated owner (not developer)
+
+Combine with:
+- Long hold period
+- Low EPC
+- Expired leases
+- No recent sales
+
+Opposite: "Applications in last 5 years > 3" = ACTIVE developer (less motivated to sell)
+
+Related: FILTER_PATTERNS.md → Pattern 2F (Stale/Passive Holdings)
+```
+
+### "Hardstanding percentage" ⚠️ PROXY FOR "PREVIOUSLY DEVELOPED"
+```
+Discovered: 2025-11-19 (Source: Presets #7, #15, #37, #43, #44, #61)
+
+HARDSTANDING = BROWNFIELD/GREY BELT EXCEPTION:
+- Hard surfaces: Concrete, asphalt, paving
+- >10-30% hardstanding = "previously developed land"
+- Green Belt exception: Previously developed can be redeveloped
+- Planning easier on brownfield than greenfield
+
+Usage Examples:
+Preset #7: Grey Belt
+1. 25%+ area developed
+2. 10%+ hardstanding
+3. Green Belt location
+4. Within 100m built-up area
+→ Exception: Previously developed in Green Belt
+
+Preset #15: Brownfield Industrial
+1. 30%+ hardstanding
+2. <10% developed (building demolished but base remains)
+3. Industrial use
+
+Preset #61: EV Charger Multi-Address
+1. 40%+ hardstanding (car parks/driveways)
+2. 75+ addresses (flats)
+
+Performance:
+- Clever workaround for Green Belt
+- Indicates previous use (less "green" objection)
+- Often cheaper than pure greenfield
+
+Thresholds:
+- 10% = Minimal (edge case)
+- 25-30% = Clear previously developed status
+- 40%+ = Significant infrastructure (car parks)
+
+Combine with:
+- Green Belt location
+- Proximity to built-up area
+- Low/no building (demolished but base remains)
+
+Related: FILTER_PATTERNS.md → Pattern 9A (Grey Belt Workarounds)
+```
+
+### "Agricultural Land Grade" 💡 ENERGY PROJECT SUITABILITY
+```
+Discovered: 2025-11-19 (Source: Presets #14, #39, #51, #52, #56, #81)
+
+AGRICULTURAL GRADE = ENERGY PROJECT VIABILITY:
+- Grade 1-2: Best & Most Versatile (BMV) - avoid (planning objection)
+- Grade 3a: BMV - marginal (avoid if possible)
+- Grade 3b, 4, 5: Lower quality - PREFERRED for solar/wind
+- Non-agricultural/Urban: Also acceptable
+
+Usage Examples:
+Preset #14: Solar Ground Mount
+1. Agricultural Grade 3/3a/3b/4 (note: excludes Grade 1-2)
+2. 40,000+ sqmt (10 acres)
+3. Within 2km green rated substation
+
+Preset #39: Nutrient Neutrality Farmland
+1. NOT Grade 1 or 2 (avoids BMV objection)
+2. 80,000+ sqmt (20 acres)
+3. Cereal crops (easy to work with)
+4. Nutrient neutrality area (special opportunity)
+
+Performance:
+- Grade 3b/4 = optimal for energy projects
+- Grade 1-2 = planning refusal risk
+- Grade 3a = borderline (case-by-case)
+
+Insight: Solar/wind planners specifically target Grade 3b/4 to avoid BMV objections
+
+Combine with:
+- Proximity to substation (< 2km)
+- Large acreage (40,000+ sqmt for solar)
+- Flat terrain (solar preferred)
+- Away from residential (wind)
+
+Related: FILTER_PATTERNS.md → Pattern 10A (Renewable Energy Land)
+```
+
+### "SHLAA Status" 💡 STRATEGIC LAND INDICATOR
+```
+Discovered: 2025-11-19 (Source: Presets #38, #43, #85)
+
+SHLAA = Strategic Housing Land Availability Assessment:
+- Positive/Neutral = Local authority identified as developable
+- Negative = Identified but rejected
+- No SHLAA = Not assessed (hidden opportunity OR too constrained)
+
+Usage Examples:
+Preset #38: Emerging Sites No Planning
+1. Housing allocation (emerging) - IN LOCAL PLAN
+2. <1 max dwellings applied for (no planning yet)
+3. 4,000-40,000 sqmt (1-10 acres)
+→ Strategy: Get planning before allocation adopted (first mover)
+
+Preset #85: Un-Allocated No SHLAA 1-10 Acres
+1. NOT positive/neutral/negative SHLAA (not assessed)
+2. NOT allocated (any type)
+3. Within 50m settlement boundary
+→ Strategy: Promote to local authority (no one else looking)
+
+Performance:
+- SHLAA positive = easier planning (authority support)
+- No SHLAA + edge of settlement = promotion opportunity
+- Negative SHLAA = understand WHY before pursuing
+
+Strategic Insight:
+- Un-assessed sites near settlements = hidden gems
+- Emerging allocations = get planning before competition
+
+Combine with:
+- Edge of settlement proximity
+- No recent planning applications
+- Private ownership (easier to deal)
+
+Related: FILTER_PATTERNS.md → Pattern 11A (Strategic Land Promotion)
+```
+
+### "SIC Codes" 💡 INDUSTRY TARGETING
+```
+Discovered: 2025-11-19 (Source: Presets #71, #73, #83)
+
+SIC = Standard Industrial Classification:
+- UK company registration codes
+- Target specific industries for outreach
+- Solar/energy particularly effective
+
+Usage Examples:
+Preset #71: Paper Manufacturers (Solar Outreach)
+1. SIC codes: 18110, 58130, 58110, etc. (paper/printing)
+2. 5,000+ sqmt
+3. Freehold, no leaseholds
+→ Large roofs, high energy use, solar saves money
+
+Preset #73: Poultry Farms (Solar Outreach)
+1. SIC codes: 01470 (poultry), 10130, 10120 (processing)
+2. Private/company ownership
+→ Large barns, steady energy demand
+
+Preset #83: Manufacturing Owner-Occupier (Solar)
+1. Extensive list of manufacturing SIC codes
+2. B2/E(g)(iii) use class
+3. 0 leaseholds (owner-occupied)
+→ High energy users, own roof space
+
+Performance:
+- Highly targeted industry outreach
+- Solar: Target high-energy users with large roofs
+- Owner-occupied = decision maker accessible
+
+Strategic Insight:
+- Manufacturing = high energy bills = solar ROI compelling
+- Owner-occupied (no leaseholds) = easier than landlord/tenant
+
+Target Industries for Solar:
+- Paper/printing (high energy)
+- Poultry (continuous heating)
+- Manufacturing (machinery)
+- Warehousing (large roofs)
+
+Combine with:
+- Flat roofs (easier solar install)
+- Freehold, no leases (owner control)
+- Large buildings (economies of scale)
+
+Related: FILTER_PATTERNS.md → Pattern 10B (Industry-Targeted Solar)
+```
+
+### "Footfall / Vehicle Count" 💡 COMMERCIAL VIABILITY
+```
+Discovered: 2025-11-19 (Source: Presets #27, #46, #54, #58, #72, #84)
+
+TRAFFIC = COMMERCIAL REVENUE POTENTIAL:
+- High footfall = retail viability
+- High vehicle count = drive-thru, petrol station, EV charger viability
+- Quantified thresholds from presets
+
+Usage Examples:
+Preset #27: Cafe & Restaurant Sites
+1. 800+ average daily footfall
+2. E(a) retail display use
+3. 325+ sqmt
+
+Preset #46: High Footfall Retail Expiring Leases
+1. 6,000+ average daily footfall (very high)
+2. Lease expiring (motivation)
+→ Prime location, landlord motivated
+
+Preset #54: EV Charging Sites
+1. 10,000+ average daily vehicle count
+2. Within 400m A road
+3. Within 5km green rated substation
+
+Preset #72: Petrol Station Sites
+1. 10,000+ average daily vehicle count
+2. 15,000-60,000 sqmt
+3. Aged 25-64 demographics
+
+Performance Thresholds:
+- 800+ footfall = viable for cafe
+- 6,000+ footfall = prime retail
+- 10,000+ vehicles = viable for petrol/EV/drive-thru
+
+Strategic Insight:
+- Traffic counts validate commercial viability
+- Higher = higher rents/profits possible
+- Essential for drive-thru, petrol, EV chargers
+
+Combine with:
+- Proximity to major roads
+- Commercial use class
+- Expiring leases (motivation)
+- EV: Proximity to substation
+
+Related: FILTER_PATTERNS.md → Pattern 12A (Traffic-Dependent Commercial)
+```
+
+### "Distance to Substation" 💡 ENERGY PROJECT CRITICAL
+```
+Discovered: 2025-11-19 (Source: Presets #14, #51, #52, #53, #54, #55, #56, #81, #84)
+
+SUBSTATION PROXIMITY = GRID CONNECTION VIABILITY:
+- Green rated = capacity available (preferred)
+- Amber/Red rated = constrained (avoid or expensive)
+- Distance thresholds vary by project type
+
+Usage Examples:
+Preset #14: Solar Ground Mount
+1. Within 2,000m (2km) green rated substation
+2. 40,000+ sqmt land
+3. Agricultural Grade 3b/4
+
+Preset #51: BESS (Battery Storage)
+1. Within 2,000m green rated substation
+2. 20,000-400,000 sqmt
+
+Preset #55: Hydrogen Sites
+1. Within 200m of substation (very close!)
+2. 8,000-20,000 sqmt
+3. Away from sensitive uses (500m+ from schools/hospitals)
+
+Preset #53: Data Centers
+1. Within 2,000m substation
+2. 60,000+ sqmt
+3. Flat terrain
+
+Distance Thresholds by Use:
+- Solar/Wind/BESS: <2,000m (2km) acceptable
+- Hydrogen: <200m (very close - high power demand)
+- EV Chargers: <5,000m (5km) workable
+- Data Centers: <2,000m
+
+Insight: "Green rated" substation filter exists and is CRITICAL
+- Green = capacity available now
+- Connection costs increase exponentially with distance
+
+Combine with:
+- Large acreage (energy projects)
+- Flat terrain (solar preferred)
+- Agricultural Grade 3b/4 (avoid planning objections)
+- Away from residential (wind, hydrogen)
+
+Related: FILTER_PATTERNS.md → Pattern 10 (Renewable Energy Opportunities)
+```
+
+---
+
+## Date Format Standards
+
+### Accepted Format
+```
+✅ YYYY-MM-DD (e.g., 2023-01-19)
+❌ DD/MM/YYYY
+❌ MM/DD/YYYY
+```
+
+### Date Operators
+```
+✅ is before 2023-01-19
+✅ is after 2020-01-01
+✅ is between 2020-01-01 and 2023-01-01
+```
+
+---
+
+## Common Pitfalls & Solutions
+
+### Pitfall #1: Over-Constraining Filters
+```
+Problem:
+- Combining many restrictive filters compounds to zero results
+- Example: "Applications = 0" AND "Price < £200k" AND "Inactive" AND "On market"
+
+Solution:
+- Test filters incrementally
+- Start broad, narrow iteratively
+- Consider multiple strategies vs one perfect filter
+```
+
+### Pitfall #2: Assuming Unit Availability
+```
+Problem:
+- Assuming sqm filters exist (they don't)
+- Using wrong units causes filter failure
+
+Solution:
+- ALWAYS check AvailableFiltersInSearchLand_ACTUAL.md
+- Use conversion reference above
+- Default to acres/sqft/metres
+```
+
+### Pitfall #3: Non-Existent Filters
+```
+Problem:
+- Using "Planning Status: Expired" (doesn't exist)
+- Using "Price reduced" (doesn't exist)
+- Using "Listed >12 months" (doesn't exist)
+
+Solution:
+- Use proxy filter combinations
+- See FILTER_PATTERNS.md for proven workarounds
+```
+
+### Pitfall #4: Misunderstanding PTAL Geography
+```
+Problem:
+- PTAL (Public Transport Accessibility Level) only covers London/TfL area
+- Filter returns 0 results outside London
+
+Solution:
+- Only use PTAL for London-based searches
+- For UK-wide: Use "Distance to nearest Train Station" instead
+```
+
+---
+
+## Proxy Filter Strategies
+
+### Expired Planning Permission (No Direct Filter)
+```
+Proxy Combination:
+1. Last application submitted: is before [3+ years ago]
+2. Applications in the last 5 years: is less than 3
+3. Max number of dwellings applied for: is greater than 0
+4. Building on title is inactive: is equal to Yes
+
+Rationale: Targets sites with old planning, no recent activity, inactive status
+```
+
+### Motivated Seller (No Direct Filter)
+```
+Proxy Combination:
+1. Latest sold date: is before [5+ years ago] (long hold period)
+2. Ownership type: is equal to Company (institutional)
+3. Building on title is derelict: is equal to Yes (asset write-down)
+4. Sales listing currently on the market: is equal to Yes (active sale)
+
+Rationale: Corporate holding derelict asset for 5+ years likely motivated
+```
+
+### Long-Listed Property (No "Listed >12 months" Filter)
+```
+Proxy Combination:
+Not directly achievable in SearchLand
+Requires: Manual screening of "Sales listing currently on the market"
+Workaround: Use broad filters, export results, screen externally
+```
+
+---
+
+## Filter Performance Observations
+
+### Highly Restrictive Filters (Often 0-10 results)
+- `Applications in the last 5 years: is equal to 0`
+- `Sales listing price: is less than 200000` (UK-wide)
+- `Building on title is derelict: is equal to Yes` (combined with price caps)
+
+### Moderately Selective (10-100 results)
+- `PTAL: is one of 4, 5, 6a, 6b` (London only)
+- `Latest sold date: is before 2020-01-19`
+- `Title area (acres): is greater than 0.25 AND less than 2`
+
+### Broad Filters (100+ results)
+- `Proposal: contains "mixed-use"`
+- `Max building height on title (m): is less than 12`
+- `Distance to nearest Train Station (m): is less than 1000`
+
+**Note:** These are general observations. Actual results vary significantly by LPA/geography.
+
+---
+
+## SearchLand AI Parsing Quirks
+
+### Complex Multi-Line Prompts May Be Partially Ignored ⚠️ CRITICAL
+```
+Discovered: 2025-11-24 (Project: MixedUse-8Storey-2M-v20, Approach E)
+
+ISSUE:
+- When providing 8+ filter lines in a single prompt, SearchLand AI may only parse 2-3 filters
+- More complex the prompt structure, higher the failure rate
+- No clear pattern for which filters get dropped
+- Can result in massively inflated result counts (e.g., 25,910 instead of 10-50)
+
+Example Failure:
+Prompt with 8 filters → Only 2 created (Max floors, Tenure auto-added)
+Missing: Distance to station, title area, use class, sold date, applications, on market
+
+SOLUTION:
+1. **Simplify prompt structure:**
+   - Separate compound AND conditions into individual lines
+   - Avoid mixing multiple filter types in rapid sequence
+   
+2. **Break into smaller chunks:**
+   - Start with 4-5 filters, verify they parse
+   - Add remaining filters manually in UI if needed
+   
+3. **Always verify before clicking Search:**
+   - Count filters created vs filters requested
+   - Check filter names match what you asked for
+   - Add missing filters manually using "Add Filter" button
+
+Success Pattern (Iteration 2):
+- Split "is greater than X AND less than Y" into two separate lines
+- Used simpler filter names (e.g., "floors" instead of "height in metres")
+- Result: 8/8 filters successfully parsed
+
+Related: See "Multiple AND Conditions" section below
+```
+
+### Multiple AND Conditions
+```
+✅ Works: "Title area (acres): is greater than 0.2 AND less than 2"
+✅ Works: "Proposal: contains 'mixed' AND 'storey'"
+❌ Limited: Cannot chain 3+ AND conditions reliably
+
+RELIABILITY TIP (Discovered 2025-11-24):
+While AND works in simple prompts, complex prompts (6+ filters) benefit from splitting:
+
+❌ Less Reliable (in complex prompts):
+Title area (acres): is greater than 0.25 AND less than 1.5
+
+✅ More Reliable (always parses):
+Title area (acres): is greater than 0.25
+Title area (acres): is less than 1.5
+
+WHEN TO SPLIT:
+- Complex prompts (6+ filters total)
+- When other filters are failing to parse
+- When you need guaranteed reliability
+
+WHEN SINGLE LINE IS OK:
+- Simple prompts (3-5 filters)
+- When used alone or with minimal other filters
+- Numeric ranges are the primary search criteria
+```
+
+### Whitespace & Special Characters
+```
+✅ Handles: Quotes in text search ("mixed-use")
+⚠️ Sensitive: Extra whitespace may affect parsing
+❌ Avoid: Special regex characters (*, ?, [, ])
+```
+
+### Filter Ordering
+```
+Observation: Filter order doesn't affect results
+Best practice: Order logically (most selective first) for readability
+```
+
+---
+
+## Version History
+
+### v5.2.4 (2025-11-24)
+- **CRITICAL:** Added "Complex Multi-Line Prompts May Be Partially Ignored" (SearchLand AI Parsing Quirks)
+- Added "Building Height Auto-Conversion Behavior" (metres ↔ floors)
+- Expanded "Multiple AND Conditions" with reliability tips for complex prompts
+- Added "Sui Generis Display Name Clarification" ("Outside of the defined classes")
+- Source: MixedUse-8Storey-2M-v20, Approach E testing and iteration
+
+### v3.0 (2025-11-19)
+- Initial creation with divergent hypothesis testing methodology
+- Captured learnings from MixedUse-8Storey-2M projects (v1, v2)
+- Documented "Applications in last 5 years = 0" restrictiveness
+- Added unit conversion reference
+- Documented OR logic limitations
+
+---
+
+## Contributing Guidelines
+
+### ⚠️ THIS IS A LIVING DOCUMENT - UPDATE IT!
+
+**Philosophy:** LEARNINGS_DATABASE.md is **NOT fixed** - it's **cumulative and adaptive**. Every project should add to it.
+
+### When to add entries:
+
+**MUST ADD:**
+- ✅ Discovered new SearchLand AI parsing behavior
+- ✅ Found filter syntax that works/doesn't work  
+- ✅ Identified implementation quirks
+- ✅ Discovered new unit conventions
+- ✅ Found new motivation signals (e.g., "Company status: Liquidation")
+- ✅ Discovered filter value options not previously documented
+
+**When NOT to add entries:**
+- ❌ Geography-specific result counts (e.g., "10 results in Slough")
+- ❌ Project-specific strategies (goes in FILTER_PATTERNS.md instead)
+- ❌ User preferences (goes in project requirements)
+
+### How to Contribute (3 Methods):
+
+**Method 1: During Stage 4 (Learning Capture)**
+After parallel testing, review results for universal insights:
+1. Did any filter behave unexpectedly?
+2. Did we discover new filter values/options?
+3. Did we find new motivation signals?
+4. Did syntax work differently than documented?
+
+If YES → Update this file immediately
+
+**Method 2: Ad-Hoc Discovery (Like Today!)**
+When you discover something useful while exploring SearchLand:
+1. Document it in this file under appropriate section
+2. Note date discovered and who found it
+3. Add example filter usage
+4. Link to related FILTER_PATTERNS.md if applicable
+
+**Method 3: User Feedback**
+When testing reveals reality differs from documentation:
+1. Update incorrect entries
+2. Add new sections for missing information
+3. Mark outdated info with ⚠️ or remove it
+
+### Format for New Entries:
+
+```markdown
+### "Filter Name" ⚠️ OPTIONAL: Flag if critical/new
+```
+Discovered: YYYY-MM-DD (Source: Project/User name)
+
+Behavior/Insight:
+- [What was discovered]
+- [Why it matters]
+- [How to use it]
+
+Example:
+1. [Exact filter usage]
+
+Performance/Notes:
+- [Any observations]
+```
+Related: [Link to FILTER_PATTERNS.md if applicable]
+```
+
+### Recent Contributions:
+
+**2025-11-24 (v5.2.4):**
+- ✅ **CRITICAL:** "Complex Multi-Line Prompts Partially Ignored" parsing issue (User: ashsubband)
+  - Discovered: Approach E only created 2/8 filters → 25,910 results instead of 10-50
+  - Added comprehensive troubleshooting guide
+  - Solution: Split AND conditions, simplify prompts, verify before Search
+- ✅ "Building Height Auto-Conversion" between metres and floors
+  - SearchLand may convert "height (m)" to "number of floors" automatically
+  - Added filter comparison and recommendations
+- ✅ Expanded "Multiple AND Conditions" with reliability tips
+  - Complex prompts benefit from splitting AND into separate lines
+- ✅ "Sui Generis" appears as "Outside of the defined classes" in UI
+  - Clarified display name to prevent confusion during filter verification
+
+**2025-11-19:**
+- ✅ "Company status: Liquidation" as strong motivation signal (User: ashsubband)
+  - Added to LEARNINGS_DATABASE (line 192)
+  - Added Pattern 2D to FILTER_PATTERNS.md
+  - Discovered via real SearchLand exploration
+
+**2025-11-19 (System v3.0 launch):**
+- ✅ Initial database population from MixedUse-8Storey-2M projects (v1, v2)
+- ✅ "Applications in last 5 years = 0" too restrictive
+- ✅ PTAL London-only limitation
+- ✅ Unit conversions (acres/sqft not sqm)
+
+---
+
+## Newly Documented Filters (v5.2.3)
+
+### Property Type
+
+**Context:**
+- Simple residential/commercial classification (different from "Property classification")
+- Only 5 values: Detached, Semi-Detached, Terraced, Flat, Commercial
+- Used for basic property type filtering
+
+**Operators:** `contains all`, `contains any`, `does not contain`
+
+**✅ Correct Examples:**
+```
+Property type: contains any [Detached, Semi-Detached]
+Property type: contains all [Commercial, Flat]  // Mixed-use commercial flats
+Property type: does not contain [Terraced]
+```
+
+**❌ Incorrect Examples:**
+```
+❌ Property type: 'Commercial' OR 'Residential'
+❌ Property type: Detached AND Semi-Detached
+```
+
+**Performance/Notes:**
+- Fast filter - indexed field
+- Do NOT confuse with "Property classification" (which has 500+ values)
+
+---
+
+### Tenure
+
+**Context:**
+- Legal ownership structure
+- 5 values: Leasehold, Freehold, Pending first registration, Caution against first registration, Rentcharge
+- Critical for acquisition strategy (Freehold = full ownership, Leasehold = time-limited)
+
+**Operator:** `is one of` (implicit OR)
+
+**✅ Correct Examples:**
+```
+Tenure: is one of [Freehold]
+Tenure: is one of [Leasehold, Freehold]
+Tenure: is one of [Pending first registration]  // Unregistered land - potential opportunity
+```
+
+**❌ Incorrect Examples:**
+```
+❌ Tenure: 'Freehold' OR 'Leasehold'
+❌ Tenure: NOT 'Leasehold'
+```
+
+**Strategic Use Cases:**
+- **Freehold only:** For long-term hold/development (no ground rent complications)
+- **Leasehold:** Can indicate motivated sellers (especially short leases <80 years)
+- **Pending first registration:** Unregistered land - may have title issues but also opportunities
+
+**Performance/Notes:**
+- Fast filter - indexed field
+- Combine with "Lease end date" for leasehold properties to find short leases
+
+---
+
+### Property Classification
+
+**Context:**
+- Comprehensive taxonomy with ~500+ values across 24 major categories
+- Separate from "Use class" (planning) - this is Ordnance Survey classification
+- Hierarchical: Commercial > Hotel/Motel > Youth Hostel (example)
+- **CRITICAL:** Do NOT mix with "Use class" values
+
+**Operators:** `contains any`, `contains all`, `does not contain`, `exactly matches`
+
+**Major Categories:**
+- Commercial, Education, Hotel/Motel, Industrial, Leisure, Medical, Animal Centre, Office, Broadcasting, Retail, Storage Land, Transport, Utility, Emergency/Rescue, Information, Land, Water, Military, Other, Parent Shell, Residential, Unclassified, Dual Use, Object of Interest
+
+**✅ Correct Examples:**
+```
+Property classification: contains any [Commercial, Residential]
+Property classification: contains all [Development Site, Residential Construction Site]
+Property classification: does not contain [Military, Prison]
+Property classification: exactly matches [Hotel/Motel]
+Property classification: contains any [Vacant / Derelict Land, Development Site]  // Opportunity sites
+```
+
+**❌ Incorrect Examples:**
+```
+❌ Property classification: 'Commercial' OR 'Residential'
+❌ Property classification: contains any [E - Commercial Business and Service]  // WRONG - that's Use class, not classification
+❌ Property classification: Development Site AND Residential  // Use 'contains all' instead
+```
+
+**Strategic Use Cases:**
+- **Development Site:** Active construction - may indicate market activity
+- **Vacant / Derelict Land:** Potential redevelopment opportunities
+- **Care / Nursing Home:** For care home conversion strategies
+- **Hotel/Motel:** For hotel-to-residential conversions
+- **Warehouse / Store / Storage Depot:** For industrial-to-residential conversions
+
+**Performance/Notes:**
+- Slower filter due to large value set - use strategically
+- More granular than "Property type" but less planning-specific than "Use class"
+- Can combine with "Use class" for precision (e.g., Classification: Hotel + Use class: C3 for converted hotels)
+
+---
+
+### PTAL (Public Transport Accessibility Level)
+
+**Context:**
+- London-specific metric (Transport for London)
+- 9 values: 0 (Worst), 1a, 1b, 2, 3, 4, 5, 6a, 6b (Best)
+- Higher = better public transport access = higher land values + planning support for density
+- **CRITICAL:** Only available in London - will return zero results elsewhere
+
+**Operators:** `contains any`, `contains all`, `does not contain`, `exactly matches`
+
+**✅ Correct Examples:**
+```
+PTAL: contains any [6a, 6b (Best)]  // Excellent transport - supports tall buildings
+PTAL: contains any [4, 5, 6a, 6b (Best)]  // Good to excellent
+PTAL: does not contain [0 (Worst), 1a, 1b]  // Exclude poor transport areas
+PTAL: exactly matches [6b (Best)]  // Only the very best
+```
+
+**❌ Incorrect Examples:**
+```
+❌ PTAL: '6a' OR '6b'
+❌ PTAL: is greater than 4  // Not a numeric filter - use 'contains any' with list
+❌ PTAL: High  // Must use exact values (0, 1a, 1b, 2, 3, 4, 5, 6a, 6b)
+```
+
+**Strategic Use Cases:**
+- **High-density development:** PTAL 4+ supports planning for tall buildings
+- **Residential demand:** PTAL 5+ = premium pricing for car-free living
+- **Planning policy:** Many London boroughs require PTAL 3+ for car-free developments
+- **Opportunity:** PTAL 2-3 areas with planned transport improvements (check TfL plans)
+
+**Performance/Notes:**
+- Fast filter - indexed field
+- **London only** - always combine with London geography filters
+- Use with "Distance to nearest Train Station" for non-London areas
+- PTAL ratings can change - check TfL website for planned improvements
+
+**Related Filters:**
+- Distance to nearest Train Station (m) - for non-London areas
+- Distance to nearest Bus Stop (m)
+- Distance to nearest Rapid Transit Stop/Station (m)
+
+---
+
+### Planning Constraints
+
+**Context:**
+- 34 constraint types covering environmental, heritage, policy, and flood risk
+- Critical for assessing development viability
+- Some are absolute blockers (Green Belt, SSSI), others provide policy support (Housing Zones)
+- **IMPORTANT:** "Built up areas" is POSITIVE (urban context), not a constraint to avoid
+
+**Operators:** `contains any`, `contains all`, `does not contain`
+
+**Available Values:** (34 constraints)
+- **Absolute Blockers:** Green Belt, Conservation Area, Listed Building(s) in plot, SSSI, Ancient Woodland, World heritage sites, Scheduled Monuments, National Parks, National Landscapes (AONB)
+- **Flood Risk:** Flood Zone 2 (negotiable), Flood Zone 3 (major blocker)
+- **Policy Support (SEEK):** Housing Zones, Opportunity Areas, Areas Of Intensification, Site Allocations, Built up areas
+- **Heritage:** Listed Building(s) 50m Buffer (less restrictive), Parks and Gardens, Battlefields
+- **Environmental:** SAC, SPA, RAMSAR, National Nature Reserves, Local Nature Reserves, Country Parks, CROW
+- **Urban Planning:** Central Activities Zone (London), SIL, LSIS, Town Center Boundaries, Designated Open Space
+- **Other:** Tree Preservation Order (TPO), Nutrient Neutrality
+
+**✅ Correct Examples:**
+```
+Planning constraints: does not contain [Green Belt, Conservation Area, Flood Zone 3]  // Avoid major blockers
+Planning constraints: contains any [Housing Zones, Opportunity Areas]  // Seek policy support
+Planning constraints: does not contain [SSSI, Ancient Woodland, Listed Building(s) in plot]  // Exclude protected sites
+Planning constraints: contains all [Housing Zones, Built up areas]  // Urban housing policy areas
+Planning constraints: does not contain [Green Belt]  // Exclude Green Belt only
+Planning constraints: contains any [Site Allocations]  // Sites allocated for development in local plan
+```
+
+**❌ Incorrect Examples:**
+```
+❌ Planning constraints: NOT 'Green Belt'
+❌ Planning constraints: 'Green Belt' OR 'Conservation Area'
+❌ Planning constraints: does not contain [Built up areas]  // WRONG - Built up areas is GOOD!
+```
+
+**Strategic Use Cases:**
+
+1. **Urban Brownfield Opportunities:**
+   ```
+   Planning constraints: contains all [Built up areas, Housing Zones]
+   Planning constraints: does not contain [Green Belt, Conservation Area]
+   ```
+
+2. **High-Density Development (London):**
+   ```
+   Planning constraints: contains any [Central Activities Zone, Opportunity Areas]
+   Planning constraints: does not contain [Conservation Area, Listed Building(s) in plot]
+   PTAL: contains any [5, 6a, 6b (Best)]
+   ```
+
+3. **Avoid All Major Blockers:**
+   ```
+   Planning constraints: does not contain [Green Belt, Conservation Area, Flood Zone 3, SSSI, Ancient Woodland, Listed Building(s) in plot]
+   ```
+
+4. **Industrial Conversion Opportunities:**
+   ```
+   Planning constraints: contains any [SIL, LSIS]  // Strategic/Locally Significant Industrial - may be released
+   Planning constraints: does not contain [Green Belt]
+   ```
+
+5. **Flood Risk Mitigation Strategy:**
+   ```
+   Planning constraints: does not contain [Flood Zone 3]  // Exclude high risk
+   Planning constraints: contains any [Flood Zone 2]  // Accept Zone 2 (mitigation possible)
+   ```
+
+**Performance/Notes:**
+- Fast filter - indexed field
+- Use "Percentage of plot un-constrained" to find sites with minimal coverage (e.g., >80%)
+- **Critical distinction:** "Built up areas" = urban context (GOOD), NOT a development blocker
+- Green Belt = ~13% of England - major constraint but some brownfield exceptions exist
+- Conservation Areas = ~2% of England - design restrictions, not necessarily a blocker
+- Flood Zone 3 = high risk - insurance issues, planning refusal likely
+- Flood Zone 2 = medium risk - mitigation measures required but achievable
+
+**Related Filters:**
+- Percentage of plot un-constrained (%) - Find sites with <20% constraint coverage
+- Area of plot un-constrained (acres) - Absolute unconstrained area
+- Percentage of title covered by Green Belt - Partial coverage may be workable
+- Percentage of title covered by Flood Zone 2/3 - Assess flood risk extent
+
+**Common Combinations:**
+```
+# Clean sites for quick planning
+Planning constraints: does not contain [Green Belt, Conservation Area]
+Percentage of plot un-constrained: is greater than 80
+
+# Policy-supported urban sites
+Planning constraints: contains all [Built up areas, Housing Zones]
+Planning constraints: does not contain [Conservation Area]
+
+# Heritage-adjacent (not on-site)
+Planning constraints: contains any [Listed Building(s) 50m Buffer]
+Planning constraints: does not contain [Listed Building(s) in plot]  // Near but not on
+```
+
+---
+
+### Building Use Group
+
+**Context:**
+- High-level functional classification - 17 categories
+- Less granular than "Use class" (planning), more functional than "Property type"
+- Good for broad filtering before applying detailed "Use class" filters
+- "Mixed Use" is explicitly listed as a category (unlike in Property type)
+
+**Operators:** `contains any`, `contains all`, `does not contain`
+
+**Available Values:** (17 categories)
+- **Commercial:** Commercial Activity: Retail, Commercial Activity: Logistics Or Manufacturing, Commercial Activity: Other
+- **Residential:** Residential Accommodation, Temporary Or Holiday Accommodation
+- **Public Services:** Education, Government Services, Medical or Emergency Services
+- **Infrastructure:** Transport, Utility Or Environmental Protection, Construction
+- **Other:** Agriculture Or Aquaculture, Attraction Sports or Activity, Religious Worship and Funeral Services, Mixed Use, Unknown
+
+**✅ Correct Examples:**
+```
+Building use group: contains any [Mixed Use, Commercial Activity: Other]
+Building use group: does not contain [Agriculture Or Aquaculture, Utility Or Environmental Protection]
+Building use group: contains any [Residential Accommodation, Temporary Or Holiday Accommodation]  // All residential types
+Building use group: contains any [Commercial Activity: Retail]  // Retail focus
+Building use group: does not contain [Unknown]  // Exclude unclear properties
+```
+
+**❌ Incorrect Examples:**
+```
+❌ Building use group: 'Mixed Use' OR 'Commercial'
+❌ Building use group: NOT 'Agriculture'
+❌ Building use group: contains any [C3, E]  // WRONG - those are Use class values, not Building use group
+```
+
+**Strategic Use Cases:**
+
+1. **Broad Commercial Search:**
+   ```
+   Building use group: contains any [Commercial Activity: Retail, Commercial Activity: Other, Commercial Activity: Logistics Or Manufacturing]
+   ```
+
+2. **Exclude Non-Development Sites:**
+   ```
+   Building use group: does not contain [Agriculture Or Aquaculture, Utility Or Environmental Protection, Unknown]
+   ```
+
+3. **Mixed-Use Opportunities:**
+   ```
+   Building use group: contains any [Mixed Use]
+   // Then refine with specific Use class filters
+   ```
+
+4. **Conversion Opportunities:**
+   ```
+   Building use group: contains any [Temporary Or Holiday Accommodation]  // Hotels to residential
+   Building use group: contains any [Commercial Activity: Logistics Or Manufacturing]  // Industrial to residential
+   ```
+
+**Performance/Notes:**
+- Fast filter - indexed field
+- Good for initial broad filtering, then refine with "Use class"
+- "Mixed Use" is explicitly tagged - useful for precedent-based searches
+- "Unknown" category exists - may want to exclude or investigate separately
+- More intuitive than "Use class" codes but less planning-specific
+
+**Relationship to Other Filters:**
+- **Broader than:** Use class (E, C3, B2, etc.)
+- **Narrower than:** Property type (Detached, Commercial, etc.)
+- **Different from:** Property classification (OS taxonomy)
+
+**Common Combinations:**
+```
+# Broad commercial search, then refine
+Building use group: contains any [Commercial Activity: Retail, Commercial Activity: Other]
+Use class: contains any [E - Commercial Business and Service]
+
+# Residential focus with mixed-use
+Building use group: contains any [Residential Accommodation, Mixed Use]
+Property type: contains any [Flat, Commercial]
+
+# Exclude unsuitable for development
+Building use group: does not contain [Agriculture Or Aquaculture, Utility Or Environmental Protection, Unknown]
+Planning constraints: does not contain [Green Belt]
+```
+
+---
+
+Loaded cached credentials.
+Here is the technical and business case validation for each approach, based on the provided reference materials.
+
+### Claude - Approach A: Precedent Replication - 8-Storey Mixed-Use (Slough Focus)
+**Status:** CONDITIONAL
+**Reasoning:** The `Proposal` filter uses an `OR` operator within a single text search line. According to `LEARNINGS_DATABASE.md`, this syntax is not supported and will cause the filter to fail or produce incorrect results. The rest of the approach is logically sound and financially feasible.
+**Technical Issues (if any):**
+- Filter 2 (`Proposal: contains "retail" OR "commercial"`) uses invalid syntax.
+**Suggested Fixes (if CONDITIONAL):**
+- Split the `Proposal` filter into two separate searches (one for "retail", one for "commercial") and merge the results.
+
+---
+
+### Claude - Approach B: Liquidation Arbitrage - Forced Sales at Discount
+**Status:** VALID
+**Reasoning:** All filters exist and use correct syntax and units. The use of `Ownership type: is equal to Company` is confirmed as valid for a single-item list selection in `LEARNINGS_DATABASE.md`. The business case, centered on motivated sellers, is sound and the capital requirements are within budget.
+**Technical Issues (if any):**
+- None.
+
+---
+
+### Claude - Approach C: Airspace Rights Acquisition - Low-Rise to 8-Storey
+**Status:** VALID
+**Reasoning:** All filters, including the key `A building in the title has flat roof: Yes`, are confirmed to exist in `AvailableFiltersInSearchLand_ACTUAL.md` and use correct syntax. The business case for airspace development is viable and capital-efficient.
+**Technical Issues (if any):**
+- None.
+
+---
+
+### Claude - Approach D: Legacy Holdings + Edge of Settlement Promotion
+**Status:** CONDITIONAL
+**Reasoning:** The prompt contains two problematic filters. Filter 4 (`Less than 1 application in last 5 years: Yes`) uses an incorrect filter name and a boolean operator for what should be a numeric comparison. Filter 1 (`No latest sold date: Yes`) refers to a filter that is not officially documented in `AvailableFiltersInSearchLand_ACTUAL.md`, making its behavior unconfirmed.
+**Technical Issues (if any):**
+- Filter 4: Invalid filter name and operator type.
+- Filter 1: The filter is not documented in the primary filter list, creating uncertainty.
+**Suggested Fixes (if CONDITIONAL):**
+- Correct Filter 4 to `Applications in the last 5 years: is less than 1`.
+- For Filter 1, either test the filter empirically as written or replace it with a reliable proxy like `Latest sold date: is before 1990-01-01` to capture properties that have not been sold in decades.
+
+---
+
+### Claude - Approach E: HMO License Expiry + Low EPC Arbitrage
+**Status:** CONDITIONAL
+**Reasoning:** The approach incorrectly attempts to exclude Article 4 areas by listing "Article 4 Directions" within the `Planning constraints` filter. The documentation confirms that `Article 4` is a separate, dedicated filter, not a value within the constraints list.
+**Technical Issues (if any):**
+- Filter 9 (`Planning constraints: does not contain [Article 4 Directions]`) is an invalid filter specification.
+**Suggested Fixes (if CONDITIONAL):**
+- Replace the incorrect constraint with the correct standalone filter: `Article 4: No`.
+
+---
+
+### Codex - Approach A: Slough Mixed-Use Precedent Intensification
+**Status:** INVALID
+**Reasoning:** The approach is critically dependent on `Filter 2: Decision: is equal to Approved`. This filter does not exist in SearchLand, a fact explicitly noted in the "CRITICAL MISSING" section of `AvailableFiltersInSearchLand_ACTUAL.md`. As a result, the prompt is unexecutable as written.
+**Technical Issues (if any):**
+- The filter `Decision: is equal to Approved` is non-existent.
+**Suggested Fixes (if CONDITIONAL):**
+- This approach requires a major rework. The non-existent `Decision` filter must be removed and replaced with a proxy workaround, such as searching for keywords like "approved" or "consent" in the `Proposal` text field, which would then require manual verification of results.
+
+---
+
+### Codex - Approach B: Large C3 to HMO Conversion (Cashflow Upside)
+**Status:** VALID
+**Reasoning:** All filters exist and use correct syntax. The `LEARNINGS_DATABASE.md` confirms `Tenure: is equal to Freehold` is a valid syntax for a single-item list selection. The business case is sound and meets capital requirements.
+**Technical Issues (if any):**
+- None.
+
+---
+
+### Codex - Approach C: Unbroken Mixed-Use Freeholds Near Transit (Add Floors)
+**Status:** CONDITIONAL
+**Reasoning:** The prompt uses an incorrect value for the `Property type` filter. The value `Mixed Use` is not available for the `Property type` filter; it belongs to the separate `Building use group` filter.
+**Technical Issues (if any):**
+- `Property type: is one of [Mixed Use]` is an invalid filter/value combination.
+**Suggested Fixes (if CONDITIONAL):**
+- Replace the incorrect filter with `Building use group: contains any [Mixed Use]`.
+
+---
+
+### Gemini - Approach A: Precedent-Based Option Agreement
+**Status:** CONDITIONAL
+**Reasoning:** The filter syntax is correct and the business logic is sound. However, the rationale states the search must be constrained to **Slough** to match the precedent, but this critical geographic filter is missing from the copy-paste-ready prompt, making it incomplete.
+**Technical Issues (if any):**
+- The prompt is incomplete as it lacks the required geographic filter mentioned in its own rationale.
+**Suggested Fixes (if CONDITIONAL):**
+- Add a geographic filter to constrain the search to the "Slough" local authority.
+
+---
+
+### Gemini - Approach B: Strategic Airspace Development
+**Status:** CONDITIONAL
+**Reasoning:** The filter syntax is correct. However, the rationale specifies the search is for "major UK urban centres outside London", but this essential geographic targeting is not included in the prompt, making it logically incomplete for its stated purpose.
+**Technical Issues (if any):**
+- The prompt is incomplete as it lacks the required geographic filters.
+**Suggested Fixes (if CONDITIONAL):**
+- Add geographic filters to target the intended major UK cities (e.g., Manchester, Birmingham, Bristol).
+
+---
+
+### Grok - Approach A: Slough Mixed-Use Precedent Replication
+**Status:** CONDITIONAL
+**Reasoning:** The approach presents a significant internal contradiction. The "Capital Required" section budgets for a `£150,000 (acquisition)`, while the "Implementation Strategy" describes using low-cost `option agreements (£10k-£20k)`. These are mutually exclusive capital strategies, making the business case logically incoherent as written.
+**Technical Issues (if any):**
+- The implementation plan is not aligned with the capital breakdown, affecting the business case validity.
+**Suggested Fixes (if CONDITIONAL):**
+- The author must align the capital plan and implementation strategy by choosing either an acquisition-based or an option-based approach and making the text consistent.
+
+---
+
+### Grok - Approach B: Fresh Planning Consent Arbitrage
+**Status:** VALID
+**Reasoning:** The filters are syntactically correct and the information arbitrage strategy, while operationally demanding, is viable. The key filter `Last application submitted: is after [date]` works as intended to find recent applications.
+**Technical Issues (if any):**
+- None.
+**Strategic Notes (optional):**
+- To be effective, the date in the `Last application submitted` filter must be updated daily to find consents within the desired 24-48 hour window.
+
+---
+
+### Grok - Approach C: HMO License Deadline Exploitation
+**Status:** CONDITIONAL
+**Reasoning:** The `EPC rating` filter is missing the required square brackets `[]` around its list of values. The documented syntax for list-based filters using `is one of` requires brackets to enclose the list of values.
+**Technical Issues (if any):**
+- `EPC rating: is one of E, F, G` is invalid syntax due to missing brackets.
+**Suggested Fixes (if CONDITIONAL):**
+- Correct the filter to `EPC rating: is one of [E, F, G]`.

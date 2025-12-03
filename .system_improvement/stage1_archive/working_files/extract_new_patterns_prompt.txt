@@ -1,0 +1,73 @@
+# EXTRACTION TASK: New Patterns from Peer Reviews
+
+You are extracting NEW PATTERNS that Gemini and Codex proposed in their reviews.
+
+## YOUR TASK
+
+Extract the following 8 new patterns from the review files. For each pattern, output in this EXACT format:
+
+```
+## [NUMBER]. [PATTERN NAME] ⭐ NEW FROM PEER REVIEW
+
+### Pattern [NUMBER][LETTER]: [Sub-Pattern Name]
+```
+Strategy: [Brief description]
+Source: SearchLand Preset #[number(s)]
+Discovered: 2025-11-20 (Peer Review)
+
+Indicators:
+- [Filter 1]
+- [Filter 2]
+- [etc.]
+
+Strategic Rationale:
+- [Why this works]
+- [Market insight]
+
+Strengths:
+- [Advantage 1]
+- [Advantage 2]
+
+Weaknesses:
+- [Limitation 1]
+- [Limitation 2]
+
+Capital requirement:
+- [Range and breakdown]
+
+Strategy:
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
+```
+
+## PATTERNS TO EXTRACT
+
+**From Gemini's review (Part 2 - New Patterns section):**
+1. Legacy Holdings
+2. Portfolio Divestment
+3. Brownfield Demolition
+
+**From Codex's review (Part 2 - New Patterns section):**
+4. Micro-Infill Service Yards
+5. Nutrient Neutrality
+6. Digital Infrastructure
+7. Brand Covenant Reposition
+8. Community Asset
+
+## NUMBER THESE AS PATTERNS 14-21
+
+Pattern 14: Legacy Holdings (Gemini)
+Pattern 15: Portfolio Divestment (Gemini)
+Pattern 16: Brownfield Demolition (Gemini)
+Pattern 17: Micro-Infill Service Yards (Codex)
+Pattern 18: Nutrient Neutrality (Codex)
+Pattern 19: Digital Infrastructure (Codex)
+Pattern 20: Brand Covenant Reposition (Codex)
+Pattern 21: Community Asset (Codex)
+
+## OUTPUT FORMAT
+
+Output ONLY the 8 formatted pattern sections, ready to paste into FILTER_PATTERNS.md.
+Do NOT add commentary, explanations, or summaries.
+Output the patterns in order (14-21).

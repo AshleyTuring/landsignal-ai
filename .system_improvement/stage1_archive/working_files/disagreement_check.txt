@@ -1,0 +1,2408 @@
+You are analyzing two peer reviews for disagreements.
+
+## YOUR TASK
+
+Review both Gemini and Codex critiques and determine if there are SIGNIFICANT DISAGREEMENTS.
+
+**SIGNIFICANT DISAGREEMENT means:**
+- One says pattern is "clear" and other says "unclear"
+- One suggests adding pattern X, other suggests removing/merging pattern X
+- One suggests structure change that contradicts other's suggestion
+- One ranks pattern as #1 priority, other ranks it as #10
+
+**NOT significant:**
+- Minor wording differences
+- Both critique same pattern but suggest different improvements (both valid)
+- One suggests more patterns than the other (additive, not conflicting)
+
+## OUTPUT FORMAT
+
+```
+DISAGREEMENT ANALYSIS:
+
+Total Patterns Reviewed: 13
+Significant Disagreements Found: [Count]
+
+[If count > 0:]
+
+### Disagreement 1: [Pattern Name or Topic]
+**Gemini Position:** [Summary]
+**Codex Position:** [Summary]
+**Conflict:** [Why these positions conflict]
+**Requires Iteration:** YES / NO
+
+[Repeat for each significant disagreement]
+
+---
+
+RECOMMENDATION: [ITERATE / PROCEED TO SYNTHESIS]
+```
+
+If ≥2 significant disagreements OR any disagreement marked "Requires Iteration: YES" → Recommend ITERATE
+Otherwise → Recommend PROCEED TO SYNTHESIS
+
+---
+
+Loaded cached credentials.
+# FILTER_PATTERNS.md REVIEW - Gemini
+
+**Reviewer:** Gemini  
+**Date:** 2025-11-20  
+**Review Completeness:** 5/5 parts completed
+
+---
+
+## PART 1: CRITIQUE OF EXISTING PATTERNS
+
+### **Pattern 1: Expired/Stalled Planning Strategies**
+
+**Clarity:** Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**
+- Good identification of two distinct sub-patterns (date-based vs. keyword-based).
+- Correctly identifies that a direct "expired" filter doesn't exist and provides a solid proxy.
+
+**Weaknesses:**
+- The indicators are too simple. They miss key motivation signals. For example, why did it stall? Combining with ownership type (e.g., `Company`) or a long hold period (`Latest sold date`) would strengthen this.
+- "Building on title is inactive" is a good start, but `Derelict` is a much stronger signal of distress and should be mentioned as a more potent alternative.
+
+**Suggested Improvements:**
+- Add `Ownership type: Company` and `Latest sold date: >5 years ago` as optional indicators to find stalled projects held by potentially impatient corporate owners.
+- Explicitly state that `Building on title is derelict: Yes` is a stronger indicator than `inactive`.
+- Add a note to cross-reference with Pattern 2 (Motivated Seller) as these strategies are often intertwined.
+
+**Your Usage:** I would use this, but always in combination with other motivation filters. A stalled application on its own isn't enough; I need to know *why* it stalled and if the owner is now motivated to sell.
+
+---
+
+### **Pattern 2: Motivated Seller Strategies**
+
+**Clarity:** Clear  
+**Completeness:** Complete  
+**Usefulness:** Highly Useful  
+
+**Strengths:**
+- Excellent identification of multiple motivation angles: corporate distress (2A), market fatigue (2B), and development rationale (2C).
+- The new Pattern 2D (Liquidation/Administration) is a superb, high-value addition. It targets a clear, legally-enforced motivation. This is a top-tier strategy.
+
+**Weaknesses:**
+- Pattern 2B is weak because SearchLand lacks a "time on market" filter. It's more of a manual review strategy than a filter strategy. This should be clarified.
+- Pattern 2C's logic is slightly flawed; transport proximity doesn't directly signal motivation. It signals *value*, which should be combined with a true motivation signal like `Building on title is derelict: Yes`. The current description conflates the two.
+
+**Suggested Improvements:**
+- **Pattern 2B:** Re-label as "Manual Review of Stale Listings" and clarify that it's not a direct filtering strategy.
+- **Pattern 2C:** Rephrase to "Derelict Assets with High Redevelopment Value". The core is the dereliction (motivation), and the transport link is the value-add.
+- Add a new sub-pattern based on `No latest sold date` (from Presets #18, #69), which targets inherited/legacy holdings where owners may be unaware of the asset's true value and are often motivated to sell.
+
+**Your Usage:** Yes, especially 2A and 2D. These are actionable, filter-based strategies that target genuine, verifiable seller motivation. They lead to off-market and below-market opportunities.
+
+---
+
+### **Pattern 3: Development Opportunity Strategies**
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**
+- Covers the main types of development opportunities: intensification (3A), clean slate (3B), and value-add (3C).
+
+**Weaknesses:**
+- The indicators are too generic. "Title area: appropriate size" is not a useful indicator. It should provide concrete ranges sourced from the presets (e.g., `>0.5 acres` or `4,000-8,000 sqmt`).
+- Lacks specificity. For example, Pattern 3A (Under-Developed + High Accessibility) is a classic London strategy but doesn't explicitly mention using `PTAL` as the primary filter.
+
+**Suggested Improvements:**
+- Replace "appropriate size" with specific area ranges (in acres and sqmt) derived from presets like #5 (1-2 acres) or #9 (500-8,000 sqmt).
+- **Pattern 3A:** Explicitly state this is a PTAL-driven strategy for London and a "Distance to Train Station" strategy elsewhere.
+- **Pattern 3B:** Add `Use class: Vacant/derelict land` or `Unused land` (from Preset #9) as a key indicator for "clean slate" development.
+
+**Your Usage:** I would use these as starting points, but they require significant refinement with specific metrics to be effective. They are more like conceptual guides than ready-to-use patterns.
+
+---
+
+### **Pattern 4: Low Capital Entry Strategies**
+
+**Clarity:** Clear  
+**Completeness:** Complete  
+**Usefulness:** Highly Useful  
+
+**Strengths:**
+- Correctly identifies the three main low-capital routes: direct purchase (4A), options (4B), and distressed assets (4C).
+- Pattern 4B (Option Agreements) rightly points out that the `Sales listing price` filter is NOT required, targeting off-market deals. This is a crucial insight.
+
+**Weaknesses:**
+- Pattern 4A (Sub-£200k) is highly restrictive and often yields poor quality sites. The "Weaknesses" section is accurate but could be stronger – it's a needle-in-a-haystack search.
+- The capital requirements are a bit generic. They could be linked to specific deal types (e.g., "Option fees for a £1M site are typically £10k-£20k").
+
+**Suggested Improvements:**
+- Add `Airspace Rights` (Pattern 6) as a fourth low-capital entry strategy, as the initial capital outlay is for the rights, not the entire building.
+- For Pattern 4B, add `No latest sold date` as another indicator for finding owners who might be open to creative deals like options.
+
+**Your Usage:** Yes, absolutely. Pattern 4B is the cornerstone of many a developer's portfolio. Pattern 4C is my preferred route for finding value. Pattern 4A is a last resort.
+
+---
+
+### **Pattern 5: High-Density/Intensification Strategies**
+
+**Clarity:** Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**
+- Good breakdown of policy-led (5A), planning-led (5B), and allocation-led (5C) intensification.
+
+**Weaknesses:**
+- Pattern 5A is missing the critical manual research step. There is no "Tall Building Zone" filter. The pattern implies you can filter for this, which is dangerously misleading.
+- Pattern 5C (Strategic Site Allocation) is too vague. It should reference specific allocation types like `Housing allocation (emerging)` from the `LEARNINGS_DATABASE.md`.
+
+**Suggested Improvements:**
+- **Pattern 5A:** Add a prominent `Manual Research Required` warning. State that the user must first identify tall building zones from local planning policy documents and then search within those LPAs.
+- **Pattern 5C:** Replace `[specific allocation]` with concrete examples from the `AvailableFiltersInSearchLand_ACTUAL.md` file, such as `Site allocation type: is one of Housing allocation, Mixed allocation, Employment allocation`.
+
+**Your Usage:** I would use 5B and 5C as they are based on verifiable data within SearchLand. I would use 5A with extreme caution, as it requires significant off-platform research to be viable.
+
+---
+
+### **Pattern 6: Airspace Development Strategies**
+
+**Clarity:** Clear  
+**Completeness:** Complete  
+**Usefulness:** Highly Useful  
+
+**Strengths:**
+- Excellent use of the `A building in the title has flat roof: Yes` filter.
+- Correctly identifies the two main airspace plays: residential on residential (6A) and residential on commercial (6B).
+- The link to PDR in 6B is a sophisticated and valuable insight.
+
+**Weaknesses:**
+- Could be strengthened by referencing the specific Airspace presets (#22, #23, #24, #25) to provide more concrete filter examples, such as targeting `8 or more addresses` or `Unbroken freeholds` (<1 leasehold).
+
+**Suggested Improvements:**
+- Add a sub-section "Sourced From Presets" and list the criteria from Presets #22 (8+ addresses), #23 (Commercial, no resi), and #25 (Unbroken freeholds) as example implementations. This makes the pattern much more actionable.
+
+**Your Usage:** Yes. This is a key urban development strategy, and the pattern correctly identifies the core filters needed to find opportunities.
+
+---
+
+### **Pattern 7: Permitted Development Rights (PDR) Strategies**
+
+**Clarity:** Clear  
+**Completeness:** Complete  
+**Usefulness:** Highly Useful  
+
+**Strengths:**
+- This is a fantastic, well-researched addition. It correctly extracts the most valuable PDR strategies directly from the presets.
+- The inclusion of source presets (#4, #6, #31, #8) is excellent practice and should be replicated elsewhere.
+- The breakdown into Class MA, Q, G, and Infill is logical and covers the main opportunities.
+
+**Weaknesses:**
+- The "Profit calculation" for Class MA is specific to Preset #4 and might not apply if building the filter from scratch. This should be clarified.
+- Pattern 7D (Infill) is based on a "pre-calculated" preset. The pattern should explain how a user could *approximate* this themselves, e.g., by using `C3 dwellinghouses`, `<15% area developed`, and `Private owner ownership` (from Preset #16/69).
+
+**Suggested Improvements:**
+- For Pattern 7A, add a note: "The automatic profit calculation is a feature of Preset #4. Manual calculation is required if building this filter from scratch."
+- For Pattern 7D, add a "Manual Approximation" section with filters like `Use class: C3`, `Developed area percentage: <20%`, `Title area (acres): >0.2` to find potential infill sites without relying on the pre-calculated preset.
+
+**Your Usage:** Absolutely. These are bread-and-butter strategies for small to medium-sized developers. The regulatory shortcut is the primary value driver.
+
+---
+
+### **Pattern 8: Regulation-Driven Opportunities**
+
+**Clarity:** Clear  
+**Completeness:** Complete  
+**Usefulness:** Highly Useful  
+
+**Strengths:**
+- Another outstanding, high-value addition based on deep preset analysis.
+- Identifies three of the most powerful, non-obvious motivation signals in SearchLand: HMO license expiry, lease expiry, and EPC non-compliance.
+- The "Motivation Logic" and "Motivation Timeline" sections are superb, explaining the *why* behind the strategy.
+
+**Weaknesses:**
+- No significant weaknesses. This section is a model for how other patterns should be structured.
+
+**Suggested Improvements:**
+- Under Pattern 8C (EPC), add a note about combining this with `No latest sold date` (from Preset #69) to find long-held, poorly-maintained properties that are prime for this strategy.
+
+**Your Usage:** Yes, 100%. These are the "alpha" strategies. They find motivated sellers based on external pressures that are invisible to most market participants. Pattern 8A (HMOs) is particularly potent due to its time-sensitive and legal nature.
+
+---
+
+### **Pattern 9: Green Belt/Constraint Workarounds**
+
+**Clarity:** Clear  
+**Completeness:** Complete  
+**Usefulness:** Highly Useful  
+
+**Strengths:**
+- Excellent explanation of the "Grey Belt" concept, a sophisticated planning strategy.
+- Correctly identifies `Hardstanding percentage` as the key proxy filter for "previously developed land". This is a critical, non-obvious insight from the presets.
+- Pattern 9B (Edge of Settlement) is a brilliant distillation of the land promotion strategy shown in presets like #18 and #85.
+
+**Weaknesses:**
+- The term "Green Belt Workaround" is a bit aggressive. "Green Belt Exceptions" or "Green Belt Strategies" would be more professional.
+
+**Suggested Improvements:**
+- Rename the category to "Green Belt & Strategic Land Strategies".
+- In Pattern 9B, explicitly mention using `SHLAA status: is not one of Positive, Neutral, Negative` (from Preset #85) to find sites that haven't even been assessed by the council yet, representing a true "hidden gem".
+
+**Your Usage:** Yes. These are advanced strategies for experienced developers and land promoters. Pattern 9A can unlock sites that others dismiss, and 9B is the core of long-term strategic land promotion.
+
+---
+
+### **Pattern 10: Renewable Energy Opportunities**
+
+**Clarity:** Clear  
+**Completeness:** Complete  
+**Usefulness:** Highly Useful (for a niche audience)  
+
+**Strengths:**
+- A comprehensive and well-structured guide to a very specialized field.
+- Correctly identifies the critical filters: `Agricultural Land Grade` (avoiding Grade 1-2), `Distance to green rated substation`, and safety buffers for hydrogen.
+- The use of `SIC codes` for targeting high-energy industries (Pattern 10B) is a very advanced and effective technique.
+
+**Weaknesses:**
+- The capital requirements are huge, making these patterns irrelevant for most users. This should be stated upfront.
+
+**Suggested Improvements:**
+- Add an introductory sentence: "Note: These are institutional-scale, high-capital strategies (£500k - £50M+) primarily for energy companies, funds, or specialist developers."
+- For Pattern 10B, highlight that this is an *outreach* strategy. You're not buying the site, you're selling a solar installation service to the owner. This is a different business model.
+
+**Your Usage:** As an analyst, this is invaluable for advising energy clients. As a typical property developer, I would likely never use these directly unless I had a specific mandate and institutional backing.
+
+---
+
+### **Pattern 11: Strategic Land Promotion**
+
+**Clarity:** Clear  
+**Completeness:** Somewhat Incomplete (overlaps with 9B)  
+**Usefulness:** Useful  
+
+**Strengths:**
+- Correctly identifies the "first mover" advantage of targeting emerging allocations with no planning yet (Pattern 11A).
+
+**Weaknesses:**
+- This pattern category feels redundant. Pattern 11A is very similar to Pattern 9B. They are both about promoting land for allocation. They should be merged or more clearly differentiated.
+- Pattern 11B is a good, distinct strategy for large employment land.
+
+**Suggested Improvements:**
+- **Merge Pattern 11A into 9B.** Rename Pattern 9 to "Strategic Land & Green Belt" and have two sub-patterns: 9A (Grey Belt) and 9B (Land Promotion), where 9B combines the insights from the current 9B and 11A.
+- Keep Pattern 11B but move it under the new merged category, perhaps as "Pattern 9C: Strategic Employment Land".
+
+**Your Usage:** Yes, but I find the current structure confusing. I would use the merged structure I've proposed.
+
+---
+
+### **Pattern 12: Commercial Traffic-Dependent**
+
+**Clarity:** Clear  
+**Completeness:** Complete  
+**Usefulness:** Highly Useful (for commercial/retail clients)  
+
+**Strengths:**
+- Excellent use of the data-driven filters `Average daily footfall` and `Average daily vehicle count`.
+- Provides clear, quantified viability thresholds (e.g., 800+ footfall for a cafe, 10,000+ vehicles for a drive-thru). This is extremely valuable.
+- The breakdown into footfall, vehicle traffic, and niche markets is logical.
+
+**Weaknesses:**
+- No significant weaknesses. This is another well-executed pattern derived from preset analysis.
+
+**Suggested Improvements:**
+- In Pattern 12B, add a note about combining this with `Lease end date` filters. An expiring lease on a high-traffic site is a prime opportunity.
+
+**Your Usage:** Yes, constantly for my retail and commercial clients. This is how you make data-driven decisions in the commercial property sector, moving beyond guesswork.
+
+---
+
+### **Pattern 13: Time/Information Arbitrage Strategies**
+
+**Clarity:** Clear  
+**Completeness:** Complete  
+**Usefulness:** Highly Useful (conceptually)  
+
+**Strengths:**
+- This is a brilliant, high-level strategic concept. It correctly identifies that the 24-hour refresh cycle of SearchLand creates a window of opportunity.
+- The examples (Fresh Planning Consent, Lease Expiry Pre-Contact) are concrete and illustrate the value of speed.
+
+**Weaknesses:**
+- This is not a *filter* pattern. It's a *workflow* or *process* that sits on top of other filter patterns. It requires external automation (scripts, alerts) that are outside the scope of SearchLand itself.
+- It's presented as a pattern, but it's really a meta-strategy for *how to use* the other patterns.
+
+**Suggested Improvements:**
+- **Move this entire section.** Create a new top-level section in the document called "Advanced Workflow: Time & Information Arbitrage" or move it into the "Structure & Usability" part of the review. It doesn't belong in the list of filter patterns.
+- Reframe it as a "how-to" guide for setting up a monitoring system that leverages the other patterns.
+
+**Your Usage:** I would use this *process* every single day. But I wouldn't look for it in a list of *filter patterns*. The concept is A-grade, but its placement is confusing.
+
+---
+
+## PART 2: NEW PATTERNS PROPOSED
+
+### **NEW PATTERN: Legacy Holdings (Inherited & Untouched)**
+
+**Category:** Motivated Seller Strategies
+
+**Strategic Rationale:**
+This pattern targets properties that have likely been inherited or held by the same owner for decades, before digital records were common. These owners are often elderly, non-professional, and may be unaware of the property's current development potential or market value. They can be highly motivated to sell for estate planning, to release equity, or to offload a burdensome asset. This is a distinct motivation from corporate or regulatory pressure.
+
+**Key Filters:**
+1. `No latest sold date`: is equal to Yes (The single most important filter)
+2. `Ownership type`: is equal to Private owner
+3. `Less than 1 application in last 5 years`: is equal to Yes (Confirms no recent activity)
+4. `EPC rating`: is one of E, F, G (Optional but strong signal of a poorly maintained, un-rentable asset)
+5. `Title area (acres)`: is greater than 0.5 (Optional, to target larger plots with infill potential)
+
+**Sourced From:**
+- Preset #18 (Edge of settlement sites)
+- Preset #69 (Older houses with outdoor space)
+- General property knowledge (finding "tired landlords" and inherited properties)
+
+**Use Cases:**
+- Finding off-market sites for infill development.
+- Approaching elderly owners for option agreements.
+- Acquiring properties below market value from non-professional sellers.
+
+**Expected Results:**
+- Low volume of results, but each one is a high-potential lead.
+- Excellent for patient, relationship-based sourcing.
+
+---
+
+### **NEW PATTERN: Portfolio Divestment Candidate**
+
+**Category:** Motivated Seller Strategies
+
+**Strategic Rationale:**
+This pattern identifies large, professional landlords (companies) who own multiple properties, often including underperforming assets like those with expiring HMO licenses or numerous vacant units. The strategy is to find signals that a portfolio owner might be looking to divest specific, problematic assets. This is different from a single-asset owner.
+
+**Key Filters:**
+1. `Number of titles owned by company`: is greater than 30 (Targets large portfolio holders)
+2. `Ownership type`: is equal to Company
+3. `Currently has HMO`: is equal to Yes (Narrows to HMO landlords)
+4. `HMO License Expiry Date`: is before [today's date] (Finds the problematic asset in their portfolio)
+
+**Sourced From:**
+- Preset #35 (Companies owning more than 30 titles)
+- Combination of Pattern 8A (HMOs) and corporate ownership filters.
+
+**Use Cases:**
+- Approaching large landlords to acquire their expired-license HMOs.
+- Identifying professional sellers who may be willing to offload multiple assets at once.
+- Targeting portfolios for bulk acquisition.
+
+**Expected Results:**
+- A highly targeted list of professional landlords with a clear reason to sell a specific asset.
+
+---
+
+### **NEW PATTERN: Brownfield Demolition & Rebuild**
+
+**Category:** Development Opportunity Strategies
+
+**Strategic Rationale:**
+This pattern specifically targets "brownfield" sites where a building likely existed but has been demolished, leaving behind hardstanding but low developed area. This is a distinct opportunity from "vacant land" (which may be greenfield) and "derelict buildings" (where demolition is still required). It finds sites that are primed for a new build with less site-clearing cost and a clear "previously developed" planning argument.
+
+**Key Filters:**
+1. `Developed area percentage`: is less than 10% (No significant buildings remain)
+2. `Hardstanding percentage`: is greater than 30% (Confirms a previous structure/use)
+3. `Use class`: is one of `E(g)(iii) industrial processes`, `B2`, `B8` (Targets former industrial sites)
+4. `Title area (acres)`: is between 0.25 and 3 (Typical size for small-medium industrial plots)
+
+**Sourced From:**
+- Preset #15 (Brownfield - industrial)
+- Analysis of the relationship between `Developed area %` and `Hardstanding %` in the `LEARNINGS_DATABASE.md`.
+
+**Use Cases:**
+- Finding clean, ready-to-build industrial or residential plots.
+- Leveraging "previously developed land" status in planning applications.
+- Avoiding demolition costs and risks associated with derelict buildings.
+
+**Expected Results:**
+- A small number of sites that are perfect for ground-up development.
+
+---
+
+## PART 3: STRUCTURE & USABILITY
+
+### **Structural Improvement: Create a Master Strategy Matrix**
+
+**Current Problem:**
+The current list is a flat hierarchy of 13 patterns. It's hard to quickly decide which pattern to use based on project goals like capital, risk, or timeline. The "Strategy Selection Guide" at the end is a good start but is disconnected from the patterns themselves.
+
+**Proposed Solution:**
+Create a master matrix or table at the very top of the document that maps every pattern to key strategic axes. This allows an agent to find the right patterns in seconds.
+
+**Example (mockup):**
+```markdown
+## Master Strategy Matrix
+
+| Pattern # | Pattern Name | Primary Goal | Capital Level | Risk Level | Timeline | Key Filter Signal |
+|---|---|---|---|---|---|---|
+| 1 | Stalled Planning | Value-Add | Medium | Medium | 12-24m | `Last application submitted` |
+| 2D | Liquidation Sales | Below Market | Low-Medium | Low | <6m | `Company status: Liquidation` |
+| 4B | Option Agreements | Low Capital Entry | Very Low | Medium | 24-36m | `Latest sold date >5yrs` |
+| 7A | Class MA (PDR) | Speed / Low Risk | Medium | Low | 6-12m | `Use class: E` |
+| 8A | HMO Expired License | Forced Seller | Medium | Low | <6m | `HMO License Expiry Date` |
+| 9A | Grey Belt | Unlock Land | Low-Medium | High | 24-48m | `Hardstanding percentage` |
+| ... | ... | ... | ... | ... | ... | ... |
+```
+
+**Benefit:**
+This provides an at-a-glance decision-making tool. An agent with a "Low Capital" requirement can immediately see that Patterns 4B, 2D, and 6 are their best starting points. It makes the entire document instantly more usable.
+
+---
+
+### **Structural Improvement: Add Actionable Filter Snippets**
+
+**Current Problem:**
+The patterns describe the filters conceptually but don't provide copy-paste-ready examples. An agent still has to manually translate "Long Corporate Hold + Derelict Asset" into the correct filter syntax from `LEARNINGS_DATABASE.md`. This is inefficient and error-prone.
+
+**Proposed Solution:**
+For each pattern, add a collapsible "Example Filter Snippet" in a format that could be easily parsed or copied, like JSON or a simple key-value list.
+
+**Example:**
+````markdown
+### Pattern 2A: Long Corporate Hold + Derelict Asset
+
+... [existing description] ...
+
+<details>
+<summary>Example Filter Snippet</summary>
+
+```json
+{
+  "group_operator": "AND",
+  "filters": [
+    { "filter": "Ownership type", "operator": "is equal to", "value": "Company" },
+    { "filter": "Latest sold date", "operator": "is before", "value": "2020-11-20" },
+    { "filter": "Building on title is derelict", "operator": "is equal to", "value": "Yes" }
+  ]
+}
+```
+</details>
+````
+
+**Benefit:**
+This makes the patterns immediately actionable. It reduces ambiguity, prevents syntax errors (like using "sqm" instead of "acres"), and speeds up the entire workflow from strategy selection to execution.
+
+---
+
+### **Structural Improvement: Reorganize Categories & Relocate Pattern 13**
+
+**Current Problem:**
+The categories are a mix of strategy types (e.g., Motivated Seller) and development outcomes (e.g., Airspace). Pattern 13 (Time Arbitrage) is a workflow, not a filter pattern, and its inclusion in the list is confusing.
+
+**Proposed Solution:**
+1.  **Reorganize Categories:** Group patterns by their core strategic driver.
+    *   **Motivation-Driven:** (Patterns 2, 8, and my new "Legacy Holdings" pattern). These are about *why* someone would sell.
+    *   **Value-Add/Development:** (Patterns 1, 3, 5, 6, 7, 9, and my new "Brownfield" pattern). These are about *what* you can do with the site.
+    *   **Low Capital:** (Pattern 4).
+    *   **Niche & Specialist:** (Patterns 10, 12).
+2.  **Relocate Pattern 13:** Move the "Time/Information Arbitrage" content out of the pattern list and into a new, top-level section called "Advanced Workflow: Real-Time Monitoring". This correctly frames it as a process that uses the other patterns.
+
+**Benefit:**
+This creates a more logical, intuitive structure. Agents can first decide on their primary driver (e.g., "I need to find a motivated seller") and then look at the relevant patterns, rather than scanning a disorganized list.
+
+---
+
+## PART 4: PATTERN RANKING
+
+| Rank | Pattern # | Pattern Name | Why This Ranking? |
+|------|-----------|--------------|-------------------|
+| 1 | 8 | Regulation-Driven | Most potent. Targets non-obvious, legally-enforced motivation (HMO, EPC, Lease). Generates high-quality, off-market leads. |
+| 2 | 2 | Motivated Seller | The core of value investing in property. Pattern 2D (Liquidation) is especially powerful. |
+| 3 | 9 | Green Belt/Constraint Workarounds | Advanced, high-upside strategies. Unlocks value where others see none. "Grey Belt" is a game-changer. |
+| 4 | 7 | Permitted Development (PDR) | De-risks the planning process, offering speed and certainty. A reliable strategy for smaller developers. |
+| 5 | 4 | Low Capital Entry | Essential for most developers. Pattern 4B (Options) provides access to larger deals than capital would otherwise allow. |
+| 6 | 6 | Airspace Development | A clever, capital-efficient urban intensification strategy. High ROI potential. |
+| 7 | 12 | Commercial Traffic-Dependent | The definitive way to source and validate commercial sites. Data-driven and objective. |
+| 8 | 1 | Expired/Stalled Planning | A classic strategy. Useful, but requires combination with motivation signals to be truly effective. |
+| 9 | 3 | Development Opportunity | Too generic on its own. A good conceptual starting point but needs significant refinement to be actionable. |
+| 10 | 13 | Time/Information Arbitrage | Conceptually brilliant, but it's a *process*, not a filter pattern. Its value depends on implementing an external system. |
+| 11 | 5 | High-Density/Intensification | Useful but often requires significant capital and planning expertise. Pattern 5A is misleading without manual research. |
+| 12 | 11 | Strategic Land Promotion | Redundant with Pattern 9B. A valid but niche, long-term strategy that is better captured elsewhere. |
+| 13 | 10 | Renewable Energy | Extremely niche, institutional-scale strategies. Irrelevant for 99% of typical property development users. |
+
+---
+
+**Real-World Test:**
+"If you were given the MixedUse-8Storey-2M project requirements RIGHT NOW, which patterns would you reference and why?"
+
+I would immediately reference and combine the following patterns:
+
+1.  **Pattern 5A (Low-Rise in Tall Building Zone) + Pattern 3A (Under-Developed + High Accessibility):** My first approach would be to find an under-developed, low-rise building (e.g., 2-3 storeys) in a location with high transport accessibility (`PTAL: 4-6b` or `Distance to Train Station: <500m`). This combination targets sites where planning policy is most likely to support height and density, making an 8-storey scheme plausible.
+
+2.  **Pattern 1A (Old Planning) + Pattern 2D (Liquidation Sales):** My second, more opportunistic approach would be to look for a site that *previously* had planning for a multi-storey mixed-use scheme but it stalled and the corporate owner is now in liquidation. This is a "double-win" scenario: the planning principle has been established, and the seller is maximally motivated, allowing for a below-market acquisition.
+
+3.  **Pattern 6B (Low-Rise Commercial + Residential Overlay):** My third, creative approach would be to find a 1-2 storey commercial building with a flat roof in a strong residential area. I would then use an airspace strategy to build 6-7 storeys of residential on top, creating the 8-storey mixed-use building. This can be a capital-efficient way to achieve the goal.
+
+I would run all three of these divergent approaches in parallel.
+
+---
+
+## PART 5: WORKFLOW INTEGRATION
+
+**1. Are patterns mapped well to rounds?**
+The mapping is okay but could be much better. Round 4 (Behavioral/Motivation) is poorly served. It's not clear which patterns apply.
+
+**2. Should there be a "Round Guide"?**
+Yes, absolutely. A "Round Guide" is essential to make the document useful in the collaborative workflow. Without it, agents will waste time re-reading the whole document each round.
+
+**3. Missing Round-Specific Guidance?**
+Yes. The current structure doesn't guide the agents on *how* to think during each round.
+
+**Proposed "Round Guide" Integration:**
+
+I suggest adding this section directly after the Master Strategy Matrix.
+
+```markdown
+---
+## Collaborative Round Guide
+
+This guide maps filter patterns to the specific goals of each collaborative exploration round.
+
+### **Round 2: Regulation/Policy Angle**
+**Goal:** Find opportunities created by laws, policies, and regulations.
+**Primary Patterns:**
+- **Pattern 8 (Regulation-Driven):** START HERE. This is the core of the regulation angle.
+  - 8A: HMO Expired Licenses (Forced action)
+  - 8C: EPC Compliance Pressure (Forced action)
+- **Pattern 7 (PDR):** Exploit regulatory shortcuts (Class MA, Q, G).
+- **Pattern 9A (Grey Belt):** Exploit planning policy exceptions for Green Belt.
+- **Pattern 5C / 11 (Strategic Allocations):** Leverage sites already blessed by local plan policy.
+
+### **Round 3: Structural/Creative Angle**
+**Goal:** Find opportunities based on the physical attributes of land and buildings.
+**Primary Patterns:**
+- **Pattern 6 (Airspace):** Build on top of existing structures.
+- **Pattern 3 (Development Opportunity):** Focus on physical under-development (low density, large plots).
+- **Pattern 9A (Grey Belt):** Use `Hardstanding %` as a proxy for demolished structures.
+- **Pattern 7D (Infill):** Find unused space on existing plots.
+- **NEW: Brownfield Demolition & Rebuild:** Find sites with foundations but no buildings.
+
+### **Round 4: Behavioral/Motivation Angle**
+**Goal:** Find opportunities based on owner psychology and circumstances.
+**Primary Patterns:**
+- **Pattern 2 (Motivated Seller):** START HERE. This is the core of the behavioral angle.
+  - 2A: Long Corporate Hold (Impatience)
+  - 2D: Liquidation (Distress)
+- **Pattern 8B (Lease Expiry):** Target the "income cliff" anxiety.
+- **NEW: Legacy Holdings:** Target inherited/untouched properties where owners may be emotionally detached or overwhelmed.
+- **Pattern 1 (Stalled Planning):** Find evidence of a previously motivated owner who has now given up.
+
+### **Round 5: Challenge Round**
+**Goal:** Combine patterns from previous rounds to create novel, high-value strategies.
+**Example Combinations:**
+- **(Regulation + Motivation):** Find an `Expired HMO` (Pattern 8A) owned by a `Company in Liquidation` (Pattern 2D).
+- **(Structural + Regulation):** Find a `Flat Roof` commercial building (Pattern 6B) eligible for `Class MA` PDR (Pattern 7A).
+- **(Behavioral + Structural):** Find a `Legacy Holding` (New Pattern) with a `Large Garden` suitable for `Infill` (Pattern 7D).
+---
+```
+
+---
+
+## SUMMARY
+
+**Top 3 Improvements Needed:**
+1.  **Add a Master Strategy Matrix:** The document needs a top-level matrix mapping patterns to goals (capital, risk, timeline) for quick, effective decision-making.
+2.  **Reorganize & Refactor:** The categories should be restructured by strategic driver (Motivation, Value-Add, etc.), and Pattern 13 (Time Arbitrage) must be moved out of the patterns list into a separate "Advanced Workflow" section.
+3.  **Add Actionable Snippets & a Round Guide:** Each pattern needs a concrete, copy-pasteable filter snippet. A "Round Guide" is essential to integrate the document into the collaborative workflow effectively.
+
+**Confidence in Current Patterns:** Medium. The raw content, especially in patterns 7-12, is excellent. However, the overall structure, lack of actionable examples, and confusing categorization severely limit its usability.
+
+**Would You Use This Document?** With my suggested changes, yes, it would become an indispensable daily tool. In its current state, it's a frustratingly dense reference file that requires too much effort to use effectively.
+
+**Overall Grade:** C+ (A- for content, D for usability and structure)
+OpenAI Codex v0.58.0 (research preview)
+--------
+workdir: /home/ashsubband/landsignal/.system_improvement
+model: gpt-5.1-codex
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: none
+reasoning summaries: auto
+session id: 019aa0c3-59d9-7e90-b99c-118f95ae99fc
+--------
+user
+You are Codex, an expert property analyst. Review FILTER_PATTERNS.md as instructed in the prompt.
+Snapshots disabled: current directory is not a Git repository.
+
+thinking
+**Preparing to read file**
+exec
+bash -lc ls in /home/ashsubband/landsignal/.system_improvement succeeded in 36ms:
+CRITICAL_FLAW_V4_AGENTS.md
+DESIGN_PHILOSOPHY_INDEPENDENCE.md
+FILTER_PATTERNS_BACKUP_20251120_101547.md
+FILTER_PATTERNS_REVIEW_PROMPT.md
+FIX_PRESETS_ADDED.md
+FIX_SYNTHESIS_PRESETS.md
+ITERATION_LOGIC_ADDED.md
+QUESTIONS_ANSWERED.md
+README.md
+Review_Codex.md
+Review_Gemini.md
+WORKFLOW_DIAGRAM.md
+review_context_full.txt
+run_filter_patterns_review.sh
+synthesize_filter_patterns_improvements.sh
+
+thinking
+**Requesting instructions prompt**
+exec
+bash -lc 'cat FILTER_PATTERNS_REVIEW_PROMPT.md' in /home/ashsubband/landsignal/.system_improvement succeeded in 21ms:
+# FILTER_PATTERNS.md PEER REVIEW TASK
+
+**Reviewer:** [Gemini / Codex - you are reviewing Claude's work]  
+**Date:** 2025-11-19  
+**Purpose:** Critique and improve FILTER_PATTERNS.md for better usability
+
+---
+
+## YOUR TASK
+
+You are an expert UK property analyst reviewing Claude's `FILTER_PATTERNS.md` document. This document contains 13 strategic filter patterns derived from analyzing 86 SearchLand preset filters.
+
+**IMPORTANT:** You are working INDEPENDENTLY. You won't see other reviewers' feedback until later. Provide YOUR OWN analysis without trying to coordinate or collaborate.
+
+**Your job:**
+1. **Critique existing patterns** - Are they clear? Complete? Useful?
+2. **Suggest new patterns** - What did Claude miss?
+3. **Optimize for YOUR usage** - How would you structure this for easier application?
+
+---
+
+thinking
+**Planning to read filter patterns**
+Plan update
+The task requires a multi-part review: critique current patterns, propose new ones, reshape structure, rank usefulness, and suggest workflow integration improvements.
+  → Read FILTER_PATTERNS.md plus relevant supporting docs (preset list, strategy guide) to understand current content.
+  • Critique each of the 13 existing patterns and document insights using required template.
+  • Identify and document at least 3-5 new patterns from raw presets/gaps.
+  • Provide structural/usability recommendations, pattern ranking, workflow integration guidance, and final summary.
+
+thinking
+**Starting file review**
+exec
+bash -lc 'cat FILTER_PATTERNS.md' in /home/ashsubband/landsignal/.system_improvement exited 1 in 19ms:
+cat: FILTER_PATTERNS.md: No such file or directory
+
+thinking
+**Searching for target file**
+exec
+bash -lc "rg --files -g 'FILTER_PATTERNS.md'" in /home/ashsubband/landsignal succeeded in 54ms:
+FILTER_PATTERNS.md
+
+thinking
+**Reading FILTER_PATTERNS.md file**
+exec
+bash -lc 'cat FILTER_PATTERNS.md' in /home/ashsubband/landsignal succeeded in 20ms:
+# Reusable Filter Strategy Patterns
+
+**Purpose:** Proven filter strategies that can be adapted across projects
+**Scope:** Strategic approaches, NOT technical implementation (see LEARNINGS_DATABASE.md)
+**Usage:** LLMs should reference these patterns when creating divergent approaches
+
+---
+
+## Pattern Categories
+
+1. **Expired/Stalled Planning Strategies**
+2. **Motivated Seller Strategies**
+3. **Development Opportunity Strategies**
+4. **Low Capital Entry Strategies**
+5. **High-Density/Intensification Strategies**
+6. **Airspace Development Strategies**
+7. **Permitted Development (PDR) Strategies**
+8. **Regulation-Driven Strategies**
+9. **Green Belt Workaround Strategies**
+10. **Renewable Energy Strategies**
+
+thinking
+**Planning detailed pattern review**
+
+I want to read the full presets document to gather all 13 filter pattern details, since truncation is hiding critical info. I'll explore ways to extract and parse the file in chunks, using tools like `sed` and Python scripts to identify each pattern and its sub-patterns so I can later critique and propose improvements.
+exec
+bash -lc "python - <<'PY'
+import re
+from pathlib import Path
+text=Path('FILTER_PATTERNS.md').read_text()
+for line in text.splitlines():
+    if line.startswith('### Pattern'):
+        print(line)
+PY" in /home/ashsubband/landsignal exited 127 in 89ms:
+bash: line 1: python: command not found
+
+thinking
+**Testing Python command availability**
+exec
+bash -lc "python3 - <<'PY'
+import re
+from pathlib import Path
+text=Path('FILTER_PATTERNS.md').read_text()
+for line in text.splitlines():
+    if line.startswith('### Pattern'):
+        print(line)
+PY" in /home/ashsubband/landsignal succeeded in 62ms:
+### Pattern A: Old Planning + No Recent Activity
+### Pattern B: Proposal Keyword + Inactive Building
+### Pattern A: Long Corporate Hold + Derelict Asset
+### Pattern B: Long Market Listing + Price Cap
+### Pattern C: Inactive Building + Transport Proximity
+### Pattern D: Liquidation/Administration Sales ⭐ NEW
+### Pattern A: Under-Developed + High Accessibility
+### Pattern B: Large Plot + Low Building Density
+### Pattern C: Existing Use + Upside Potential
+### Pattern A: Sub-£200k Direct Purchase
+### Pattern B: Option Agreement Candidates
+### Pattern C: Derelict Asset Turnaround
+### Pattern A: Low-Rise in Tall Building Zone
+### Pattern B: Existing Approval for Height
+### Pattern C: Strategic Site Allocation
+### Pattern A: Flat Roof + Height Headroom
+### Pattern B: Low-Rise Commercial + Residential Overlay
+### Pattern A: Class MA (Commercial to Residential)
+### Pattern B: Class Q (Agricultural to Residential)
+### Pattern C: Class G (Space Above Shops)
+
+thinking
+**Planning pattern critique with line references**
+exec
+bash -lc 'wc -l PresetFiltersBuiltIntoSearchLand.md' in /home/ashsubband/landsignal exited 1 in 46ms:
+wc: PresetFiltersBuiltIntoSearchLand.md: No such file or directory
+
+thinking
+**Considering location for file**
+exec
+bash -lc "rg --files -g 'PresetFiltersBuiltIntoSearchLand.md'" in /home/ashsubband/landsignal succeeded in 57ms:
+SearchlandContext/PresetFiltersBuiltIntoSearchLand.md
+
+thinking
+**Retrieving part of cat file**
+exec
+bash -lc 'head -n 40 SearchlandContext/PresetFiltersBuiltIntoSearchLand.md' in /home/ashsubband/landsignal succeeded in 22ms:
+# Searchland Preset Filters
+
+All preset filters available in Searchland via the website interface.
+
+---
+
+## 1. Unbroken freeholds
+Multi-unit freeholds with potential to split or repurpose
+
+Criteria (ALL):
+- Freehold tenure
+- 3-15 addresses
+- Exactly 0 leaseholds on freehold
+- Private owner ownership
+- Only C3 dwellinghouses
+- More than 3 EPC records on title
+
+## 2. Run down homes
+Low-EPC single homes with rebuild or improvement potential
+
+
+thinking
+**Preparing to analyze filter patterns file**
+exec
+bash -lc "nl -ba FILTER_PATTERNS.md | rg '## '" in /home/ashsubband/landsignal succeeded in 29ms:
+     9	## Pattern Categories
+    27	## 1. Expired/Stalled Planning Strategies
+    29	### Pattern A: Old Planning + No Recent Activity
+    43	### Pattern B: Proposal Keyword + Inactive Building
+    58	## 2. Motivated Seller Strategies
+    60	### Pattern A: Long Corporate Hold + Derelict Asset
+    74	### Pattern B: Long Market Listing + Price Cap
+    87	### Pattern C: Inactive Building + Transport Proximity
+   100	### Pattern D: Liquidation/Administration Sales ⭐ NEW
+   154	## 3. Development Opportunity Strategies
+   156	### Pattern A: Under-Developed + High Accessibility
+   170	### Pattern B: Large Plot + Low Building Density
+   184	### Pattern C: Existing Use + Upside Potential
+   200	## 4. Low Capital Entry Strategies
+   202	### Pattern A: Sub-£200k Direct Purchase
+   216	### Pattern B: Option Agreement Candidates
+   230	### Pattern C: Derelict Asset Turnaround
+   246	## 5. High-Density/Intensification Strategies
+   248	### Pattern A: Low-Rise in Tall Building Zone
+   262	### Pattern B: Existing Approval for Height
+
+thinking
+**Extracting relevant sections for analysis**
+exec
+bash -lc "nl -ba FILTER_PATTERNS.md | sed -n '27,120p'" in /home/ashsubband/landsignal succeeded in 27ms:
+    27	## 1. Expired/Stalled Planning Strategies
+    28	
+    29	### Pattern A: Old Planning + No Recent Activity
+    30	```
+    31	Strategy: Find sites with old planning applications and no recent development activity
+    32	Indicators:
+    33	- Last application submitted: >2-3 years ago
+    34	- Applications in last 5 years: <3
+    35	- Building on title is inactive: Yes
+    36	- Max number of dwellings applied for: >0 (confirms development intent)
+    37	
+    38	Strengths: Targets sites where planning work already done but stalled
+    39	Weaknesses: May miss sites with expired planning but recent resubmissions
+    40	Capital requirement: Varies (often requires on-market listing filter)
+    41	```
+    42	
+    43	### Pattern B: Proposal Keyword + Inactive Building
+    44	```
+    45	Strategy: Search for specific development types with inactive buildings
+    46	Indicators:
+
+thinking
+**Requesting more pattern D lines**
+exec
+bash -lc "nl -ba FILTER_PATTERNS.md | sed -n '100,210p'" in /home/ashsubband/landsignal succeeded in 21ms:
+   100	### Pattern D: Liquidation/Administration Sales ⭐ NEW
+   101	```
+   102	Strategy: Companies in liquidation or administration forced to sell assets
+   103	Discovered: 2025-11-19 (User: ashsubband)
+   104	
+   105	Indicators:
+   106	- Ownership type: Company
+   107	- Company status: is one of Liquidation (or In Administration)
+   108	- Optional: Building on title is derelict/inactive (double motivation)
+   109	- Optional: Title area appropriate for target development
+   110	
+   111	Strengths:
+   112	- VERY STRONG motivation (forced sale, legal obligation)
+   113	- Liquidators motivated to complete quickly
+   114	- Often discounted pricing below market
+   115	- Strong buyer negotiating position
+   116	- Clear decision-maker (liquidator/administrator)
+   117	
+   118	Weaknesses:
+   119	- Limited pool of properties (rare)
+
+thinking
+**Pausing to gather more information**
+exec
+bash -lc "nl -ba FILTER_PATTERNS.md | sed -n '200,330p'" in /home/ashsubband/landsignal succeeded in 22ms:
+   200	## 4. Low Capital Entry Strategies
+   201	
+   202	### Pattern A: Sub-£200k Direct Purchase
+   203	```
+   204	Strategy: Direct freehold/leasehold purchase under capital limit
+   205	Indicators:
+   206	- Sales listing price: <200000 (or target amount)
+   207	- Tenure: Freehold
+   208	- Sales listing currently on the market: Yes
+   209	- Title area: appropriate minimum size
+   210	
+   211	Strengths: Direct acquisition within budget
+   212	Weaknesses: Very limited supply; may sacrifice quality/location
+   213	Capital requirement: Hard cap at budget limit
+   214	```
+   215	
+   216	### Pattern B: Option Agreement Candidates
+   217	```
+   218	Strategy: Higher-value sites suitable for option agreements
+   219	Indicators:
+
+thinking
+**Continuing file review**
+exec
+bash -lc "nl -ba FILTER_PATTERNS.md | sed -n '324,450p'" in /home/ashsubband/landsignal succeeded in 19ms:
+   324	## 7. Permitted Development Rights (PDR) Strategies ⭐ FROM PRESETS
+   325	
+   326	### Pattern A: Class MA (Commercial to Residential)
+   327	```
+   328	Strategy: Convert Class E commercial to residential (PDR)
+   329	Source: SearchLand Presets #4, #32
+   330	Discovered: 2025-11-19
+   331	
+   332	Indicators:
+   333	- Use class: E, E(a), E(b), E(c), E(d), E(e), E(f), E(g)
+   334	- Floor area: >37 sqmt (minimum for MA)
+   335	- Class E for at least 2 years (PDR requirement)
+   336	- Title no bigger than 4,000 sqmt
+   337	- NOT: AONB, Flood zone 3, Conservation area, SSSI
+   338	- Built-up areas
+   339	
+   340	Strengths:
+   341	- No planning permission needed (PDR)
+   342	- Faster than full planning
+   343	- SearchLand calculates profit automatically (Preset #4)
+
+thinking
+**Fetching remaining document lines**
+exec
+bash -lc "nl -ba FILTER_PATTERNS.md | sed -n '449,750p'" in /home/ashsubband/landsignal succeeded in 20ms:
+   449	## 8. Regulation-Driven Opportunities ⭐ FROM PRESETS
+   450	
+   451	### Pattern A: HMO Expired Licenses
+   452	```
+   453	Strategy: Target HMOs with expired licenses (forced compliance or sale)
+   454	Source: SearchLand Preset #12
+   455	Discovered: 2025-11-19
+   456	
+   457	Indicators:
+   458	- Currently has HMO: Yes
+   459	- HMO License Expiry Date: before [current date]
+   460	- Freehold tenure
+   461	
+   462	Strengths:
+   463	- FORCED action (cannot operate)
+   464	- Time-sensitive (urgency)
+   465	- Clear motivation signal
+   466	- Often tired landlords
+   467	
+   468	Weaknesses:
+
+thinking
+**Continuing inspection from line 730**
+exec
+bash -lc "nl -ba FILTER_PATTERNS.md | sed -n '730,1065p'" in /home/ashsubband/landsignal succeeded in 19ms:
+   730	## 10. Renewable Energy Opportunities ⭐ FROM PRESETS
+   731	
+   732	### Pattern A: Solar Ground Mount (Agricultural Land)
+   733	```
+   734	Strategy: Large-scale solar farms on lower-grade agricultural land
+   735	Source: SearchLand Presets #14, #81
+   736	Discovered: 2025-11-19
+   737	
+   738	Indicators:
+   739	- Freehold tenure
+   740	- 40,000+ sqmt (10 acres minimum, typically 20-100 acres)
+   741	- Less than 5% area developed (flat, open land)
+   742	- Agricultural Grade 3/3a/3b/4 (NOT Grade 1-2 = planning objection)
+   743	- Within 2,000m of green rated substation (grid connection)
+   744	- 75%+ area un-constrained
+   745	- Corporate/company/private owner
+   746	
+   747	Strategic Rationale:
+   748	- Solar requires: Large area, flat land, grid connection
+   749	- Grade 1-2 = "Best & Most Versatile" (BMV) → planning refusal
+
+thinking
+**Requesting remaining content**
+exec
+bash -lc "nl -ba FILTER_PATTERNS.md | sed -n '1057,1405p'" in /home/ashsubband/landsignal succeeded in 19ms:
+  1057	## 12. Commercial Traffic-Dependent ⭐ FROM PRESETS
+  1058	
+  1059	### Pattern A: High-Footfall Retail Opportunities
+  1060	```
+  1061	Strategy: Retail sites with quantified footfall (viability proven)
+  1062	Source: SearchLand Presets #27, #46
+  1063	Discovered: 2025-11-19
+  1064	
+  1065	Indicators:
+  1066	- Average daily footfall: 800+ (viable), 6,000+ (prime)
+  1067	- Use class: E(a) retail display
+  1068	- Lease end date optional (motivation signal)
+  1069	- 325+ sqmt
+  1070	
+  1071	Strategic Rationale:
+  1072	- Footfall = revenue potential (quantified)
+  1073	- High footfall = supports premium rents
+  1074	- Expiring leases = motivated landlords
+  1075	
+  1076	Strengths:
+
+thinking
+**Continuing to review lines past 1405**
+exec
+bash -lc "nl -ba FILTER_PATTERNS.md | sed -n '1405,1495p'" in /home/ashsubband/landsignal succeeded in 18ms:
+  1405	**Profit Model:**
+  1406	- Time arbitrage: Buy at "uninformed" price, sell at "informed" price
+  1407	- Typical spread: 10-30% (£50k-£200k on £500k deal)
+  1408	- Volume strategy: 10-20 deals/year = £500k-£2M profit
+  1409	
+  1410	### Strengths
+  1411	1. **Information asymmetry:** You know before owner/market
+  1412	2. **No competition:** Pre-market, no agents, no bidders
+  1413	3. **Premium pricing:** Buyers pay for exclusivity
+  1414	4. **Scalable:** Automated monitoring, repeatable process
+  1415	5. **High ROI:** Low capital, high profit margins
+  1416	
+  1417	### Weaknesses
+  1418	1. **Requires daily monitoring:** Labor-intensive or requires automation
+  1419	2. **Speed critical:** Miss by 1 day = opportunity lost
+  1420	3. **Competitive advantage erodes:** Once others adopt same strategy
+  1421	4. **SearchLand dependency:** 24hr refresh only (not real-time)
+  1422	5. **Execution risk:** Owner may not want to sell, buyer may back out
+  1423	
+  1424	### Example Deal Flow
+
+thinking
+**Retrieving omitted file section**
+exec
+bash -lc "nl -ba FILTER_PATTERNS.md | sed -n '1227,1285p'" in /home/ashsubband/landsignal succeeded in 19ms:
+  1227	## Strategy Selection Guide
+  1228	
+  1229	### When to Use Each Pattern:
+  1230	
+  1231	**Budget-Driven:**
+  1232	- <£50k → Option Agreement, Airspace Rights
+  1233	- £50k-£200k → Sub-£200k Direct, Derelict Turnaround
+  1234	- £200k-£500k → Under-Developed + Accessibility, Stalled Planning
+  1235	- >£500k → Existing Approvals, Strategic Allocations
+  1236	
+  1237	**Risk Tolerance:**
+  1238	- Low risk → Existing Approvals, Strategic Allocations
+  1239	- Medium risk → Stalled Planning, Under-Developed Sites
+  1240	- High risk → Derelict Turnaround, Airspace Development
+  1241	
+  1242	**Timeline:**
+  1243	- Fast (<12 months) → Existing Approvals, Option Exercise
+  1244	- Medium (12-24 months) → Stalled Planning Revival, Turnarounds
+  1245	- Long (24+ months) → Greenfield Development, Strategic Allocations
+  1246	
+
+thinking
+**Investigating preset filters file**
+exec
+bash -lc 'wc -l SearchlandContext/PresetFiltersBuiltIntoSearchLand.md' in /home/ashsubband/landsignal succeeded in 18ms:
+1006 SearchlandContext/PresetFiltersBuiltIntoSearchLand.md
+
+thinking
+**Reading file in chunks**
+exec
+bash -lc "sed -n '1,200p' SearchlandContext/PresetFiltersBuiltIntoSearchLand.md" in /home/ashsubband/landsignal succeeded in 18ms:
+# Searchland Preset Filters
+
+All preset filters available in Searchland via the website interface.
+
+---
+
+## 1. Unbroken freeholds
+Multi-unit freeholds with potential to split or repurpose
+
+Criteria (ALL):
+- Freehold tenure
+- 3-15 addresses
+- Exactly 0 leaseholds on freehold
+- Private owner ownership
+- Only C3 dwellinghouses
+- More than 3 EPC records on title
+
+## 2. Run down homes
+Low-EPC single homes with rebuild or improvement potential
+
+
+thinking
+**Continuing to review presets from line 200 onward**
+exec
+bash -lc "sed -n '200,400p' SearchlandContext/PresetFiltersBuiltIntoSearchLand.md" in /home/ashsubband/landsignal succeeded in 17ms:
+
+## 18. Edge of settlement sites
+Plots on settlement edges with potential boundary changes
+
+Criteria (ALL):
+- Freehold tenure
+- Private owner ownership
+- 1,000-8,000 sqmt
+- Less than 5% area developed
+- Majority NOT road
+- NOT listed building(s) in plot
+- More than 80% area un-constrained
+- Less than 1 application in last 5 years
+- Less than 1 leasehold on freehold
+- No latest sold date
+- NOT: B2, B8, C2, C2A, C3
+- 1-10% built up area coverage
+
+## 19. Homes to HMO
+Houses for conversion into HMOs for rental or investment
+
+thinking
+**Continuing file snippet extraction**
+exec
+bash -lc "sed -n '400,600p' SearchlandContext/PresetFiltersBuiltIntoSearchLand.md" in /home/ashsubband/landsignal succeeded in 19ms:
+
+## 35. Companies owning more than 30 titles
+Companies holding over 30 freehold titles with HMOs
+
+Criteria (ALL):
+- More than 30 titles owned by company
+- Freehold tenure
+- Has HMO
+
+## 36. ECO4
+Private sites with poor EPCs for ECO4 solar installs
+
+Criteria (ALL):
+- EPC rating: E, F, G
+- More than 5 addresses
+- 20% or more area developed
+- Private owner ownership
+- 1 or more leaseholds on freehold
+
+## 37. Educational sites with parking
+
+thinking
+**Extracting specific lines with sed**
+exec
+bash -lc "sed -n '600,800p' SearchlandContext/PresetFiltersBuiltIntoSearchLand.md" in /home/ashsubband/landsignal succeeded in 19ms:
+Criteria (ALL):
+- Private owner/company/corporate ownership
+- More than 60,000 sqmt
+- Within 2,000m of substation
+- More than 99% flat terrain
+- More than 70% area un-constrained
+- Use class: B2 or B8
+
+## 54. Land for EV charging
+Unconstrained land near busy roads suitable for EV chargers
+
+Criteria (ALL):
+- Freehold tenure
+- Corporate or company ownership
+- Use class: Public car parking, Car park space, Petrol filling station, Fast food outlet/takeaway, or Restaurant/cafeteria
+- Majority NOT road
+- 10,000 or more average daily vehicle count
+- Within 400m of A road
+- Within 5,000m of green rated substation
+- More than 1,000m from EV chargepoint
+
+thinking
+**Continuing to review file segment**
+exec
+bash -lc "sed -n '800,1000p' SearchlandContext/PresetFiltersBuiltIntoSearchLand.md" in /home/ashsubband/landsignal succeeded in 20ms:
+
+## 70. Padel opportunities
+Land beside commercial sites suitable for new padel courts
+
+Criteria (ALL):
+- Freehold tenure
+- 1,000-6,000 sqmt
+- Use class: F2(C), F2(B), E, E(a), E(d), E(c)(iii), E(g)(iii), or E(g)(ii)
+- 5-12m building height
+- 10-70% area developed
+- Built up areas
+- Less than 1 max dwellings applied for
+- NOT: C3, C1, C2
+
+Criteria (ANY):
+- Within 100m of A road
+- Within 100m of bus stop
+- Within 100m of rapid transit stop/station
+
+## 71. Paper manufacturers
+
+thinking
+**Continuing file review beyond line 1000**
+exec
+bash -lc "sed -n '1000,1100p' SearchlandContext/PresetFiltersBuiltIntoSearchLand.md" in /home/ashsubband/landsignal succeeded in 19ms:
+Criteria (ANY):
+- Within 200m of adopted settlement boundary
+- Within 200m of emerging settlement boundary
+
+---
+
+**Total Preset Filters:** 86
+
+thinking
+**Searching for PRESET_STRATEGY_GUIDE**
+exec
+bash -lc "rg --files -g 'PRESET_STRATEGY_GUIDE.md'" in /home/ashsubband/landsignal succeeded in 25ms:
+PRESET_STRATEGY_GUIDE.md
+
+thinking
+**Previewing file start**
+exec
+bash -lc "sed -n '1,200p' PRESET_STRATEGY_GUIDE.md" in /home/ashsubband/landsignal succeeded in 21ms:
+# SearchLand Preset Strategy Guide
+
+**Purpose:** Comprehensive reference for all 86 SearchLand expert-designed presets  
+**Source:** SearchLand.co.uk preset filters (analyzed 2025-11-19)  
+**Status:** Production-ready, validated strategies
+
+---
+
+## Executive Summary
+
+SearchLand's team has created **86 preset filters** representing validated, expert-designed property strategies. This guide extracts key insights, patterns, and strategic approaches for reuse in custom filter creation.
+
+**Key Discovery:** These presets reveal advanced techniques not documented elsewhere:
+- Regulation-driven motivations (HMO licenses, lease expiries, EPC compliance)
+- Renewable energy site selection (agricultural grades, substation proximity)
+- Green Belt workarounds (previously developed land, hardstanding)
+- Commercial viability metrics (footfall/vehicle counts)
+- Strategic land promotion (emerging allocations, SHLAA gaps)
+
+---
+
+thinking
+**Planning detailed pattern critique and new categories**
+
+I'm organizing a thorough critique of the 13 existing patterns following a markdown template that covers clarity, strengths, and weaknesses with precise line references from source files. I’m also identifying potential new strategy patterns missing from the document, like digital infrastructure land and nutrient neutrality farmland, for a comprehensive update.
+exec
+bash -lc "nl -ba FILTER_PATTERNS.md | sed -n '1170,1235p'" in /home/ashsubband/landsignal succeeded in 20ms:
+  1170	See LEARNINGS_DATABASE.md → "Footfall / Vehicle Count"
+  1171	```
+  1172	
+  1173	### Pattern C: Niche Commercial Markets
+  1174	```
+  1175	Strategy: Specific commercial uses with defined criteria
+  1176	Source: SearchLand Presets (Padel #10/#70, Care Homes #28)
+  1177	Discovered: 2025-11-19
+  1178	
+  1179	Padel Courts (Growing Trend):
+  1180	- 1,500-6,500 sqmt
+  1181	- 7-15m building height (convert existing buildings)
+  1182	- Commercial use class (E, B2, B8)
+  1183	- Within 400m bus OR 800m train OR 5m built-up (accessibility)
+  1184	- Company/private owner
+  1185	
+  1186	Care Homes:
+  1187	- 4,000+ sqmt
+  1188	- ≤10% developed (room for building)
+  1189	- Within 500m of hospital
+
+thinking
+**Outlining new preset patterns**
+exec
+bash -lc "nl -ba SearchlandContext/PresetFiltersBuiltIntoSearchLand.md | sed -n '520,660p'" in /home/ashsubband/landsignal succeeded in 19ms:
+   520	
+   521	## 46. High footfall leases ending soon
+   522	High-footfall retail sites with leases expiring within 1 year
+   523	
+   524	Criteria (ALL):
+   525	- Lease end date between 30/09/2025 and 30/09/2026
+   526	- 6,000 or more average daily footfall
+   527	- Use class: E(a) retail or Retail
+   528	
+   529	## 47. HMO opportunities
+   530	Houses for HMO conversion for rental or investment
+   531	
+   532	Criteria (ALL):
+   533	- Freehold tenure
+   534	- 8-12 habitable rooms (latest EPC)
+   535	- Only C3 dwellinghouses
+   536	- Latest sold date before 30/04/2014
+   537	- EPC rating: F, G, D, E
+   538	- Less than 1 application in last 5 years
+   539	- Within 500m of bus stop
+
+thinking
+**Preparing to extract specific lines**
+exec
+bash -lc "nl -ba SearchlandContext/PresetFiltersBuiltIntoSearchLand.md | sed -n '360,430p'" in /home/ashsubband/landsignal succeeded in 19ms:
+   360	Criteria (ALL):
+   361	- Freehold tenure
+   362	- 1 or fewer addresses
+   363	- NOT: C3(A), C3, C3(B), C3(C), B2
+   364	- Use class: E, E(a), E(b), E(c)(i), E(c)(ii), E(c)(iii), E(d), E(e), E(f), E(g)(i), E(g)(ii), or E(g)(iii)
+   365	- 250 sqmt or less
+   366	- NOT listed buildings or National landscapes (AONB)
+   367	
+   368	## 32. Class MA eligible commercial sites
+   369	Commercial sites in built-up areas eligible for Class MA permitted development
+   370	
+   371	Criteria (ALL):
+   372	- Freehold tenure
+   373	- Use class: E, E(a), E(b), E(c)(i), E(c)(ii), E(c)(iii), E(d), E(e), E(f), E(g)(i), E(g)(ii), or E(g)(iii)
+   374	- 100-8,000 sqmt
+   375	- NOT: National landscapes (AONB), Flood zone 3, Conservation area, SSSI, Battlefields, Scheduled monuments, National nature reserves, Ancient woodland
+   376	- NOT C3 dwellinghouses
+   377	
+   378	## 33. Class ZA
+   379	Small commercial buildings eligible for Class ZA (permitted development) rebuild
+
+thinking
+**Requesting line numbers for code references**
+exec
+bash -lc "nl -ba SearchlandContext/PresetFiltersBuiltIntoSearchLand.md | sed -n '430,520p'" in /home/ashsubband/landsignal succeeded in 19ms:
+   430	
+   431	Criteria (ALL):
+   432	- Freehold tenure
+   433	- Housing allocation (emerging)
+   434	- Less than 1 max dwellings applied for
+   435	- 4,000-40,000 sqmt
+   436	- Less than 3% area developed
+   437	
+   438	## 39. Farmland in nutrient neutrality areas
+   439	Freehold farmland >8 ha in nutrient neutrality zones
+   440	
+   441	Criteria (ALL):
+   442	- Freehold tenure
+   443	- More than 80,000 sqmt
+   444	- NOT Grade 1 or Grade 2
+   445	- Cereal crops habitat type
+   446	- Nutrient neutrality area
+   447	
+   448	## 40. Farm titles less than 5 acres
+   449	Farm land plots of less than 5 acres
+
+thinking
+**Updating plan with progress**
+Plan update
+  ✓ Read FILTER_PATTERNS.md plus relevant supporting docs (preset list, strategy guide) to understand current content.
+  → Critique each of the 13 existing patterns and document insights using required template.
+  • Identify and document at least 3-5 new patterns from raw presets/gaps.
+  • Provide structural/usability recommendations, pattern ranking, workflow integration guidance, and final summary.
+
+thinking
+**Planning detailed pattern critiques**
+
+I’m organizing a thorough critique for each of the 13 patterns in FILTER_PATTERNS.md, carefully referencing specific line ranges and evaluating clarity, completeness, usefulness, strengths, weaknesses, and suggestions. I’m also considering cross-references to presets and preparing to propose new patterns with supporting line numbers to make the review clear and well-structured.
+exec
+bash -lc "nl -ba SearchlandContext/PresetFiltersBuiltIntoSearchLand.md | sed -n '660,740p'" in /home/ashsubband/landsignal succeeded in 20ms:
+   660	## 58. Land suitable for drive-thru
+   661	Sites with high traffic, suitable for drive-thru development
+   662	
+   663	Criteria (ALL):
+   664	- Freehold tenure
+   665	- Private owner/council/company ownership
+   666	- 10,000 or more average daily vehicle count
+   667	- 1,000-20,000 sqmt
+   668	- 30% or less area developed
+   669	- 30% or less area on road
+   670	
+   671	## 59. Land without planning (Duplicate entry)
+   672	Undeveloped land with no planning applications submitted
+   673	
+   674	Criteria (ALL):
+   675	- Freehold tenure
+   676	- NOT council/housing association ownership
+   677	- 2,000-8,000 sqmt
+   678	- 3% or less area developed
+   679	- 70% or more area un-constrained
+
+thinking
+**Locating relevant building and lease lines**
+exec
+bash -lc "nl -ba SearchlandContext/PresetFiltersBuiltIntoSearchLand.md | sed -n '780,860p'" in /home/ashsubband/landsignal succeeded in 22ms:
+   780	- Lease end date on or before 02/05/2025
+   781	- Exactly 0 leaseholds on freehold
+   782	
+   783	## 69. Older houses with outdoor space
+   784	Older homes with space, no recent sales or planning activity
+   785	
+   786	Criteria (ALL):
+   787	- Freehold tenure
+   788	- Only C3 dwellinghouses
+   789	- Private owner ownership
+   790	- 1,000-4,500 sqmt
+   791	- Less than 15% area developed
+   792	- Majority NOT road
+   793	- NOT E commercial/business/service
+   794	- NOT listed building(s) in plot
+   795	- More than 80% area un-constrained
+   796	- Less than 1 application in last 5 years
+   797	- EPC rating: G, F, E, D
+   798	- Less than 1 leasehold on freehold
+   799	- No latest sold date
+
+thinking
+**Continuing to gather more lines for #78**
+exec
+bash -lc "nl -ba SearchlandContext/PresetFiltersBuiltIntoSearchLand.md | sed -n '860,940p'" in /home/ashsubband/landsignal succeeded in 22ms:
+   860	
+   861	## 75. Residential allocations
+   862	Freehold sites strategically allocated for housing development
+   863	
+   864	Criteria (ALL):
+   865	- Freehold tenure
+   866	- 4,000-40,000 sqmt
+   867	- Private owner ownership
+   868	- Site allocation: Housing allocation, Mixed allocation, Housing allocation (emerging), or Mixed allocation (emerging)
+   869	
+   870	## 76. Retail units
+   871	Freehold retail spaces suitable for commercial use
+   872	
+   873	Criteria (ALL):
+   874	- Freehold tenure
+   875	- Use class: E commercial/business/service AND E(a) retail
+   876	- 2,000 sqmt or more
+   877	- NOT B2 or B8
+   878	- NOT green belt
+   879	- More than 50% area developed
+
+thinking
+**Outlining detailed pattern review plan**
+exec
+bash -lc "nl -ba SearchlandContext/PresetFiltersBuiltIntoSearchLand.md | sed -n '300,340p'" in /home/ashsubband/landsignal succeeded in 20ms:
+   300	Strategic land parcels, 5–50 acres, suitable for development
+   301	
+   302	Criteria (ALL):
+   303	- 20,000-200,000 sqmt
+   304	- Less than 10% area developed
+   305	- Employment allocation or employment allocation (emerging)
+   306	
+   307	Criteria (ANY):
+   308	- Within 100m of A road
+   309	- Within 100m of B road
+   310	
+   311	## 27. Cafe & restaurant sites
+   312	High-footfall sites suitable for cafes and restaurants
+   313	
+   314	Criteria (ALL):
+   315	- Leasehold or freehold tenure
+   316	- Demographics: White English/Welsh/Scottish/Northern Irish/British or White Other
+   317	- More than 325 sqmt
+   318	- More than 800 average daily footfall
+   319	- Use class: E(a) retail display
+
+thinking
+**Organizing detailed pattern evaluation plan**
+codex
+# FILTER_PATTERNS.md REVIEW - Codex
+
+**Reviewer:** Codex  
+**Date:** 2025-11-19  
+**Review Completeness:** 5/5 parts completed
+
+---
+
+## PART 1: CRITIQUE OF EXISTING PATTERNS
+
+## Pattern 1: Expired/Stalled Planning Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Separates date-based and proposal-keyword tactics so we can choose between quantitative and qualitative planning signals (`FILTER_PATTERNS.md:29-54`).
+
+**Weaknesses:**  
+- No guidance on which planning-status filters (Decision, Outcome, Appeal) actually exist, so replicating “stalled” conditions risks capturing live resubmissions (`FILTER_PATTERNS.md:29-40`).  
+- “Building on title is inactive” is treated as a binary filter but SearchLand’s preset library shows richer proxies (e.g., “Large sites with planning 10-100 units” already filters by applications) that are not referenced (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:721-730`).  
+- No advice on how to pair with price/ownership filters to confirm sellers are still reachable, so the workflow remains theoretical.
+
+**Suggested Improvements:**  
+- Show an explicit filter stack using Decision Date / Status plus Max Dwellings to mirror Preset #63 and prevent false positives (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:721-730`).  
+- Add a step for verifying “no recent resubmission” via “Applications in last 12 months = 0” and note how to surface planning references for outreach.  
+- Include a follow-up path (option agreement, uplift sharing) so the strategy ties to a deal structure.
+
+**Your Usage:** Would use after bolting on status filters and ownership overlays; in its current form it risks chasing already-active schemes.
+
+---
+
+## Pattern 2: Motivated Seller Strategies
+
+**Clarity:** Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Highly Useful  
+
+**Strengths:**  
+- Covers multiple motivation signals (corporate hold, dereliction, transport adjacency, insolvency) giving a layered approach (`FILTER_PATTERNS.md:60-150`).  
+- Pattern D correctly highlights Companies House status as a forced-sale trigger, plus provides a concrete example filter (`FILTER_PATTERNS.md:100-150`).
+
+**Weaknesses:**  
+- Long market listing relies on a “time on market” filter that does not exist, so the tactic cannot be implemented as written (`FILTER_PATTERNS.md:74-85`).  
+- No mention of brand/operator datasets (KFC, McDonald’s) or lease expiries that already serve as motivation proxies (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:562-571` and `732-738`).  
+- Transport-proximity motivation conflates desirability with distress; without a trigger (lease expiry, EPC failure) we just find nice derelict sites.
+
+**Suggested Improvements:**  
+- Replace the non-existent “time on market” logic with measurable proxies (listing refresh date, price reductions, repeated listings scraped externally).  
+- Reference presets #41/#46 that capture expiring QSR leases so we can target landlords with quantifiable vacancy pressure (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:458-466`).  
+- Show how to combine motivation filters with capital-specific tactics (options vs direct purchase).
+
+**Your Usage:** Yes, but only after swapping in trackable regulatory signals (lease expiries, EPC deadlines) for market-time assumptions.
+
+---
+
+## Pattern 3: Development Opportunity Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Highlights PTAL 4-6 and low developed-area percentages as reliable densification indicators (`FILTER_PATTERNS.md:156-176`).  
+- Recognizes “Existing Use + Upside” to keep cash flow during planning (`FILTER_PATTERNS.md:184-195`).
+
+**Weaknesses:**  
+- “Title area appropriate” appears repeatedly without defining ranges, leaving analysts to guess what fits small vs medium schemes (`FILTER_PATTERNS.md:156-195`).  
+- Does not tie to ready-made presets like “Vacant land in built-up areas” (#9) or “Land without planning” (#59/#60) that already embody these filters (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:205-214` and `671-696`).  
+- Omits constraint guidance (flood zones, allocations) that often kill deals at this stage.
+
+**Suggested Improvements:**  
+- Add decision trees for <0.5 acre, 0.5-2 acre, and 2-10 acre opportunities with explicit area/coverage ranges.  
+- Cross-link to relevant presets for each sub-pattern so an agent can immediately load a starting filter.  
+- Include a “red flag” list (e.g., SHLAA negative, Conservation Area) to avoid spending time on highly constrained plots.
+
+**Your Usage:** Only as a brainstorming aid; I would still build my own filter stack from presets because the quantitative guardrails are missing.
+
+---
+
+## Pattern 4: Low Capital Entry Strategies
+
+**Clarity:** Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Limited Use  
+
+**Strengths:**  
+- Differentiates between direct purchase, options, and derelict turnaround so investors can match structure to liquidity (`FILTER_PATTERNS.md:202-242`).
+
+**Weaknesses:**  
+- Sub-£200k strategy assumes on-market listings and ignores the scarcity of viable listings at that level in target areas (`FILTER_PATTERNS.md:202-214`).  
+- No mention of ready presets like “Homes to HMO” (#19) or “Older houses with outdoor space” (#69) that cater to sweat-equity entry (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:205-222` and `783-800`).  
+- Option agreement guidance lacks specific motivation signals and legal workflow references.
+
+**Suggested Improvements:**  
+- Provide geographic notes (e.g., focus on lower-value authorities such as Hull, Stoke) and layering tips (auction results, probate).  
+- Link each sub-pattern to the most relevant preset(s) so low-capital users don’t start from scratch.  
+- Add worked examples showing cash required for option deposit, planning spend, and exit.
+
+**Your Usage:** Rarely—most low-cap opportunities I pursue use preset-driven niche filters rather than hard price caps.
+
+---
+
+## Pattern 5: High-Density/Intensification Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Emphasizes PTAL and existing approvals, which are genuine accelerators in London intensification (`FILTER_PATTERNS.md:248-274`).  
+- Mentions strategic allocations as a route to policy-backed uplift (`FILTER_PATTERNS.md:276-288`).
+
+**Weaknesses:**  
+- “Local policy manual research” is vague and provides no map sources (Tall Building SPD, OAPF) so a new analyst cannot action it (`FILTER_PATTERNS.md:252-258`).  
+- Fails to cite presets like “Large sites with planning 10-100 units” (#63) that already vet schemes for height approvals (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:721-730`).  
+- No sensitivity to Section 106/CIL impacts on viability.
+
+**Suggested Improvements:**  
+- Embed references to policy datasets (London Plan tall building maps, ONS density stats) and show how to import them into SearchLand.  
+- Provide a sample viability stress test (plot ratio, net:gross conversion).  
+- Add tags to indicate which sub-pattern fits Round 3 (structural/creative) so agents can reach for it quickly.
+
+**Your Usage:** Yes for London/metros, but I would need my own policy overlays and viability calculator.
+
+---
+
+## Pattern 6: Airspace Development Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Calls out flat roofs and height headroom, which align with SearchLand’s dedicated airspace presets (#22-#25) (`FILTER_PATTERNS.md:294-320`).  
+- Acknowledges structural and freeholder negotiation risks.
+
+**Weaknesses:**  
+- Ignores valuable preset differentiators such as “pre-1990 build” and “unbroken freehold” that materially simplify deals (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:229-256`).  
+- Does not outline leasehold enfranchisement or rooftop rights acquisition workflows, so the reader cannot judge complexity.
+
+**Suggested Improvements:**  
+- Add sub-patterns mirroring presets #24/#25 (pre-1990 blocks, unbroken titles) with filter criteria spelled out.  
+- Include a checklist for leaseholder consultation, Section 5 notices, and structural surveys.  
+- Provide output metrics (number of new units achievable per m² of existing roof).
+
+**Your Usage:** With amendments; I rely on the preset filters and a standard legal playbook that are currently omitted.
+
+---
+
+## Pattern 7: Permitted Development (PDR) Strategies
+
+**Clarity:** Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Details Class MA, Q, G, and infill with specific eligibility criteria and referenced presets (`FILTER_PATTERNS.md:326-445`).  
+- Includes profit-calculation logic for Class MA, which is rare in the rest of the document.
+
+**Weaknesses:**  
+- Omits Class A and Class ZA presets despite their presence in the raw list (#30 and #33), leaving obvious PDR routes undocumented (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:300-389`).  
+- Does not flag Article 4 withdrawal areas beyond a passing mention, even though that is the main practical blocker for MA/G.  
+- No template for prior-approval timelines or typical consultant costs.
+
+**Suggested Improvements:**  
+- Add patterns for Class A extensions (garden depth, ridge lines) and Class ZA knock-down/rebuild to cover the full preset family.  
+- Provide a matrix of Article 4 boroughs/districts and suggest fallback strategies where PDR is withdrawn.  
+- Include a financial summary (fees, build cost per sq m, resale assumptions) per PDR class.
+
+**Your Usage:** Yes—after supplementing with Article 4 data and the missing PDR classes.
+
+---
+
+## Pattern 8: Regulation-Driven Opportunities
+
+**Clarity:** Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Highly Useful  
+
+**Strengths:**  
+- Presents strong motivation logic for expired HMO licences, lease expiries, and EPC compliance, each with supporting presets (`FILTER_PATTERNS.md:451-607`).  
+- Provides detailed timelines for lease expiries, helping cadence outreach (`FILTER_PATTERNS.md:497-543`).
+
+**Weaknesses:**  
+- Leaves out other regulation-driven presets such as “Homes to HMO” (#19) and “Single flats with expiring leases” (#78) that also hinge on legal deadlines (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:205-214` and `893-901`).  
+- EPC section is very broad and risks unworkable result volumes without layering (ownership type, geography) (`FILTER_PATTERNS.md:546-574`).  
+- No talk track for compliance-oriented approaches (help owners refurbish vs buy).
+
+**Suggested Improvements:**  
+- Expand the section to include leasehold reversion plays and Article 4-safe HMO conversions with explicit preset references.  
+- Recommend pairing EPC triggers with ownership size (e.g., companies with >30 titles) to focus on likely sellers (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:401-408`).  
+- Provide outreach scripts/value propositions tailored to each regulation scenario.
+
+**Your Usage:** Absolutely; this is the richest source of motivated stock once the missing sub-patterns are added.
+
+---
+
+## Pattern 9: Green Belt Workarounds
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Explains “previously developed land” logic using hardstanding percentage and proximity to built-up areas (`FILTER_PATTERNS.md:610-661`).  
+- Notes edge-of-settlement promotion with SHLAA gaps (`FILTER_PATTERNS.md:664-726`).
+
+**Weaknesses:**  
+- Does not mention other preset options like Green Belt solar (#45) or storage uses (#57) that exploit different policy carve-outs (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:515-658`).  
+- Missing a reminder about recent NPPF/PF revisions (e.g., “Grey Belt” consultation outcomes) that affect viability.  
+- No discussion of evidencing “previously developed land” (historic aerials, OS maps).
+
+**Suggested Improvements:**  
+- Add sub-patterns for renewable exemptions (solar/battery) and commercial uses (storage) to match presets #45 and #57.  
+- Include a data checklist (historic imagery, planning history) to defend “grey belt” claims at committee.  
+- Highlight councils actively reviewing Green Belt boundaries so agents know where to spend time.
+
+**Your Usage:** Yes, though I would fold in renewable/storage plays to make the category complete.
+
+---
+
+## Pattern 10: Renewable Energy Strategies
+
+**Clarity:** Clear  
+**Completeness:** Somewhat Complete  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Thoroughly documents solar ground-mount and industrial rooftop criteria including substations, grades, and ROI models (`FILTER_PATTERNS.md:732-852`).  
+- Adds battery/hydrogen/wind sub-patterns with setbacks and capital needs (`FILTER_PATTERNS.md:853-955`).
+
+**Weaknesses:**  
+- No coverage of EV-charging or bioenergy presets (#54, #52) even though they share similar land requirements (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:609-656`).  
+- Lacks guidance on grid-capacity vetting (G99 queue, DNO engagement) beyond the “green substation” filter.  
+- No mention of community benefits or planning sensitivities (glint/glare, heritage).
+
+**Suggested Improvements:**  
+- Add EV charging/bioenergy sub-patterns referencing presets #54/#52 to diversify revenue models.  
+- Include a workflow for pre-consulting the DNO and budgeting grid-upgrade deposits.  
+- Provide a policy summary (NPS EN-3 update, local renewable allocations) to support applications.
+
+**Your Usage:** Yes for energy clients, with added grid diligence steps.
+
+---
+
+## Pattern 11: Strategic Land Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Highlights emerging allocations with no planning and large employment allocations (`FILTER_PATTERNS.md:960-1053`).  
+- Provides option-cost guidance (£10k-£50k) which helps scoping.
+
+**Weaknesses:**  
+- Ignores other strategic presets (edge-of-settlement #13/#18, unallocated no SHLAA #85/#86) that broaden the funnel (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:205-222` and `845-857`).  
+- No instructions on Local Plan timelines, Regulation 18/19 stages, or promotion agreement structuring.  
+- Doesn’t address infrastructure obligations (spine roads, utilities) that can kill smaller operators.
+
+**Suggested Improvements:**  
+- Add sub-patterns for SHLAA omissions and legacy estates to cover all 8 relevant presets.  
+- Provide a Local Plan calendar template and engagement workflow (Reg18 reps, Reg19 objections).  
+- Include indicative infrastructure cost ranges so analysts can assess capital appetite early.
+
+**Your Usage:** Yes for land-promotion briefs, but I need the missing SHLAA/edge filters and process notes.
+
+---
+
+## Pattern 12: Commercial Traffic-Dependent Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Uses quantifiable footfall/vehicle-count thresholds tied to branded presets (#27, #46, #54, #58, #72) (`FILTER_PATTERNS.md:1059-1170`).  
+- Pattern C acknowledges niche sectors like padel courts and care homes with key dimensions given (`FILTER_PATTERNS.md:1173-1223`).
+
+**Weaknesses:**  
+- Treats “niche markets” as a catch-all without distinguishing data sources or buyer profiles, which dilutes focus (`FILTER_PATTERNS.md:1173-1221`).  
+- Lacks cost/yield benchmarks for EV, drive-thru, or retail to help prioritise leads.  
+- No mention of competition filters (e.g., radius to nearest EV charger is available in presets #54/#84 but absent in the write-up).
+
+**Suggested Improvements:**  
+- Break Pattern C into separate subsections (Padel, Care, Data Centre retail) with outcome metrics and preset references.  
+- Add ROI snippets (expected rent per sq ft, cap rates) for each use.  
+- Include “competition” filter guidance (distance to existing chargers/QSR) to raise conversion odds.
+
+**Your Usage:** Yes for quick-service and EV work, but I would spin out each niche into its own playbook.
+
+---
+
+## Pattern 13: Time/Information Arbitrage Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Provides detailed rationale and implementation requirements (exports, diffing, alerts) for acting on daily SearchLand refreshes (`FILTER_PATTERNS.md:1281-1396`).  
+- Includes an illustrative deal flow showing how the arbitrage converts into cash within days (`FILTER_PATTERNS.md:1424-1444`).
+
+**Weaknesses:**  
+- Relies entirely on external automation without linking to specific SearchLand filters that feed the exports, so newcomers might not know where to start.  
+- Omits compliance considerations (GDPR when contacting owners the same day, Companies House spam rules).  
+- Doesn’t prioritise which arbitrage events matter most (planning approval vs allocation vs lease expiry), so resources may be spread thin.
+
+**Suggested Improvements:**  
+- Provide ready-to-run export templates referencing earlier patterns (e.g., Pattern 8B lease-expiry filters) to close the loop.  
+- Rank the sub-patterns by margin/volume and suggest staffing per trigger.  
+- Add legal guidance on contact cadence and script approval.
+
+**Your Usage:** Yes, but only once a monitoring stack (SearchLand API + CRM + dialer) is fully documented.
+
+---
+
+## PART 2: NEW PATTERNS PROPOSED
+
+## NEW PATTERN: Nutrient Neutrality Offset Banking
+
+**Category:** Regulation-Driven / Environmental Mitigation  
+
+**Strategic Rationale:** LPAs inside Solent, Norfolk, and Tees catchments need off-site nutrient credits before granting resi permissions. Buying or optioning Grade 3b/4 cereal land in the designated zones lets you sell offset capacity to housebuilders who are otherwise stuck.  
+
+**Key Filters:**  
+1. Ownership: Freehold, private/company (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:438-447`).  
+2. Site size: >80,000 sq m (enough for meaningful mitigation) (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:443-444`).  
+3. Habitat: Cereal crops (high phosphate output to convert) (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:445-446`).  
+4. Constraint: Nutrient neutrality area = TRUE.  
+5. Optional: Within 20 km of growth settlements to ease transactional logistics.
+
+**Sourced From:** Preset #39 plus current DEFRA nutrient mitigation policy.
+
+**Use Cases:** Pair with stalled residential schemes needing credits; structure long leases with developers that fund the rewilding works.
+
+**Expected Results:** Low capital (options/leases), £10k-£40k per dwelling equivalent in credit sales, timelines 6-18 months.
+
+---
+
+## NEW PATTERN: Digital Infrastructure Campus Assembly
+
+**Category:** Development Opportunity / Specialist Infrastructure  
+
+**Strategic Rationale:** Data centres and AI training campuses require large, flat B2/B8 plots within 2 km of a high-capacity substation. These are scarce, so assembling suitable titles and securing grid queue positions creates outsized land value.  
+
+**Key Filters:**  
+1. Site size: >60,000 sq m (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:600-603`).  
+2. Terrain: >99% flat, >70% unconstrained (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:604-605`).  
+3. Land use: B2 or B8.  
+4. Power: Within 2,000 m of substation, ideally “green” capacity.  
+5. Ownership: Corporate/private (fast negotiation).  
+
+**Sourced From:** Preset #53, plus demand surge from hyperscalers.
+
+**Use Cases:** Option land and pre-let to cloud providers; or package for speculative colocation developers.
+
+**Expected Results:** Site premiums of £1m-£2m per acre in hot markets; 18-36 month promotion cycles.
+
+---
+
+## NEW PATTERN: Community Asset Repositioning
+
+**Category:** Development Opportunity / Social Infrastructure  
+
+**Strategic Rationale:** Under-utilised institutional land (schools, community halls, care homes) near hospitals and town centres can be recycled into senior living, health hubs, or residential through JV with councils/trustees. Presets #28 and #37/#62 already isolate these titles.  
+
+**Key Filters:**  
+1. Use class: F1/F2/C2/E(f) with >40% hardstanding (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:419-427` and `706-717`).  
+2. Size: 650-10,300 sq m (enough for conversion without complex estate regeneration).  
+3. Proximity: Within 500 m of hospitals or major bus routes for care demand (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:324-330`).  
+4. Ownership: Private trusts or non-profit (no corporate restrictions).  
+5. Option: No recent planning applications (lightly contested).  
+
+**Sourced From:** Presets #28, #37, #62 plus local authority disposal pipelines.
+
+**Use Cases:** Forward-fund extra care, co-locate medical hubs, secure community asset transfers before marketing.
+
+**Expected Results:** Deal sizes £2m-£10m GDV; planning timelines 12-24 months; higher success where councils target health provision.
+
+---
+
+## NEW PATTERN: Brand Covenant Reposition (QSR & Retail)
+
+**Category:** Motivated Seller / Commercial Traffic  
+
+**Strategic Rationale:** Franchise networks regularly rebalance estates; brand-specific datasets (KFC #50, McDonald’s #64) plus lease-expiry presets allow targeted sale-leaseback or redevelopment plays when corporate covenants vacate.  
+
+**Key Filters:**  
+1. Company/tenant name contains target brand (KFC, McDonald’s etc.) (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:562-571` and `732-738`).  
+2. Lease end date within 18 months (combine with Pattern 8B logic).  
+3. Footfall >2,000/day or vehicle count >10,000/day to ensure re-letting viability (`FILTER_PATTERNS.md:1059-1170`).  
+4. Plot size 1,000-20,000 sq m for drive-thru or infill alternatives.  
+5. Ownership: corporate freehold or franchise SPV.
+
+**Sourced From:** Presets #50, #64, #46, #58; industry knowledge of sale-leaseback spreads.
+
+**Use Cases:** Negotiate reverse premium to take back underperforming stores, redevelop to mixed-use, or re-let to competing brands.
+
+**Expected Results:** £0.5m-£5m deal ticket; 5-10% yield arbitrage on covenant swaps; 6-18 month execution.
+
+---
+
+## NEW PATTERN: Micro-Infill Service Yard Conversions
+
+**Category:** Low-Capital / Permitted Development  
+
+**Strategic Rationale:** Small garages, car parks, and MOT yards contiguous to housing (Presets #29 and #42) are ideal for single-plot infill, new-build mews, or EV charging clusters with minimal land cost.  
+
+**Key Filters:**  
+1. Use class: Car park or B2/E(g)(iii) garage (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:333-339` and `465-474`).  
+2. Size: 300-4,000 sq m (sweet spot for 2-10 units).  
+3. Proximity: Within 20 m of residential (ready utilities) (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:472-474`).  
+4. Planning history: Proposal keywords “garage/MOT/tyre” for conversion precedent (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:476-479`).  
+5. Ownership: Private/company (one title).  
+
+**Sourced From:** Presets #29, #42 and established mews-developer strategies.
+
+**Use Cases:** Low-capital option or overage agreements, Class G or F carve-outs, EV micro depots.
+
+**Expected Results:** 2-8 units per site, £200k-£1m GDV, 9-18 month timeline, capital input £50k-£200k.
+
+---
+
+## PART 3: STRUCTURE & USABILITY
+
+- **Add a pattern index/table with tags:** Right now analysts scroll 1,400+ lines to find relevant filters; a matrix tagging each pattern by capital, motivation, planning stage, and rounds would cut lookup time (no equivalent exists today beyond the short budget/risk bullets at `FILTER_PATTERNS.md:1231-1250`).  
+- **Embed preset references in every pattern:** Only some sections cite preset numbers; many (Patterns 1,3,5,6,11) leave you guessing which raw filters to load. Add “Starting presets” lists for every sub-pattern to honour the instruction to reuse all 86 presets.  
+- **Use consistent template blocks:** Some patterns include Strengths/Weaknesses (e.g., 10A) while others are pure bullet lists; align them so agents know where to find capital requirements, risk, workflow.  
+- **Introduce cross-links to LEARNINGS_DATABASE and anti-patterns:** Pattern 8 references LEARNINGS once (`FILTER_PATTERNS.md:491-493`), but others don’t signpost where to read caveats; add callouts pointing to relevant Learnings entries to stop repeated mistakes.  
+- **Decision-tree overlays per round:** Provide a “Round 2/3/4/5 quick pick” chart mapping patterns to collaborative stages; currently we only see an abstract combination example at `FILTER_PATTERNS.md:1256-1274`.
+
+---
+
+## PART 4: PATTERN RANKING
+
+| Rank | Pattern # | Pattern Name | Why This Ranking? |
+|------|-----------|--------------|-------------------|
+| 1 | 8 | Regulation-Driven Opportunities | Strongest motivation data, multiple presets, clear timelines (`FILTER_PATTERNS.md:451-607`). |
+| 2 | 2 | Motivated Seller Strategies | Broad mix of seller distress signals including insolvency (`FILTER_PATTERNS.md:60-150`). |
+| 3 | 13 | Time/Information Arbitrage | Converts SearchLand’s daily refresh into unique deal flow; needs tooling but high ROI (`FILTER_PATTERNS.md:1281-1444`). |
+| 4 | 7 | Permitted Development Strategies | Actionable, policy-backed, with quantified criteria (`FILTER_PATTERNS.md:326-445`). |
+| 5 | 10 | Renewable Energy Strategies | Deep detail and capital guidance; strong for infrastructure mandates (`FILTER_PATTERNS.md:732-955`). |
+| 6 | 9 | Green Belt Workarounds | Niche but valuable guidance on previously developed land exceptions (`FILTER_PATTERNS.md:610-726`). |
+| 7 | 12 | Commercial Traffic Strategies | Quantified demand metrics yet needs competitive context (`FILTER_PATTERNS.md:1059-1223`). |
+| 8 | 3 | Development Opportunity Strategies | Useful heuristics but lacks preset mapping and thresholds (`FILTER_PATTERNS.md:156-195`). |
+| 9 | 5 | High-Density/Intensification | Highlights PTAL but thin on execution detail (`FILTER_PATTERNS.md:248-288`). |
+|10 | 11 | Strategic Land Promotion | Describes only part of the preset set and omits plan process steps (`FILTER_PATTERNS.md:960-1053`). |
+|11 | 6 | Airspace Development | Captures basics but misses key preset variants and legal workflow (`FILTER_PATTERNS.md:294-320`). |
+|12 | 4 | Low Capital Entry | Relies on scarce on-market deals; limited presets referenced (`FILTER_PATTERNS.md:202-242`). |
+|13 | 1 | Expired/Stalled Planning | Too vague on filters/status logic to implement reliably (`FILTER_PATTERNS.md:29-54`). |
+
+**Real-World Test:** For “MixedUse-8Storey-2M profit on £200k capital,” I’d combine Pattern 5 (tall building zones) to target policy-backed height (`FILTER_PATTERNS.md:248-274`), Pattern 6 (airspace) for adding storeys to existing low-rise stock (`FILTER_PATTERNS.md:294-320`), and Pattern 2D (liquidation) to cap acquisition price (`FILTER_PATTERNS.md:100-150`). Overlay Pattern 13B’s monitoring so we pounce on fresh consents matching those filters (`FILTER_PATTERNS.md:1303-1319`).
+
+---
+
+## PART 5: WORKFLOW INTEGRATION
+
+- **Round-to-pattern mapping:** Create a table showing which patterns apply to each collaborative round (Regulation → Pattern 8 & Nutrient Offset; Structural → Patterns 5/6; Behavioural → Patterns 2/13; Challenge → Patterns 9/11). The Strategy Selection Guide is capital/risk-based, not round-based (`FILTER_PATTERNS.md:1229-1250`).  
+- **Round-specific prompts:** For each round, add “If/Then” prompts (e.g., “If lease expires <12 months and footfall >2k → use 8B + 12A”) so agents don’t improvise during live sessions.  
+- **Shared monitoring checklist:** Pattern 13’s automation steps should be summarized in a reusable “Round 5 readiness” checklist (export IDs, alert cadence) to ensure every agent sees the same alerts (`FILTER_PATTERNS.md:1374-1396`).  
+- **Learning hooks:** Encourage agents to feed discoveries back into LEARNINGS_DATABASE after each round, linking entries by pattern ID to keep institutional memory fresh.  
+- **Challenge Round playbook:** Provide adversarial questions per pattern (e.g., “What if Article 4 removes MA?”) so Round 5 explicitly pressure-tests the chosen filters.
+
+---
+
+## SUMMARY
+
+**Top 3 Improvements Needed:**  
+1. Map every pattern/sub-pattern to concrete SearchLand presets and add missing presets (Class ZA, SHLAA gaps, nutrient neutrality).  
+2. Introduce structural navigation aids—pattern index, tags, and round-based decision trees—to reduce lookup time and align with collaborative workflow.  
+3. Expand motivation/regulation coverage (leasehold reversions, nutrient credits, brand covenants) to capture uncovered strategies from the 86 presets.
+
+**Confidence in Current Patterns:** Medium — several are actionable, but missing presets and vague filters risk misapplication.
+
+**Would You Use This Document?** With changes — I need the preset mapping and round guides before relying on it in live searches.
+
+**Overall Grade:** B-
+tokens used
+136,221
+# FILTER_PATTERNS.md REVIEW - Codex
+
+**Reviewer:** Codex  
+**Date:** 2025-11-19  
+**Review Completeness:** 5/5 parts completed
+
+---
+
+## PART 1: CRITIQUE OF EXISTING PATTERNS
+
+## Pattern 1: Expired/Stalled Planning Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Separates date-based and proposal-keyword tactics so we can choose between quantitative and qualitative planning signals (`FILTER_PATTERNS.md:29-54`).
+
+**Weaknesses:**  
+- No guidance on which planning-status filters (Decision, Outcome, Appeal) actually exist, so replicating “stalled” conditions risks capturing live resubmissions (`FILTER_PATTERNS.md:29-40`).  
+- “Building on title is inactive” is treated as a binary filter but SearchLand’s preset library shows richer proxies (e.g., “Large sites with planning 10-100 units” already filters by applications) that are not referenced (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:721-730`).  
+- No advice on how to pair with price/ownership filters to confirm sellers are still reachable, so the workflow remains theoretical.
+
+**Suggested Improvements:**  
+- Show an explicit filter stack using Decision Date / Status plus Max Dwellings to mirror Preset #63 and prevent false positives (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:721-730`).  
+- Add a step for verifying “no recent resubmission” via “Applications in last 12 months = 0” and note how to surface planning references for outreach.  
+- Include a follow-up path (option agreement, uplift sharing) so the strategy ties to a deal structure.
+
+**Your Usage:** Would use after bolting on status filters and ownership overlays; in its current form it risks chasing already-active schemes.
+
+---
+
+## Pattern 2: Motivated Seller Strategies
+
+**Clarity:** Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Highly Useful  
+
+**Strengths:**  
+- Covers multiple motivation signals (corporate hold, dereliction, transport adjacency, insolvency) giving a layered approach (`FILTER_PATTERNS.md:60-150`).  
+- Pattern D correctly highlights Companies House status as a forced-sale trigger, plus provides a concrete example filter (`FILTER_PATTERNS.md:100-150`).
+
+**Weaknesses:**  
+- Long market listing relies on a “time on market” filter that does not exist, so the tactic cannot be implemented as written (`FILTER_PATTERNS.md:74-85`).  
+- No mention of brand/operator datasets (KFC, McDonald’s) or lease expiries that already serve as motivation proxies (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:562-571` and `732-738`).  
+- Transport-proximity motivation conflates desirability with distress; without a trigger (lease expiry, EPC failure) we just find nice derelict sites.
+
+**Suggested Improvements:**  
+- Replace the non-existent “time on market” logic with measurable proxies (listing refresh date, price reductions, repeated listings scraped externally).  
+- Reference presets #41/#46 that capture expiring QSR leases so we can target landlords with quantifiable vacancy pressure (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:458-466`).  
+- Show how to combine motivation filters with capital-specific tactics (options vs direct purchase).
+
+**Your Usage:** Yes, but only after swapping in trackable regulatory signals (lease expiries, EPC deadlines) for market-time assumptions.
+
+---
+
+## Pattern 3: Development Opportunity Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Highlights PTAL 4-6 and low developed-area percentages as reliable densification indicators (`FILTER_PATTERNS.md:156-176`).  
+- Recognizes “Existing Use + Upside” to keep cash flow during planning (`FILTER_PATTERNS.md:184-195`).
+
+**Weaknesses:**  
+- “Title area appropriate” appears repeatedly without defining ranges, leaving analysts to guess what fits small vs medium schemes (`FILTER_PATTERNS.md:156-195`).  
+- Does not tie to ready-made presets like “Vacant land in built-up areas” (#9) or “Land without planning” (#59/#60) that already embody these filters (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:205-214` and `671-696`).  
+- Omits constraint guidance (flood zones, allocations) that often kill deals at this stage.
+
+**Suggested Improvements:**  
+- Add decision trees for <0.5 acre, 0.5-2 acre, and 2-10 acre opportunities with explicit area/coverage ranges.  
+- Cross-link to relevant presets for each sub-pattern so an agent can immediately load a starting filter.  
+- Include a “red flag” list (e.g., SHLAA negative, Conservation Area) to avoid spending time on highly constrained plots.
+
+**Your Usage:** Only as a brainstorming aid; I would still build my own filter stack from presets because the quantitative guardrails are missing.
+
+---
+
+## Pattern 4: Low Capital Entry Strategies
+
+**Clarity:** Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Limited Use  
+
+**Strengths:**  
+- Differentiates between direct purchase, options, and derelict turnaround so investors can match structure to liquidity (`FILTER_PATTERNS.md:202-242`).
+
+**Weaknesses:**  
+- Sub-£200k strategy assumes on-market listings and ignores the scarcity of viable listings at that level in target areas (`FILTER_PATTERNS.md:202-214`).  
+- No mention of ready presets like “Homes to HMO” (#19) or “Older houses with outdoor space” (#69) that cater to sweat-equity entry (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:205-222` and `783-800`).  
+- Option agreement guidance lacks specific motivation signals and legal workflow references.
+
+**Suggested Improvements:**  
+- Provide geographic notes (e.g., focus on lower-value authorities such as Hull, Stoke) and layering tips (auction results, probate).  
+- Link each sub-pattern to the most relevant preset(s) so low-capital users don’t start from scratch.  
+- Add worked examples showing cash required for option deposit, planning spend, and exit.
+
+**Your Usage:** Rarely—most low-cap opportunities I pursue use preset-driven niche filters rather than hard price caps.
+
+---
+
+## Pattern 5: High-Density/Intensification Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Emphasizes PTAL and existing approvals, which are genuine accelerators in London intensification (`FILTER_PATTERNS.md:248-274`).  
+- Mentions strategic allocations as a route to policy-backed uplift (`FILTER_PATTERNS.md:276-288`).
+
+**Weaknesses:**  
+- “Local policy manual research” is vague and provides no map sources (Tall Building SPD, OAPF) so a new analyst cannot action it (`FILTER_PATTERNS.md:252-258`).  
+- Fails to cite presets like “Large sites with planning 10-100 units” (#63) that already vet schemes for height approvals (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:721-730`).  
+- No sensitivity to Section 106/CIL impacts on viability.
+
+**Suggested Improvements:**  
+- Embed references to policy datasets (London Plan tall building maps, ONS density stats) and show how to import them into SearchLand.  
+- Provide a sample viability stress test (plot ratio, net:gross conversion).  
+- Add tags to indicate which sub-pattern fits Round 3 (structural/creative) so agents can reach for it quickly.
+
+**Your Usage:** Yes for London/metros, but I would need my own policy overlays and viability calculator.
+
+---
+
+## Pattern 6: Airspace Development Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Calls out flat roofs and height headroom, which align with SearchLand’s dedicated airspace presets (#22-#25) (`FILTER_PATTERNS.md:294-320`).  
+- Acknowledges structural and freeholder negotiation risks.
+
+**Weaknesses:**  
+- Ignores valuable preset differentiators such as “pre-1990 build” and “unbroken freehold” that materially simplify deals (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:229-256`).  
+- Does not outline leasehold enfranchisement or rooftop rights acquisition workflows, so the reader cannot judge complexity.
+
+**Suggested Improvements:**  
+- Add sub-patterns mirroring presets #24/#25 (pre-1990 blocks, unbroken titles) with filter criteria spelled out.  
+- Include a checklist for leaseholder consultation, Section 5 notices, and structural surveys.  
+- Provide output metrics (number of new units achievable per m² of existing roof).
+
+**Your Usage:** With amendments; I rely on the preset filters and a standard legal playbook that are currently omitted.
+
+---
+
+## Pattern 7: Permitted Development (PDR) Strategies
+
+**Clarity:** Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Details Class MA, Q, G, and infill with specific eligibility criteria and referenced presets (`FILTER_PATTERNS.md:326-445`).  
+- Includes profit-calculation logic for Class MA, which is rare in the rest of the document.
+
+**Weaknesses:**  
+- Omits Class A and Class ZA presets despite their presence in the raw list (#30 and #33), leaving obvious PDR routes undocumented (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:300-389`).  
+- Does not flag Article 4 withdrawal areas beyond a passing mention, even though that is the main practical blocker for MA/G.  
+- No template for prior-approval timelines or typical consultant costs.
+
+**Suggested Improvements:**  
+- Add patterns for Class A extensions (garden depth, ridge lines) and Class ZA knock-down/rebuild to cover the full preset family.  
+- Provide a matrix of Article 4 boroughs/districts and suggest fallback strategies where PDR is withdrawn.  
+- Include a financial summary (fees, build cost per sq m, resale assumptions) per PDR class.
+
+**Your Usage:** Yes—after supplementing with Article 4 data and the missing PDR classes.
+
+---
+
+## Pattern 8: Regulation-Driven Opportunities
+
+**Clarity:** Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Highly Useful  
+
+**Strengths:**  
+- Presents strong motivation logic for expired HMO licences, lease expiries, and EPC compliance, each with supporting presets (`FILTER_PATTERNS.md:451-607`).  
+- Provides detailed timelines for lease expiries, helping cadence outreach (`FILTER_PATTERNS.md:497-543`).
+
+**Weaknesses:**  
+- Leaves out other regulation-driven presets such as “Homes to HMO” (#19) and “Single flats with expiring leases” (#78) that also hinge on legal deadlines (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:205-214` and `893-901`).  
+- EPC section is very broad and risks unworkable result volumes without layering (ownership type, geography) (`FILTER_PATTERNS.md:546-574`).  
+- No talk track for compliance-oriented approaches (help owners refurbish vs buy).
+
+**Suggested Improvements:**  
+- Expand the section to include leasehold reversion plays and Article 4-safe HMO conversions with explicit preset references.  
+- Recommend pairing EPC triggers with ownership size (e.g., companies with >30 titles) to focus on likely sellers (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:401-408`).  
+- Provide outreach scripts/value propositions tailored to each regulation scenario.
+
+**Your Usage:** Absolutely; this is the richest source of motivated stock once the missing sub-patterns are added.
+
+---
+
+## Pattern 9: Green Belt Workarounds
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Explains “previously developed land” logic using hardstanding percentage and proximity to built-up areas (`FILTER_PATTERNS.md:610-661`).  
+- Notes edge-of-settlement promotion with SHLAA gaps (`FILTER_PATTERNS.md:664-726`).
+
+**Weaknesses:**  
+- Does not mention other preset options like Green Belt solar (#45) or storage uses (#57) that exploit different policy carve-outs (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:515-658`).  
+- Missing a reminder about recent NPPF/PF revisions (e.g., “Grey Belt” consultation outcomes) that affect viability.  
+- No discussion of evidencing “previously developed land” (historic aerials, OS maps).
+
+**Suggested Improvements:**  
+- Add sub-patterns for renewable exemptions (solar/battery) and commercial uses (storage) to match presets #45 and #57.  
+- Include a data checklist (historic imagery, planning history) to defend “grey belt” claims at committee.  
+- Highlight councils actively reviewing Green Belt boundaries so agents know where to spend time.
+
+**Your Usage:** Yes, though I would fold in renewable/storage plays to make the category complete.
+
+---
+
+## Pattern 10: Renewable Energy Strategies
+
+**Clarity:** Clear  
+**Completeness:** Somewhat Complete  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Thoroughly documents solar ground-mount and industrial rooftop criteria including substations, grades, and ROI models (`FILTER_PATTERNS.md:732-852`).  
+- Adds battery/hydrogen/wind sub-patterns with setbacks and capital needs (`FILTER_PATTERNS.md:853-955`).
+
+**Weaknesses:**  
+- No coverage of EV-charging or bioenergy presets (#54, #52) even though they share similar land requirements (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:609-656`).  
+- Lacks guidance on grid-capacity vetting (G99 queue, DNO engagement) beyond the “green substation” filter.  
+- No mention of community benefits or planning sensitivities (glint/glare, heritage).
+
+**Suggested Improvements:**  
+- Add EV charging/bioenergy sub-patterns referencing presets #54/#52 to diversify revenue models.  
+- Include a workflow for pre-consulting the DNO and budgeting grid-upgrade deposits.  
+- Provide a policy summary (NPS EN-3 update, local renewable allocations) to support applications.
+
+**Your Usage:** Yes for energy clients, with added grid diligence steps.
+
+---
+
+## Pattern 11: Strategic Land Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Highlights emerging allocations with no planning and large employment allocations (`FILTER_PATTERNS.md:960-1053`).  
+- Provides option-cost guidance (£10k-£50k) which helps scoping.
+
+**Weaknesses:**  
+- Ignores other strategic presets (edge-of-settlement #13/#18, unallocated no SHLAA #85/#86) that broaden the funnel (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:205-222` and `845-857`).  
+- No instructions on Local Plan timelines, Regulation 18/19 stages, or promotion agreement structuring.  
+- Doesn’t address infrastructure obligations (spine roads, utilities) that can kill smaller operators.
+
+**Suggested Improvements:**  
+- Add sub-patterns for SHLAA omissions and legacy estates to cover all 8 relevant presets.  
+- Provide a Local Plan calendar template and engagement workflow (Reg18 reps, Reg19 objections).  
+- Include indicative infrastructure cost ranges so analysts can assess capital appetite early.
+
+**Your Usage:** Yes for land-promotion briefs, but I need the missing SHLAA/edge filters and process notes.
+
+---
+
+## Pattern 12: Commercial Traffic-Dependent Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Uses quantifiable footfall/vehicle-count thresholds tied to branded presets (#27, #46, #54, #58, #72) (`FILTER_PATTERNS.md:1059-1170`).  
+- Pattern C acknowledges niche sectors like padel courts and care homes with key dimensions given (`FILTER_PATTERNS.md:1173-1223`).
+
+**Weaknesses:**  
+- Treats “niche markets” as a catch-all without distinguishing data sources or buyer profiles, which dilutes focus (`FILTER_PATTERNS.md:1173-1221`).  
+- Lacks cost/yield benchmarks for EV, drive-thru, or retail to help prioritise leads.  
+- No mention of competition filters (e.g., radius to nearest EV charger is available in presets #54/#84 but absent in the write-up).
+
+**Suggested Improvements:**  
+- Break Pattern C into separate subsections (Padel, Care, Data Centre retail) with outcome metrics and preset references.  
+- Add ROI snippets (expected rent per sq ft, cap rates) for each use.  
+- Include “competition” filter guidance (distance to existing chargers/QSR) to raise conversion odds.
+
+**Your Usage:** Yes for quick-service and EV work, but I would spin out each niche into its own playbook.
+
+---
+
+## Pattern 13: Time/Information Arbitrage Strategies
+
+**Clarity:** Somewhat Clear  
+**Completeness:** Missing Details  
+**Usefulness:** Useful  
+
+**Strengths:**  
+- Provides detailed rationale and implementation requirements (exports, diffing, alerts) for acting on daily SearchLand refreshes (`FILTER_PATTERNS.md:1281-1396`).  
+- Includes an illustrative deal flow showing how the arbitrage converts into cash within days (`FILTER_PATTERNS.md:1424-1444`).
+
+**Weaknesses:**  
+- Relies entirely on external automation without linking to specific SearchLand filters that feed the exports, so newcomers might not know where to start.  
+- Omits compliance considerations (GDPR when contacting owners the same day, Companies House spam rules).  
+- Doesn’t prioritise which arbitrage events matter most (planning approval vs allocation vs lease expiry), so resources may be spread thin.
+
+**Suggested Improvements:**  
+- Provide ready-to-run export templates referencing earlier patterns (e.g., Pattern 8B lease-expiry filters) to close the loop.  
+- Rank the sub-patterns by margin/volume and suggest staffing per trigger.  
+- Add legal guidance on contact cadence and script approval.
+
+**Your Usage:** Yes, but only once a monitoring stack (SearchLand API + CRM + dialer) is fully documented.
+
+---
+
+## PART 2: NEW PATTERNS PROPOSED
+
+## NEW PATTERN: Nutrient Neutrality Offset Banking
+
+**Category:** Regulation-Driven / Environmental Mitigation  
+
+**Strategic Rationale:** LPAs inside Solent, Norfolk, and Tees catchments need off-site nutrient credits before granting resi permissions. Buying or optioning Grade 3b/4 cereal land in the designated zones lets you sell offset capacity to housebuilders who are otherwise stuck.  
+
+**Key Filters:**  
+1. Ownership: Freehold, private/company (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:438-447`).  
+2. Site size: >80,000 sq m (enough for meaningful mitigation) (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:443-444`).  
+3. Habitat: Cereal crops (high phosphate output to convert) (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:445-446`).  
+4. Constraint: Nutrient neutrality area = TRUE.  
+5. Optional: Within 20 km of growth settlements to ease transactional logistics.
+
+**Sourced From:** Preset #39 plus current DEFRA nutrient mitigation policy.
+
+**Use Cases:** Pair with stalled residential schemes needing credits; structure long leases with developers that fund the rewilding works.
+
+**Expected Results:** Low capital (options/leases), £10k-£40k per dwelling equivalent in credit sales, timelines 6-18 months.
+
+---
+
+## NEW PATTERN: Digital Infrastructure Campus Assembly
+
+**Category:** Development Opportunity / Specialist Infrastructure  
+
+**Strategic Rationale:** Data centres and AI training campuses require large, flat B2/B8 plots within 2 km of a high-capacity substation. These are scarce, so assembling suitable titles and securing grid queue positions creates outsized land value.  
+
+**Key Filters:**  
+1. Site size: >60,000 sq m (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:600-603`).  
+2. Terrain: >99% flat, >70% unconstrained (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:604-605`).  
+3. Land use: B2 or B8.  
+4. Power: Within 2,000 m of substation, ideally “green” capacity.  
+5. Ownership: Corporate/private (fast negotiation).  
+
+**Sourced From:** Preset #53, plus demand surge from hyperscalers.
+
+**Use Cases:** Option land and pre-let to cloud providers; or package for speculative colocation developers.
+
+**Expected Results:** Site premiums of £1m-£2m per acre in hot markets; 18-36 month promotion cycles.
+
+---
+
+## NEW PATTERN: Community Asset Repositioning
+
+**Category:** Development Opportunity / Social Infrastructure  
+
+**Strategic Rationale:** Under-utilised institutional land (schools, community halls, care homes) near hospitals and town centres can be recycled into senior living, health hubs, or residential through JV with councils/trustees. Presets #28 and #37/#62 already isolate these titles.  
+
+**Key Filters:**  
+1. Use class: F1/F2/C2/E(f) with >40% hardstanding (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:419-427` and `706-717`).  
+2. Size: 650-10,300 sq m (enough for conversion without complex estate regeneration).  
+3. Proximity: Within 500 m of hospitals or major bus routes for care demand (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:324-330`).  
+4. Ownership: Private trusts or non-profit (no corporate restrictions).  
+5. Option: No recent planning applications (lightly contested).  
+
+**Sourced From:** Presets #28, #37, #62 plus local authority disposal pipelines.
+
+**Use Cases:** Forward-fund extra care, co-locate medical hubs, secure community asset transfers before marketing.
+
+**Expected Results:** Deal sizes £2m-£10m GDV; planning timelines 12-24 months; higher success where councils target health provision.
+
+---
+
+## NEW PATTERN: Brand Covenant Reposition (QSR & Retail)
+
+**Category:** Motivated Seller / Commercial Traffic  
+
+**Strategic Rationale:** Franchise networks regularly rebalance estates; brand-specific datasets (KFC #50, McDonald’s #64) plus lease-expiry presets allow targeted sale-leaseback or redevelopment plays when corporate covenants vacate.  
+
+**Key Filters:**  
+1. Company/tenant name contains target brand (KFC, McDonald’s etc.) (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:562-571` and `732-738`).  
+2. Lease end date within 18 months (combine with Pattern 8B logic).  
+3. Footfall >2,000/day or vehicle count >10,000/day to ensure re-letting viability (`FILTER_PATTERNS.md:1059-1170`).  
+4. Plot size 1,000-20,000 sq m for drive-thru or infill alternatives.  
+5. Ownership: corporate freehold or franchise SPV.
+
+**Sourced From:** Presets #50, #64, #46, #58; industry knowledge of sale-leaseback spreads.
+
+**Use Cases:** Negotiate reverse premium to take back underperforming stores, redevelop to mixed-use, or re-let to competing brands.
+
+**Expected Results:** £0.5m-£5m deal ticket; 5-10% yield arbitrage on covenant swaps; 6-18 month execution.
+
+---
+
+## NEW PATTERN: Micro-Infill Service Yard Conversions
+
+**Category:** Low-Capital / Permitted Development  
+
+**Strategic Rationale:** Small garages, car parks, and MOT yards contiguous to housing (Presets #29 and #42) are ideal for single-plot infill, new-build mews, or EV charging clusters with minimal land cost.  
+
+**Key Filters:**  
+1. Use class: Car park or B2/E(g)(iii) garage (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:333-339` and `465-474`).  
+2. Size: 300-4,000 sq m (sweet spot for 2-10 units).  
+3. Proximity: Within 20 m of residential (ready utilities) (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:472-474`).  
+4. Planning history: Proposal keywords “garage/MOT/tyre” for conversion precedent (`SearchlandContext/PresetFiltersBuiltIntoSearchLand.md:476-479`).  
+5. Ownership: Private/company (one title).  
+
+**Sourced From:** Presets #29, #42 and established mews-developer strategies.
+
+**Use Cases:** Low-capital option or overage agreements, Class G or F carve-outs, EV micro depots.
+
+**Expected Results:** 2-8 units per site, £200k-£1m GDV, 9-18 month timeline, capital input £50k-£200k.
+
+---
+
+## PART 3: STRUCTURE & USABILITY
+
+- **Add a pattern index/table with tags:** Right now analysts scroll 1,400+ lines to find relevant filters; a matrix tagging each pattern by capital, motivation, planning stage, and rounds would cut lookup time (no equivalent exists today beyond the short budget/risk bullets at `FILTER_PATTERNS.md:1231-1250`).  
+- **Embed preset references in every pattern:** Only some sections cite preset numbers; many (Patterns 1,3,5,6,11) leave you guessing which raw filters to load. Add “Starting presets” lists for every sub-pattern to honour the instruction to reuse all 86 presets.  
+- **Use consistent template blocks:** Some patterns include Strengths/Weaknesses (e.g., 10A) while others are pure bullet lists; align them so agents know where to find capital requirements, risk, workflow.  
+- **Introduce cross-links to LEARNINGS_DATABASE and anti-patterns:** Pattern 8 references LEARNINGS once (`FILTER_PATTERNS.md:491-493`), but others don’t signpost where to read caveats; add callouts pointing to relevant Learnings entries to stop repeated mistakes.  
+- **Decision-tree overlays per round:** Provide a “Round 2/3/4/5 quick pick” chart mapping patterns to collaborative stages; currently we only see an abstract combination example at `FILTER_PATTERNS.md:1256-1274`.
+
+---
+
+## PART 4: PATTERN RANKING
+
+| Rank | Pattern # | Pattern Name | Why This Ranking? |
+|------|-----------|--------------|-------------------|
+| 1 | 8 | Regulation-Driven Opportunities | Strongest motivation data, multiple presets, clear timelines (`FILTER_PATTERNS.md:451-607`). |
+| 2 | 2 | Motivated Seller Strategies | Broad mix of seller distress signals including insolvency (`FILTER_PATTERNS.md:60-150`). |
+| 3 | 13 | Time/Information Arbitrage | Converts SearchLand’s daily refresh into unique deal flow; needs tooling but high ROI (`FILTER_PATTERNS.md:1281-1444`). |
+| 4 | 7 | Permitted Development Strategies | Actionable, policy-backed, with quantified criteria (`FILTER_PATTERNS.md:326-445`). |
+| 5 | 10 | Renewable Energy Strategies | Deep detail and capital guidance; strong for infrastructure mandates (`FILTER_PATTERNS.md:732-955`). |
+| 6 | 9 | Green Belt Workarounds | Niche but valuable guidance on previously developed land exceptions (`FILTER_PATTERNS.md:610-726`). |
+| 7 | 12 | Commercial Traffic Strategies | Quantified demand metrics yet needs competitive context (`FILTER_PATTERNS.md:1059-1223`). |
+| 8 | 3 | Development Opportunity Strategies | Useful heuristics but lacks preset mapping and thresholds (`FILTER_PATTERNS.md:156-195`). |
+| 9 | 5 | High-Density/Intensification | Highlights PTAL but thin on execution detail (`FILTER_PATTERNS.md:248-288`). |
+|10 | 11 | Strategic Land Promotion | Describes only part of the preset set and omits plan process steps (`FILTER_PATTERNS.md:960-1053`). |
+|11 | 6 | Airspace Development | Captures basics but misses key preset variants and legal workflow (`FILTER_PATTERNS.md:294-320`). |
+|12 | 4 | Low Capital Entry | Relies on scarce on-market deals; limited presets referenced (`FILTER_PATTERNS.md:202-242`). |
+|13 | 1 | Expired/Stalled Planning | Too vague on filters/status logic to implement reliably (`FILTER_PATTERNS.md:29-54`). |
+
+**Real-World Test:** For “MixedUse-8Storey-2M profit on £200k capital,” I’d combine Pattern 5 (tall building zones) to target policy-backed height (`FILTER_PATTERNS.md:248-274`), Pattern 6 (airspace) for adding storeys to existing low-rise stock (`FILTER_PATTERNS.md:294-320`), and Pattern 2D (liquidation) to cap acquisition price (`FILTER_PATTERNS.md:100-150`). Overlay Pattern 13B’s monitoring so we pounce on fresh consents matching those filters (`FILTER_PATTERNS.md:1303-1319`).
+
+---
+
+## PART 5: WORKFLOW INTEGRATION
+
+- **Round-to-pattern mapping:** Create a table showing which patterns apply to each collaborative round (Regulation → Pattern 8 & Nutrient Offset; Structural → Patterns 5/6; Behavioural → Patterns 2/13; Challenge → Patterns 9/11). The Strategy Selection Guide is capital/risk-based, not round-based (`FILTER_PATTERNS.md:1229-1250`).  
+- **Round-specific prompts:** For each round, add “If/Then” prompts (e.g., “If lease expires <12 months and footfall >2k → use 8B + 12A”) so agents don’t improvise during live sessions.  
+- **Shared monitoring checklist:** Pattern 13’s automation steps should be summarized in a reusable “Round 5 readiness” checklist (export IDs, alert cadence) to ensure every agent sees the same alerts (`FILTER_PATTERNS.md:1374-1396`).  
+- **Learning hooks:** Encourage agents to feed discoveries back into LEARNINGS_DATABASE after each round, linking entries by pattern ID to keep institutional memory fresh.  
+- **Challenge Round playbook:** Provide adversarial questions per pattern (e.g., “What if Article 4 removes MA?”) so Round 5 explicitly pressure-tests the chosen filters.
+
+---
+
+## SUMMARY
+
+**Top 3 Improvements Needed:**  
+1. Map every pattern/sub-pattern to concrete SearchLand presets and add missing presets (Class ZA, SHLAA gaps, nutrient neutrality).  
+2. Introduce structural navigation aids—pattern index, tags, and round-based decision trees—to reduce lookup time and align with collaborative workflow.  
+3. Expand motivation/regulation coverage (leasehold reversions, nutrient credits, brand covenants) to capture uncovered strategies from the 86 presets.
+
+**Confidence in Current Patterns:** Medium — several are actionable, but missing presets and vague filters risk misapplication.
+
+**Would You Use This Document?** With changes — I need the preset mapping and round guides before relying on it in live searches.
+
+**Overall Grade:** B-

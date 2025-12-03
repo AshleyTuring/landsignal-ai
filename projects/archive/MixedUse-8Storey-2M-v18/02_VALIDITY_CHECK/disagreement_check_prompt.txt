@@ -1,0 +1,48 @@
+# Disagreement Detection Task
+
+Analyze the 4 critique files and identify TECHNICAL AND BUSINESS CASE DISAGREEMENTS.
+
+## What Counts as Disagreement
+- LLM A says filter exists, LLM B says it doesn't (factual dispute)
+- LLM A says "acres", LLM B says "sqft" for same filter (unit dispute)
+- LLM A says VALID syntax, LLM B says INVALID syntax (technical dispute)
+- LLM A says £200k is sufficient, LLM B says it's not (capital feasibility dispute)
+- LLM A says ROI achievable, LLM B says unrealistic (business case dispute)
+- LLM A says deal structure works, LLM B says legally/financially flawed (implementation dispute)
+
+## What Does NOT Count
+- Priority rankings (A ranks #1, B ranks #3 - both valid)
+- Strategic preferences (speed vs certainty - philosophical)
+- Implementation styles (different but both correct)
+
+## Special Note on Precedent-Based Approaches
+For approaches replicating user-provided planning applications:
+- Business case is AUTO-VALID (user requested it)
+- Focus validation on: Do filters actually replicate the precedent correctly?
+- Multiple valid filter implementations are expected and acceptable
+
+## Output Format
+If disagreements exist:
+
+DISAGREEMENTS_FOUND: YES
+
+### Disagreement #1
+**Type:** [Filter existence | Units | Syntax | Capital feasibility | ROI | Deal structure]
+**Approaches:** [Which approaches affected]
+**Positions:**
+- LLM A: [Position]
+- LLM B: [Position]
+- LLM C: [Position]
+- LLM D: [Position]
+
+**Impact:** [Critical | Minor]
+**Requires iteration:** [YES | NO]
+
+---
+
+If no disagreements:
+
+DISAGREEMENTS_FOUND: NO
+
+All LLMs agree on technical and business case facts. Strategic differences are preserved.
+

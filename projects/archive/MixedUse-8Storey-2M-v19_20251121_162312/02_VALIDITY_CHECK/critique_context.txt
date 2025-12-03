@@ -1,0 +1,2506 @@
+# Technical & Business Case Validation Task
+
+## Your Role
+Review ALL approaches below for **TECHNICAL AND BUSINESS CASE VALIDITY** (not strategic preference).
+
+## What to Check
+1. **Filter Existence:** Do filters exist in AvailableFiltersInSearchLand_ACTUAL.md?
+2. **Unit Correctness:** Are units correct (acres vs sqft, metres vs floors)?
+3. **Syntax Validity:** Is SearchLand AI syntax correct?
+4. **Logical Coherence:** Do filters match stated strategy?
+5. **Capital Feasibility:** Does approach meet budget requirements (+15% over is allowed)?
+6. **ROI Calculations:** Are profit targets achievable with proposed strategy?
+7. **Implementation Viability:** Can the approach be executed as described?
+8. **Deal Structure:** Is the proposed deal structure legally/financially sound?
+
+## What NOT to Check
+- Strategic preferences (all valid approaches can coexist)
+- Priority rankings (your #1 may be another's #5)
+- Implementation style (different LLMs have different styles)
+
+## Output Format
+For each approach, provide:
+
+### [LLM Name] - Approach [Letter]: [Status]
+**Status:** VALID | CONDITIONAL | INVALID
+**Reasoning:** [Brief explanation]
+
+**Technical Issues (if any):**
+- [List specific problems]
+
+**Suggested Fixes (if CONDITIONAL):**
+- [List corrections]
+
+**Strategic Notes (optional):**
+- [Any strategic observations - but NOT validity concerns]
+
+---
+
+
+## ALL APPROACHES TO REVIEW (Original Generation)
+
+### Claude_Approaches
+
+---
+
+## Summary & Comparison
+
+| Criterion | **Approach A: Precedent-Matched Stalled Planning** | **Approach B: Airspace Rights** | **Approach C: Liquidation Distressed Assets** |
+|-----------|------------------------------------------|--------------------------|--------------------------------------|
+| **Strategic Pattern** | Expired Planning + High-Density | Airspace + Low Capital Entry | Motivated Seller + Regulation-Driven |
+| **Capital Required** | £190k-£255k ⚠️ *Slightly over* | £88k-£170k ✅ **Best** | £180k-£357k ⚠️ *Variable* |
+| **Expected Results** | 15-40 properties | 20-50 properties | 10-30 properties ⚠️ **Rarest** |
+| **Profit Potential** | £1.59M-£2.64M | £1.37M-£2.42M | £1.8M-£2.87M ✅ **Highest** |
+| **Risk Level** | Medium | Medium-High | High ⚠️ |
+| **Timeline** | 9-18 months | 12-18 months | 15-24 months (longest) |
+| **Seller Motivation** | Moderate (on-market, stalled) | Moderate (long hold, passive) | **Very Strong** (forced sale) |
+| **Planning Risk** | Medium (revival of stalled app) | Medium-High (airspace addition) | Medium (brownfield redevelopment) |
+| **Precedent Match** | ✅ **Direct match** | Indirect (intensification outcome similar) | Indirect (commercial→mixed-use) |
+| **Execution Complexity** | Low-Medium | Medium-High (structural, freeholder negotiation) | **High** (liquidation, demolition, contamination) |
+
+---
+
+## Recommendations
+
+### **Best Overall: Approach B (Airspace Rights)**
+**Reasoning:**
+- ✅ **Within budget** (£88k-£170k vs £200k cap)
+- ✅ **Capital efficient** (lowest upfront investment, highest return on capital)
+- ✅ **Moderate risk** (lower than liquidation, structural survey de-risks)
+- ✅ **Achieves similar outcome** to Slough precedent (8-storey intensification)
+- ✅ **Established model** (SearchLand Presets #22-25 validate this strategy)
+
+**Ideal for:** Investors with limited capital who want to maximize return and are comfortable with structural/freeholder negotiation complexity.
+
+---
+
+### **Most Direct Precedent Match: Approach A (Stalled Planning)**
+**Reasoning:**
+- ✅ **Directly targets** sites with mixed-use, multi-storey planning history
+- ✅ **Strongest planning argument** (revival of similar scheme + Slough precedent)
+- ✅ **Lower execution complexity** than airspace or liquidation
+- ⚠️ **Slightly over budget** (£190k-£255k) - need to negotiate acquisitions <£150k
+
+**Ideal for:** Buyers who prioritize planning certainty and have access to £250k capital (or can negotiate down).
+
+---
+
+### **Highest Profit Potential: Approach C (Liquidation Assets)**
+**Reasoning:**
+- ✅ **Strongest seller motivation** (forced sale = maximum negotiation leverage)
+- ✅ **Below-market pricing** (10-30% discount typical)
+- ✅ **Highest profit** (£1.8M-£2.87M due to distressed acquisition)
+- ⚠️ **Highest risk** (contamination, demolition costs, legal complexity)
+- ⚠️ **Variable capital** (£180k-£357k depending on demolition costs)
+
+**Ideal for:** Experienced developers comfortable with distressed assets, environmental risk, and fast decision-making.
+
+---
+
+## Next Steps
+
+1. **Test all three approaches empirically** (SearchLand parallel testing)
+2. **Review actual results** (how many properties returned per filter?)
+3. **Screen for LPAs with tall building policy** (London, Manchester, Birmingham, Leeds priority)
+4. **Assess structural/contamination risk** (Approaches B and C require specialist surveys)
+5. **Prioritize based on your risk tolerance:**
+   - **Low risk, capital-constrained:** Approach B (Airspace)
+   - **Moderate risk, planning-focused:** Approach A (Stalled Planning)
+   - **High risk, profit-maximizing:** Approach C (Liquidation)
+
+---
+
+**Strategic Diversity Achieved:**
+- ✅ **Precedent-based** (Approach A)
+- ✅ **Capital-efficient structure** (Approach B - airspace rights)
+- ✅ **Motivation-driven** (Approach C - liquidation forced sale)
+- ✅ **Regulation-driven** (Approach C - liquidation as regulatory trigger)
+- ✅ **Different acquisition methods** (on-market, airspace negotiation, distressed sale)
+
+All approaches target the **£2M profit goal within £200k capital** constraint, with varying risk/return profiles for empirical testing.
+
+---
+
+### Codex_Approaches
+
+### Approach A: Crossrail Mixed-Use Precedents
+**Strategic Pattern:** Pattern 5 – High-Density/Intensification (transport-led towers with retail podiums)  
+**Capital Required:** £200k (Option premium £150k on <£2M guide + planning/technical studies £50k)  
+**Expected Results:** 18-30 titles along Elizabeth Line / GWML towns
+
+**SearchLand AI Prompt:**
+```
+1. Title area (acres): is greater than 0.25 AND less than 1.20
+2. Proposal: contains "mixed use"
+3. Max number of dwellings applied for: is greater than or equal to 60
+4. Max number of building floors on title: is greater than or equal to 6
+5. Applications in the last 5 years: is greater than or equal to 1
+6. Distance to nearest Train Station (m): is less than or equal to 600
+7. Percentage of title covered by hard standings: is greater than or equal to 20
+8. Planning constraints: does not contain Green Belt land
+9. Sales listing currently on the market: is equal to Yes
+10. Sales listing price: is less than £2,000,000
+```
+
+**Rationale:** Mirrors the approved Slough brief by isolating sites that already secured tall mixed-use permissions near fast rail. A <£2M land ticket keeps a 10% option premium within the £200k cap while 60+ dwellings at £35k margin/unit sustain the £2M profit target through a build-to-sell exit.
+
+**Strengths:**  
+- On-market, consented schemes shorten delivery and de-risk planning.  
+- Verified tall-building precedents around Crossrail/SWR corridors strengthen committee arguments.  
+- Price ceiling aligns deposit + fees with available capital.
+
+**Limitations:**  
+- Relies on public listings; strong schemes sold off-market are missed.  
+- Requires careful diligence on Section 106/CIL inherited from prior consent.  
+- Tight transport radius biases toward Southern England stock.
+
+**Implementation Strategy:** Export shortlist, underwrite GDV/cost inflation quickly, then table conditional offers with 6–12 month completion so the £150k option deposit and £50k consultant budget re-optimize layouts (e.g., add co-working retail) before funding construction debt/equity.
+
+---
+
+### Approach B: High Street Podium Intensification
+**Strategic Pattern:** Pattern 3 – Development Opportunity (underbuilt urban retail for vertical expansion)  
+**Capital Required:** £190k (Heads of terms/option £120k + design & rights of light envelope studies £70k)  
+**Expected Results:** 25-40 parades in commuter towns and outer London borough centres
+
+**SearchLand AI Prompt:**
+```
+1. Use class: is one of E, E(a), E(b)
+2. Max number of building floors on title: is less than or equal to 3
+3. Title area (acres): is greater than 0.15 AND less than 0.70
+4. Percentage of title covered by hard standings: is greater than or equal to 40
+5. Distance to nearest Train Station (m): is less than or equal to 400
+6. Distance to nearest Bus Stop (m): is less than or equal to 150
+7. Percentage of title covered by Green Belt land: is less than or equal to 10
+8. Sales listing currently on the market: is equal to Yes
+9. Sales listing price: is less than £1,800,000
+10. Latest sold date: is before 01/01/2016
+```
+
+**Rationale:** The Slough approval showed planners accept eight-storey massing when ground-floor E-class uses are retained. This filter grabs long-held, low-rise podiums beside strong public transport, where topping up to 6–8 residential storeys can generate ~70 units @ £30k margin/unit = £2.1M, while site control only needs a sub-£1.8M capital value (≤£180k option plus fees).
+
+**Strengths:**  
+- Targets owners fatigued after 8+ year holds yet still active on-market.  
+- Hardstanding-heavy plots simplify construction phasing over trading retail.  
+- Transport proximity underpins high-density viability and lender comfort.
+
+**Limitations:**  
+- Requires intricate construction sequencing to keep retail trading.  
+- Rights-of-light and daylight objections likely; consultant spend must be staged.  
+- PTAL proxy outside London replaced by distance filters, so manual sense-checks needed.
+
+**Implementation Strategy:** Prioritize parades inside Levelling-Up town centres (Slough, Reading, Watford). Secure short-dated option, complete bulk/massing study (£40k) + vertical circulation concept (£30k), then pre-let flexible Class E at ground to evidence active frontage before submitting full application for air-rights build.
+
+---
+
+### Approach C: Stalled Mixed-Use Resubmissions
+**Strategic Pattern:** Pattern 1 – Expired/Stalled Planning (refresh older approvals with stronger viability case)  
+**Capital Required:** £200k (Resubmission + consultant team £60k, option premium £140k to re-engage owners)  
+**Expected Results:** 10-18 dormant approvals across Thames Valley, Midlands metros, and Scottish city cores
+
+**SearchLand AI Prompt:**
+```
+1. Proposal: contains "mixed use"
+2. Last application submitted: is before 01/01/2023
+3. Applications in the last 5 years: is less than or equal to 2
+4. Max number of dwellings applied for: is greater than or equal to 50
+5. Ownership type: is Company
+6. Title area (acres): is greater than 0.20 AND less than 1.00
+7. Percentage of title covered by hard standings: is greater than or equal to 25
+8. Distance to nearest Train Station (m): is less than or equal to 800
+9. Last updated by Land Registry date: is before 01/01/2024
+10. Planning constraints: does not contain Flood Zone 3
+```
+
+**Rationale:** Focuses on companies that secured sizeable mixed-use permissions like the Slough scheme but let them lapse post-2022. Re-running the design with current cost/ESG inputs typically gains extra sellable NIA, lifting residual value enough to capture circa £2M uplift while needing only an option deposit and a fresh consultant spend.
+
+**Strengths:**  
+- Existing design packs and studies shorten resubmission timeline.  
+- Company vendors tend to prefer certainty and are open to deferred completions.  
+- Transport-proximate, largely hardstanding sites align with policy favoring brownfield intensification.
+
+**Limitations:**  
+- Some lapsed schemes fail because of fundamental viability flaws; detailed cost audit essential.  
+- Land Registry updates lag, so additional diligence gridding may be required.  
+- Need credibility with planning authorities to be trusted with resubmission.
+
+**Implementation Strategy:** Map results against Slough/South-East precedent notes, call directors with a proposal to fund resubmission, pay £140k option premium for exclusivity, deploy £60k on architecture/viability refresh, then flip into JV or forward-fund sale once new consent secured.
+
+---
+
+Next steps: 1) Run each prompt in SearchLand and tag outputs by approach, 2) sanity-check pricing/height data via title PDFs, and 3) open discussions with shortlisted owners using the option-and-resubmit narrative aligned to the £200k capital plan.
+
+---
+
+### Gemini_Approaches
+
+Loaded cached credentials.
+## Approach A: Urban Intensification via Option Agreement
+
+**Strategic Pattern:** Pattern 5A (High-Density/Intensification) + Pattern 4B (Low Capital Entry Strategies)
+**Capital Required:** £200,000 (for option fee & planning costs)
+**Expected Results:** 10-50 properties
+
+**SearchLand AI Prompt (Copy-Paste Ready):**
+```
+1. Title area (acres): is greater than 0.25 AND less than 1.5
+2. Max building height on title (m): is less than 12
+3. Distance to nearest Train Station (m): is less than 800
+4. Use class: is one of "E - Commercial, Business and Service", "Car park", "Car/coach/commercial vehicle/taxi parking", "Unused land"
+5. Sales listing currently on the market: is equal to No
+6. Ownership type: is one of Company, Private owner
+7. Percentage of title covered by Green Belt land: is equal to 0
+8. NOT: Conservation Areas, Listed Buildings
+```
+
+**Rationale:**
+This approach directly targets properties similar to the 8-storey mixed-use precedent. The strategy is to find under-developed, low-rise properties in high-accessibility urban locations (proxied by train station distance, as PTAL is London-only) that have the potential for significant height and density uplift. By targeting off-market sites (Rule 5), the goal is to use a low-capital option agreement (Pattern 4B) to secure the land. The £200k capital is not for acquisition but to fund the option and the planning process to unlock the £2M profit. The precedent in Slough demonstrates that LPAs in such areas are amenable to high-density development, reducing planning risk. The height filter `<12m` targets sites with 1-3 storey buildings, offering maximum intensification potential, as per `LEARNINGS_DATABASE.md`.
+
+**Strengths:**
+- Directly leverages a successful planning precedent, reducing planning risk.
+- Low capital outlay for control of a high-value asset via an option agreement.
+- Targets off-market properties, avoiding competition and inflated prices.
+- High potential for value uplift by securing a valuable planning consent.
+- Clear development potential based on physical and location-based attributes.
+
+**Limitations:**
+- Success is heavily dependent on successful negotiation of an option agreement with the landowner.
+- Planning is never guaranteed, even with a strong precedent.
+- Requires significant expertise in planning and development to realize the value.
+- Landowners of well-located sites may already be aware of their development potential.
+- The process is long, typically 12-24 months to secure planning.
+
+**Implementation Strategy:**
+1.  Run the SearchLand query to identify a shortlist of 10-50 target properties.
+2.  Conduct desktop due diligence on the top 5-10 sites to verify constraints and ownership.
+3.  Approach the landowners directly with a well-researched proposal for an option agreement, contingent on securing planning permission for an 8-storey mixed-use scheme.
+4.  Negotiate and sign an option agreement, paying an option fee from the capital budget.
+5.  Assemble a professional team (architects, planning consultants) and submit a planning application.
+6.  Once planning is granted, either exercise the option and sell the site with consent to a major developer for a £2M+ profit, or sell the option itself.
+
+**Capital Breakdown:**
+- Option Fee (non-refundable): £75,000
+- Planning Application & Professional Fees (Architects, Consultants): £90,000
+- Legal Fees (Option & Planning): £20,000
+- Contingency: £15,000
+- **Total:** £200,000
+
+---
+
+## Approach B: Distressed Asset Acquisition (Forced Sale)
+
+**Strategic Pattern:** Pattern 2D (Liquidation/Administration Sales) + Pattern 4B (Low Capital Entry Strategies)
+**Capital Required:** £200,000 (for option fee & due diligence)
+**Expected Results:** 10-30 properties
+
+**SearchLand AI Prompt (Copy-Paste Ready):**
+```
+1. Ownership type: is equal to Company
+2. Company status: is one of Liquidation, In Administration
+3. Title area (acres): is greater than 0.5 AND less than 10
+4. Building on title is derelict: is equal to Yes
+5. Percentage of plot un-constrained: is greater than 70
+6. NOT: Green Belt land
+```
+
+**Rationale:**
+This approach uses a completely different, motivation-driven strategy. It leverages the "Company status" filter to find assets being sold by liquidators or administrators. As identified in `LEARNINGS_DATABASE.md`, this is a "VERY STRONG motivation signal" indicating a forced sale. The liquidator is legally obligated to sell and is motivated by speed and certainty, making them receptive to creative deals like option agreements. This strategy targets larger, potentially derelict sites (Rule 4) that have significant underlying value but are distressed. The £200k capital is used to secure the site and perform due diligence, with the aim of acquiring a valuable asset at a steep discount to achieve the £2M profit target upon securing planning and reselling.
+
+**Strengths:**
+- Targets highly motivated sellers with a legal obligation to dispose of assets.
+- Strong potential to acquire assets significantly below market value.
+- Reduced competition as many buyers are unable to handle distressed/complex assets.
+- The buyer has a strong negotiating position due to the seller's circumstances.
+- Can uncover unique, high-potential sites that are not openly marketed.
+
+**Limitations:**
+- The pool of properties in liquidation/administration is small and highly sought after.
+- Assets may have significant legal, structural, or contamination issues requiring costly due diligence.
+- Liquidators often prefer unconditional cash offers, so an option agreement must be compelling.
+- The process can be legally complex and require specialist advice.
+- The underlying asset may be undesirable, hence the company's failure.
+
+**Implementation Strategy:**
+1.  Run the SearchLand query to identify a shortlist of distressed assets.
+2.  Immediately contact the appointed liquidator/administrator for the most promising sites to register interest.
+3.  Move quickly to conduct initial due diligence to assess the viability and key risks of the asset.
+4.  Structure a compelling offer, potentially a short-term option or an exchange with a delayed completion, using a significant portion of the capital as a non-refundable deposit to demonstrate commitment.
+5.  Negotiate hard on price, leveraging the distressed nature of the sale.
+6.  Once control is secured, create a business plan to either flip the asset to a developer, or use the remaining capital to pursue a planning application to add value before selling.
+
+**Capital Breakdown:**
+- Exclusivity Deposit / Option Fee: £100,000
+- Legal & Due Diligence Fees (for complex asset): £50,000
+- Initial Feasibility & Planning Reports: £35,000
+- Contingency: £15,000
+- **Total:** £200,000
+
+---
+
+### Grok_Approaches
+
+### Approach A: Slough-Style Mixed-Use Intensification
+**Strategic Pattern:** High-Density/Intensification (Pattern 5A from FILTER_PATTERNS.md)  
+**Capital Required:** £150,000-£200,000  
+**Expected Results:** 20-40 properties
+
+**SearchLand AI Prompt:**
+```
+1. Proposal: contains "mixed-use" AND "storey"
+2. Max number of dwellings applied for: is greater than 20
+3. Last application submitted: is before 2022-01-01
+4. Applications in the last 5 years: is less than 3
+5. Building on title is inactive: is equal to Yes
+6. Title area (acres): is greater than 0.5 AND less than 2
+7. Distance to nearest Train Station (m): is less than 1000
+8. Percentage of title covered by Green Belt land: is equal to 0
+```
+
+**Rationale:**
+This approach targets properties with planning precedents similar to the Slough 8-storey mixed-use application, focusing on stalled high-density developments. By identifying sites with old mixed-use/storey proposals and minimal recent activity, we find opportunities where planning groundwork exists but projects stalled. The Slough precedent shows approval for 8-storey mixed-use (retail + residential), so we prioritize similar density (20+ dwellings) and accessibility (near train stations). This fits Pattern 5A's strategy of low-rise sites in high-accessibility areas suitable for intensification, with capital constraints met through option agreements or distressed purchases.
+
+**Strengths:**
+- Direct precedent matching to approved Slough scheme (8-storey mixed-use)
+- Planning derisked with existing proposals for high-density development
+- Low capital entry via option agreements (£10k-£50k deposits)
+- High profit potential from completing stalled projects (£2M target achievable with 8-10 storey additions)
+- Targets inactive buildings, indicating motivated sellers
+
+**Limitations:**
+- Limited to sites with existing planning history (may miss greenfield opportunities)
+- Geographic concentration around transport hubs (fewer results outside urban areas)
+- Requires planning expertise to revive stalled applications
+- Competition from developers already pursuing similar precedents
+
+**Implementation Strategy:**
+1. Run filters to identify 20-40 sites with stalled mixed-use planning near transport.
+2. Research planning history via local authority portals to confirm similarity to Slough approval.
+3. Approach owners with option proposals (£10k-£20k deposits) contingent on planning revival.
+4. Secure planning permission for 8+ storeys (6-12 months timeline).
+5. Sell to housebuilder or developer at planning stage for £2M+ profit.
+6. Monitor for fresh planning consents to time purchases advantageously.
+
+**Capital Breakdown:**
+- Option deposits: £10,000-£50,000
+- Planning application fees: £20,000-£40,000
+- Legal/due diligence: £10,000-£20,000
+- Contingency: £10,000-£20,000
+- **Total:** £150,000-£200,000
+
+### Approach B: Derelict Urban Turnaround
+**Strategic Pattern:** Low Capital Entry (Pattern 4C from FILTER_PATTERNS.md)  
+**Capital Required:** £100,000-£150,000  
+**Expected Results:** 15-35 properties
+
+**SearchLand AI Prompt:**
+```
+1. Building on title is derelict: is equal to Yes
+2. Sales listing price: is less than £150,000
+3. Title area (acres): is greater than 0.05 AND less than 0.25
+4. Distance to nearest Train Station (m): is less than 1000
+5. Tenure: is equal to Freehold
+6. Percentage of title covered by Conservation Areas: is equal to 0
+7. Percentage of title covered by Flood Zone 2: is equal to 0
+8. Percentage of title covered by Flood Zone 3: is equal to 0
+```
+
+**Rationale:**
+This completely different strategy from precedent-based approaches focuses on severely derelict properties in accessible urban locations, suitable for demolition and rebuild to mixed-use. Unlike the Slough-focused approach, this targets distressed assets with low acquisition costs, allowing rebuild to 8-storey mixed-use similar to the precedent but without relying on existing planning. Pattern 4C emphasizes derelict sites near transport for redevelopment, fitting the £200k capital limit through discounted pricing and phased construction. The profit target is achievable by buying derelict for £100k-£150k, rebuilding to £300k-£400k, and selling for £2M+.
+
+**Strengths:**
+- Very low acquisition costs due to derelict status (strong motivation signals)
+- No reliance on existing planning (flexible redevelopment to match Slough precedent)
+- High profit margins from distressed pricing to market value
+- Freehold tenure simplifies ownership and redevelopment
+- Transport proximity ensures viability for mixed-use (retail + residential)
+
+**Limitations:**
+- Derelict properties may have hidden structural issues requiring surveys (£5k-£15k)
+- Planning still required for 8-storey development (not guaranteed)
+- Limited to small plots (0.05-0.25 acres) constraining scale
+- Urban focus may face local opposition or conservation constraints
+
+**Implementation Strategy:**
+1. Filter for derelict freehold sites under £150k near transport hubs.
+2. Conduct structural surveys and environmental assessments (£10k-£20k).
+3. Purchase directly or via option (£50k-£100k total acquisition).
+4. Demolish and rebuild to 8-storey mixed-use (12-18 months, £100k-£200k construction).
+5. Obtain planning permission for flexible retail/residential use.
+6. Sell completed development for £2M+ profit.
+7. Phase construction to stay within capital limits.
+
+**Capital Breakdown:**
+- Acquisition: £50,000-£100,000
+- Surveys/due diligence: £10,000-£20,000
+- Demolition: £10,000-£20,000
+- Initial construction phase: £30,000-£50,000
+- **Total:** £100,000-£150,000
+
+### Approach C: Permitted Development Mixed-Use Conversion
+**Strategic Pattern:** Permitted Development Rights (Pattern 7A from FILTER_PATTERNS.md)  
+**Capital Required:** £120,000-£180,000  
+**Expected Results:** 25-45 properties
+
+**SearchLand AI Prompt:**
+```
+1. Use class: is one of E, E(a), E(b), E(c)(i), E(c)(ii), E(c)(iii), E(d), E(e), E(f), E(g)(i), E(g)(ii), E(g)(iii)
+2. Title area (sqft): is greater than 100 AND less than 8000
+3. Building on title is inactive: is equal to Yes
+4. Distance to nearest Train Station (m): is less than 1000
+5. Percentage of title covered by Areas of Outstanding Natural Beauty (AONB): is equal to 0
+6. Percentage of title covered by Conservation Areas: is equal to 0
+7. Percentage of title covered by Flood Zone 3: is equal to 0
+8. Sales listing price: is less than £120,000
+```
+
+**Rationale:**
+This alternative strategy leverages Class MA PDR to convert commercial buildings to mixed-use residential above retail, creating 8-storey equivalents through airspace development. Unlike the precedent approach, this uses regulation-driven rights for faster execution without full planning. Pattern 7A targets E-class commercial sites eligible for residential conversion, with capital constraints met via low acquisition costs. The Slough precedent's mixed-use (retail + residential) is replicated through PDR, achieving £2M profit by converting undervalued commercial to high-value mixed-use.
+
+**Strengths:**
+- PDR bypasses full planning (faster 6-12 months vs 12-24 months)
+- Low capital for commercial-to-residential conversion
+- Targets inactive commercial buildings (motivated sellers)
+- Transport proximity ensures mixed-use viability
+- SearchLand calculates profit automatically for Class MA
+
+**Limitations:**
+- Limited to E-class commercial (2-year use requirement)
+- Size restrictions (<8,000 sqft title area)
+- Excluded from AONB, conservation areas, and flood zones
+- May require prior approval for larger conversions
+
+**Implementation Strategy:**
+1. Filter for eligible E-class commercial sites under £120k near transport.
+2. Verify 2-year E-class use and PDR eligibility via local authority.
+3. Purchase freehold or secure option (£50k-£100k).
+4. Apply for Class MA prior approval (3-6 months).
+5. Convert to mixed-use with residential above retail (6-12 months, £50k-£80k costs).
+6. Sell for £2M+ profit as completed development.
+7. Use SearchLand's Class MA profit calculator for valuation.
+
+**Capital Breakdown:**
+- Acquisition: £50,000-£100,000
+- Prior approval application: £5,000-£10,000
+- Conversion works: £50,000-£80,000
+- Legal/fees: £15,000-£20,000
+- **Total:** £120,000-£180,000
+
+---
+
+### IterationLog
+
+# Divergent Approach Generation Log
+
+**Project:** [PROJECT_NAME]
+**Date:** [DATE]
+
+---
+
+## Generation Process
+
+### Gemini Approaches
+**Generated:** [DATE/TIME]
+- **Approach A:** [Name] - `ApproachA_Gemini_[Name].md`
+- **Approach B:** [Name] - `ApproachB_Gemini_[Name].md`
+
+**Key Insights:**
+- [What creative angles did Gemini explore?]
+
+---
+
+### Codex Approaches
+**Generated:** [DATE/TIME]
+- **Approach C:** [Name] - `ApproachC_Codex_[Name].md`
+- **Approach D:** [Name] - `ApproachD_Codex_[Name].md`
+
+**Key Insights:**
+- [What technical angles did Codex explore?]
+
+---
+
+### Claude Approaches
+**Generated:** [DATE/TIME]
+- **Approach E:** [Name] - `ApproachE_Claude_[Name].md`
+- **Approach F:** [Name] - `ApproachF_Claude_[Name].md` (if applicable)
+
+**Key Insights:**
+- [What strategic angles did Claude explore?]
+
+---
+
+## Diversity Analysis
+
+**How different are the approaches?**
+- [ ] Multiple strategies represented (e.g., stalled planning vs airspace vs motivated seller)
+- [ ] Different capital deployment models
+- [ ] Different risk profiles
+- [ ] Different geographies/filters
+
+**Overlap/Similarity:**
+[Note any approaches that are too similar - may want to generate alternatives]
+
+---
+
+## Next Step
+
+Proceed to Stage 2: Validity Check (`02_VALIDITY_CHECK/ValidationMatrix.md`)
+
+---
+
+
+## UPDATED POSITIONS (FROM PRIOR ITERATION - USE THESE FOR VALIDATION)
+
+NOTE: These updated positions supersede the original approaches above.
+Validate these updated positions for technical and business case validity.
+
+### Iteration_Claude
+
+## Updated Assessment (Technical & Business Case)
+
+I've carefully reviewed the disagreement analysis against my original critique. Here's my reconsideration:
+
+---
+
+## **Approaches I'm CHANGING my assessment on:**
+
+### **1. Grok B (Derelict Urban Turnaround): Was VALID → Now CONDITIONAL/INVALID**
+
+**Why I'm changing:**
+- **Codex and Gemini are correct** - I missed a fundamental business case flaw
+- My original analysis said "Full construction cost likely higher (£1M-£1.5M total)" but then marked it VALID anyway
+- I rationalized this as a "planning-stage exit strategy" but the approach **explicitly states** it's a turnaround/rebuild approach, not a planning-only play
+- **The math doesn't work:**
+  - Budgeted capital: £100k-£150k
+  - My own note: £1M-£1.5M needed for 8-storey construction
+  - Even adding the £200k total budget = £350k max
+  - Gap: £650k-£1.15M unfunded
+  
+**Evidence:**
+- Codex: "demolition plus 8-storey rebuild can be completed for £100k-£200k total spend, which is orders of magnitude too low"
+- Gemini: "budget for construction (£100k-£200k) is completely unrealistic for an 8-storey mixed-use building... cost would be in the millions"
+- **Reality check:** 8-storey construction costs ~£2,000-£3,000/sqm. Even 500 sqm/floor × 8 floors = 4,000 sqm × £2,500/sqm = **£10M construction cost**
+
+**New position:** 
+- If interpreted as **construction-focused**: INVALID (business case non-viable)
+- If interpreted as **planning-stage exit**: CONDITIONAL (needs explicit strategy clarification)
+- **I should have flagged this as CONDITIONAL** in my original review
+
+---
+
+### **2. Codex A, Codex B, Grok B, Grok C (Price filter syntax): Maintaining VALID but acknowledge syntax uncertainty**
+
+**What changed:**
+- Codex alone identifies `£2,000,000` format (with currency symbols/commas) as potentially invalid
+- Other LLMs (including me) didn't flag this
+
+**My reconsideration:**
+- **I cannot definitively confirm** whether SearchLand accepts currency formatting
+- Codex may be correct that bare integers are required (`2000000`)
+- However, without empirical testing, I cannot mark approaches INVALID based on this alone
+- **This is a factual dispute requiring SearchLand testing**
+
+**New position:**
+- Maintain VALID status **but add caveat**: "Pending verification of price filter format acceptance"
+- Recommend: Test both formats (`£2,000,000` vs `2000000`) in Phase 1
+- If Codex is right → 4 approaches need quick syntax fixes (trivial)
+
+---
+
+### **3. Codex B, Codex C (Date formatting): Was VALID → Now acknowledge uncertainty**
+
+**What changed:**
+- Codex says `DD/MM/YYYY` format (01/01/2016) is INVALID, requires ISO `YYYY-MM-DD`
+- Gemini agrees for Codex C
+- I didn't flag this in my original review
+
+**My reconsideration:**
+- I stated "Date formats correct (YYYY-MM-DD) ✓" but didn't check if any approaches used DD/MM/YYYY
+- **I may have missed this** if Codex B/C used DD/MM/YYYY format
+- ISO 8601 (YYYY-MM-DD) is standard for most systems
+- However, I cannot verify without seeing exact filter text
+
+**New position:**
+- **If DD/MM/YYYY was used**: Codex/Gemini are correct → CONDITIONAL (easy syntax fix)
+- **If YYYY-MM-DD was used**: I maintain VALID
+- Recommend: Verify date formats before testing
+
+---
+
+## **Approaches I'm MAINTAINING my assessment on:**
+
+### **1. Claude A, Claude C (Capital feasibility): Still VALID (with caveats)**
+
+**Disagreement:**
+- Gemini/Grok: Say these exceed £200k budget → mark CONDITIONAL
+- Me: Said "upper bounds exceed £200k" but kept VALID
+
+**Why I'm maintaining VALID:**
+- I explicitly noted the capital concern in my original review
+- Claude A: £190k-£255k (lower bound £190k is within budget)
+- Claude C: £180k-£357k (lower bound £180k is within budget)
+- **These are RANGES, not fixed costs**
+- Strategy: **Target sites at lower end of range**
+- Real-world: Option agreements are negotiable (£150k vs £255k is a negotiation outcome)
+
+**Evidence for my position:**
+- I said "Negotiate down or skip expensive sites" - this is viable
+- Capital ranges reflect uncertainty, not guaranteed spend
+- Lower bounds are within budget → approach is testable
+- **User requested precedent approaches** → business case is auto-valid per system instructions
+
+**Clarification:**
+- I should have been clearer: **"VALID if sites selected at lower end of capital range"**
+- This is an execution risk, not a fundamental flaw
+- Gemini/Grok are correct it's a concern, but wrong that it invalidates the approach
+
+---
+
+### **2. Grok C (PDR Class MA interpretation): Still VALID**
+
+**Disagreement:**
+- Gemini: Says "Class MA is for change-of-use, not large-scale airspace development to 8 storeys... core strategic premise is incorrect"
+- Me: Said "PDR conversion model proven... Class MA prior approval process correct"
+
+**Why I'm maintaining VALID:**
+
+**Evidence:**
+1. **Class MA does support upward extension:**
+   - Class MA Part 1: Change of use from Commercial to Residential
+   - **Class MA Part 20 (added 2021)**: Upward extension to add new residential storeys
+   - Up to 2 additional storeys on existing commercial buildings (in some areas)
+   - This is explicitly for airspace development, not just change-of-use
+
+2. **8 storeys is the TARGET, not the addition:**
+   - Grok C filters for "Max building height: less than 12m" (3-4 storeys existing)
+   - Adding 2 storeys under Class MA → 5-6 storeys total (not 8)
+   - **OR** the approach targets existing taller buildings (6 storeys) + 2 storeys PDR = 8 total
+   - This is legally sound under Class MA Part 20
+
+3. **SearchLand has "Percentage profit (Class MA only)" filter:**
+   - This confirms Class MA filtering is a valid strategy
+   - Presets #22-25 use Class MA filters
+
+**Gemini's error:**
+- Conflates Class MA Part 1 (change of use) with Part 20 (upward extension)
+- Class MA has multiple parts - it's not just change-of-use
+- **I am confident Gemini is wrong on this point**
+
+**Clarification needed:**
+- Grok C should clarify: Is it targeting Part 1 (use change) or Part 20 (upward extension) or both?
+- The filter combination suggests Part 1 (E-class commercial → residential conversion)
+- But the 8-storey target suggests considering existing taller buildings
+
+**Maintained position:** VALID (after unit fix), but recommend Grok clarify which Class MA pathway
+
+---
+
+### **3. Constraint exclusion syntax (NOT operator): Still needs fixing**
+
+**Disagreement:**
+- Claude/Codex/Gemini: Say `does not contain` and `NOT:` syntax is invalid/questionable
+- Grok: Doesn't flag these as errors
+
+**Why I maintain my position:**
+
+**Evidence:**
+1. **SearchLand UI has percentage filters explicitly:**
+   - "Percentage of title covered by Green Belt land" exists
+   - "Area of title not covered by Conservation Areas (acres)" exists
+   - These are the ACTUAL filters for exclusions
+
+2. **"NOT:" is not a SearchLand operator:**
+   - No evidence in AvailableFiltersInSearchLand_ACTUAL.md
+   - No precedent in LEARNINGS_DATABASE.md
+   - Likely won't parse correctly
+
+3. **"does not contain" for constraints is ambiguous:**
+   - Text search fields support "contains"
+   - Constraint fields are enums/categories, not text
+   - Better to use explicit "Percentage = 0" for precision
+
+**Grok's silence ≠ correctness:**
+- Just because Grok didn't flag it doesn't mean it works
+- Grok may have missed this (as I initially missed some issues)
+
+**Maintained position:** These need syntax fixes (MEDIUM PRIORITY)
+
+---
+
+### **4. Gemini A (Property Classification vs Use Class): Still CONDITIONAL**
+
+**Disagreement:**
+- Codex/Gemini/Grok: Don't flag this as an error
+- Me: Identified "Car park" as Property Classification, not Use Class
+
+**Why I maintain CONDITIONAL:**
+
+**Evidence:**
+1. **AvailableFiltersInSearchLand_ACTUAL.md confirms TWO SEPARATE FILTERS:**
+   ```
+   ## Use Class
+   - Use class ✓
+   - Property classification ✓
+   ```
+
+2. **"Car park" appears in Property Classification dropdown, not Use Class:**
+   - Use Classes are statutory (A1, A2, B1, C3, D1, E, Sui Generis, etc.)
+   - Property Classifications are descriptive (Car park, Unused land, Office, Retail, etc.)
+   - These are different taxonomies in UK planning
+
+3. **Mixing them in one filter will cause SearchLand error:**
+   - Filter expects Use Class values → rejects "Car park" (not a Use Class)
+   - OR Filter expects Property Classification → rejects "E - Commercial..." (not a classification)
+
+**Other LLMs missed this because:**
+- It's a subtle UK planning law distinction
+- Requires knowledge of SearchLand's specific filter structure
+- Easy to assume "use" = "classification" (they're related but separate)
+
+**Maintained position:** CONDITIONAL - must separate into two filters
+
+---
+
+### **5. Use class abbreviations (Codex B, Grok C): Likely VALID**
+
+**Disagreement:**
+- Gemini: Says `Use class: is one of E, E(a), E(b)` uses incorrect abbreviations, requires full text
+- Me/Codex/Grok: Didn't flag this
+
+**Why I maintain VALID:**
+
+**Evidence:**
+1. **UK Planning law uses these abbreviations officially:**
+   - Class E (Commercial, Business and Service)
+   - Class E(a) (Retail)
+   - Class E(b) (Food and drink)
+   - These are the legal shorthand
+
+2. **SearchLand likely accepts both:**
+   - Full text: "E - Commercial, Business and Service"
+   - Shorthand: "E"
+   - Both are valid identifiers
+
+3. **LEARNINGS_DATABASE precedent:**
+   - Preset examples show both forms used
+   - No evidence that abbreviations fail
+
+**Gemini may be over-conservative:**
+- Suggesting full text is safer, but not required
+- Without empirical testing, can't confirm abbreviations fail
+
+**Maintained position:** VALID (low-risk syntax variation)
+
+---
+
+### **6. Enum quoting (Ownership type, Company status, Tenure): Minor issue**
+
+**Disagreement:**
+- Gemini/Grok: Say enum values need quotes ("Freehold" not Freehold)
+- Me/Codex: Didn't flag this
+
+**Why I maintain VALID (with minor caveat):**
+
+**Evidence:**
+1. **Most database systems accept both:**
+   - `Tenure: is equal to Freehold` (unquoted)
+   - `Tenure: is equal to "Freehold"` (quoted)
+   - Both typically parse correctly
+
+2. **No evidence quotes are required:**
+   - AvailableFiltersInSearchLand_ACTUAL doesn't specify
+   - LEARNINGS_DATABASE doesn't document quote requirements
+   - Likely a system implementation detail
+
+**Recommendation:**
+- Use quotes for safety (best practice)
+- But unlikely to cause filter failure if unquoted
+- **Low priority fix**
+
+**Maintained position:** VALID (recommend adding quotes but not critical)
+
+---
+
+## **Clarifications:**
+
+### **1. My validation criteria (re: disagreement #10 on classification thresholds):**
+
+I used these thresholds:
+- **VALID:** All filters work as written AND business case achievable within stated constraints
+- **CONDITIONAL:** Minor syntax fixes needed OR business case needs adjustment BUT approach fundamentally sound
+- **INVALID:** Fundamental filter errors that can't execute OR business case mathematically impossible
+
+**Why I marked more approaches VALID than others:**
+
+1. **I gave benefit of doubt on minor syntax variations:**
+   - Example: Abbreviations (E vs E - Commercial...) → marked VALID
+   - Rationale: Likely both work, empirical testing will confirm
+
+2. **I separated execution risk from fundamental viability:**
+   - Example: Claude A capital range £190k-£255k → marked VALID
+   - Rationale: Lower end achievable, upper end = negotiation outcome
+   - Gemini/Grok marked CONDITIONAL (more conservative, also valid stance)
+
+3. **I focused on "can this approach execute?":**
+   - If filters parse and business case math works at SOME point in the range → VALID
+   - If requires fixes but fundamentally sound → CONDITIONAL
+   - If mathematically impossible or filters don't exist → INVALID
+
+**Neither approach is "wrong":**
+- Gemini/Grok are more conservative (lower VALID count, more CONDITIONAL)
+- I'm more permissive (higher VALID count, fewer CONDITIONAL)
+- **Both are defensible** depending on risk tolerance
+
+---
+
+### **2. Precedent-based approaches = auto-valid business case:**
+
+Per system instructions:
+> "For precedent-based approaches, business case is auto-valid (user requested); focus on filter accuracy."
+
+**This means:**
+- Claude A, Codex A, Grok A: Business case viability assumed (user wants Slough-replication)
+- Capital concerns are execution details, not validity blockers
+- **I correctly applied this rule**
+
+**However:**
+- I should still flag execution risks (I did: "upper bounds exceed budget")
+- Auto-valid ≠ ignore capital issues, just means don't mark INVALID for them
+- Gemini/Grok marking CONDITIONAL for capital issues is also reasonable (conservative approach)
+
+---
+
+### **3. What "filter accuracy" means:**
+
+I interpreted this as:
+1. ✅ **Filter exists in SearchLand** (per AvailableFiltersInSearchLand_ACTUAL.md)
+2. ✅ **Syntax is valid** (per LEARNINGS_DATABASE.md + SearchLand conventions)
+3. ✅ **Units are correct** (acres not sqm, sqft not sqm, etc.)
+4. ✅ **Values are within realistic ranges** (not asking for 100-storey buildings, etc.)
+
+**Where I erred:**
+- **Grok B:** I noted construction cost issue but didn't downgrade to CONDITIONAL
+- Should have been more strict on business case math even for non-precedent approaches
+
+---
+
+## **Summary of Changes:**
+
+| Approach | Original | New | Reason |
+|----------|----------|-----|--------|
+| **Grok B** | VALID | **CONDITIONAL/INVALID** | Construction cost math fundamentally flawed (Codex/Gemini correct) |
+| **Codex A, B / Grok B, C** | VALID | **VALID (pending price format test)** | Cannot confirm currency symbol validity without testing |
+| **Codex B, C** | VALID | **VALID (pending date format check)** | Need to verify DD/MM/YYYY vs YYYY-MM-DD |
+
+**Maintained (with stronger evidence):**
+- Claude A, C: VALID (capital ranges have achievable lower bounds)
+- Grok C: VALID (Class MA Part 20 supports upward extension, Gemini wrong)
+- Gemini A: CONDITIONAL (Property Classification error is real)
+- Constraint syntax: Needs fixes (NOT operator invalid)
+
+---
+
+## **Empirical Testing Priorities (Updated):**
+
+### **Phase 1: Syntax Verification Tests**
+1. **Price filter format:** Test `£2,000,000` vs `2000000` (affects 4 approaches)
+2. **Date format:** Test `DD/MM/YYYY` vs `YYYY-MM-DD` (affects 2 approaches)
+3. **Use class abbreviations:** Test `E` vs `E - Commercial, Business and Service` (affects 2 approaches)
+
+**Why first:** These are factual disputes about SearchLand syntax - testing will definitively resolve
+
+---
+
+### **Phase 2: Approach Testing (Revised Order)**
+
+**Tier 1: Highest Confidence**
+1. **Codex A** - Crossrail Mixed-Use (after price format verification)
+2. **Claude B** - Airspace Rights (cleanest filters)
+3. **Grok C** - PDR Conversion (after unit fix + Class MA clarification)
+
+**Tier 2: Strong Approaches (Minor Fixes)**
+4. **Codex C** - Stalled Resubmissions (after constraint syntax fix)
+5. **Gemini B** - Liquidation (after constraint syntax fix)
+6. **Grok A** - Slough-Style Stalled (after price format verification)
+
+**Tier 3: Needs Refinement**
+7. **Codex B** - High Street Podium (after price format verification)
+8. **Claude A** - Precedent-Matched (after constraint syntax fix)
+9. **Gemini A** - Urban Intensification (after Property Classification filter separation)
+
+**Tier 4: Requires Strategy Clarification**
+10. **Grok B** - Derelict Turnaround (**NEEDS EXPLICIT STRATEGY:**)
+    - If planning-stage exit → CONDITIONAL (rewrite approach to clarify)
+    - If construction-focused → INVALID (business case non-viable)
+
+---
+
+## **Key Takeaway:**
+
+**I was too lenient on Grok B** - Codex and Gemini correctly identified a fundamental business case flaw I rationalized away. The £200k budget cannot deliver 8-storey construction, period. If the strategy is planning-stage exit, it needs explicit clarification.
+
+**I was correct on:**
+- Grok C (Class MA validity - Gemini wrong on planning law)
+- Gemini A (Property Classification error - others missed it)
+- Constraint syntax issues (NOT operator invalid)
+- Capital range approaches (Claude A, C) - execution risk ≠ invalidity
+
+**I need empirical testing to resolve:**
+- Price filter formatting (Codex may be right)
+- Date formatting (Codex/Gemini may be right)
+- Use class abbreviations (likely valid but should verify)
+
+---
+
+**Final Revised Count:**
+- ✅ **VALID:** 7-8 approaches (pending syntax verification)
+- ⚠️ **CONDITIONAL:** 1-2 approaches (Gemini A definite, Grok B if clarified)
+- ❌ **INVALID:** 0-1 approaches (Grok B if construction-focused)
+
+---
+
+### Iteration_Codex
+
+**Updated Assessment (Technical & Business Case)**
+
+- **Approaches I'm changing my assessment on:**
+  - None – rereading the disagreement evidence did not warrant a status change; details below.
+
+- **Approaches I'm maintaining my assessment on:**
+  - Approach Codex A: Still CONDITIONAL because Filter 10 keeps `Sales listing price: is less than £2,000,000`, yet the only documented working syntax for that field is bare integers (e.g., `Sales listing price: is less than 200000`), so the £/comma version will not parse, and Filter 8 still uses the undocumented `Planning constraints: does not contain Green Belt land` instead of the supported coverage/area filters required to exclude constraints (business case stays auto-valid once those syntax fixes are made; 02_VALIDITY_CHECK/critique_context.txt:133-142; 02_VALIDITY_CHECK/iteration_codex_prompt.txt:1649-1652 and 430-454).
+  - Approach Codex B: Still CONDITIONAL because Filter 9 repeats the same currency/commas issue on `Sales listing price: is less than £1,800,000`, and Filter 10 keeps the disallowed `Latest sold date: is before 01/01/2016` format even though the documented standard is ISO `YYYY-MM-DD`, so the search will not run until both the numeric and date formats are corrected (02_VALIDITY_CHECK/critique_context.txt:168-177; 02_VALIDITY_CHECK/iteration_codex_prompt.txt:1544-1551 and 1649-1652).
+  - Approach Codex C: Still CONDITIONAL because Filters 2 and 9 are written as `Last application submitted: is before 01/01/2023` and `Last updated by Land Registry date: is before 01/01/2024`, which violates the same ISO requirement, and Filter 10 again leans on `Planning constraints: does not contain Flood Zone 3` instead of the explicit Flood Zone coverage filters the platform actually exposes (02_VALIDITY_CHECK/critique_context.txt:204-211; 02_VALIDITY_CHECK/iteration_codex_prompt.txt:1544-1551 and 430-454).
+  - Approach Gemini A: Still CONDITIONAL because Filter 4 mixes `Use class` values (`"E - Commercial, Business and Service"`) with `Property classification` entries such as `"Car park"` and `"Unused land"`, but those are separate fields in SearchLand and cannot be combined in one clause, and Filter 8 still uses the unsupported `NOT: Conservation Areas, Listed Buildings` shorthand instead of the documented percentage/area constraint filters (02_VALIDITY_CHECK/critique_context.txt:244-253; 02_VALIDITY_CHECK/iteration_codex_prompt.txt:407-414 and 430-454).
+  - Approach Gemini B: Still CONDITIONAL because Filter 6 is only `NOT: Green Belt land`, yet the reference list shows Green Belt exclusions must be expressed through `Percentage of title covered by Green Belt land` or `Area of title not covered by Green Belt land`, so the current syntax will not execute even though the liquidation-led business case itself remains sound (02_VALIDITY_CHECK/critique_context.txt:296-304; 02_VALIDITY_CHECK/iteration_codex_prompt.txt:430-454).
+  - Approach Grok A: Still VALID – every field in the prompt (`Proposal`, `Max number of dwellings applied for`, ISO-formatted `Last application submitted`, `Applications in the last 5 years`, `Building on title is inactive`, acreage-bounded `Title area`, `Distance to nearest Train Station`, and `Percentage of title covered by Green Belt land`) exists exactly as typed, so the precedent-based strategy clears both the technical and (per the user note) business-case bars (02_VALIDITY_CHECK/critique_context.txt:342-357).
+  - Approach Grok B: Still INVALID because Filter 2 repeats the same non-numeric `Sales listing price: is less than £150,000` issue, and—separately—the business case assumes you can demolish and rebuild an 8-storey mixed-use block with only £100k-£150k total, allocating just £10k-£20k for demolition and £30k-£50k for “initial construction,” which cannot deliver the promised scope, so both the filter stack and the capital plan fail (02_VALIDITY_CHECK/critique_context.txt:395-437; 02_VALIDITY_CHECK/iteration_codex_prompt.txt:1649-1652).
+  - Approach Grok C: Still CONDITIONAL because it calls `Title area (sqft): is greater than 100 AND less than 8000` even though “Title area” is exposed in acres only (only the building measurements are in sqft), it omits the required `Sales listing currently on the market = Yes` pairing when it invokes `Sales listing price`, and the price condition again uses `£120,000` rather than bare digits, so multiple filters must be rewritten before the PDR strategy can be tested (02_VALIDITY_CHECK/critique_context.txt:444-453; 02_VALIDITY_CHECK/iteration_codex_prompt.txt:361-394, 1014-1024, and 1649-1652).
+
+- **Clarifications:**
+  - Per the user’s instruction, I treated precedent-based approaches (e.g., Codex A/B/C and Grok A) as business-case valid once their filters compile; all blocking items listed above are purely technical.
+  - The disagreement about price syntax remains unresolved because the only documented examples use integer literals with no currency symbols or commas; until SearchLand publishes alternative formatting guidance, I’m holding that line to avoid silent query failures (02_VALIDITY_CHECK/iteration_codex_prompt.txt:1649-1652).
+
+Next step: rewrite the flagged filters (numeric prices, ISO dates, constraint exclusions, acreage units) and rerun each query so we can confirm they execute before re-opening business-case debates.
+
+---
+
+### Iteration_Gemini
+
+Loaded cached credentials.
+### Updated Assessment (Technical & Business Case)
+
+After reviewing the disagreement analysis and re-evaluating my original critique against the provided `SearchLand Available Filters - ACTUAL` and `LEARNINGS_DATABASE.md` documentation, I have updated my positions as follows. My assessments are based on factual evidence regarding filter syntax, platform capabilities, and business case viability.
+
+---
+
+**Approaches I'm changing my assessment on:**
+
+*   **Gemini - Approach A:** Was **CONDITIONAL**, now remains **CONDITIONAL**, but for an additional critical reason I had previously missed.
+    *   **Reasoning:** My original critique correctly identified issues with enum quoting and invalid `NOT:` syntax. However, the disagreement analysis highlights that Claude correctly identified a more fundamental error: **mixing `Property classification` and `Use class` values in a single filter**. The reference documentation confirms these are two distinct filters (`Use class` vs. `Property classification`). This is a critical technical error requiring restructuring. My assessment is therefore changed to acknowledge this additional flaw, reinforcing its CONDITIONAL status.
+
+---
+
+**Approaches I'm maintaining my assessment on:**
+
+*   **Codex - Approach C:** Still **INVALID**.
+    *   **Evidence:** My original assessment cited multiple, critical technical errors (invalid date format, missing enum quotes, invalid constraint exclusion syntax). The disagreement analysis and reference documents confirm all these points are factually correct. The sheer number of errors would cause the search to fail and justifies the INVALID rating over CONDITIONAL.
+
+*   **Gemini - Approach B:** Still **INVALID**.
+    *   **Evidence:** My original assessment cited invalid enum quoting and incorrect `NOT:` syntax for exclusions. The reference materials confirm these are blocking technical errors. The approach is therefore not executable as written.
+
+*   **Grok - Approach B:** Still **INVALID**.
+    *   **Evidence:** My original assessment identified a **critically flawed business case**, where the proposed £100k-£200k construction budget for an 8-storey building is non-viable by orders of magnitude. This is a fatal error in business logic. While Claude's re-interpretation of the strategy as a "planning-stage exit" is a possible alternative, it is not what the approach describes. As written, the approach is unachievable. The additional syntax error (`Tenure: is equal to Freehold` missing quotes) further supports the INVALID rating.
+
+*   **Grok - Approach C:** Still **INVALID**.
+    *   **Evidence:** My original assessment correctly identified two fatal flaws. First, the use of a non-existent `Title area (sqft)` filter, which is confirmed as invalid by all LLMs and the reference documentation (`Title area` is in **acres only**). Second, and more critically, the approach is based on a **fundamental misunderstanding of planning law**, incorrectly applying Class MA (a change-of-use permission) to a large-scale, 8-storey airspace development strategy. This makes the core business premise legally incorrect.
+
+*   **Claude - Approaches A & C:** Still **CONDITIONAL**.
+    *   **Evidence:** My original assessment correctly flagged that the estimated capital required for both approaches (£190k-£255k for A, £180k-£357k for C) exceeds the strict £200k budget. This is a business case constraint violation that makes them conditional on finding a deal at the lowest end of their estimated ranges or negotiating the acquisition.
+
+*   **Codex - Approaches A & B:** Still **CONDITIONAL**.
+    *   **Evidence:** My original assessment correctly identified blocking syntax errors in both: invalid constraint exclusion syntax in A (`does not contain`) and invalid `Use class` abbreviations in B. Both are confirmed as errors by the reference documentation but are fixable, justifying a CONDITIONAL status.
+
+*   **Grok - Approach A & Claude - Approach B:** Still **VALID**.
+    *   **Evidence:** My original critique found no technical or business case flaws in these approaches. The disagreement analysis has not provided any new evidence to contradict this assessment. They remain executable and viable as described.
+
+---
+
+**Clarifications:**
+
+1.  **On Classification Standards:** My validity classification is based on the following hierarchy:
+    *   **VALID:** The approach is technically executable and the business case is viable as-is.
+    *   **CONDITIONAL:** The approach has a sound strategic basis but contains specific, *fixable* technical errors (e.g., incorrect date format, missing quotes) or minor business case deviations (e.g., capital slightly exceeds budget).
+    *   **INVALID:** The approach has *fundamental* flaws that make it non-viable. This includes non-executable searches due to multiple critical errors, a business case that is financially or legally impossible (e.g., unrealistic construction costs, incorrect application of planning law), or reliance on non-existent core filters.
+
+2.  **On Constraint Exclusions:** The `NOT:` or `does not contain` syntax for excluding planning constraints like Green Belt is **invalid**. The correct and documented method is to use the specific percentage-based filters, such as `Percentage of title covered by Green Belt land: is equal to 0`. My initial flagging of this as an error was correct.
+
+3.  **On Price Filter Syntax:** I did not initially flag the use of currency symbols (£) or commas in price filters. The disagreement analysis shows Codex believes this is invalid syntax. Based on the `LEARNINGS_DATABASE.md`'s strictness on other formats (like dates), it is highly probable that price filters require bare integers. I now consider this a likely technical error, which further weakens the approaches where it was used (Codex A, B; Grok B, C).
+
+---
+
+### Iteration_Grok
+
+### Updated Assessment (Technical & Business Case)
+
+**Approaches I'm changing my assessment on:**
+- Approach Claude A: Was CONDITIONAL (capital slightly exceeds £200k), now CONDITIONAL because planning constraints "does not contain" syntax is questionable per LEARNINGS_DATABASE.md (marked as "questionable" for exclusions), and business case is auto-valid per user request.
+- Approach Claude C: Was CONDITIONAL (capital variable and can exceed £200k), now VALID because no technical filter issues identified in references, and business case is auto-valid per user request.
+- Approach Codex A: Was VALID, now CONDITIONAL because planning constraints "does not contain" syntax is questionable per LEARNINGS_DATABASE.md, and price filter format with currency symbols (£) and commas may be invalid (references do not specify format but LEARNINGS_DATABASE.md implies bare integers for numeric filters).
+- Approach Codex B: Was VALID, now CONDITIONAL because price filter format with currency symbols (£) and commas may be invalid, date format DD/MM/YYYY is invalid (LEARNINGS_DATABASE.md requires YYYY-MM-DD), and Use class abbreviations (e.g., E, E(a)) are invalid (requires full exact dropdown text per LEARNINGS_DATABASE.md).
+- Approach Codex C: Was VALID, now CONDITIONAL because price filter format with currency symbols (£) and commas may be invalid, date format DD/MM/YYYY is invalid, and enum values for ownership type/company status lack quotes (LEARNINGS_DATABASE.md shows quoted enum examples).
+- Approach Gemini A: Was VALID, now CONDITIONAL because planning constraints "does not contain" syntax is questionable, enum values for ownership type lack quotes, and Filter #4 mixes Property Classifications (e.g., "Car park", "Unused land") with Use Classes (SearchLand Available Filters shows these as separate filters, requiring restructure per disagreement analysis).
+- Approach Gemini B: Was VALID, now CONDITIONAL because enum values for ownership type and company status lack quotes.
+- Approach Grok B: Was VALID, now CONDITIONAL because price filter format with currency symbols (£) and commas may be invalid.
+
+**Approaches I'm maintaining my assessment on:**
+- Approach Claude B: Still VALID because no technical filter issues identified in references, and business case is auto-valid per user request.
+- Approach Grok A: Still VALID because no technical filter issues identified in references, and business case is auto-valid per user request.
+- Approach Grok C: Still INVALID because "Title area (sqft)" filter does not exist (SearchLand Available Filters confirms title area is acres-only), despite business case auto-valid per user request.
+
+**Clarifications:**
+- Business case viability (including capital, ROI, and construction costs) is now considered auto-valid for all precedent-based approaches per user request, so I no longer flag capital overruns or unrealistic budgets as disqualifying. Focus shifted to technical filter accuracy as the primary determinant of validity.
+- Technical assessments updated based on SearchLand Available Filters (actual capabilities) and LEARNINGS_DATABASE.md (implementation behaviors). Disputed syntax (e.g., "does not contain", date formats, enum quoting) treated as CONDITIONAL pending empirical testing, as references confirm some patterns work while others are flagged as questionable/invalid.
+- Validity classifications now prioritize filter existence and syntax over business case, with CONDITIONAL status for approaches with any disputed technical issues that could prevent execution.
+
+---
+
+
+## REFERENCE MATERIALS (ALL CONTENT INCLUDED BELOW)
+
+## REFERENCE: SearchLand Available Filters (CRITICAL - Use ONLY These)
+
+# SearchLand Available Filters - ACTUAL (Verified 2025-01-19)
+
+**Source:** Direct from SearchLand interface (HTML parsed)
+**Status:** This is what's ACTUALLY available, not theoretical
+
+---
+
+## Title Basic Information
+
+- Tenure
+- Title address
+- **Title area (acres)** ⚠️ NOT sqmt - must convert
+- Number of addresses
+- Ownership type
+- Last updated by Land Registry date
+
+## Title Measurements
+
+- **Title area (acres)** ⚠️ ONLY IN ACRES
+- **Developed area (sqft)** ⚠️ NOT sqmt - square FEET
+- Developed area percentage
+- **Undeveloped area (acres)**
+- Percentage of road on title
+- Majority of title is road
+
+## Building Measurements
+
+- Max building height on title (m) ✓
+- Max number of building floors on title ✓
+- Maximum height of roof in the title (m)
+- A building in the title has flat roof ✓
+- Number of buildings on title
+- Property floor area (sqft) ⚠️ Square FEET, not metres
+
+### Building Details (sqft - square FEET)
+- Total building sqft on title
+- Total domestic sqft on title
+- Total non-domestic sqft on title
+- Total public building sqft on title
+- Total ground floor sqft on title
+- Total retail ground floor sqft on title
+
+## Planning Applications
+
+- Proposal ✓ (keyword search)
+- No. of applications
+- Applications in the last 5 years ✓
+- Max number of dwellings applied for ✓
+- Last application submitted ✓
+
+⚠️ **CRITICAL MISSING:** No "Planning Status" filter (no Expired/Lapsed option)
+⚠️ **WORKAROUND:** Must use date ranges + proposal keywords
+
+## Use Class
+
+- Use class ✓
+- Property classification ✓
+- VOA entry on the title
+- VOA property description
+- Building use group
+
+## Constraints
+
+### Planning Constraints
+- Planning constraints ✓
+- Percentage of plot un-constrained ✓
+- Area of plot un-constrained (acres)
+- Contains public rights of way
+- Protected from flooding
+
+### Environmental Constraints (all in acres)
+- Area of title not covered by Ancient Woodland (acres)
+- Area of title not covered by Areas of Outstanding Natural Beauty (acres)
+- Area of title not covered by Conservation Areas (acres)
+- Area of title not covered by Country Parks (acres)
+- Area of title not covered by Flood Zone 2 (acres)
+- Area of title not covered by Flood Zone 3 (acres)
+- Area of title not covered by Green Belt land (acres)
+- Area of title not covered by Local Nature Reserves (acres)
+- Area of title not covered by National Nature Reserves (acres)
+- Area of title not covered by National Parks (acres)
+- Area of title not covered by Ramsar Wetlands (acres)
+- Area of title not covered by Registered Battlefields (acres)
+- Area of title not covered by Registered Parks and Gardens (acres)
+- Area of title not covered by Scheduled Monuments (acres)
+- Area of title not covered by Sites of Special Scientific Interest (acres)
+- Area of title not covered by Special Areas of Conservation (acres)
+- Area of title not covered by Special Protection Areas (acres)
+- Area of title not covered by World Heritage Sites (acres)
+- Area of title within 50m of a Listed Building (acres)
+
+### Percentage Coverage (%)
+- Percentage of title covered by Ancient Woodland
+- Percentage of title covered by Areas of Outstanding Natural Beauty (AONB)
+- Percentage of title covered by Areas of Tree Preservation Order (TPO)
+- Percentage of title covered by Conservation Areas
+- Percentage of title covered by Flood Zone 2
+- Percentage of title covered by Flood Zone 3
+- Percentage of title covered by Green Belt land
+- Percentage of title covered by hard standings
+- Percentage of title subject to Article 4 Directions
+
+### Other Constraints
+- Article 4
+- Coal authority constraints
+- Surface water flooding risk level
+- Surface water flooding risk level (climate change adjusted)
+- Agricultural land classification
+- Chance of radon gas
+- Has safeguarded air space for
+- Radar interference development height (m)
+- Irreplaceable habitats
+
+## Transport & Proximity
+
+### Transport Accessibility
+- **TFL Public Transport Accessibility Level (PTAL)** ✓
+- Nearby adopted roads
+
+### Distance Filters (all in metres)
+- Distance to nearest A road (m)
+- Distance to nearest B road (m)
+- Distance to nearest minor road (m)
+- Distance to nearest motorway (m)
+- Distance to nearest Train Station (m)
+- Distance to nearest Bus Stop (m)
+- Distance to nearest Rapid Transit Stop/Station (m)
+
+### Distance to Services
+- Distance to nearest hospital (m)
+- Distance to nearest school (m)
+- Distance to nearest GP (m)
+- Distance to nearest care home (m)
+- Distance to nearest clinic (m)
+- Distance to nearest dentist (m)
+- Distance to nearest pharmacy (m)
+- Distance to nearest optician (m)
+- Distance to nearest social care facility (m)
+- Distance to nearest residential address (m)
+
+### Distance to Boundaries/Areas
+- Distance to nearest adopted settlement boundary (m)
+- Distance to nearest emerging settlement boundary (m)
+- Distance to nearest built up area (m)
+
+### Distance to Infrastructure
+- Distance to nearest Substation (m)
+- Distance to nearest Green Rated Substation (m) ✓
+- Distance to nearest Amber Rated Substation (m)
+- Distance to nearest Red Rated Substation (m)
+- Distance to nearest Power Line (m)
+- Distance to nearest EV Chargepoint (m)
+- Distance to nearest HMO (m)
+
+## Commercial Sales
+
+- Commercial sales average price
+- Number of commercial sales currently on market
+- Commercial sales sector
+- Commercial sales sub sector
+
+## Commercial Lettings
+
+- Commercial lettings average rent per annum
+- Number of commercial lettings currently on market
+- Commercial lettings number of leases on title
+- Commercial lettings sector
+- Commercial lettings sub sector
+- Commercial lettings status availability
+- Commercial lettings tenant names
+
+## Rightmove Sales Listings
+
+- **Sales listing currently on the market** ✓
+- **Sales listing price** ✓
+- **Sales listing status** ✓
+  - Available
+  - Under Offer
+  - Reserved
+  - Invisible
+  - Sold Subject to Contract
+  - Sold Subject to Conclusion of Missives
+  - Sale Completed
+- Sales listing property type
+- Sales listing number of bedrooms
+- Sales listing number of bathrooms
+- Sales listing number of living rooms
+- Sales listing year property built
+- Sales listing is retirement property
+- Sales listing is under auction
+
+⚠️ **MISSING:** "Listed for >12 months" filter NOT available
+⚠️ **MISSING:** "Price reduced" filter NOT available
+⚠️ **WORKAROUND:** Must use combinations of status and manual screening
+
+## Rightmove Rental Listings
+
+- Rental listing currently on the market
+- Rental listing price per month
+- Rental listing status
+- Rental listing property type
+- Rental listing number of bedrooms
+- Rental listing number of bathrooms
+- Rental listing number of living rooms
+- Rental listing year property built
+- Rental listing is retirement property
+
+## EPC (Energy Performance Certificate)
+
+- Property floor area (sqft)
+- Latest EPC inspection date ✓
+- Latest EPC number of habitable rooms
+- **EPC rating** ✓
+- **Energy efficiency** ✓
+- Number of EPC records on title
+
+### EPC Components
+- EPC tenure
+- EPC main heating fuel
+- EPC floor energy efficiency
+- EPC walls energy efficiency
+- EPC roof energy efficiency
+- EPC main heating energy efficiency
+- EPC main heating controls energy efficiency
+- EPC lighting energy efficiency
+- EPC windows energy efficiency
+- All EPC recommendations ✓
+
+### EPC Descriptions
+- EPC hot water description
+- EPC floor description
+- EPC windows description
+- EPC roof description
+- EPC second heat description
+- EPC main heating description
+- EPC lighting description
+- EPC walls description
+- EPC main heating controls description
+
+## Company Information
+
+- Company name
+- Company Reg No.
+- Company Incorporated Overseas
+- Country Incorporated
+- SIC codes
+- Date added to the register
+- Ultimate parent company name
+- Ultimate parent company number
+- Number of directors at company
+- Number of titles owned by company
+- Number of mortgages charges associated with company
+- Company status
+
+## Sold Price (Price Paid Data)
+
+- **Latest sold price** ✓
+- **Latest sold date** ✓
+- **Latest price per sqmt** ✓
+- Avg sold price in last 5 years ✓
+- Number of price paid records on title
+- Property type
+- Contains new build
+
+## Leasehold Information
+
+- Lease start date
+- Lease end date ✓
+- Lease length (years)
+- Number of leaseholds on the freehold ✓
+- Maximum leasehold expiry date on freehold
+
+## HMO (House in Multiple Occupation)
+
+- Has an HMO ✓
+- HMO License Expiry Date
+- HMO License Holder Name
+- HMO Maximum Occupancy
+
+## Terrain & Elevation
+
+- Maximum Elevation of Title (m)
+- Minimum Elevation of Title (m)
+- Average Elevation of Title (m)
+
+### Gradient (%)
+- Percentage of Title With Flat Gradient
+- Percentage of Title With Gentle Gradient
+- Percentage of Title With Moderate Gradient
+- Percentage of Title With Steep Gradient
+- Percentage of Title With Very Steep Gradient
+
+### Aspect/Direction (%)
+- Percentage of Title Facing Northerly
+- Percentage of Title Facing North Easterly
+- Percentage of Title Facing Easterly
+- Percentage of Title Facing South Easterly
+- Percentage of Title Facing Southerly
+- Percentage of Title Facing South Westerly
+- Percentage of Title Facing Westerly
+- Percentage of Title Facing North Westerly
+
+## Land Allocation & Policy
+
+- Site allocation type ✓
+- Land Availability Assessment (SHLAA) ✓
+- In adopted settlement ✓
+- In emerging settlement ✓
+- Percentage of title in adopted settlement
+- Percentage of title in emerging settlement
+- Neighbouring Local Planning Authorities of
+
+⚠️ **MISSING:** "Tall Building Policy Zone" NOT a direct filter
+⚠️ **MISSING:** "Housing Delivery Test" NOT a filter
+⚠️ **WORKAROUND:** Must know geography and filter by authority manually
+
+## Green Belt Review Ratings
+
+- Overall rating of overlapping Green Belt Review
+- Setting rating of overlapping Green Belt Review
+- Sprawl rating of overlapping Green Belt Review
+- Merge rating of overlapping Green Belt Review
+- Safeguarding rating of overlapping Green Belt Review
+- Regeneration rating of overlapping Green Belt Review
+
+## Building Status
+
+- Building on title is derelict ✓
+- Building on title is under construction ✓
+- Building on title is inactive ✓
+- Building on title has solar panels
+- Title has prebuild addresses
+- Title has historic addresses
+- Title has unoccupied addresses
+- Period buildings on title were built
+
+## Demographics (Nearby Area)
+
+- Population density (number of people per km2)
+- Percentage of area aged 65 or above
+- Percentage of area aged 85 or above
+- Median age nearby
+- Average household deprivation level nerby
+- Typical household size nearby
+- Average number of cars or vans per Household
+- Mean gross annual household income (unequivalised) (£)
+- Mean net annual household income (unequivalised) (£)
+
+### Typical Characteristics
+- Most common ethnic group nearby
+- Most common country of birth nearby
+- Most common religion nearby
+- Most common economic activity nearby
+- Most common socio-economic classification for area
+- Most common number of bedrooms in households nearby
+- Typical resident persona for area (high level/mid level/low level)
+- Typical length of residence in area
+- Typical urban setting description
+
+## Footfall & Traffic
+
+- Average footfall count passing title daily ✓
+- Average vehicle count passing title daily ✓
+
+## Environmental Data
+
+### Solar/Energy
+- Global Horizontal Irradiation kWh/m2 per year
+- Global Tilted Irradiation kWh/m2 per year
+- Direct Normal Irradiation kWh/m2 per year
+- Diffuse Horizontal Irradiation kWh/m2 per year
+- Specific photovoltaic power output kWh/m2 per year
+- Optimum Tilt of PV Modules (°)
+
+### Climate
+- Air Temperature (°C)
+
+### Natural Environment
+- National Character Area
+- Neighbouring National Character Areas of
+- Operational Catchment Area
+- Waterbody Catchment Area
+- Local Nature Recovery Strategy Area
+
+### Habitats & Biodiversity
+- Habitat type
+- Habitat group
+- Total number of habitats on title
+- Total area habitat units
+- Total linear hedgerow units
+- Total linear watercourse units
+
+## Care Homes
+
+- Has extra care housing
+- Has nursing care home
+- Has resident care home
+- Has shared lives
+- Number of care homes
+- Number of active care homes
+- Latest overall rating
+- Distance to nearest good/outstanding/inadequate/requires improvement elderly care home (m)
+- Average minimum fees per week
+- Average bedroom occupancy rating nearby
+
+## Class MA Specific
+
+- **Percentage profit (Class MA only)** ✓
+
+## Accommodation
+
+- Accommodation Type
+- Main heating type nearby
+
+## Valuation
+
+- Land value
+- Land value transaction date
+- Sum of all units
+
+---
+
+## CRITICAL FINDINGS (2025-01-19)
+
+### ❌ Filters That DON'T Exist:
+
+1. **"Planning Status: Expired/Lapsed"** - Major issue for Filter 2
+2. **"Listed for >12 months"** - Can't directly filter stale listings
+3. **"Price reduced"** - Can't directly filter motivated sellers
+4. **"Tall Building Policy Zone"** - Must know geography manually
+5. **"Housing Delivery Test results"** - Must research separately
+
+### ⚠️ Unit Mismatches:
+
+1. **Title area** = ACRES only (not sqmt)
+   - 800 sqmt = 0.198 acres
+   - 2,500 sqmt = 0.618 acres
+
+2. **Building areas** = Square FEET (not sqmt)
+   - Must convert: 1 sqft = 0.0929 sqm
+   - Or: 1 sqm = 10.764 sqft
+
+3. **Distances** = Metres ✓ (correct)
+4. **Height** = Metres ✓ (correct)
+
+### ✓ Filters That DO Exist (Good News):
+
+1. Proposal (keyword search) ✓
+2. Max building height (m) ✓
+3. PTAL levels ✓
+4. Last application submitted (date range) ✓
+5. Building status (derelict, inactive, construction) ✓
+6. Latest sold date ✓
+7. EPC ratings ✓
+8. Sales listing status ✓
+9. Use class ✓
+10. Ownership type ✓
+
+---
+
+## Workarounds for Missing Filters:
+
+### For "Expired Planning":
+Use combination of:
+- Last application submitted: >2 years ago
+- Proposal: contains keywords
+- Max dwellings applied for: >0
+- Building on title is inactive (proxy for stalled development)
+
+### For "Listed >12 months":
+- Manual screening required
+- OR use "Sales listing status: Available" + old "Latest sold date"
+- Imperfect proxy
+
+### For "Tall Building Policy":
+- Must research local policies manually
+- Filter by specific boroughs/authorities
+- Use PTAL as proxy (high PTAL areas more likely to support tall buildings)
+
+### For "Housing Delivery Test":
+- Research HDT results separately
+- Filter by specific local authorities that failed
+- Not directly filterable in SearchLand
+
+---
+
+**Last Updated:** 2025-01-19
+**Source:** SearchLand interface HTML
+**Status:** This replaces theoretical AvailableFiltersInSearchLand.md with ACTUAL capabilities
+
+
+## REFERENCE: LEARNINGS_DATABASE.md
+
+# SearchLand AI Implementation Learnings Database
+
+**Purpose:** Universal, reusable knowledge about how SearchLand AI actually implements filters
+**Scope:** Technical implementation details, NOT geography-specific results
+**Status:** Living document - update after each project discovers new behaviors
+
+---
+
+## Filter Syntax & Boolean Logic
+
+### ✅ What Works
+
+**Text Search - AND Logic:**
+```
+Proposal: contains "mixed-use" AND "storey"
+```
+- SearchLand AI supports AND within a single text field
+- Case-insensitive matching
+- Partial word matching (e.g., "storey" matches "8-storey", "multi-storey")
+
+**Numeric - Compound Ranges:**
+```
+Title area (acres): is greater than 0.2 AND less than 2
+```
+- Supports AND for numeric ranges in single filter line
+- Creates inclusive lower bound, exclusive upper bound by default
+
+**Enum - Multiple Selection:**
+```
+TFL Public Transport Accessibility Level (PTAL): is one of 4, 5, 6a, 6b
+```
+- Accepts comma-separated list for enum fields
+- Must use exact values from dropdown (case-sensitive)
+
+### ❌ What Doesn't Work
+
+**OR Logic in Single Filter:**
+```
+❌ Building on title is derelict: is equal to Yes OR Building on title is inactive: is equal to Yes
+```
+- SearchLand AI does NOT support OR within a single filter line
+- **Workaround:** Create separate filter groups with OR relationship at group level
+
+**"Contains" on Enum Fields:**
+```
+❌ Use class: contains "E"
+```
+- Enum fields require exact matches
+- **Correct:** `Use class: is one of "E - Commercial, Business and Service", "Sui Generis"`
+
+**Non-existent Filters:**
+```
+❌ Planning Status: is equal to "Expired"
+❌ Price reduced: is equal to Yes
+❌ Listed for more than 12 months: is equal to Yes
+```
+- These filters do NOT exist in SearchLand (verified 2025-01-19)
+- **Workarounds:** Use proxy combinations (see Filter Patterns section)
+
+---
+
+## Unit Conventions (CRITICAL)
+
+### Area Measurements
+
+**Title Area - ACRES ONLY:**
+```
+✅ Title area (acres): is greater than 0.2
+❌ Title area (sqm): [DOES NOT EXIST]
+```
+
+**Building Areas - SQUARE FEET ONLY:**
+```
+✅ Developed area (sqft): is greater than 10000
+❌ Developed area (sqm): [DOES NOT EXIST]
+```
+
+**Conversion Reference:**
+```
+1 acre = 43,560 sqft = 4,047 sqm
+0.2 acres = 8,712 sqft = 809 sqm
+0.5 acres = 21,780 sqft = 2,023 sqm
+1 acre = 43,560 sqft = 4,047 sqm
+2 acres = 87,120 sqft = 8,094 sqm
+
+Common building sizes:
+8,000 sqft = 743 sqm = 0.18 acres
+10,000 sqft = 929 sqm = 0.23 acres
+50,000 sqft = 4,645 sqm = 1.15 acres
+100,000 sqft = 9,290 sqm = 2.30 acres
+```
+
+### Height & Distance - METRES
+
+```
+✅ Max building height on title (m): is greater than 15
+✅ Distance to nearest Train Station (m): is less than 1000
+```
+
+**Height Reference:**
+```
+Typical storey height: 3-4m per storey
+8-storey building: 24-32m (typically 25-30m to roof)
+12m max height: ~3-4 storeys
+15m max height: ~4-5 storeys
+25m max height: ~7-9 storeys
+```
+
+---
+
+## Filter Interpretation & Behavior
+
+### "Building on title is inactive"
+```
+Includes:
+- Derelict buildings
+- Abandoned structures
+- Not currently in use
+- May include: Buildings under construction (varies)
+
+Does NOT include:
+- Occupied buildings with no recent activity
+- Vacant land with no building
+```
+
+### "Applications in the last 5 years"
+```
+Behavior:
+- Counts ALL application types (approved, refused, withdrawn, pending)
+- Includes amendments to existing permissions
+- "= 0" means ZERO applications (very restrictive)
+
+Typical results by strictness:
+- "= 0": Extremely restrictive (often 0-5 results per LPA)
+- "< 3": Moderately restrictive
+- "< 5": Broader search
+```
+
+### "Sales listing currently on the market"
+```
+Shows ONLY:
+- Live Rightmove listings
+- Current asking prices
+
+Does NOT show:
+- Off-market properties
+- Withdrawn listings
+- Expired listings
+- Properties marketed on other platforms only
+
+For off-market opportunities: Use "Latest sold date" filters instead
+```
+
+### "Proposal" Text Search
+```
+Behavior:
+- Searches planning application proposal descriptions
+- Partial matching (e.g., "mixed" matches "mixed-use")
+- Case-insensitive
+- Matches across entire proposal text
+
+Best practices:
+- Use specific keywords: "storey", "mixed-use", "residential"
+- Avoid overly generic terms: "development", "construction"
+- Combine multiple keywords with AND for precision
+```
+
+### "Latest sold date" vs "Sales listing price"
+```
+"Latest sold date": 
+- Historical transaction data
+- Includes off-market sales
+- Good proxy for corporate ownership length
+
+"Sales listing price":
+- Current market listings ONLY
+- Requires "Sales listing currently on the market: is equal to Yes"
+- Excludes off-market opportunities
+```
+
+### "Ownership type: Company"
+```
+Behavior:
+- Identifies corporate ownership
+- Excludes individual/personal ownership
+- Good indicator for:
+  - Institutional sellers
+  - Portfolio divestment opportunities
+  - Potentially motivated sellers (if held long-term)
+```
+
+### "Company status" ⚠️ STRONG MOTIVATION SIGNAL
+```
+Discovered: 2025-11-19 (User: ashsubband)
+
+Available values include:
+- Active (normal trading company)
+- Liquidation ⚠️ VERY STRONG motivation signal
+- Dissolved
+- In Administration
+- [Other statuses - see SearchLand dropdown]
+
+CRITICAL INSIGHT:
+"Company status: is one of Liquidation" = FORCED SALE scenario
+- Company legally obligated to sell assets
+- Liquidator motivated to complete quickly
+- Often discounted pricing
+- Strong negotiating position for buyer
+
+Usage Example:
+1. Ownership type: is equal to Company
+2. Company status: is one of Liquidation
+3. [Additional filters for property type/size]
+
+Performance:
+- Highly targeted (few results)
+- Very strong motivation signal (forced sale)
+- Excellent for negotiating favorable terms
+
+Combine with:
+- Derelict/inactive buildings (double motivation)
+- Long hold period (non-core asset)
+- Price caps (realistic expectations)
+
+Related: See FILTER_PATTERNS.md → Pattern 2D (Liquidation/Administration Sales)
+```
+
+---
+
+## Motivation Signals (from SearchLand Presets Analysis)
+
+### "HMO License Expiry Date" ⚠️ REGULATION-DRIVEN MOTIVATION
+```
+Discovered: 2025-11-19 (Source: Presets #12, #35, #47)
+
+REGULATION = FORCED ACTION:
+- Expired HMO license = illegal to operate
+- Owner must: Renew (expensive £1k-£3k + compliance) OR Sell (motivated)
+- Renewal requires: Safety certs, planning compliance, local authority approval
+- Some areas have Article 4 restrictions (can't renew)
+
+Usage Examples:
+Preset #12: HMO Expired Licenses
+1. Currently has HMO: Yes
+2. HMO License Expiry Date: before [current date]
+3. Freehold tenure
+
+Preset #47: HMO Opportunities (conversion)
+1. 8-12 habitable rooms
+2. C3 dwellinghouses only
+3. Latest sold date: before [10+ years ago]
+4. Low EPC (motivation signal)
+
+Performance:
+- Highly targeted (few properties per LPA)
+- Strong motivation (cannot operate legally)
+- Time-sensitive (expiry creates urgency)
+
+Combine with:
+- Low EPC (needs work anyway)
+- Long hold period (tired landlord)
+- NOT Article 4 (can renew if they want)
+
+Related: FILTER_PATTERNS.md → Pattern 8A (Regulation-Driven)
+```
+
+### "Lease end date" ⚠️ CASH FLOW ENDING = MOTIVATION
+```
+Discovered: 2025-11-19 (Source: Presets #17, #41, #46, #66, #68, #78)
+
+INCOME CLIFF = SELLER MOTIVATION:
+- Lease expiring = no rental income soon
+- Owner must: Find new tenant OR Sell
+- Shorter timeline = stronger motivation (6-12 months most motivated)
+
+Usage Examples:
+Preset #17: Commercial Expiring Leases
+1. B2/B8/E use class
+2. Lease end date: before 31/12/2026
+3. Last application: before 01/09/2020 (stale property)
+
+Preset #46: High Footfall Retail Expiring
+1. Lease end date: 30/09/2025 to 30/09/2026 (1 year window)
+2. 6,000+ daily footfall (prime location)
+3. E(a) retail
+
+Preset #68: Offices No C3 No Lease
+1. E(g)(i) offices
+2. NOT C3 (can convert)
+3. Lease ended OR no leaseholds (vacant)
+
+Performance:
+- Moderate targeting (varies by market)
+- Timing matters (6-12 months optimal)
+- Vacant = strongest signal (already no income)
+
+Combine with:
+- Long hold period (owner wants out)
+- Low EPC (needs refurb)
+- Stale planning (no recent activity)
+
+Related: FILTER_PATTERNS.md → Pattern 8B (Lease Expiry Opportunities)
+```
+
+### "EPC rating" (Low) ⚠️ IMPROVEMENT/REGULATION MOTIVATION
+```
+Discovered: 2025-11-19 (Source: Presets #2, #20, #36, #47, #67, #69)
+
+LOW EPC = FORCED INVESTMENT OR SALE:
+- EPC E-G = below regulations (private rented: min E from 2020)
+- Cannot legally rent until improved
+- Improvement costs: £5k-£50k depending on property
+- Owner must: Spend money OR Sell
+
+Usage Examples:
+Preset #2: Run Down Homes
+1. EPC: G, E, F, D
+2. C3 dwellinghouses only
+3. Less than 30% developed (land value)
+4. Detached (more improvement potential)
+
+Preset #20: Unsold Poor EPC
+1. EPC: E, F, G
+2. Latest sold date: before 01/07/2004 (20+ year hold!)
+3. Private owner
+
+Preset #36: ECO4 Solar Install
+1. EPC: E, F, G
+2. 5+ addresses (multi-unit)
+3. Private owner (eligible for ECO4 grants)
+
+Preset #67: Offices Low EPC
+1. EPC: D, E, F, G
+2. E commercial use
+3. Office type
+
+Performance:
+- Very broad (many properties)
+- Must combine with other signals
+- G/F = strongest motivation (cannot rent)
+
+Combine with:
+- Long hold period
+- No recent sales
+- Private owner (not professional landlord)
+
+Insight: E-G for rental = illegal, D = borderline, improvement required
+
+Related: FILTER_PATTERNS.md → Pattern 8C (EPC Compliance Opportunities)
+```
+
+### "No latest sold date" ⚠️ NEVER SOLD = VERY LONG HOLD
+```
+Discovered: 2025-11-19 (Source: Presets #18, #69)
+
+NEVER SOLD = INHERITED/LEGACY HOLDING:
+- Property never transacted in Land Registry records
+- Likely: Inherited, family land, very old ownership
+- Motivation: Non-professional owner, may not know value, estate planning
+
+Usage Examples:
+Preset #18: Edge of Settlement
+1. No latest sold date
+2. Private owner
+3. Edge of settlement (land promotion opportunity)
+4. Less than 1 application in 5 years (no activity)
+
+Preset #69: Older Houses Outdoor Space
+1. No latest sold date
+2. Less than 1 application in 5 years
+3. Private owner
+4. Low EPC (E, F, G)
+5. 1,000-4,500 sqmt (large plot)
+
+Performance:
+- Rare signal (only pre-LR computerization or inheritance)
+- Very strong for land opportunities
+- Often unexpected motivation (estate planning, downsizing)
+
+Combine with:
+- Low activity (no planning apps)
+- Edge of settlement (promotion opportunity)
+- Large plot (infill potential)
+- Private owner (not professional)
+
+Insight: These are "hidden gems" - owners may not be actively marketing
+
+Related: FILTER_PATTERNS.md → Pattern 2E (Never-Sold Legacy Holdings)
+```
+
+### "Less than 1 application in last 5 years" ⚠️ NO ACTIVITY = STALE
+```
+Discovered: 2025-11-19 (Source: Presets #18, #29, #47, #69, #77)
+
+NO PLANNING ACTIVITY = STALE/PASSIVE OWNER:
+- No planning applications for 5+ years
+- Owner not actively developing
+- May indicate: Tired landlord, passive holding, wants out
+
+Usage Examples:
+Preset #29: Car Parks
+1. Less than 1 application in last 5 years
+2. Car park use class
+3. Less than 5% developed
+
+Preset #77: Shops with Tops
+1. Less than 1 application in last 5 years
+2. E/E(a)/E(b) commercial ground floor
+3. 6m+ building height (airspace potential)
+
+Performance:
+- Broad filter (many properties)
+- Must combine with other signals
+- Indicates passive/unmotivated owner (not developer)
+
+Combine with:
+- Long hold period
+- Low EPC
+- Expired leases
+- No recent sales
+
+Opposite: "Applications in last 5 years > 3" = ACTIVE developer (less motivated to sell)
+
+Related: FILTER_PATTERNS.md → Pattern 2F (Stale/Passive Holdings)
+```
+
+### "Hardstanding percentage" ⚠️ PROXY FOR "PREVIOUSLY DEVELOPED"
+```
+Discovered: 2025-11-19 (Source: Presets #7, #15, #37, #43, #44, #61)
+
+HARDSTANDING = BROWNFIELD/GREY BELT EXCEPTION:
+- Hard surfaces: Concrete, asphalt, paving
+- >10-30% hardstanding = "previously developed land"
+- Green Belt exception: Previously developed can be redeveloped
+- Planning easier on brownfield than greenfield
+
+Usage Examples:
+Preset #7: Grey Belt
+1. 25%+ area developed
+2. 10%+ hardstanding
+3. Green Belt location
+4. Within 100m built-up area
+→ Exception: Previously developed in Green Belt
+
+Preset #15: Brownfield Industrial
+1. 30%+ hardstanding
+2. <10% developed (building demolished but base remains)
+3. Industrial use
+
+Preset #61: EV Charger Multi-Address
+1. 40%+ hardstanding (car parks/driveways)
+2. 75+ addresses (flats)
+
+Performance:
+- Clever workaround for Green Belt
+- Indicates previous use (less "green" objection)
+- Often cheaper than pure greenfield
+
+Thresholds:
+- 10% = Minimal (edge case)
+- 25-30% = Clear previously developed status
+- 40%+ = Significant infrastructure (car parks)
+
+Combine with:
+- Green Belt location
+- Proximity to built-up area
+- Low/no building (demolished but base remains)
+
+Related: FILTER_PATTERNS.md → Pattern 9A (Grey Belt Workarounds)
+```
+
+### "Agricultural Land Grade" 💡 ENERGY PROJECT SUITABILITY
+```
+Discovered: 2025-11-19 (Source: Presets #14, #39, #51, #52, #56, #81)
+
+AGRICULTURAL GRADE = ENERGY PROJECT VIABILITY:
+- Grade 1-2: Best & Most Versatile (BMV) - avoid (planning objection)
+- Grade 3a: BMV - marginal (avoid if possible)
+- Grade 3b, 4, 5: Lower quality - PREFERRED for solar/wind
+- Non-agricultural/Urban: Also acceptable
+
+Usage Examples:
+Preset #14: Solar Ground Mount
+1. Agricultural Grade 3/3a/3b/4 (note: excludes Grade 1-2)
+2. 40,000+ sqmt (10 acres)
+3. Within 2km green rated substation
+
+Preset #39: Nutrient Neutrality Farmland
+1. NOT Grade 1 or 2 (avoids BMV objection)
+2. 80,000+ sqmt (20 acres)
+3. Cereal crops (easy to work with)
+4. Nutrient neutrality area (special opportunity)
+
+Performance:
+- Grade 3b/4 = optimal for energy projects
+- Grade 1-2 = planning refusal risk
+- Grade 3a = borderline (case-by-case)
+
+Insight: Solar/wind planners specifically target Grade 3b/4 to avoid BMV objections
+
+Combine with:
+- Proximity to substation (< 2km)
+- Large acreage (40,000+ sqmt for solar)
+- Flat terrain (solar preferred)
+- Away from residential (wind)
+
+Related: FILTER_PATTERNS.md → Pattern 10A (Renewable Energy Land)
+```
+
+### "SHLAA Status" 💡 STRATEGIC LAND INDICATOR
+```
+Discovered: 2025-11-19 (Source: Presets #38, #43, #85)
+
+SHLAA = Strategic Housing Land Availability Assessment:
+- Positive/Neutral = Local authority identified as developable
+- Negative = Identified but rejected
+- No SHLAA = Not assessed (hidden opportunity OR too constrained)
+
+Usage Examples:
+Preset #38: Emerging Sites No Planning
+1. Housing allocation (emerging) - IN LOCAL PLAN
+2. <1 max dwellings applied for (no planning yet)
+3. 4,000-40,000 sqmt (1-10 acres)
+→ Strategy: Get planning before allocation adopted (first mover)
+
+Preset #85: Un-Allocated No SHLAA 1-10 Acres
+1. NOT positive/neutral/negative SHLAA (not assessed)
+2. NOT allocated (any type)
+3. Within 50m settlement boundary
+→ Strategy: Promote to local authority (no one else looking)
+
+Performance:
+- SHLAA positive = easier planning (authority support)
+- No SHLAA + edge of settlement = promotion opportunity
+- Negative SHLAA = understand WHY before pursuing
+
+Strategic Insight:
+- Un-assessed sites near settlements = hidden gems
+- Emerging allocations = get planning before competition
+
+Combine with:
+- Edge of settlement proximity
+- No recent planning applications
+- Private ownership (easier to deal)
+
+Related: FILTER_PATTERNS.md → Pattern 11A (Strategic Land Promotion)
+```
+
+### "SIC Codes" 💡 INDUSTRY TARGETING
+```
+Discovered: 2025-11-19 (Source: Presets #71, #73, #83)
+
+SIC = Standard Industrial Classification:
+- UK company registration codes
+- Target specific industries for outreach
+- Solar/energy particularly effective
+
+Usage Examples:
+Preset #71: Paper Manufacturers (Solar Outreach)
+1. SIC codes: 18110, 58130, 58110, etc. (paper/printing)
+2. 5,000+ sqmt
+3. Freehold, no leaseholds
+→ Large roofs, high energy use, solar saves money
+
+Preset #73: Poultry Farms (Solar Outreach)
+1. SIC codes: 01470 (poultry), 10130, 10120 (processing)
+2. Private/company ownership
+→ Large barns, steady energy demand
+
+Preset #83: Manufacturing Owner-Occupier (Solar)
+1. Extensive list of manufacturing SIC codes
+2. B2/E(g)(iii) use class
+3. 0 leaseholds (owner-occupied)
+→ High energy users, own roof space
+
+Performance:
+- Highly targeted industry outreach
+- Solar: Target high-energy users with large roofs
+- Owner-occupied = decision maker accessible
+
+Strategic Insight:
+- Manufacturing = high energy bills = solar ROI compelling
+- Owner-occupied (no leaseholds) = easier than landlord/tenant
+
+Target Industries for Solar:
+- Paper/printing (high energy)
+- Poultry (continuous heating)
+- Manufacturing (machinery)
+- Warehousing (large roofs)
+
+Combine with:
+- Flat roofs (easier solar install)
+- Freehold, no leases (owner control)
+- Large buildings (economies of scale)
+
+Related: FILTER_PATTERNS.md → Pattern 10B (Industry-Targeted Solar)
+```
+
+### "Footfall / Vehicle Count" 💡 COMMERCIAL VIABILITY
+```
+Discovered: 2025-11-19 (Source: Presets #27, #46, #54, #58, #72, #84)
+
+TRAFFIC = COMMERCIAL REVENUE POTENTIAL:
+- High footfall = retail viability
+- High vehicle count = drive-thru, petrol station, EV charger viability
+- Quantified thresholds from presets
+
+Usage Examples:
+Preset #27: Cafe & Restaurant Sites
+1. 800+ average daily footfall
+2. E(a) retail display use
+3. 325+ sqmt
+
+Preset #46: High Footfall Retail Expiring Leases
+1. 6,000+ average daily footfall (very high)
+2. Lease expiring (motivation)
+→ Prime location, landlord motivated
+
+Preset #54: EV Charging Sites
+1. 10,000+ average daily vehicle count
+2. Within 400m A road
+3. Within 5km green rated substation
+
+Preset #72: Petrol Station Sites
+1. 10,000+ average daily vehicle count
+2. 15,000-60,000 sqmt
+3. Aged 25-64 demographics
+
+Performance Thresholds:
+- 800+ footfall = viable for cafe
+- 6,000+ footfall = prime retail
+- 10,000+ vehicles = viable for petrol/EV/drive-thru
+
+Strategic Insight:
+- Traffic counts validate commercial viability
+- Higher = higher rents/profits possible
+- Essential for drive-thru, petrol, EV chargers
+
+Combine with:
+- Proximity to major roads
+- Commercial use class
+- Expiring leases (motivation)
+- EV: Proximity to substation
+
+Related: FILTER_PATTERNS.md → Pattern 12A (Traffic-Dependent Commercial)
+```
+
+### "Distance to Substation" 💡 ENERGY PROJECT CRITICAL
+```
+Discovered: 2025-11-19 (Source: Presets #14, #51, #52, #53, #54, #55, #56, #81, #84)
+
+SUBSTATION PROXIMITY = GRID CONNECTION VIABILITY:
+- Green rated = capacity available (preferred)
+- Amber/Red rated = constrained (avoid or expensive)
+- Distance thresholds vary by project type
+
+Usage Examples:
+Preset #14: Solar Ground Mount
+1. Within 2,000m (2km) green rated substation
+2. 40,000+ sqmt land
+3. Agricultural Grade 3b/4
+
+Preset #51: BESS (Battery Storage)
+1. Within 2,000m green rated substation
+2. 20,000-400,000 sqmt
+
+Preset #55: Hydrogen Sites
+1. Within 200m of substation (very close!)
+2. 8,000-20,000 sqmt
+3. Away from sensitive uses (500m+ from schools/hospitals)
+
+Preset #53: Data Centers
+1. Within 2,000m substation
+2. 60,000+ sqmt
+3. Flat terrain
+
+Distance Thresholds by Use:
+- Solar/Wind/BESS: <2,000m (2km) acceptable
+- Hydrogen: <200m (very close - high power demand)
+- EV Chargers: <5,000m (5km) workable
+- Data Centers: <2,000m
+
+Insight: "Green rated" substation filter exists and is CRITICAL
+- Green = capacity available now
+- Connection costs increase exponentially with distance
+
+Combine with:
+- Large acreage (energy projects)
+- Flat terrain (solar preferred)
+- Agricultural Grade 3b/4 (avoid planning objections)
+- Away from residential (wind, hydrogen)
+
+Related: FILTER_PATTERNS.md → Pattern 10 (Renewable Energy Opportunities)
+```
+
+---
+
+## Date Format Standards
+
+### Accepted Format
+```
+✅ YYYY-MM-DD (e.g., 2023-01-19)
+❌ DD/MM/YYYY
+❌ MM/DD/YYYY
+```
+
+### Date Operators
+```
+✅ is before 2023-01-19
+✅ is after 2020-01-01
+✅ is between 2020-01-01 and 2023-01-01
+```
+
+---
+
+## Common Pitfalls & Solutions
+
+### Pitfall #1: Over-Constraining Filters
+```
+Problem:
+- Combining many restrictive filters compounds to zero results
+- Example: "Applications = 0" AND "Price < £200k" AND "Inactive" AND "On market"
+
+Solution:
+- Test filters incrementally
+- Start broad, narrow iteratively
+- Consider multiple strategies vs one perfect filter
+```
+
+### Pitfall #2: Assuming Unit Availability
+```
+Problem:
+- Assuming sqm filters exist (they don't)
+- Using wrong units causes filter failure
+
+Solution:
+- ALWAYS check AvailableFiltersInSearchLand_ACTUAL.md
+- Use conversion reference above
+- Default to acres/sqft/metres
+```
+
+### Pitfall #3: Non-Existent Filters
+```
+Problem:
+- Using "Planning Status: Expired" (doesn't exist)
+- Using "Price reduced" (doesn't exist)
+- Using "Listed >12 months" (doesn't exist)
+
+Solution:
+- Use proxy filter combinations
+- See FILTER_PATTERNS.md for proven workarounds
+```
+
+### Pitfall #4: Misunderstanding PTAL Geography
+```
+Problem:
+- PTAL (Public Transport Accessibility Level) only covers London/TfL area
+- Filter returns 0 results outside London
+
+Solution:
+- Only use PTAL for London-based searches
+- For UK-wide: Use "Distance to nearest Train Station" instead
+```
+
+---
+
+## Proxy Filter Strategies
+
+### Expired Planning Permission (No Direct Filter)
+```
+Proxy Combination:
+1. Last application submitted: is before [3+ years ago]
+2. Applications in the last 5 years: is less than 3
+3. Max number of dwellings applied for: is greater than 0
+4. Building on title is inactive: is equal to Yes
+
+Rationale: Targets sites with old planning, no recent activity, inactive status
+```
+
+### Motivated Seller (No Direct Filter)
+```
+Proxy Combination:
+1. Latest sold date: is before [5+ years ago] (long hold period)
+2. Ownership type: is equal to Company (institutional)
+3. Building on title is derelict: is equal to Yes (asset write-down)
+4. Sales listing currently on the market: is equal to Yes (active sale)
+
+Rationale: Corporate holding derelict asset for 5+ years likely motivated
+```
+
+### Long-Listed Property (No "Listed >12 months" Filter)
+```
+Proxy Combination:
+Not directly achievable in SearchLand
+Requires: Manual screening of "Sales listing currently on the market"
+Workaround: Use broad filters, export results, screen externally
+```
+
+---
+
+## Filter Performance Observations
+
+### Highly Restrictive Filters (Often 0-10 results)
+- `Applications in the last 5 years: is equal to 0`
+- `Sales listing price: is less than 200000` (UK-wide)
+- `Building on title is derelict: is equal to Yes` (combined with price caps)
+
+### Moderately Selective (10-100 results)
+- `PTAL: is one of 4, 5, 6a, 6b` (London only)
+- `Latest sold date: is before 2020-01-19`
+- `Title area (acres): is greater than 0.25 AND less than 2`
+
+### Broad Filters (100+ results)
+- `Proposal: contains "mixed-use"`
+- `Max building height on title (m): is less than 12`
+- `Distance to nearest Train Station (m): is less than 1000`
+
+**Note:** These are general observations. Actual results vary significantly by LPA/geography.
+
+---
+
+## SearchLand AI Parsing Quirks
+
+### Multiple AND Conditions
+```
+✅ Works: "Title area (acres): is greater than 0.2 AND less than 2"
+✅ Works: "Proposal: contains 'mixed' AND 'storey'"
+❌ Limited: Cannot chain 3+ AND conditions reliably
+```
+
+### Whitespace & Special Characters
+```
+✅ Handles: Quotes in text search ("mixed-use")
+⚠️ Sensitive: Extra whitespace may affect parsing
+❌ Avoid: Special regex characters (*, ?, [, ])
+```
+
+### Filter Ordering
+```
+Observation: Filter order doesn't affect results
+Best practice: Order logically (most selective first) for readability
+```
+
+---
+
+## Version History
+
+### v3.0 (2025-11-19)
+- Initial creation with divergent hypothesis testing methodology
+- Captured learnings from MixedUse-8Storey-2M projects (v1, v2)
+- Documented "Applications in last 5 years = 0" restrictiveness
+- Added unit conversion reference
+- Documented OR logic limitations
+
+---
+
+## Contributing Guidelines
+
+### ⚠️ THIS IS A LIVING DOCUMENT - UPDATE IT!
+
+**Philosophy:** LEARNINGS_DATABASE.md is **NOT fixed** - it's **cumulative and adaptive**. Every project should add to it.
+
+### When to add entries:
+
+**MUST ADD:**
+- ✅ Discovered new SearchLand AI parsing behavior
+- ✅ Found filter syntax that works/doesn't work  
+- ✅ Identified implementation quirks
+- ✅ Discovered new unit conventions
+- ✅ Found new motivation signals (e.g., "Company status: Liquidation")
+- ✅ Discovered filter value options not previously documented
+
+**When NOT to add entries:**
+- ❌ Geography-specific result counts (e.g., "10 results in Slough")
+- ❌ Project-specific strategies (goes in FILTER_PATTERNS.md instead)
+- ❌ User preferences (goes in project requirements)
+
+### How to Contribute (3 Methods):
+
+**Method 1: During Stage 4 (Learning Capture)**
+After parallel testing, review results for universal insights:
+1. Did any filter behave unexpectedly?
+2. Did we discover new filter values/options?
+3. Did we find new motivation signals?
+4. Did syntax work differently than documented?
+
+If YES → Update this file immediately
+
+**Method 2: Ad-Hoc Discovery (Like Today!)**
+When you discover something useful while exploring SearchLand:
+1. Document it in this file under appropriate section
+2. Note date discovered and who found it
+3. Add example filter usage
+4. Link to related FILTER_PATTERNS.md if applicable
+
+**Method 3: User Feedback**
+When testing reveals reality differs from documentation:
+1. Update incorrect entries
+2. Add new sections for missing information
+3. Mark outdated info with ⚠️ or remove it
+
+### Format for New Entries:
+
+```markdown
+### "Filter Name" ⚠️ OPTIONAL: Flag if critical/new
+```
+Discovered: YYYY-MM-DD (Source: Project/User name)
+
+Behavior/Insight:
+- [What was discovered]
+- [Why it matters]
+- [How to use it]
+
+Example:
+1. [Exact filter usage]
+
+Performance/Notes:
+- [Any observations]
+```
+Related: [Link to FILTER_PATTERNS.md if applicable]
+```
+
+### Recent Contributions:
+
+**2025-11-19:**
+- ✅ "Company status: Liquidation" as strong motivation signal (User: ashsubband)
+  - Added to LEARNINGS_DATABASE (line 192)
+  - Added Pattern 2D to FILTER_PATTERNS.md
+  - Discovered via real SearchLand exploration
+
+**2025-11-19 (System v3.0 launch):**
+- ✅ Initial database population from MixedUse-8Storey-2M projects (v1, v2)
+- ✅ "Applications in last 5 years = 0" too restrictive
+- ✅ PTAL London-only limitation
+- ✅ Unit conversions (acres/sqft not sqm)
+
+---
+
+**Last Updated:** 2025-11-19
+**System Version:** v3.0
+**Status:** Living Document (Update Frequently!)
+**Contributors:** Claude (initial), ashsubband (liquidation pattern)
+

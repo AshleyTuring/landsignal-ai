@@ -1,0 +1,324 @@
+A building in the title has flat roof
+Accommodation Type
+Agricultural land classification
+Air Temperature (°C)
+All EPC recommendations
+Applications in the last 5 years
+Area of plot un-constrained (acres)
+Area of title affected by Surface Water Flooding (acres)
+Area of title not covered by Ancient Woodland (acres)
+Area of title not covered by Areas of Outstanding Natural Beauty (acres)
+Area of title not covered by CROW (acres)
+Area of title not covered by Conservation Areas (acres)
+Area of title not covered by Country Parks (acres)
+Area of title not covered by Flood Zone 2 (acres)
+Area of title not covered by Flood Zone 3 (acres)
+Area of title not covered by Green Belt land (acres)
+Area of title not covered by Local Nature Reserves (acres)
+Area of title not covered by National Nature Reserves (acres)
+Area of title not covered by National Parks (acres)
+Area of title not covered by Ramsar Wetlands (acres)
+Area of title not covered by Registered Battlefields (acres)
+Area of title not covered by Registered Parks and Gardens (acres)
+Area of title not covered by Scheduled Monuments (acres)
+Area of title not covered by Sites of Special Scientific Interest (acres)
+Area of title not covered by Special Areas of Conservation (acres)
+Area of title not covered by Special Protection Areas (acres)
+Area of title not covered by World Heritage Sites (acres)
+Area of title subject to Article 4 Directions (acres)
+Area of title within 50m of a Listed Building (acres)
+Article 4
+Average Elevation of Title (m)
+Average bedroom occupancy rating nearby
+Average footfall count passing title daily
+Average household deprivation level nerby
+Average minimum fees per week
+Average number of cars or vans per Household
+Average vehicle count passing title daily
+Avg sold price in last 5 years
+Building on title has solar panels
+Building on title is derelict
+Building on title is inactive
+Building on title is under construction
+Building use group
+Chance of radon gas
+Coal authority constraints
+Commercial lettings average rent per annum
+Commercial lettings number of leases on title
+Commercial lettings sector
+Commercial lettings status availability
+Commercial lettings sub sector
+Commercial lettings tenant names
+Commercial sales average price
+Commercial sales sector
+Commercial sales sub sector
+Company Incorporated Overseas
+Company Reg No.
+Company name
+Company status
+Contains new build
+Contains public rights of way
+Country Incorporated
+Date added to the register
+Developed area (sqft)
+Developed area percentage
+Diffuse Horizontal Irradiation kWh/m2 per year
+Direct Normal Irradiation kWh/m2 per year
+Distance to nearest A road (m)
+Distance to nearest Amber Rated Substation (m)
+Distance to nearest B road (m)
+Distance to nearest Bulk Substation (m)
+Distance to nearest Bulk Tower (m)
+Distance to nearest Bus Stop (m)
+Distance to nearest EV Chargepoint (m)
+Distance to nearest Extra High Voltage Line (m)
+Distance to nearest GP (m)
+Distance to nearest Green Rated Substation (m)
+Distance to nearest Grid Substation (m)
+Distance to nearest Grid Tower (m)
+Distance to nearest HMO (m)
+Distance to nearest High Voltage Line (m)
+Distance to nearest Low Voltage Line (m)
+Distance to nearest Medium Voltage Line (m)
+Distance to nearest Power Line (m)
+Distance to nearest Primary Substation (m)
+Distance to nearest Primary Tower (m)
+Distance to nearest Rapid Transit Stop/Station (m)
+Distance to nearest Red Rated Substation (m)
+Distance to nearest Secondary Substation (m)
+Distance to nearest Substation (m)
+Distance to nearest Tower (m)
+Distance to nearest Train Station (m)
+Distance to nearest adopted settlement boundary (m)
+Distance to nearest built up area (m)
+Distance to nearest care home (m)
+Distance to nearest clinic (m)
+Distance to nearest dentist (m)
+Distance to nearest elderly care home (m)
+Distance to nearest emerging settlement boundary (m)
+Distance to nearest good elderly care home (m)
+Distance to nearest good school (m)
+Distance to nearest hospital (m)
+Distance to nearest inadequate elderly care home (m)
+Distance to nearest inadequate school (m)
+Distance to nearest minor road (m)
+Distance to nearest motorway (m)
+Distance to nearest national grid power line (m)
+Distance to nearest national grid substation (m)
+Distance to nearest national grid tower (m)
+Distance to nearest optician (m)
+Distance to nearest outstanding elderly care home (m)
+Distance to nearest outstanding school (m)
+Distance to nearest pharmacy (m)
+Distance to nearest requires improvement elderly care home (m)
+Distance to nearest requires improvement school (m)
+Distance to nearest residential address (m)
+Distance to nearest school (m)
+Distance to nearest social care facility (m)
+EPC floor description
+EPC floor energy efficiency
+EPC hot water description
+EPC lighting description
+EPC lighting energy efficiency
+EPC main heating controls description
+EPC main heating controls energy efficiency
+EPC main heating description
+EPC main heating energy efficiency
+EPC main heating fuel
+EPC rating
+EPC roof description
+EPC roof energy efficiency
+EPC second heat description
+EPC tenure
+EPC walls description
+EPC walls energy efficiency
+EPC windows description
+EPC windows energy efficiency
+Energy efficiency
+Global Horizontal Irradiation kWh/m2 per year
+Global Tilted Irradiation kWh/m2 per year
+HMO License Expiry Date
+HMO License Holder Name
+HMO Maximum Occupancy
+Habitat group
+Habitat type
+Has an HMO
+Has extra care housing
+Has nursing care home
+Has resident care home
+Has safeguarded air space for
+Has shared lives
+In adopted settlement
+In emerging settlement
+Irreplaceable habitats
+Land Availability Assessment (SHLAA)
+Land value
+Land value transaction date
+Last application submitted
+Last updated by Land Registry date
+Latest EPC inspection date
+Latest EPC number of habitable rooms
+Latest overall rating
+Latest price per sqmt
+Latest sold date
+Latest sold price
+Lease end date
+Lease length (years)
+Lease start date
+Local Nature Recovery Strategy Area
+Main heating type nearby
+Majority of title is road
+Max building height on title (m)
+Max number of building floors on title
+Max number of dwellings applied for
+Maximum Elevation of Title (m)
+Maximum height of roof in the title (m)
+Maximum leasehold expiry date on freehold
+Mean gross annual household income (unequivalised) (£)
+Mean net annual household income (unequivalised) (£)
+Mean net annual household income after housing (equivalised) (£)
+Mean net annual household income before housing (equivalised) (£)
+Median age nearby
+Merge rating of overlapping Green Belt Review
+Minimum Elevation of Title (m)
+Most common country of birth nearby
+Most common economic activity nearby
+Most common ethnic group nearby
+Most common number of bedrooms in households nearby
+Most common religion nearby
+Most common socio-economic classification for area
+National Character Area
+Nearby adopted roads
+Neighbouring Local Planning Authorities of
+Neighbouring National Character Areas of
+No. of applications
+Number of EPC records on title
+Number of active care homes
+Number of addresses
+Number of buildings on title
+Number of care homes
+Number of commercial lettings currently on market
+Number of commercial sales currently on market
+Number of directors at company
+Number of leaseholds on the freehold
+Number of mortgages charges associated with company
+Number of price paid records on title
+Number of titles owned by company
+Operational Catchment Area
+Optimum Tilt of PV Modules (°)
+Overall rating of overlapping Green Belt Review
+Ownership type
+Percentage of Title Facing Easterly
+Percentage of Title Facing North Easterly
+Percentage of Title Facing North Westerly
+Percentage of Title Facing Northerly
+Percentage of Title Facing South Easterly
+Percentage of Title Facing South Westerly
+Percentage of Title Facing Southerly
+Percentage of Title Facing Westerly
+Percentage of Title With Flat Gradient
+Percentage of Title With Gentle Gradient
+Percentage of Title With Moderate Gradient
+Percentage of Title With Steep Gradient
+Percentage of Title With Very Steep Gradient
+Percentage of area aged 65 or above
+Percentage of area aged 85 or above
+Percentage of plot un-constrained
+Percentage of road on title
+Percentage of title affected by Surface Water Flooding
+Percentage of title affected by Surface Water Flooding (Climate change adjusted)
+Percentage of title covered by Ancient Woodland
+Percentage of title covered by Areas of Outstanding Natural Beauty (AONB)
+Percentage of title covered by Areas of Tree Preservation Order (TPO)
+Percentage of title covered by CROW (Countryside and Rights of Way Act)
+Percentage of title covered by Conservation Areas
+Percentage of title covered by Country Parks
+Percentage of title covered by Flood Zone 2
+Percentage of title covered by Flood Zone 3
+Percentage of title covered by Green Belt land
+Percentage of title covered by Local Nature Reserves
+Percentage of title covered by National Nature Reserves
+Percentage of title covered by National Parks
+Percentage of title covered by Ramsar Wetlands
+Percentage of title covered by Registered Battlefields
+Percentage of title covered by Registered Parks and Gardens
+Percentage of title covered by Scheduled Monuments
+Percentage of title covered by Sites of Special Scientific Interest (SSSI)
+Percentage of title covered by Special Areas of Conservation (SAC)
+Percentage of title covered by Special Protection Areas (SPA)
+Percentage of title covered by World Heritage Sites
+Percentage of title covered by green belt
+Percentage of title covered by hard standings
+Percentage of title in adopted settlement
+Percentage of title in emerging settlement
+Percentage of title subject to Article 4 Directions
+Percentage of title within 50m of a Listed Building
+Percentage profit (Class MA only)
+Period buildings on title were built
+Planning constraints
+Population density (number of people per km2)
+Property classification
+Property floor area (sqft)
+Property type
+Proposal
+Protected from flooding
+Radar interference development height (m)
+Regeneration rating of overlapping Green Belt Review
+Rental listing currently on the market
+Rental listing is retirement property
+Rental listing number of bathrooms
+Rental listing number of bedrooms
+Rental listing number of living rooms
+Rental listing price per month
+Rental listing property type
+Rental listing status
+Rental listing year property built
+SIC codes
+Safeguarding rating of overlapping Green Belt Review
+Sales listing currently on the market
+Sales listing is retirement property
+Sales listing is under auction
+Sales listing number of bathrooms
+Sales listing number of bedrooms
+Sales listing number of living rooms
+Sales listing price
+Sales listing property type
+Sales listing status
+Sales listing year property built
+Setting rating of overlapping Green Belt Review
+Site allocation type
+Specific photovoltaic power output kWh/m2 per year
+Sprawl rating of overlapping Green Belt Review
+Sum of all units
+Surface water flooding risk level
+Surface water flooding risk level (climate change adjusted)
+TFL Public Transport Accessibility Level (PTAL)
+Tenure
+Title address
+Title area (acres)
+Title has historic addresses
+Title has prebuild addresses
+Title has unoccupied addresses
+Total area habitat units
+Total building sqft on title
+Total domestic sqft on title
+Total ground floor sqft on title
+Total linear hedgerow units
+Total linear watercourse units
+Total non-domestic sqft on title
+Total number of habitats on title
+Total public building sqft on title
+Total retail ground floor sqft on title
+Typical household size nearby
+Typical length of residence in area
+Typical resident persona for area (high level)
+Typical resident persona for area (low level)
+Typical resident persona for area (mid level)
+Typical urban setting description
+Ultimate parent company name
+Ultimate parent company number
+Undeveloped area (acres)
+Use class
+VOA entry on the title
+VOA property description
+Waterbody Catchment Area

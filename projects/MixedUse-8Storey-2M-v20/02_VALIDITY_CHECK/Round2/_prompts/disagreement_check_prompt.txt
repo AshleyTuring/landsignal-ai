@@ -1,0 +1,1003 @@
+# Disagreement Detection Task
+
+Analyze the 4 critique files and identify TECHNICAL AND BUSINESS CASE DISAGREEMENTS.
+
+## What Counts as Disagreement
+- LLM A says filter exists, LLM B says it doesn't (factual dispute)
+- LLM A says "acres", LLM B says "sqft" for same filter (unit dispute)
+- LLM A says VALID syntax, LLM B says INVALID syntax (technical dispute)
+- LLM A says £n is sufficient, LLM B says it's not (capital feasibility dispute)
+- LLM A says ROI achievable, LLM B says unrealistic (business case dispute)
+- LLM A says deal structure works, LLM B says legally/financially flawed (implementation dispute)
+
+## What Does NOT Count
+- Priority rankings (A ranks #1, B ranks #3 - both valid)
+- Strategic preferences (speed vs certainty - philosophical)
+- Implementation styles (different but both correct)
+
+## Special Note on Precedent-Based Approaches
+For approaches replicating user-provided planning applications:
+- Business case is AUTO-VALID (user requested it)
+- Focus validation on: Do filters actually replicate the precedent correctly?
+- Multiple valid filter implementations are expected and acceptable
+
+## Output Format
+If disagreements exist:
+
+DISAGREEMENTS_FOUND: YES
+
+### Disagreement #1
+**Type:** [Filter existence | Units | Syntax | Capital feasibility | ROI | Deal structure]
+**Approaches:** [Which approaches affected]
+**Positions:**
+- LLM A: [Position]
+- LLM B: [Position]
+- LLM C: [Position]
+- LLM D: [Position]
+
+**Impact:** [Critical | Minor]
+**Requires iteration:** [YES | NO]
+
+---
+
+If no disagreements:
+
+DISAGREEMENTS_FOUND: NO
+
+All LLMs agree on technical and business case facts. Strategic differences are preserved.
+
+
+## CRITIQUES TO ANALYZE
+
+### Critique_Claude
+
+Now I'll conduct a comprehensive validation review of all approaches:
+
+---
+
+# **COMPREHENSIVE TECHNICAL & BUSINESS CASE VALIDATION**
+## Cross-LLM Approach Review | 2025-01-19
+
+---
+
+## **VALIDATION METHODOLOGY**
+
+### Validation Criteria Applied:
+1. ✅ **Filter Existence** - Cross-referenced with `AvailableFiltersInSearchLand_ACTUAL.md`
+2. ✅ **Syntax Correctness** - Validated against `LEARNINGS_DATABASE.md` rules
+3. ✅ **Unit Accuracy** - Verified acres/sqft/metres usage
+4. ✅ **Logical Coherence** - Filters match stated strategy
+5. ✅ **Capital Feasibility** - Within £200k constraint
+6. ✅ **ROI Viability** - £2M profit target achievable
+7. ✅ **Implementation Soundness** - Legal/financial structure valid
+
+---
+
+## **DETAILED APPROACH VALIDATIONS**
+
+---
+
+### **Claude - Approach A: High-Density Mixed-Use Precedent**
+**Status:** ⚠️ **CONDITIONAL** (Filter corrections required)
+
+**Technical Issues:**
+1. ❌ **Filter doesn't exist:** `Development Type: contains "Mixed Use"`
+   - **Evidence:** Not in `AvailableFiltersInSearchLand_ACTUAL.md`
+   - **3/4 LLM consensus:** Claude, Gemini, Grok agree it doesn't exist
+2. ✅ All other filters valid
+3. ✅ Unit usage correct (acres, metres)
+
+**Suggested Fixes:**
+```
+REMOVE:
+❌ Development Type: contains "Mixed Use"
+
+ADD:
+✅ Proposal: contains "mixed use" OR "mixed-use"
+✅ Proposal: contains "retail"
+```
+
+**Business Case Assessment:**
+- **Capital:** £180k total - ✅ WITHIN BUDGET
+- **ROI Target:** £2M-£4M from precedent replication - ✅ VALID (user requested precedent-based, auto-valid per instructions)
+- **Structure:** Option agreements - ✅ SOUND
+- **Implementation:** Viable with filter corrections
+
+**Strategic Notes:**
+- Strong precedent alignment (Slough 8-storey)
+- Once filter corrected, highly executable
+
+---
+
+### **Claude - Approach B: Article 4 Direction Expiry**
+**Status:** ❌ **INVALID** (Multiple critical failures)
+
+**Technical Issues:**
+1. ❌ **Filter doesn't exist:** `Article 4 expiry date`
+   - **Evidence:** `AvailableFiltersInSearchLand_ACTUAL.md` only shows `Percentage of title subject to Article 4 Directions`
+   - **No expiry date filter available**
+2. ❌ **Fatal flaw:** Even if filter existed, Article 4 restrictions are LOCAL AUTHORITY decisions - expiry dates are not systematically tracked in SearchLand
+
+**Business Case Assessment:**
+- **Capital feasibility:** ❌ **INVALID**
+  - Strategy requires acquiring 3 office buildings at £200/sqft
+  - Example: 5,000 sqft building = £1M purchase price
+  - 3 buildings = £3M+ acquisition cost
+  - **Even with options:** £50k-£100k per building × 3 = £150k-£300k (exceeds budget)
+  - **Conversion costs:** £50-£100/sqft × 15,000 sqft = £750k-£1.5M
+  - **Total capital required:** £900k-£1.8M - **FAR EXCEEDS £200k**
+
+- **Codex's critique validated:** This approach cannot be executed within £200k capital
+
+**Verdict:** ❌ **INVALID** - Both technical (no filter) and business case (capital requirement) fail
+
+---
+
+### **Claude - Approach C: Stalled Planning + Fresh Option**
+**Status:** ⚠️ **CONDITIONAL** (Filter naming corrections needed)
+
+**Technical Issues:**
+1. ⚠️ **Minor naming precision:** Uses abbreviated filter names vs full names
+   - Example: References "Max building height" vs exact "Max building height on title (m)"
+   - **Impact:** Low - SearchLand AI likely parses both
+2. ✅ All filters exist
+3. ✅ Syntax correct
+4. ✅ Units correct
+
+**Suggested Fixes:**
+```
+PRECISION IMPROVEMENTS:
+- Use full filter names from AvailableFiltersInSearchLand_ACTUAL.md
+- "Max building height on title (m)" (not abbreviated)
+- "Number of addresses" (not "addresses on title")
+```
+
+**Business Case Assessment:**
+- **Capital:** £190k - ✅ WITHIN BUDGET
+- **ROI:** £2.17M from stalled planning arbitrage - ✅ FEASIBLE
+  - Strategy: Buy planning-approved sites with motivated sellers
+  - Value uplift already derisked (planning approved)
+  - Realistic profit path
+- **Structure:** Options + acquisition - ✅ SOUND
+
+**Strategic Notes:**
+- Solid time arbitrage strategy
+- Minor filter naming corrections don't affect viability
+
+---
+
+### **Claude - Approach D: PDR - Light Industrial to Resi**
+**Status:** ❌ **INVALID** (Legal premise failure)
+
+**Technical Issues:**
+1. ❌ **FATAL LEGAL ERROR:** Class MA PDR does NOT apply to B2 (General Industrial)
+   - **Evidence:** Town and Country Planning (General Permitted Development) Order 2015
+   - **Class MA covers:** Former B1(a-c) offices/light industrial → NOW Class E(g)
+   - **B2 (General Industrial):** Requires FULL PLANNING PERMISSION for residential conversion
+   - **No PDR route exists**
+
+2. ✅ Filters themselves are valid (but strategy is not)
+
+**Gemini's critique validated:** Planning law research confirms B2 has no PDR to C3
+
+**Business Case Assessment:**
+- **Premise failure:** Strategy relies on non-existent PDR rights
+- **Even if corrected to E(g)(iii):** Would need complete strategy restructuring
+
+**Suggested Fix (Major Restructure Required):**
+```
+MUST CHANGE:
+❌ Remove: Target B2 (General Industrial)
+✅ Add: Target E(g)(iii) (Light Industrial within Class E)
+✅ Add: Verify 2-year continuous use requirement
+✅ Rewrite entire strategy around correct PDR eligibility
+```
+
+**Verdict:** ❌ **INVALID** - Cannot work as written. Requires fundamental restructuring.
+
+---
+
+### **Claude - Approach E: Green Belt Exception Sites**
+**Status:** ⚠️ **CONDITIONAL** (Filter substitution + partnership dependency)
+
+**Technical Issues:**
+1. ⚠️ **No direct "agricultural value" filter**
+   - **Workaround:** Use `Agricultural land classification` as proxy
+   - **Feasible:** Grade 3b/4/5 land correlates with lower agricultural value
+2. ✅ All other filters exist
+3. ✅ Strategy technically sound
+
+**Business Case Assessment:**
+- **Capital:** £60k-£80k per site - ✅ WITHIN BUDGET (2-3 sites possible)
+- **ROI:** £2.27M - ⚠️ **CONDITIONAL on Housing Association partnership**
+  - **Critical dependency:** Requires HA to deliver affordable units
+  - **Not self-executable:** Cannot develop alone with £200k capital
+  - **Exit route:** Profit from cross-subsidy market units OR sell consented site to HA/developer
+
+**Partnership Risk:**
+- ✅ Strategy is valid IF partnerships secured
+- ⚠️ Execution depends on third-party cooperation (not fully in your control)
+
+**Strategic Notes:**
+- Innovative niche strategy
+- Higher execution complexity than other approaches
+
+---
+
+### **Codex - Approach A: Slough 8-Storey Precedent Match**
+**Status:** ❌ **INVALID** (Critical filters don't exist)
+
+**Technical Issues:**
+1. ❌ **Filter doesn't exist:** `Decision: is one of Approved`
+   - **Evidence:** NOT in `AvailableFiltersInSearchLand_ACTUAL.md`
+   - **3/4 LLM consensus:** Claude, Gemini, Grok confirm it doesn't exist
+   - **Codex's claim:** "Filter exists" - ❌ **FACTUALLY INCORRECT**
+
+2. ❌ **Filter doesn't exist:** `Local Planning Authority: is equal to Slough`
+   - **Evidence:** NOT in `AvailableFiltersInSearchLand_ACTUAL.md`
+   - **Available alternative:** `Neighbouring Local Planning Authorities of` (requires manual selection)
+
+3. ✅ Other filters valid
+
+**Suggested Fixes:**
+```
+REMOVE:
+❌ Decision: is one of Approved
+❌ Local Planning Authority: is equal to Slough
+
+ADD:
+✅ Last application submitted: is after 2020-01-01
+✅ Proposal: contains "approved" OR "permission granted"
+✅ Neighbouring Local Planning Authorities of: [manual selection including Slough]
+```
+
+**Business Case Assessment:**
+- **Once corrected:** Capital feasible (£180k), ROI valid (precedent-based)
+- **As written:** ❌ **UNEXECUTABLE** - filters will fail
+
+**Verdict:** ❌ **INVALID** as written - Must use proxy filters before deployment
+
+---
+
+### **Codex - Approach B: Sub-£200k Mixed-Use Footfall Edge**
+**Status:** ❌ **INVALID** (Syntax error)
+
+**Technical Issues:**
+1. ❌ **INVALID SYNTAX:** `Use class: contains "E" OR Use class: contains "Mixed"`
+   - **Evidence:** `LEARNINGS_DATABASE.md` states: "SearchLand AI does NOT support OR within a single filter line"
+   - **Enum fields require:** `is one of` operator, not `contains`
+   - **Gemini + Grok consensus:** This syntax will fail
+
+**Suggested Fixes:**
+```
+REMOVE:
+❌ Use class: contains "E" OR Use class: contains "Mixed"
+
+ADD:
+✅ Use class: is one of "E - Commercial, Business and Service", "Mixed Use", "Sui Generis"
+```
+
+**Business Case Assessment:**
+- **Capital:** £200k - ✅ EXACTLY AT BUDGET
+- **ROI:** Viable (low-cost entry + PD/intensification upside)
+- **Structure:** Sound
+
+**Verdict:** ❌ **INVALID** syntax as written - Easy fix, strategy remains sound
+
+---
+
+### **Codex - Approach C: Distressed Company Mixed-Use Sites**
+**Status:** ❌ **INVALID** (Syntax error - same issue as Approach B)
+
+**Technical Issues:**
+1. ❌ **INVALID SYNTAX:** `Use class: contains "E" OR Use class: contains "Mixed"`
+   - **Same error as Approach B**
+   - **SearchLand doesn't support OR within single line**
+
+2. ✅ **Excellent use of motivation signal:** `Company status: is one of Liquidation, In Administration`
+   - **Confirmed valid:** `LEARNINGS_DATABASE.md` documents this filter
+   - **Strong strategy:** Liquidation = forced sale = high motivation
+
+**Suggested Fixes:**
+```
+REMOVE:
+❌ Use class: contains "E" OR Use class: contains "Mixed"
+
+ADD:
+✅ Use class: is one of "E - Commercial, Business and Service", "Mixed Use"
+```
+
+**Business Case Assessment:**
+- **Capital:** £190k - ✅ WITHIN BUDGET
+- **ROI:** ⚠️ See separate analysis below
+- **Structure:** Option/deposit approach - ✅ SOUND
+
+**ROI Analysis:**
+- **Gemini's concern validated:** £150k distressed purchase → £2M profit requires significant development
+- **Realistic profit paths:**
+  - **Planning gain only:** £150k → £450k consented = **£300k profit** ✅ ACHIEVABLE
+  - **Planning + light refurb (£50k):** £150k → £600k = **£450k profit** ✅ ACHIEVABLE
+  - **Full build-out to £2M GDV:** Requires £800k-£1.5M construction = ❌ **EXCEEDS BUDGET**
+
+**Revised Business Case:**
+- **Reduce ROI target to £300k-£500k** (planning gain strategy)
+- **Approach is VALID for £300k-£500k profit, NOT £2M**
+
+**Verdict:** ⚠️ **CONDITIONAL** - Fix syntax + adjust ROI expectations to £300k-£500k
+
+---
+
+### **Gemini - Approach A: High-Density Intensification via Option**
+**Status:** ✅ **VALID**
+
+**Technical Review:**
+1. ✅ All filters exist
+2. ✅ Syntax correct
+3. ✅ Units correct (acres, metres)
+4. ✅ Logical filter combinations
+
+**Business Case Assessment:**
+- **Capital:** £65k - ✅ WELL WITHIN BUDGET
+- **ROI:** £2M+ from intensification - ✅ FEASIBLE (precedent-based approach)
+- **Structure:** Option agreement - ✅ SOUND
+- **Conservative deployment:** Low capital risk, high upside
+
+**Strategic Notes:**
+- Well-structured, conservative approach
+- Excellent use of option strategy
+- No technical or business case issues
+
+**Verdict:** ✅ **FULLY VALID** - Production ready
+
+---
+
+### **Gemini - Approach B: Opportunistic Liquidation Acquisition**
+**Status:** ⚠️ **CONDITIONAL** (ROI expectations + SDLT error)
+
+**Technical Issues:**
+1. ⚠️ **SDLT calculation error:**
+   - **Listed:** £2,400 SDLT on £145k commercial property
+   - **Correct:** £2,900 (£145k × 2% first £250k band for non-residential)
+   - **Minor error:** Doesn't affect viability
+
+2. ✅ All filters exist and valid
+3. ✅ Excellent use of `Company status: Liquidation` motivation signal
+
+**Business Case Assessment:**
+- **Capital:** £185k - ✅ WITHIN BUDGET
+- **ROI Target:** £2M - ⚠️ **UNREALISTIC** within £200k capital
+
+**ROI Reality Check:**
+```
+Scenario: £145k acquisition + £55k costs = £200k total
+
+PATH 1 - Planning Gain Only:
+- Current: £145k (distressed)
+- Post-consent: £450k (residential planning)
+- Profit: £305k ✅ ACHIEVABLE
+
+PATH 2 - Planning + Light Works:
+- Add: £50k refurb (light touch)
+- Post-work: £600k
+- Profit: £455k ✅ ACHIEVABLE
+
+PATH 3 - Full Development to £2M GDV:
+- Build costs: £800k-£1.5M
+- Requires external finance ❌ EXCEEDS BUDGET
+```
+
+**Codex's critique validated:** £2M ROI requires build-out capital far exceeding £200k
+
+**Gemini's clarification noted:** Strategy is planning-gain focused (sell consented site), not build-out
+
+**Revised Assessment:**
+- **Realistic ROI:** £300k-£500k (planning gain + light works)
+- **£2M only achievable with external development finance**
+
+**Suggested Fix:**
+- **Revise ROI target to £300k-£500k**
+- **Clarify exit strategy:** Sell consented site to developer (not build-out)
+
+**Verdict:** ⚠️ **CONDITIONAL** - Valid strategy, but ROI expectations must be £300k-£500k, not £2M
+
+---
+
+### **Grok - Approach A: High-Density Intensification Precedent**
+**Status:** ⚠️ **CONDITIONAL** (Filter logic contradiction)
+
+**Technical Issues:**
+1. ⚠️ **Logical contradiction:**
+   - **Filter 1:** `Max building height on title (m): is less than 15` (4-5 storeys max)
+   - **Filter 2:** `Proposal: contains "storey"` (any storey count)
+   - **Strategy goal:** Target 8-storey intensification potential
+   - **Problem:** Height filter excludes sites with existing tall buildings, but doesn't guarantee low-rise → may return mix of heights
+
+2. ✅ All filters exist
+3. ✅ Syntax correct
+
+**Suggested Fix:**
+```
+CLARIFY INTENT:
+If targeting LOW-RISE for intensification:
+✅ Max building height on title (m): is less than 12 (ensures 3-4 storey max)
+✅ Remove: Proposal: contains "storey" (adds noise)
+✅ Add: Max number of building floors on title: is less than 5
+
+If targeting EXISTING tall proposals:
+✅ Remove: Max building height < 15
+✅ Add: Proposal: contains "8-storey" OR "multi-storey"
+```
+
+**Business Case Assessment:**
+- **Capital:** £100k-£200k - ✅ WITHIN BUDGET
+- **ROI:** Viable (precedent-based)
+- **Structure:** Sound
+
+**Verdict:** ⚠️ **CONDITIONAL** - Resolve filter logic contradiction before deployment
+
+---
+
+### **Grok - Approach B: Permitted Development Rights Conversion**
+**Status:** ✅ **VALID**
+
+**Technical Review:**
+1. ✅ All filters exist
+2. ✅ Excellent use of negative filters (NOT Flood Zone, NOT AONB, etc.)
+3. ✅ Correct PDR eligibility criteria (Class E, size limits, exclusions)
+4. ✅ Syntax correct
+5. ✅ Units correct (acres, sqft)
+
+**Business Case Assessment:**
+- **Capital:** £100k-£200k - ✅ WITHIN BUDGET
+- **ROI:** £3M-£4M from PDR conversions - ✅ FEASIBLE
+  - **PDR removes planning risk**
+  - **Value uplift:** Commercial £100-£150/sqft → Residential £300-£500/sqft
+  - **SearchLand calculates profit automatically for Class MA**
+- **Structure:** Direct purchase or option - ✅ SOUND
+
+**Strategic Notes:**
+- Excellent technical execution
+- Properly excludes all PDR restrictions
+- Conservative capital deployment
+- No issues identified
+
+**Verdict:** ✅ **FULLY VALID** - Production ready
+
+---
+
+## **SUMMARY VALIDATION MATRIX**
+
+| LLM | Approach | Status | Primary Issue | Severity |
+|-----|----------|--------|---------------|----------|
+| **Claude** | A: Precedent | ⚠️ CONDITIONAL | "Development Type" filter doesn't exist | LOW - Easy fix |
+| **Claude** | B: Article 4 | ❌ INVALID | No filter + Capital exceeds £200k by 5-10× | CRITICAL |
+| **Claude** | C: Stalled Planning | ⚠️ CONDITIONAL | Minor filter naming precision | LOW - Minor |
+| **Claude** | D: PDR Industrial | ❌ INVALID | B2 has no PDR to residential | CRITICAL - Legal error |
+| **Claude** | E: Green Belt | ⚠️ CONDITIONAL | No agricultural value filter + HA dependency | MEDIUM |
+| **Codex** | A: Slough Precedent | ❌ INVALID | "Decision" & "LPA" filters don't exist | CRITICAL |
+| **Codex** | B: Sub-£200k | ❌ INVALID | OR syntax not supported | LOW - Easy fix |
+| **Codex** | C: Distressed | ⚠️ CONDITIONAL | OR syntax + ROI expectations | LOW syntax, MEDIUM ROI |
+| **Gemini** | A: Intensification | ✅ VALID | None | N/A |
+| **Gemini** | B: Liquidation | ⚠️ CONDITIONAL | £2M ROI unrealistic (reduce to £300k-£500k) | MEDIUM |
+| **Grok** | A: Intensification | ⚠️ CONDITIONAL | Height filter logic contradiction | MEDIUM |
+| **Grok** | B: PDR | ✅ VALID | None | N/A |
+
+---
+
+## **STRATEGIC DIVERSITY ASSESSMENT**
+
+### ✅ **Diversity Achieved Across Patterns:**
+
+1. **Precedent-based:** Claude A, Codex A (both need fixes)
+2. **Capital-efficient:** Gemini A (option), all approaches attempt this
+3. **Motivation-driven:** Codex C (liquidation), Gemini B (liquidation)
+4. **Regulation-driven:** Claude B (Article 4 - INVALID), Claude D (PDR - INVALID on B2)
+5. **Time arbitrage:** Claude C (stalled planning)
+6. **Niche opportunities:** Claude E (Green Belt exception), Grok B (PDR - VALID)
+
+### ⚠️ **Pattern Gaps:**
+- **Article 4 strategies:** Claude B attempted but INVALID (no filter + capital infeasible)
+- **Industrial PDR:** Claude D attempted but INVALID (B2 has no PDR)
+- **Regulation-driven:** Only 1 valid approach (Grok B - PDR on Class E)
+
+---
+
+## **FINAL RECOMMENDATIONS**
+
+### **✅ FULLY VALID - DEPLOY IMMEDIATELY (2 approaches):**
+
+1. **Gemini A** - High-Density Intensification via Option
+   - **Capital:** £65k
+   - **ROI:** £2M+
+   - **Status:** Production ready
+
+2. **Grok B** - PDR Conversion (Class E to C3)
+   - **Capital:** £100k-£200k
+   - **ROI:** £3M-£4M
+   - **Status:** Production ready
+
+---
+
+### **⚠️ CONDITIONAL - FIX THEN DEPLOY (5 approaches):**
+
+1. **Claude A** - High-Density Precedent
+   - **Fix:** Replace "Development Type" with "Proposal: contains"
+   - **Effort:** 5 minutes
+   - **Deploy:** Immediately after fix
+
+2. **Claude C** - Stalled Planning
+   - **Fix:** Use full filter names
+   - **Effort:** 2 minutes
+   - **Deploy:** Immediately after fix
+
+3. **Claude E** - Green Belt Exception
+   - **Fix:** Use "Agricultural land classification" as proxy
+   - **Risk:** HA partnership dependency
+   - **Deploy:** If comfortable with partnership execution
+
+4. **Codex C** - Distressed Company
+   - **Fix:** Change OR syntax to `is one of`
+   - **Fix:** Reduce ROI target to £300k-£500k
+   - **Effort:** 5 minutes
+   - **Deploy:** After fixes
+
+5. **Gemini B** - Liquidation Acquisition
+   - **Fix:** Reduce ROI target to £300k-£500k
+   - **Fix:** Clarify exit as "sell consented site"
+   - **Effort:** Documentation update
+   - **Deploy:** With revised expectations
+
+6. **Grok A** - Intensification Precedent
+   - **Fix:** Resolve height filter logic (choose low-rise OR tall proposal strategy)
+   - **Effort:** 5 minutes
+   - **Deploy:** After logic clarification
+
+---
+
+### **❌ INVALID - DO NOT DEPLOY (4 approaches):**
+
+1. **Claude B** - Article 4 Direction Expiry
+   - **Issues:** No filter exists + Capital requirement £900k-£1.8M (3-9× over budget)
+   - **Verdict:** Cannot be fixed within constraints
+
+2. **Claude D** - PDR Industrial (B2 to C3)
+   - **Issue:** B2 has no PDR to residential (planning law error)
+   - **Verdict:** Requires complete restructuring to target E(g)(iii) instead
+
+3. **Codex A** - Slough 8-Storey Precedent
+   - **Issues:** "Decision" and "LPA" filters don't exist
+   - **Verdict:** Must rewrite with proxy filters (Last application date + Proposal keywords)
+
+4. **Codex B** - Sub-£200k Mixed-Use
+   - **Issue:** OR syntax invalid
+   - **Verdict:** Easy fix, but reclassified as CONDITIONAL (fix required before deployment)
+   - **Update:** Move to CONDITIONAL after syntax fix
+
+---
+
+## **KEY VALIDATION INSIGHTS**
+
+### **Critical Discoveries:**
+
+1. **Filter Existence is EVERYTHING:**
+   - 3 approaches (Codex A, Claude B, Claude A) relied on non-existent filters
+   - **Always verify against `AvailableFiltersInSearchLand_ACTUAL.md`**
+
+2. **Planning Law Must Be Verified:**
+   - Claude D's B2 → PDR error shows assumption risk
+   - **Always verify legal premise independently**
+
+3. **OR Syntax NOT Supported:**
+   - 2 Codex approaches (B, C) used invalid OR syntax
+   - **Use `is one of` for enums, separate filters for OR logic**
+
+4. **Capital Feasibility ≠ ROI Aspiration:**
+   - £2M ROI target is fine as goal
+   - £210k when budget is £200k = hard constraint violation
+   - **Always model full capital requirement, not just option fees**
+
+5. **3:1 Consensus = Definitive:**
+   - When 3/4 LLMs agree filter doesn't exist → it doesn't exist
+   - **Majority consensus overrides minority claims**
+
+---
+
+## **EXECUTION PRIORITY**
+
+### **Tier 1: Deploy First (Highest Confidence):**
+1. Gemini A - Intensification Option (✅ VALID, £65k, low risk)
+2. Grok B - PDR Conversion (✅ VALID, £100k-£200k, proven model)
+
+### **Tier 2: Quick Fixes, Deploy Next:**
+3. Claude A - Precedent (5-min filter fix)
+4. Codex B - Sub-£200k (5-min syntax fix - UPDATE: Move to CONDITIONAL)
+5. Claude C - Stalled Planning (2-min naming fix)
+
+### **Tier 3: Deploy with Adjusted Expectations:**
+6. Codex C - Distressed (fix syntax + reduce ROI to £300k-£500k)
+7. Gemini B - Liquidation (reduce ROI to £300k-£500k)
+
+### **Tier 4: Requires More Work:**
+8. Grok A - Intensification (resolve filter logic)
+9. Claude E - Green Belt (HA partnerships required)
+
+### **Do Not Deploy:**
+10. Claude B - Article 4 (❌ INVALID - capital infeasible)
+11. Claude D - PDR B2 (❌ INVALID - legal error)
+12. Codex A - Slough (❌ INVALID - filters don't exist)
+
+---
+
+**Validation Complete: 2025-01-19**  
+**Validated By:** Claude (Round 2 - Post-Disagreement Analysis)  
+**Status:** 2 VALID, 6 CONDITIONAL (fixable), 4 INVALID  
+**Recommendation:** Deploy Tier 1 immediately, fix Tier 2 within 1 hour, adjust expectations for Tier 3
+
+---
+
+### Critique_Codex
+
+**Claude - Approach A: INVALID**  
+**Status:** INVALID  
+**Reasoning:** Relies on non-existent filters (`Planning Status`, `Development Type`, `Number of Storeys`, `Site Area`) and PTAL outside London; core query won’t run.  
+**Technical Issues:**  
+- `Planning Status`, `Development Type`, `Number of Storeys`, `Site Area` not in available filters; should use `Proposal`, `Max number of building floors on title`, `Title area (acres)`.  
+- PTAL only valid in London; Slough needs distance-to-station.  
+**Suggested Fixes (if CONDITIONAL):**  
+- Swap to `Proposal: contains "mixed use"` and height via `Max number of building floors on title`/`Max building height on title (m)`; use `Distance to nearest Train Station (m)` instead of PTAL; replace status filter with `Last application submitted` window.
+
+**Claude - Approach B: INVALID**  
+**Status:** INVALID  
+**Reasoning:** No filter for Article 4 expiry; capital plan for buying/converting three offices far exceeds £200k unless external finance (not provided).  
+**Technical Issues:**  
+- Only `Article 4` coverage exists—no expiry/relaxation date filter.  
+- No filters provided to capture expiry proxy.  
+**Suggested Fixes (if CONDITIONAL):**  
+- Use `Percentage of title covered by Article 4 Directions` plus manual expiry research; restructure to options/promotion and model capex within £200k or add external finance/JV plan.
+
+**Claude - Approach C: CONDITIONAL**  
+**Status:** CONDITIONAL  
+**Reasoning:** Concept (stalled approvals) is viable, but relies on unstated filters for approval year and implementation status; capital structure for three sites not shown.  
+**Technical Issues:**  
+- Needs proxies for “approved 2022-2023” (`Last application submitted` date) and low activity (`Applications in the last 5 years`).  
+- No way to filter “unimplemented”; must add manual check.  
+**Suggested Fixes:**  
+- Use `Last application submitted: is between 2022-01-01 and 2023-12-31` + `Applications in the last 5 years: is less than 2`; add capital plan (options/exclusivity) showing spend ≤£200k.
+
+**Claude - Approach D: INVALID**  
+**Status:** INVALID  
+**Reasoning:** Class MA PDR does not allow B2 (general industrial) to C3; legal premise fails.  
+**Technical Issues:**  
+- Targeting B2 for PDR is incorrect; only Class E (including E(g)(iii) light industrial) qualifies.  
+**Suggested Fixes (if CONDITIONAL):**  
+- Retarget to E(g)(iii)/broader Class E stock and include 2-year qualifying use check.
+
+**Claude - Approach E: CONDITIONAL**  
+**Status:** CONDITIONAL  
+**Reasoning:** Green Belt exception route is plausible but depends on HA partnership and land-price negotiation; no filter for “agricultural value.”  
+**Technical Issues:**  
+- Must use `Percentage of title covered by Green Belt land` plus hardstanding/built-up proximity proxies; cannot filter by £/acre.  
+**Suggested Fixes:**  
+- Add filters: `Percentage of title covered by Green Belt land: is greater than 0`, `Percentage of title covered by hard standings: is greater than 10`, `Distance to nearest built up area (m): is less than 100`; include HA LOI and budgeting showing sub-£200k option/promotion costs.
+
+---
+
+**Codex - Approach A: INVALID**  
+**Status:** INVALID  
+**Reasoning:** Uses non-existent `Local Planning Authority` and `Decision` filters; rest of query cannot run.  
+**Technical Issues:**  
+- No `Local Planning Authority` filter; no `Decision/Approved` filter.  
+**Suggested Fixes (if CONDITIONAL):**  
+- Replace with geography via map/`Distance to nearest Train Station (m)` + `Title area (acres)`; use `Proposal: contains "mixed use"` and `Last application submitted` recency proxies.
+
+**Codex - Approach B: INVALID**  
+**Status:** INVALID  
+**Reasoning:** OR syntax unsupported; “Use class: contains” wrong operator; `Building on title is inactive` filter not available; business case for £2M on a £200k purchase not evidenced.  
+**Technical Issues:**  
+- `Use class: contains "E" OR ...` invalid; must use `Use class: is one of ...`.  
+- `Building on title is inactive` not in available list.  
+- Chained ANDs on flood zones may exceed parser limits.  
+**Suggested Fixes (if CONDITIONAL):**  
+- Use separate lines: `Use class: is one of "E - Commercial, Business and Service", "Mixed use"`; drop inactive filter or swap to `Ownership type`/`Latest sold date` motivation proxies; reset ROI to planning-gain level or add funding plan.
+
+**Codex - Approach C: INVALID**  
+**Status:** INVALID  
+**Reasoning:** Same OR syntax fault, and `Building on title is derelict` filter not in available list; £400k price ceiling conflicts with £200k capital unless clear option/JV shown.  
+**Technical Issues:**  
+- `Use class: contains ... OR ...` invalid; wrong operator.  
+- `Building on title is derelict` not an available filter.  
+**Suggested Fixes (if CONDITIONAL):**  
+- Use `Use class: is one of "E - Commercial, Business and Service", "Mixed use"`; replace derelict with available motivation filters (`Latest sold date`, `Applications in the last 5 years`, `Sales listing status`); show option/assignation structure to stay within budget.
+
+---
+
+**Gemini - Approach A: CONDITIONAL**  
+**Status:** CONDITIONAL  
+**Reasoning:** Filters are valid (“Max building height on title (m)”, acreage, use class, station distance) and units correct, but ROI of £2M on £65k spend is unsubstantiated and depends entirely on negotiating options/off-market owners.  
+**Technical Issues:**  
+- None material (ensure `Use class` values match enum names).  
+**Suggested Fixes:**  
+- Add capital plan showing number of options within £200k and exit via planning gain; clarify expected GDV/uplift per site.
+
+**Gemini - Approach B: CONDITIONAL**  
+**Status:** CONDITIONAL  
+**Reasoning:** Filters exist and syntax is fine, but £150k distressed purchase + £35k fees cannot by itself yield £2M without external build finance; business case needs planning-gain/flip route.  
+**Technical Issues:**  
+- None.  
+**Suggested Fixes:**  
+- Frame as planning-gain flip (consented resale) with target uplift £300k-£500k; if build-out assumed, add funding stack beyond £200k.
+
+---
+
+**Grok - Approach A: VALID**  
+**Status:** VALID  
+**Reasoning:** All filters exist (`Proposal`, `Max building height on title (m)`, `Title area (acres)`, `Developed area %`, station distance, Green Belt %); syntax and units are correct, and option-based capital plan fits £200k for planning-gain resale.  
+**Technical Issues:**  
+- None blocking; ensure “mixed-use” and “storey” keyword combo doesn’t over-constrain results.  
+**Strategic Notes:**  
+- Strong precedent-led intensification angle complements other regulatory/distress plays.
+
+**Grok - Approach B: CONDITIONAL**  
+**Status:** CONDITIONAL  
+**Reasoning:** Filters and exclusions align with Class MA targeting, but legal requirement for 2-year Class E use not captured; capital range tops £200k; ROI depends on local values.  
+**Technical Issues:**  
+- Add qualifying-use check; verify `Use class` values match enum names (`E`, `E(a)`, etc.).  
+**Suggested Fixes:**  
+- Include `Latest sold date`/lease data to evidence 2-year use; cap acquisition+works to stay ≤£200k; model conversion uplift to confirm ROI.
+
+---
+
+### Critique_Gemini
+
+Loaded cached credentials.
+Here is the technical and business case validation for each approach, based on the provided reference materials.
+
+### Claude - Approach A: High-Density Mixed-Use Precedent Replication
+**Status:** CONDITIONAL
+**Reasoning:** The strategy is logically sound and precedent-based, but it relies on a non-existent filter. The business case is considered valid as per user instructions for precedent-based approaches.
+
+**Technical Issues (if any):**
+- **Filter Existence:** The filter `Development Type: contains "Mixed Use" OR "Retail and Residential"` does not exist. The `AvailableFiltersInSearchLand_ACTUAL.md` document has no "Development Type" filter.
+
+**Suggested Fixes (if CONDITIONAL):**
+- Replace the non-existent filter with a keyword search on the planning proposal:
+  - `Proposal: contains "mixed use" OR "retail" OR "residential"`
+
+---
+
+### Claude - Approach B: Article 4 Direction Expiry - Office to Resi
+**Status:** CONDITIONAL
+**Reasoning:** The strategy of arbitraging an Article 4 expiry is valid in principle. However, its feasibility is conditional on securing low-cost options to stay within the £200k capital limit. The model presented is on the edge of the budget.
+
+**Technical Issues (if any):**
+- **Filter Existence:** There is no filter for "Article 4 expiry date". The approach can only target areas currently under an Article 4 direction (`Percentage of title subject to Article 4 Directions: is greater than 0`), which requires external research to find directions that are due to expire.
+
+**Capital Feasibility Issues:**
+- The proposed capital breakdown of £165k-£210k for three buildings pushes the upper boundary of the £200k budget. Success is highly dependent on negotiating option fees at the low end of the typical range (e.g., <3% of property value).
+
+**Suggested Fixes (if CONDITIONAL):**
+- The implementation plan must prioritize negotiating lower option fees (£20k-£25k per site) or reduce the number of target sites from three to two to ensure costs remain comfortably within the £200k capital constraint.
+
+---
+
+### Claude - Approach C: Stalled Planning + Fresh Option Arbitrage
+**Status:** CONDITIONAL
+**Reasoning:** The strategy is sound, targeting sites with derisked planning. However, it relies on several non-existent or incorrectly named filters.
+
+**Technical Issues (if any):**
+- **Filter Existence:** The approach description implies filtering on "stalled" or "unimplemented" approvals, which is not possible directly. The suggested filters in the original prompt (not fully provided in the summary) would need to use proxies like `Last application submitted` and `Building on title is inactive`.
+- The prompt example `Planning Status: contains "Approved"` is invalid as the "Planning Status" filter does not exist.
+
+**Suggested Fixes (if CONDITIONAL):**
+- Use a proxy for stalled planning:
+  - `Last application submitted: is between 2022-01-01 and 2023-12-31`
+  - `Proposal: contains "approved" OR "permission"`
+  - `Building on title is inactive: is equal to Yes`
+
+---
+
+### Claude - Approach D: Permitted Development - Light Industrial to Resi
+**Status:** INVALID
+**Reasoning:** The core legal premise of the approach is flawed. It targets B2 (General Industrial) use class for Permitted Development conversion to residential, but this right does not exist.
+
+**Implementation Viability Issues:**
+- **Planning Law:** Class MA Permitted Development Rights allow for the conversion of commercial uses within **Class E** (which includes the former B1c - Light Industrial) to C3 residential. It does **not** apply to **Class B2 (General Industrial)**. A B2-to-residential conversion requires full planning permission, making the entire PDR-based strategy invalid.
+
+**Suggested Fixes (if CONDITIONAL):**
+- The approach must be fundamentally restructured to target `Use class: is one of "E(g)(iii)"` (Light Industrial) and other eligible Class E uses, instead of B2.
+
+---
+
+### Claude - Approach E: Green Belt Exception Sites - Community-Led Housing
+**Status:** CONDITIONAL
+**Reasoning:** The strategy is viable in principle but relies on a key partnership that is not guaranteed. The original prompt likely contained filter substitutions that are necessary for it to work.
+
+**Technical Issues (if any):**
+- **Filter Existence:** There is no direct filter for "agricultural value". The approach must use proxies like `Agricultural land classification` and a low `Sales listing price` cap, or focus on off-market approaches.
+
+**Implementation Viability Issues:**
+- **Dependency:** The entire business case is contingent on successfully forming a partnership with a Housing Association, which is a significant external dependency.
+
+**Suggested Fixes (if CONDITIONAL):**
+- The implementation plan must have a robust initial phase focused solely on identifying and securing a willing Housing Association partner before committing capital to site options.
+
+---
+
+### Codex - Approach A: Slough 8-Storey Precedent Match
+**Status:** INVALID
+**Reasoning:** The approach is unexecutable as written because it relies on two critical filters that do not exist in SearchLand.
+
+**Technical Issues (if any):**
+- **Filter Existence:**
+  - `Local Planning Authority: is equal to Slough` does not exist. Geography must be filtered by drawing on a map or using the `Neighbouring Local Planning Authorities of` filter.
+  - `Decision: is one of Approved` does not exist. Planning outcomes must be inferred using proxies.
+
+**Suggested Fixes (if CONDITIONAL):**
+- Replace non-existent filters with valid proxies:
+  - `Proposal: contains "approved" OR "permission"`
+  - `Last application submitted: is after [date]`
+  - Manually define the search area to cover Slough.
+
+---
+
+### Codex - Approach B: Sub-£200k Mixed-Use Footfall Edge
+**Status:** INVALID
+**Reasoning:** The prompt contains a syntax error that would cause the search to fail.
+
+**Technical Issues (if any):**
+- **Syntax Validity:** The line `Use class: contains "E" OR Use class: contains "Mixed"` is invalid. As per `LEARNINGS_DATABASE.md`, `OR` logic is not supported within a single filter line, and enum fields like `Use class` require the `is one of` operator, not `contains`.
+
+**Suggested Fixes (if CONDITIONAL):**
+- Correct the syntax to use the `is one of` operator for the enum field:
+  - `Use class: is one of "E - Commercial, Business and Service", "Mixed Use"`
+
+---
+
+### Codex - Approach C: Distressed Company Mixed-Use Sites
+**Status:** INVALID
+**Reasoning:** The prompt contains the same syntax error as Approach B, making it unexecutable.
+
+**Technical Issues (if any):**
+- **Syntax Validity:** The line `Use class: contains "E" OR Use class: contains "Mixed"` is invalid.
+
+**Suggested Fixes (if CONDITIONAL):**
+- Correct the syntax:
+  - `Use class: is one of "E - Commercial, Business and Service", "Mixed Use"`
+
+---
+
+### Gemini - Approach A: High-Density Intensification via Option Agreement
+**Status:** VALID
+**Reasoning:** This approach is technically sound and logically coherent. It uses existing filters correctly, the units are accurate, the syntax is valid, and the option-based strategy aligns with the capital constraints.
+
+**Technical Issues (if any):**
+- None.
+
+**Strategic Notes (optional):**
+- This is a strong, viable approach that correctly identifies under-utilized assets in promising locations using valid proxy filters for motivation (long ownership, no recent applications).
+
+---
+
+### Gemini - Approach B: Opportunistic Liquidation Acquisition
+**Status:** CONDITIONAL
+**Reasoning:** The technical approach of using the `Company status: is one of Liquidation` filter is valid and powerful. However, the business case has a significant flaw in its stated ROI target.
+
+**ROI Calculations Issues:**
+- **Unrealistic Profit:** Achieving a £2M profit from a £145k acquisition using the remaining ~£55k capital is not feasible. This level of profit would require a full build-out, with financing far exceeding the £200k total capital constraint. The profit from a "planning gain" exit (selling the site with permission) would be in the range of £300k-£500k, not £2M.
+
+**Suggested Fixes (if CONDITIONAL):**
+- The business case must be revised to state a more realistic profit target of £300k-£500k for a planning-gain-only strategy. The approach remains valid, but the expectation for profit must be adjusted.
+
+---
+
+### Grok - Approach A: High-Density Intensification Precedent
+**Status:** CONDITIONAL
+**Reasoning:** The approach is logically sound, but the filters present a contradiction that could lead to poor results.
+
+**Technical Issues (if any):**
+- **Logical Coherence:** The prompt filters for `Max building height on title (m): is less than 15` while also filtering for `Proposal: contains "storey"`. This is intended to find low-rise buildings with high-rise proposals, which is smart. However, the `Proposal` filter will search *all* historical applications on a title. A site could have a recent proposal for a 2-storey extension but a historical one from 10 years ago for a 10-storey tower, creating a false positive.
+
+**Suggested Fixes (if CONDITIONAL):**
+- To improve accuracy, combine the `Proposal` search with a date filter to ensure the multi-storey proposal is recent:
+  - `Last application submitted: is after [date, e.g., 2022-01-01]`
+  - `Proposal: contains "storey" AND "mixed-use"`
+
+---
+
+### Grok - Approach B: Permitted Development Rights Conversion
+**Status:** VALID
+**Reasoning:** This is a well-constructed and technically valid approach. It correctly identifies the eligible `Use class` (E), uses the correct `NOT` operators to apply exclusions, and respects the legal constraints of Class MA PDR. The business case is sound.
+
+**Technical Issues (if any):**
+- None. The use of multiple `NOT` clauses for constraints is a correct and robust way to implement this search.
+
+---
+
+### Critique_Grok
+
+### Claude - Approach A: VALID
+**Status:** VALID  
+**Reasoning:** Filters exist in AvailableFiltersInSearchLand_ACTUAL.md (e.g., "Proposal", "Max building height on title (m)", "Distance to nearest Train Station (m)", "Title area (acres)", "Percentage of title covered by Green Belt land"). Units correct (acres, metres). Syntax valid (contains, >=). Business case sound (£2M-£4M profit via optioned sites within £200k capital). Implementation viable (precedent-based replication).  
+**Technical Issues (if any):** None.  
+**Suggested Fixes (if CONDITIONAL):** N/A  
+**Strategic Notes (optional):** Strong precedent diversity; leverages Slough approval for de-risking.
+
+### Claude - Approach B: CONDITIONAL
+**Status:** CONDITIONAL  
+**Reasoning:** Filters mostly exist (e.g., "Article 4", "Use class", "Title area (acres)", "Distance to nearest Train Station (m)"), but "Article 4 expiry date" does not (use "Percentage of title covered by Article 4 Directions" proxy). Units correct (acres, metres). Syntax valid. Business case feasible (£2.8M profit achievable with low option fees), but capital depends on negotiating 2.5-3% fees (within £200k total). Implementation viable (regulation-driven).  
+**Technical Issues (if any):** Missing "Article 4 expiry date" filter.  
+**Suggested Fixes (if CONDITIONAL):** Replace with "Percentage of title covered by Article 4 Directions: is greater than 0" and manual expiry research. Negotiate option fees at 2.5-3% to stay under £200k.  
+**Strategic Notes (optional):** Regulation-driven diversity; exploits Article 4 lifts for capital arbitrage.
+
+### Claude - Approach C: CONDITIONAL
+**Status:** CONDITIONAL  
+**Reasoning:** Filters exist (e.g., "Planning Status" proxy via "Last application submitted", "Proposal", "Title area (acres)", "Applications in the last 5 years"). Units correct (acres). Syntax valid. Business case sound (£2.17M profit via stalled planning arbitrage within £200k). Implementation viable (time arbitrage).  
+**Technical Issues (if any):** "Planning Status: contains 'Approved'" should use "Last application submitted: is after 2020-01-01" + "Proposal: contains 'approved'".  
+**Suggested Fixes (if CONDITIONAL):** Update to proxy filters for planning status.  
+**Strategic Notes (optional):** Time arbitrage diversity; targets motivated sellers with derisked planning.
+
+### Claude - Approach D: INVALID
+**Status:** INVALID  
+**Reasoning:** Filters exist (e.g., "Use class", "Title area (acres)", "Property floor area (sqft)"), but legal premise flawed (Class MA PDR does not apply to B2 General Industrial; only E-class per planning law). Units correct (acres, sqft). Syntax valid. Business case invalid (no PDR route to residential). Implementation not viable.  
+**Technical Issues (if any):** Legal premise error (B2 ineligible for Class MA).  
+**Suggested Fixes (if CONDITIONAL):** N/A (requires retargeting to E(g)(iii) light industrial).  
+**Strategic Notes (optional):** PDR diversity attempted but legally unsound.
+
+### Claude - Approach E: CONDITIONAL
+**Status:** CONDITIONAL  
+**Reasoning:** Filters exist (e.g., "Use class", "Title area (acres)", "Percentage of title covered by Green Belt land", "Distance to nearest Train Station (m)"), but "Agricultural land value" proxy needed (use "Latest sold date" + low activity). Units correct (acres, metres). Syntax valid. Business case feasible (£2.27M profit via cross-subsidy within £200k, but HA partnerships required). Implementation viable (community-led).  
+**Technical Issues (if any):** "Agricultural land value" filter missing.  
+**Suggested Fixes (if CONDITIONAL):** Replace with "Latest sold date: is before 2010-01-01" + "Applications in the last 5 years: is less than 1" for low-value proxy. Secure HA partnerships.  
+**Strategic Notes (optional):** Community partnerships diversity; low-capital entry on Green Belt exceptions.
+
+### Codex - Approach A: INVALID
+**Status:** INVALID  
+**Reasoning:** Filters do not exist ("Decision: is one of Approved", "Local Planning Authority: is equal to Slough" absent from AvailableFiltersInSearchLand_ACTUAL.md). Units correct (acres, metres). Syntax invalid (no OR support in single lines). Business case sound (precedent-based), but technical execution impossible. Implementation not viable.  
+**Technical Issues (if any):** Non-existent filters; OR syntax unsupported.  
+**Suggested Fixes (if CONDITIONAL):** N/A (use proxies like "Proposal: contains 'approved'" + geography via "Neighbouring Local Planning Authorities of").  
+**Strategic Notes (optional):** Precedent diversity intended but filter errors invalidate.
+
+### Codex - Approach B: INVALID
+**Status:** INVALID  
+**Reasoning:** Filters exist (e.g., "Sales listing price", "Sales listing currently on the market", "Use class", "Title area (acres)", "Distance to nearest Train Station (m)", "Developed area percentage"), but OR syntax invalid (SearchLand does not support OR in single lines). Units correct (acres). Business case sound (motivated sellers within £200k). Implementation not viable due to syntax.  
+**Technical Issues (if any):** OR syntax unsupported (use "is one of" for enums).  
+**Suggested Fixes (if CONDITIONAL):** N/A (rewrite as "Use class: is one of 'E - Commercial, Business and Service', 'Mixed Use', 'Sui Generis'").  
+**Strategic Notes (optional):** Low-capital diversity; focuses on on-market motivation.
+
+### Codex - Approach C: INVALID
+**Status:** INVALID  
+**Reasoning:** Filters exist (e.g., "Ownership type", "Company status", "Use class", "Title area (acres)", "Distance to nearest Train Station (m)", "Sales listing currently on the market", "Sales listing price"), but OR syntax invalid (no OR support). Units correct (acres). Business case sound (distressed motivation within £190k). Implementation not viable due to syntax.  
+**Technical Issues (if any):** OR syntax unsupported.  
+**Suggested Fixes (if CONDITIONAL):** N/A (rewrite Use class as "is one of").  
+**Strategic Notes (optional):** Motivation-led diversity; leverages liquidation for discounts.
+
+### Gemini - Approach A: VALID
+**Status:** VALID  
+**Reasoning:** Filters exist (e.g., "Max building height on title (m)", "Distance to nearest Train Station (m)", "Title area (acres)", "Use class", "Latest sold date", "Applications in the last 5 years", "Sales listing currently on the market", "Percentage of title covered by Green Belt land"). Units correct (acres, metres). Syntax valid. Business case sound (£65k capital for £2M+ uplift). Implementation viable (option-based intensification).  
+**Technical Issues (if any):** None.  
+**Suggested Fixes (if CONDITIONAL):** N/A  
+**Strategic Notes (optional):** Low-capital diversity; off-market targeting for high-density uplift.
+
+### Gemini - Approach B: CONDITIONAL
+**Status:** CONDITIONAL  
+**Reasoning:** Filters exist (e.g., "Ownership type", "Company status", "Sales listing currently on the market", "Sales listing price", "Title area (acres)", "Use class"). Units correct (acres). Syntax valid. Business case feasible but ROI overstated (£2M unrealistic from £150k; reduce to £300k-£500k via planning gain). Implementation viable (liquidation motivation).  
+**Technical Issues (if any):** SDLT calculation error (commercial SDLT is 0.5% for £145k = £725, not £2,400).  
+**Suggested Fixes (if CONDITIONAL):** Correct SDLT to £725; adjust ROI expectations to £300k-£500k; focus on planning gain, not full build-out.  
+**Strategic Notes (optional):** Distress diversity; forced sales for discounted entry.
+
+### Grok - Approach A: CONDITIONAL
+**Status:** CONDITIONAL  
+**Reasoning:** Filters exist (e.g., "Max building height on title (m)", "Proposal", "Distance to nearest Train Station (m)", "Title area (acres)", "Percentage of title covered by Green Belt land", "Developed area percentage"), but logic contradiction (height <15m + proposal "storey" may exclude tall buildings). Units correct (acres, metres). Syntax valid. Business case sound (£100k-£200k for £2M+). Implementation viable (precedent intensification).  
+**Technical Issues (if any):** Filter logic mismatch (height filter may contradict proposal).  
+**Suggested Fixes (if CONDITIONAL):** Adjust height to "is greater than 15" or remove if targeting low-rise to tall.  
+**Strategic Notes (optional):** Precedent diversity; transport-focused for viability.
+
+### Grok - Approach B: VALID
+**Status:** VALID  
+**Reasoning:** Filters exist (e.g., "Use class", "Property floor area (sqft)", "Title area (acres)", exclusions for flood zones/AONB/conservation). Units correct (sqft, acres). Syntax valid. Business case sound (£110k-£220k for PDR conversions). Implementation viable (Class MA arbitrage).  
+**Technical Issues (if any):** None.  
+**Suggested Fixes (if CONDITIONAL):** N/A  
+**Strategic Notes (optional):** PDR diversity; regulatory arbitrage for quick conversions.
+
+---
+

@@ -1,0 +1,35 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║           MixedUse-8Storey-2M-v3: QUICK START                    ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📖 FULL DOCUMENTATION:
+   → README.md (in this directory)
+
+🚀 SINGLE COMMAND TO RUN EVERYTHING:
+
+   cd /home/ashsubband/landsignal/projects/MixedUse-8Storey-2M-v3/.agents
+   ./RUN_ALL.sh
+
+⏱️  TIME: ~5-10 minutes (3 phases, multi-agent parallel execution)
+
+📊 WHAT IT DOES:
+   1. Generates 6 diverse filter approaches (Phase 1)
+   2. Cross-validates all 6 approaches (Phase 2)
+   3. Creates final validation matrix (Phase 3)
+
+📁 RESULTS LOCATION:
+   → 02_VALIDITY_CHECK/FINAL_ValidationMatrix.md
+
+🎯 AFTER RUNNING:
+   1. Read FINAL_ValidationMatrix.md
+   2. Test VALID approaches in SearchLand
+   3. Document results in 03_PARALLEL_TESTING/
+
+═══════════════════════════════════════════════════════════════════
+
+Need detailed help? → cat README.md
+
+═══════════════════════════════════════════════════════════════════
+

@@ -1,0 +1,688 @@
+# CONSENSUS TASK: Final Validation Matrix
+
+You are the FINAL ARBITRATOR synthesizing 3 agent critiques.
+
+## YOUR TASK
+Review all 3 critiques (Gemini, Codex, Claude) and create a FINAL VALIDATION MATRIX.
+
+### For EACH approach (typically 4-10), determine:
+
+1. **Consensus Status:**
+   - ✅ VALID - All agents agree it's technically sound (proceed to testing)
+   - ⚠️ CONDITIONAL - Minor issues, easy fixes (provide specific fixes)
+   - ❌ INVALID - Critical issues found by 2+ agents (reject)
+
+2. **Critical Issues (if any):**
+   - List ONLY issues flagged by 2+ agents as CRITICAL or MAJOR
+   - Ignore minor disagreements
+
+3. **Required Fixes (if CONDITIONAL):**
+   - Specific, actionable fixes
+   - Must be implementable without regenerating entire approach
+
+4. **Proceed to Testing?**
+   - YES (valid or conditional with trivial fixes)
+   - NO (critical issues prevent testing)
+
+### Output Format:
+
+```markdown
+# Final Validation Matrix
+
+## Summary
+- **Total Approaches:** 6
+- **Valid (✅):** X approaches
+- **Conditional (⚠️):** Y approaches  
+- **Invalid (❌):** Z approaches
+- **Proceed to Testing:** N approaches
+
+---
+
+## Approach A: [Name]
+**Final Status:** ✅ VALID / ⚠️ CONDITIONAL / ❌ INVALID
+
+**Agent Consensus:**
+- Gemini: PASS/FAIL - [key points]
+- Codex: PASS/FAIL - [key points]
+- Claude: PASS/FAIL - [key points]
+
+**Critical Issues:**
+1. [Issue found by 2+ agents] - Severity: CRITICAL/MAJOR
+2. ...
+
+**Required Fixes (if CONDITIONAL):**
+- [ ] Fix 1: [Specific change needed]
+- [ ] Fix 2: [Specific change needed]
+
+**Proceed to Testing?** YES / NO
+
+**Rationale:** [1-2 sentences explaining decision]
+
+---
+
+[Repeat for all 6 approaches]
+
+---
+
+## Testing Priority
+**High Priority (Test First):**
+1. Approach X - [Why]
+2. Approach Y - [Why]
+
+**Medium Priority:**
+1. Approach Z - [Why]
+
+**Low Priority / Do Not Test:**
+1. Approach W - [Why rejected]
+
+---
+
+## Recommendations
+[Summary of which approaches to test and in what order]
+```
+
+### Decision Rules:
+1. If 2+ agents say CRITICAL issue → Approach is INVALID
+2. If all 3 agents say PASS → Approach is VALID
+3. If split (e.g., 2 PASS, 1 FAIL with MINOR issues) → Approach is CONDITIONAL
+4. Prioritize approaches with VALID status for testing first
+
+Be decisive. The goal is to give clear YES/NO decisions for testing.
+
+---
+
+---
+
+# VALIDATION SUMMARY
+
+## Overall Results
+
+| Approach | Strategic Angle | Validation | Status |
+|----------|----------------|------------|--------|
+| 1. Urban Site Replication | Precedent | PASS | VALID |
+| 2. London PTAL-Based | Precedent | PASS | VALID |
+| 3. Motivated Commercial | Precedent | PASS | VALID |
+| 4. Lease Expiry + EPC | Regulation | PASS | VALID |
+| 5. Airspace Development | Structural | PASS | CONDITIONAL |
+| 6. Stalled Planning Option | Structural | **FAIL** | **INVALID** |
+| 7. Corporate Liquidation | Behavioral | PASS | VALID |
+| 8. Combined Motivation | Behavioral | PASS | VALID |
+| 9. Fresh Emerging Allocations | Challenge | PASS | CONDITIONAL |
+| 10. Strategic Land Promotion | Challenge | **FAIL** | **INVALID** |
+
+---
+
+## Critical Issues Requiring Revision
+
+### Approach 6: Stalled Planning Option Play
+**Issue:** Missing `Tenure: is equal to Freehold` filter - critical for option agreement strategy
+
+**Revised Filters:**
+```
+1. Title area (acres): is greater than 0.25 AND less than 3
+2. Proposal: contains "storey"
+3. Max number of dwellings applied for: is greater than 10
+4. Last application submitted: is before 2022-01-01
+5. Building on title is inactive: is equal to Yes
+6. Distance to nearest Train Station (m): is less than 1000
+7. Percentage of title covered by Flood Zone 3: is equal to 0
+8. Tenure: is equal to Freehold  ← ADDED
+```
+
+### Approach 10: Strategic Land Promotion
+**Issue:** `Applications in the last 5 years: is equal to 0` is CRITICAL - will return near-zero results
+
+**Revised Filters:**
+```
+1. Title area (acres): is greater than 1 AND less than 10
+2. Developed area percentage: is less than 5
+3. Distance to nearest adopted settlement boundary (m): is less than 500  ← CHANGED from 200m
+4. Applications in the last 5 years: is less than 2  ← CHANGED from = 0
+5. Ownership type: is one of Private owner
+6. Percentage of title covered by Flood Zone 3: is equal to 0
+7. Percentage of plot un-constrained: is greater than 75
+```
+
+---
+
+## Conditional Approaches - Minor Fixes Needed
+
+### Approach 5: Airspace Development
+**Add:** `Title area (acres): is greater than 0.1 AND less than 1`
+
+### Approach 9: Fresh Emerging Allocations
+**Verify:** Exact enum values in SearchLand for "Site allocation type" and "Ownership type: Private owner"
+
+---
+
+## Recurring Minor Issue
+
+All approaches 1-4, 6 use "Freehold tenure" shorthand. For clarity, ensure consistent syntax:
+```
+Tenure: is equal to Freehold
+```
+
+---
+
+## Testing Priority Recommendation (Updated)
+
+Based on technical validation:
+
+1. **Approach 7** - Corporate Liquidation (VALID, strongest motivation)
+2. **Approach 5** - Airspace Development (CONDITIONAL, add area filter)
+3. **Approach 4** - Lease Expiry + EPC (VALID)
+4. **Approach 3** - Motivated Commercial (VALID)
+5. **Approach 6** - Stalled Planning (**REVISED** - add tenure)
+6. **Approach 1** - Urban Site Replication (VALID)
+7. **Approach 8** - Combined Motivation (VALID)
+8. **Approach 2** - London PTAL (VALID, London-only)
+9. **Approach 9** - Fresh Allocations (CONDITIONAL, verify enums)
+10. **Approach 10** - Strategic Land (**REVISED** - fix applications filter)
+---
+
+# VALIDATION SUMMARY
+
+## Overall Results
+
+| Approach | Validation | Key Issue |
+|----------|------------|-----------|
+| 1. Urban Site Replication | CONDITIONAL | Tenure syntax |
+| 2. London PTAL-Based | CONDITIONAL | Tenure syntax |
+| 3. Motivated Commercial | CONDITIONAL | Tenure syntax |
+| 4. Lease Expiry + EPC | CONDITIONAL | Tenure syntax |
+| 5. Airspace Development | CONDITIONAL | Tenure syntax |
+| 6. Stalled Planning | CONDITIONAL | Missing tenure |
+| 7. Corporate Liquidation | **VALID** | Minor (add tenure) |
+| 8. Combined Motivation | **VALID** | Minor (add tenure) |
+| 9. Emerging Allocations | CONDITIONAL | Enum values unverified |
+| 10. Strategic Land | CONDITIONAL | Ownership type value |
+
+## Critical Fixes Required
+
+### Recurring Issue: "Freehold tenure" Syntax
+**Affects:** Approaches 1, 2, 3, 4, 5
+
+**Problem:** "Freehold tenure" is not valid filter syntax
+
+**Fix:** Change to: `Tenure: is equal to Freehold`
+
+### Enum Value Verification Needed
+**Affects:** Approaches 9, 10
+
+**Problem:** "Private owner" should likely be "Private individual"
+
+**Fix:** Verify exact values in SearchLand dropdown before testing
+
+### PTAL/Site Allocation Values
+**Affects:** Approaches 2, 9
+
+**Problem:** Need to confirm exact enum values accepted by SearchLand
+
+**Fix:** Check dropdown options in SearchLand interface
+
+## Ready to Test (After Fixes)
+
+**Immediately ready:**
+- Approach 7: Corporate Liquidation/Distress ✅
+- Approach 8: Combined Motivation Signals ✅
+
+**Ready after tenure syntax fix:**
+- Approaches 1, 2, 3, 4, 5
+
+**Ready after enum verification:**
+- Approaches 9, 10
+
+## Capital Feasibility Check
+
+All approaches pass £200k capital test:
+- Liquidation sales can be acquired <£200k distressed
+- Option agreements £10k-£150k entry
+- Airspace rights £50k-£150k
+- Strategic options £5k-£50k
+
+No capital feasibility issues identified.
+---
+
+# VALIDATION SUMMARY
+
+## Overall Results
+
+| Approach | Strategic Angle | Validation | Issues | Assessment |
+|----------|----------------|------------|--------|------------|
+| 1. Urban Site Replication | Precedent | PASS | 1 Minor | ✅ VALID |
+| 2. London PTAL-Based | Precedent | PASS | 1 Minor | ✅ VALID |
+| 3. Motivated Commercial | Precedent | PASS | 1 Minor | ✅ VALID |
+| 4. Lease Expiry + EPC | Regulation | PASS | 1 Minor | ✅ VALID |
+| 5. Airspace Development | Structural | PASS | 1 Minor | ✅ VALID |
+| 6. Stalled Planning | Structural | CONDITIONAL | 1 Major | ⚠️ CONDITIONAL |
+| 7. Corporate Liquidation | Behavioral | PASS | 0 | ✅ VALID |
+| 8. Combined Motivation | Behavioral | PASS | 0 | ✅ VALID |
+| 9. Emerging Allocations | Challenge | PASS | 1 Minor | ✅ VALID |
+| 10. Strategic Land | Challenge | CONDITIONAL | 2 Minor | ⚠️ CONDITIONAL |
+
+## Key Fixes Required Before Testing
+
+### Recurring Issue (Approaches 1-5):
+**"Freehold tenure"** → Change to: `Tenure: is equal to Freehold`
+
+### Approach 6 - Major Fix:
+Add: `Tenure: is equal to Freehold` (filter 8)
+
+### Approaches 9 & 10 - Verify:
+Check exact "Ownership type" dropdown value - may be "Private" not "Private owner"
+
+## Capital Feasibility Check (£200k)
+
+All approaches pass capital feasibility:
+- **Approaches 7, 3:** Direct purchase viable at distressed pricing
+- **Approaches 5, 6:** Airspace rights/option agreements £50k-£150k
+- **Approaches 4, 8:** Option agreements £10k-£50k
+- **Approaches 9, 10:** Strategic options £5k-£50k + promotion costs
+
+## Recommended Testing Priority
+
+1. **Approach 7** - Corporate Liquidation (0 issues, strongest signal)
+2. **Approach 5** - Airspace Development (1 minor fix)
+3. **Approach 8** - Combined Motivation (0 issues)
+4. **Approach 4** - Lease Expiry + EPC (1 minor fix)
+5. **Approach 3** - Motivated Commercial (1 minor fix)
+
+Then proceed with remaining approaches after initial testing validates filter behavior.
+The reference files have already been provided in the context. Let me proceed with the collaborative strategic exploration.
+
+---
+
+# COLLABORATIVE STRATEGIC EXPLORATION
+
+## Three Expert Property Analysts Working Together
+
+---
+
+## ROUND 1: PRECEDENT ANALYSIS 🎯 (MANDATORY)
+
+### Collaborative Discussion
+
+**Analyst A:** Looking at this 8-storey mixed-use approval, the key factors are clear:
+- **Scale:** 8 storeys = 25-35m height (substantial for mixed-use)
+- **Mix:** Class E ground floor + C3 residential above
+- **Amenity provision:** Terraces, cycle parking, accessible parking
+- This was approved in an urban location supporting densification
+
+**Analyst B:** Agreed. The policy support is critical here. This only gets approved where:
+- PTAL 4+ (London) OR excellent transport links (rest of UK)
+- Area supports tall buildings (local plan policy)
+- Zero flood zone 3 (essential for residential)
+- Minimal conservation area overlap (height objections)
+
+**Analyst C:** For filter implementation, I see two distinct approaches:
+1. **Direct replication:** Find sites with similar characteristics (area, height capacity, transport)
+2. **Planning precedent:** Find actual approvals for similar schemes and target adjacent/similar properties
+
+Let's start with the core factors we agree on:
+
+**Consensus Core Factors:**
+- Title area: 0.2-2 acres (enough for 8-storey with parking/amenity)
+- Current height: <15m (headroom for intensification)
+- Transport: High accessibility required
+- Constraints: No flood zone 3, minimal conservation
+
+**Implementation Options Discussed:**
+
+**Analyst A:** For transport, PTAL 4+ works for London but excludes 90% of UK. We should create both variants.
+
+**Analyst B:** I'd also propose targeting existing commercial (Class E) since ground floor needs retail anyway. Easier to get permission for mixed-use if commercial already established.
+
+**Analyst C:** Good point. And for the £200k capital constraint, we need motivation signals. Long-hold corporate ownership on existing low-rise commercial would be ideal.
+
+---
+
+### PRECEDENT APPROACHES:
+
+```
+PRECEDENT APPROACHES: 3 approaches
+
+Approach 1: Urban Site Replication (Consensus)
+Filters:
+1. Title area (acres): is greater than 0.198 AND less than 2.47
+2. Max building height on title (m): is less than 15
+3. Distance to nearest Train Station (m): is less than 800
+4. Percentage of title covered by Flood Zone 3: is equal to 0
+5. Percentage of title covered by Conservation Areas: is less than 20
+6. Use class: is one of E, E(a), E(b), E(c), E(d), E(e), E(f), E(g)
+7. Freehold tenure
+
+Rationale: Replicates the core characteristics of the approved scheme - right size, height capacity, transport access, minimal constraints, existing commercial use. Sites meeting these criteria have similar approvals precedent.
+
+Expected results: 20-50 properties per geography (UK-wide urban areas)
+
+
+Approach 2: London PTAL-Based (Proposed by: Analyst A)
+Filters:
+1. Title area (acres): is greater than 0.198 AND less than 2.47
+2. Max building height on title (m): is less than 15
+3. TFL Public Transport Accessibility Level (PTAL): is one of 4, 5, 6a, 6b
+4. Percentage of title covered by Flood Zone 3: is equal to 0
+5. Use class: is one of E, E(a), E(b), E(c), E(d), E(e), E(f), E(g)
+6. Building on title is inactive: is equal to Yes
+7. Freehold tenure
+
+Rationale: Uses official PTAL metric (London-only) which provides policy support for density. Adds "inactive" filter for motivation signal (stalled development opportunity).
+
+Expected results: 10-30 properties in London
+
+
+Approach 3: Motivated Commercial with Height Capacity (Proposed by: Analyst B & C)
+Filters:
+1. Title area (acres): is greater than 0.198 AND less than 2.47
+2. Max building height on title (m): is less than 12
+3. Distance to nearest Train Station (m): is less than 800
+4. Use class: is one of E, E(a), E(b), E(c), E(d), E(e), E(f), E(g)
+5. Ownership type: is equal to Company
+6. Latest sold date: is before 2019-01-01
+7. Percentage of title covered by Flood Zone 3: is equal to 0
+8. Freehold tenure
+
+Rationale: Targets corporate-owned commercial properties held 5+ years (motivation signal) with current low-rise that can intensify to 8+ storeys. Corporate sellers more likely to negotiate options at £200k entry.
+
+Expected results: 15-40 properties per geography
+```
+
+---
+
+## ROUND 2: REGULATION/POLICY ANGLE 📋
+
+### Collaborative Discussion
+
+**Analyst A:** For regulatory pressure, the strongest signals are:
+- HMO expired licenses (cannot operate legally)
+- Lease expiry (income cliff within 6-12 months)
+- EPC E-G (cannot let)
+
+But none of these directly apply to 8-storey mixed-use development...
+
+**Analyst B:** Actually, lease expiry on existing commercial properties IS relevant. If a ground floor retail/office has a lease expiring, the owner faces:
+- Find new tenant (effort/cost)
+- Sell the freehold (motivated)
+- Redevelop (our angle!)
+
+The motivation creates opportunity for option agreements at £200k entry.
+
+**Analyst C:** Strong point. And low EPC on commercial buildings also works - owner can't legally let to new tenants without improvements. Combined with lease expiry = double motivation.
+
+**Consensus:** One strong regulation approach - Lease Expiry + EPC Compliance pressure on commercial sites.
+
+---
+
+### REGULATION APPROACHES:
+
+```
+REGULATION APPROACHES: 1 approach
+
+Approach 4: Commercial Lease Expiry + EPC Pressure (Consensus)
+Filters:
+1. Title area (acres): is greater than 0.198 AND less than 2.47
+2. Use class: is one of E, E(a), E(b), E(c), E(g)
+3. Lease end date: is between 2025-06-01 AND 2026-12-31
+4. EPC rating: is one of D, E, F, G
+5. Distance to nearest Train Station (m): is less than 800
+6. Percentage of title covered by Flood Zone 3: is equal to 0
+7. Freehold tenure
+
+Rationale: Expiring leases (6-18 months) create income cliff. Low EPC means owner cannot easily re-let without £5k-£50k improvement spend. Combined pressure creates strong motivation for sale/redevelopment. Perfect for option agreement approach at £200k.
+
+Expected results: 10-25 properties per geography
+```
+
+---
+
+## ROUND 3: STRUCTURAL/CREATIVE ANGLE 🏗️
+
+### Collaborative Discussion
+
+**Analyst A:** The £200k capital constraint is key here. We need structural plays:
+- Airspace rights on existing buildings (flat roofs)
+- Option agreements on larger sites
+- Stalled planning (work already done)
+
+**Analyst B:** Airspace is perfect for 8-storey targets. Find a 3-4 storey building with flat roof and add 4-5 storeys residential above. Purchase airspace rights £50k-£150k.
+
+**Analyst C:** For option agreements, target larger sites with old planning approvals that stalled. The owner invested in planning but didn't build - they may accept option payment (£10k-£50k) for someone else to take it forward.
+
+**Group Decision:** Two strong structural approaches - Airspace Development and Stalled Planning Option Play.
+
+---
+
+### STRUCTURAL APPROACHES:
+
+```
+STRUCTURAL APPROACHES: 2 approaches
+
+Approach 5: Airspace Development on Commercial (Consensus)
+Filters:
+1. A building in the title has flat roof: is equal to Yes
+2. Max building height on title (m): is less than 15
+3. Max number of building floors on title: is less than 5
+4. Use class: is one of E, E(a), E(b), E(c), E(g)
+5. Distance to nearest Train Station (m): is less than 800
+6. Percentage of title covered by Flood Zone 3: is equal to 0
+7. Freehold tenure
+
+Rationale: Flat roof commercial buildings 3-4 storeys can add 4-5 residential storeys above. Airspace purchase £50k-£150k within £200k capital. Existing utilities/access. Height capacity to reach 8-storey total.
+
+Capital model: £50k-£150k airspace rights + bank finance for build
+Expected results: 20-40 properties per geography
+
+
+Approach 6: Stalled Planning Option Play (Proposed by: Analyst C)
+Filters:
+1. Title area (acres): is greater than 0.25 AND less than 3
+2. Proposal: contains "storey"
+3. Max number of dwellings applied for: is greater than 10
+4. Last application submitted: is before 2022-01-01
+5. Building on title is inactive: is equal to Yes
+6. Distance to nearest Train Station (m): is less than 1000
+7. Percentage of title covered by Flood Zone 3: is equal to 0
+
+Rationale: Sites with planning applications for multi-storey schemes (10+ units) submitted 3+ years ago that are now inactive. Owner invested £50k-£100k in planning but stalled. Strong motivation to accept option payment (£10k-£50k) rather than lose everything.
+
+Capital model: £10k-£50k option agreement + planning revival costs
+Expected results: 10-20 properties per geography
+```
+
+---
+
+## ROUND 4: BEHAVIORAL/MOTIVATION ANGLE 🧠
+
+### Collaborative Discussion
+
+**Analyst A:** For seller motivation, the strongest signals are:
+- Corporate liquidation (FORCED sale)
+- Long hold + derelict (write-off opportunity)
+- Company status: Administration
+
+**Analyst B:** Liquidation is extremely strong but rare. We should also look at long corporate holds on underperforming assets - 7+ years with derelict/inactive status suggests non-core holding they'd exit cheaply.
+
+**Analyst C:** Also consider combining multiple weaker signals: Long hold + no recent planning + inactive building = tired owner who'd accept option agreement.
+
+**Group Decision:** Two behavioral approaches - Liquidation/Distress (strongest signal) and Combined Motivation Signals (broader pool).
+
+---
+
+### BEHAVIORAL APPROACHES:
+
+```
+BEHAVIORAL APPROACHES: 2 approaches
+
+Approach 7: Corporate Liquidation/Distress (Consensus - Strongest)
+Filters:
+1. Ownership type: is equal to Company
+2. Company status: is one of Liquidation
+3. Title area (acres): is greater than 0.15 AND less than 3
+4. Distance to nearest Train Station (m): is less than 1000
+5. Percentage of title covered by Flood Zone 3: is equal to 0
+
+Rationale: Liquidation = forced sale. Liquidators must sell assets, motivated to complete quickly, often accept below-market offers. Cash buyers with fast completion preferred. Extremely strong motivation for £200k acquisition or option.
+
+Expected results: 5-15 properties per geography (rare but high-value)
+
+
+Approach 8: Combined Motivation Signals (Proposed by: Analyst B & C)
+Filters:
+1. Ownership type: is equal to Company
+2. Latest sold date: is before 2017-01-01
+3. Building on title is inactive: is equal to Yes
+4. Applications in the last 5 years: is less than 3
+5. Title area (acres): is greater than 0.198 AND less than 2.5
+6. Distance to nearest Train Station (m): is less than 1000
+7. Percentage of title covered by Flood Zone 3: is equal to 0
+
+Rationale: Multiple weak signals compound to strong motivation: 7+ year corporate hold (non-core) + inactive building (write-off candidate) + no planning activity (stale). Owner likely tired and receptive to option agreement at £200k entry.
+
+Expected results: 10-25 properties per geography
+```
+
+---
+
+## ROUND 5: CHALLENGE ROUND 🚀
+
+### Purpose: Force exploration beyond obvious angles
+
+### Collaborative Discussion
+
+**Analyst A:** Something different... Time arbitrage? Monitor emerging allocations in local plans - contact owners SAME DAY allocation announced, before they know value.
+
+**Analyst B:** Or contrarian: target sites where recent planning was REFUSED for height, but policy has since changed (new local plan, Levelling Up Act, etc.).
+
+**Analyst C:** Speculative idea: Strategic land at edge of emerging settlements. No planning yet, not even SHLAA assessed. Promote site to local authority, get allocation, then sell option to developer.
+
+**Group Decision:** Two challenge approaches - Time Arbitrage on Fresh Allocations and Strategic Land Promotion (both longer timeline, higher risk/reward).
+
+---
+
+### CHALLENGE APPROACHES:
+
+```
+CHALLENGE APPROACHES: 2 approaches
+
+Approach 9: Time Arbitrage - Fresh Emerging Allocations (Proposed by: Analyst A)
+Filters:
+1. Site allocation type: is one of Housing allocation (emerging), Mixed allocation (emerging)
+2. Applications in the last 5 years: is less than 2
+3. Title area (acres): is greater than 0.5 AND less than 5
+4. Ownership type: is one of Company, Private owner
+5. Percentage of title covered by Flood Zone 3: is equal to 0
+
+Rationale: Sites newly allocated in emerging local plans where owner hasn't yet applied for planning. Contact owner immediately after allocation announced - they don't know market value yet. Secure option at "pre-allocation" price (£50k-£100k), sell at "post-planning" value (10x).
+
+Note: This is time-sensitive and speculative - requires monitoring emerging local plans
+Expected results: 5-15 properties per geography (but high value if executed quickly)
+
+
+Approach 10: Strategic Land Promotion - Un-Assessed Edge Sites (Proposed by: Analyst C)
+Filters:
+1. Title area (acres): is greater than 1 AND less than 10
+2. Developed area percentage: is less than 5
+3. Distance to nearest adopted settlement boundary (m): is less than 200
+4. Applications in the last 5 years: is equal to 0
+5. Ownership type: is one of Private owner
+6. Percentage of title covered by Flood Zone 3: is equal to 0
+7. Percentage of plot un-constrained: is greater than 75
+
+Rationale: Undeveloped land within 200m of settlement boundary with no planning history. Promote to local authority for allocation in next local plan. Secure option (£5k-£30k), invest in planning promotion (£20k-£50k), sell to developer when allocated (£500k-£2M).
+
+Note: Long timeline (2-5 years), requires planning expertise, but massive ROI potential
+Expected results: 10-30 properties per geography
+```
+
+---
+
+## FINAL SUMMARY
+
+```
+TOTAL APPROACHES: 10
+
+ROUND BREAKDOWN:
+- Precedent: 3 approaches
+- Regulation: 1 approach
+- Structural: 2 approaches
+- Behavioral: 2 approaches
+- Challenge: 2 approaches
+
+DIVERSITY CHECK:
+Strong diversity across strategic angles:
+- Direct site matching (Approaches 1-3)
+- Regulatory pressure (Approach 4)
+- Capital-efficient structures (Approaches 5-6)
+- Seller motivation psychology (Approaches 7-8)
+- Time/information arbitrage (Approaches 9-10)
+
+Different risk profiles: Conservative (1-4), Moderate (5-8), Speculative (9-10)
+Different timelines: Quick (7), Medium (1-6, 8), Long (9-10)
+Different capital deployment: Direct purchase, option agreements, airspace rights
+
+RECOMMENDED TESTING PRIORITY:
+
+1. Approach 7: Corporate Liquidation/Distress - Test first
+   - Strongest motivation signal (forced sale)
+   - Best negotiating position
+   - Few results but highest conversion potential
+
+2. Approach 5: Airspace Development on Commercial - Test second
+   - Fits £200k capital perfectly (airspace rights)
+   - 8-storey achievable by adding to existing
+   - Good supply of flat roof commercial
+
+3. Approach 4: Commercial Lease Expiry + EPC Pressure - Test third
+   - Strong regulatory motivation
+   - Time-sensitive (acts as forcing function)
+   - Perfect for option agreement approach
+
+4. Approach 3: Motivated Commercial with Height Capacity - Test fourth
+   - Combines precedent replication + motivation
+   - Corporate 5+ year holds likely to negotiate
+   - Good balance of supply and quality
+
+5. Approach 6: Stalled Planning Option Play - Test fifth
+   - Planning work already done
+   - Owner motivation clear (sunk cost)
+   - Low capital entry (option agreement)
+
+6. Approach 1: Urban Site Replication - Test sixth
+   - Broadest approach (baseline)
+   - UK-wide applicable
+   - Good for market understanding
+
+7. Approach 8: Combined Motivation Signals - Test seventh
+   - Multiple weak signals = decent pool
+   - Good for option approaches
+   - Moderate expected results
+
+8. Approach 2: London PTAL-Based - Test eighth
+   - London-only (limited geography)
+   - Policy support strongest here
+   - Test if London-specific strategy needed
+
+9. Approach 9: Fresh Emerging Allocations - Test ninth
+   - Requires monitoring system
+   - Time-sensitive execution
+   - High risk/reward
+
+10. Approach 10: Strategic Land Promotion - Test last
+    - Longest timeline (2-5 years)
+    - Requires planning expertise
+    - Speculative but massive upside
+
+CAPITAL DEPLOYMENT GUIDE:
+- Approaches 7, 3: Direct purchase opportunities (<£200k distressed)
+- Approaches 5, 6: Airspace/option agreements (£50k-£150k entry)
+- Approaches 4, 8: Option agreements (£10k-£50k entry)
+- Approaches 9, 10: Strategic options (£5k-£50k entry + promotion costs)
+```
+
+---
+
+**Next Steps:**
+1. Run these 10 approaches in parallel across target geographies (Slough, Birmingham, Manchester, London)
+2. Compare result counts and quality
+3. Shortlist top 3-5 approaches for detailed due diligence
+4. Test with actual outreach to validate motivation assumptions

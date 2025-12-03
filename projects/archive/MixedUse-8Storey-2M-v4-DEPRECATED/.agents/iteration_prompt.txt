@@ -1,0 +1,254 @@
+# ITERATION TASK: Resolve Technical Disagreements
+
+You previously critiqued filter approaches. However, there are DISAGREEMENTS among agents on technical validity.
+
+## YOUR TASK
+Review the critiques from all 3 agents and YOUR OWN critique. For approaches where there's disagreement:
+
+### Identify Disagreements:
+Look for approaches where agents disagree on PASS/FAIL:
+- 2 agents say VALID, 1 says INVALID = disagreement
+- 2 agents say INVALID, 1 says VALID = disagreement
+- All 3 disagree = major disagreement
+
+### Reconsider Your Position:
+For each disagreement, ask yourself:
+1. **Is this a technical error or a suggestion?**
+   - Technical: "Filter doesn't exist" = error
+   - Suggestion: "Could use better filter" = preference (ignore)
+
+2. **Did I miss something the other agents caught?**
+   - Check AvailableFiltersInSearchLand_ACTUAL.md again
+   - Verify units (acres vs sqm, etc.)
+   - Check syntax validity
+
+3. **Am I being too strict or too lenient?**
+   - Too strict: Marking INVALID for minor suggestions
+   - Too lenient: Missing actual technical errors
+
+### Output Format:
+For EACH approach where you disagreed with majority:
+
+```
+## Approach [X]: [Name]
+
+**My Original Position:** VALID / INVALID
+**Majority Position:** VALID / INVALID
+
+**After Reconsideration:**
+- [Specific point I reconsidered]
+- [What I checked in available filters]
+- [What other agents caught that I missed OR what I still disagree with]
+
+**Updated Position:** VALID / INVALID / CONDITIONAL
+
+**Rationale:** [Brief explanation]
+
+**If Still Disagree:** [Explain technical reason why]
+```
+
+### Rules:
+- Focus ONLY on technical correctness (filter existence, units, syntax)
+- Ignore strategic preferences ("I like approach A better")
+- If you were wrong, admit it and update position
+- If you're still right, explain technical reason clearly
+
+---
+
+---
+
+# VALIDATION SUMMARY
+
+## Overall Results
+
+| Approach | Strategic Angle | Validation | Status |
+|----------|----------------|------------|--------|
+| 1. Urban Site Replication | Precedent | PASS | VALID |
+| 2. London PTAL-Based | Precedent | PASS | VALID |
+| 3. Motivated Commercial | Precedent | PASS | VALID |
+| 4. Lease Expiry + EPC | Regulation | PASS | VALID |
+| 5. Airspace Development | Structural | PASS | CONDITIONAL |
+| 6. Stalled Planning Option | Structural | **FAIL** | **INVALID** |
+| 7. Corporate Liquidation | Behavioral | PASS | VALID |
+| 8. Combined Motivation | Behavioral | PASS | VALID |
+| 9. Fresh Emerging Allocations | Challenge | PASS | CONDITIONAL |
+| 10. Strategic Land Promotion | Challenge | **FAIL** | **INVALID** |
+
+---
+
+## Critical Issues Requiring Revision
+
+### Approach 6: Stalled Planning Option Play
+**Issue:** Missing `Tenure: is equal to Freehold` filter - critical for option agreement strategy
+
+**Revised Filters:**
+```
+1. Title area (acres): is greater than 0.25 AND less than 3
+2. Proposal: contains "storey"
+3. Max number of dwellings applied for: is greater than 10
+4. Last application submitted: is before 2022-01-01
+5. Building on title is inactive: is equal to Yes
+6. Distance to nearest Train Station (m): is less than 1000
+7. Percentage of title covered by Flood Zone 3: is equal to 0
+8. Tenure: is equal to Freehold  ← ADDED
+```
+
+### Approach 10: Strategic Land Promotion
+**Issue:** `Applications in the last 5 years: is equal to 0` is CRITICAL - will return near-zero results
+
+**Revised Filters:**
+```
+1. Title area (acres): is greater than 1 AND less than 10
+2. Developed area percentage: is less than 5
+3. Distance to nearest adopted settlement boundary (m): is less than 500  ← CHANGED from 200m
+4. Applications in the last 5 years: is less than 2  ← CHANGED from = 0
+5. Ownership type: is one of Private owner
+6. Percentage of title covered by Flood Zone 3: is equal to 0
+7. Percentage of plot un-constrained: is greater than 75
+```
+
+---
+
+## Conditional Approaches - Minor Fixes Needed
+
+### Approach 5: Airspace Development
+**Add:** `Title area (acres): is greater than 0.1 AND less than 1`
+
+### Approach 9: Fresh Emerging Allocations
+**Verify:** Exact enum values in SearchLand for "Site allocation type" and "Ownership type: Private owner"
+
+---
+
+## Recurring Minor Issue
+
+All approaches 1-4, 6 use "Freehold tenure" shorthand. For clarity, ensure consistent syntax:
+```
+Tenure: is equal to Freehold
+```
+
+---
+
+## Testing Priority Recommendation (Updated)
+
+Based on technical validation:
+
+1. **Approach 7** - Corporate Liquidation (VALID, strongest motivation)
+2. **Approach 5** - Airspace Development (CONDITIONAL, add area filter)
+3. **Approach 4** - Lease Expiry + EPC (VALID)
+4. **Approach 3** - Motivated Commercial (VALID)
+5. **Approach 6** - Stalled Planning (**REVISED** - add tenure)
+6. **Approach 1** - Urban Site Replication (VALID)
+7. **Approach 8** - Combined Motivation (VALID)
+8. **Approach 2** - London PTAL (VALID, London-only)
+9. **Approach 9** - Fresh Allocations (CONDITIONAL, verify enums)
+10. **Approach 10** - Strategic Land (**REVISED** - fix applications filter)
+---
+
+# VALIDATION SUMMARY
+
+## Overall Results
+
+| Approach | Validation | Key Issue |
+|----------|------------|-----------|
+| 1. Urban Site Replication | CONDITIONAL | Tenure syntax |
+| 2. London PTAL-Based | CONDITIONAL | Tenure syntax |
+| 3. Motivated Commercial | CONDITIONAL | Tenure syntax |
+| 4. Lease Expiry + EPC | CONDITIONAL | Tenure syntax |
+| 5. Airspace Development | CONDITIONAL | Tenure syntax |
+| 6. Stalled Planning | CONDITIONAL | Missing tenure |
+| 7. Corporate Liquidation | **VALID** | Minor (add tenure) |
+| 8. Combined Motivation | **VALID** | Minor (add tenure) |
+| 9. Emerging Allocations | CONDITIONAL | Enum values unverified |
+| 10. Strategic Land | CONDITIONAL | Ownership type value |
+
+## Critical Fixes Required
+
+### Recurring Issue: "Freehold tenure" Syntax
+**Affects:** Approaches 1, 2, 3, 4, 5
+
+**Problem:** "Freehold tenure" is not valid filter syntax
+
+**Fix:** Change to: `Tenure: is equal to Freehold`
+
+### Enum Value Verification Needed
+**Affects:** Approaches 9, 10
+
+**Problem:** "Private owner" should likely be "Private individual"
+
+**Fix:** Verify exact values in SearchLand dropdown before testing
+
+### PTAL/Site Allocation Values
+**Affects:** Approaches 2, 9
+
+**Problem:** Need to confirm exact enum values accepted by SearchLand
+
+**Fix:** Check dropdown options in SearchLand interface
+
+## Ready to Test (After Fixes)
+
+**Immediately ready:**
+- Approach 7: Corporate Liquidation/Distress ✅
+- Approach 8: Combined Motivation Signals ✅
+
+**Ready after tenure syntax fix:**
+- Approaches 1, 2, 3, 4, 5
+
+**Ready after enum verification:**
+- Approaches 9, 10
+
+## Capital Feasibility Check
+
+All approaches pass £200k capital test:
+- Liquidation sales can be acquired <£200k distressed
+- Option agreements £10k-£150k entry
+- Airspace rights £50k-£150k
+- Strategic options £5k-£50k
+
+No capital feasibility issues identified.
+---
+
+# VALIDATION SUMMARY
+
+## Overall Results
+
+| Approach | Strategic Angle | Validation | Issues | Assessment |
+|----------|----------------|------------|--------|------------|
+| 1. Urban Site Replication | Precedent | PASS | 1 Minor | ✅ VALID |
+| 2. London PTAL-Based | Precedent | PASS | 1 Minor | ✅ VALID |
+| 3. Motivated Commercial | Precedent | PASS | 1 Minor | ✅ VALID |
+| 4. Lease Expiry + EPC | Regulation | PASS | 1 Minor | ✅ VALID |
+| 5. Airspace Development | Structural | PASS | 1 Minor | ✅ VALID |
+| 6. Stalled Planning | Structural | CONDITIONAL | 1 Major | ⚠️ CONDITIONAL |
+| 7. Corporate Liquidation | Behavioral | PASS | 0 | ✅ VALID |
+| 8. Combined Motivation | Behavioral | PASS | 0 | ✅ VALID |
+| 9. Emerging Allocations | Challenge | PASS | 1 Minor | ✅ VALID |
+| 10. Strategic Land | Challenge | CONDITIONAL | 2 Minor | ⚠️ CONDITIONAL |
+
+## Key Fixes Required Before Testing
+
+### Recurring Issue (Approaches 1-5):
+**"Freehold tenure"** → Change to: `Tenure: is equal to Freehold`
+
+### Approach 6 - Major Fix:
+Add: `Tenure: is equal to Freehold` (filter 8)
+
+### Approaches 9 & 10 - Verify:
+Check exact "Ownership type" dropdown value - may be "Private" not "Private owner"
+
+## Capital Feasibility Check (£200k)
+
+All approaches pass capital feasibility:
+- **Approaches 7, 3:** Direct purchase viable at distressed pricing
+- **Approaches 5, 6:** Airspace rights/option agreements £50k-£150k
+- **Approaches 4, 8:** Option agreements £10k-£50k
+- **Approaches 9, 10:** Strategic options £5k-£50k + promotion costs
+
+## Recommended Testing Priority
+
+1. **Approach 7** - Corporate Liquidation (0 issues, strongest signal)
+2. **Approach 5** - Airspace Development (1 minor fix)
+3. **Approach 8** - Combined Motivation (0 issues)
+4. **Approach 4** - Lease Expiry + EPC (1 minor fix)
+5. **Approach 3** - Motivated Commercial (1 minor fix)
+
+Then proceed with remaining approaches after initial testing validates filter behavior.

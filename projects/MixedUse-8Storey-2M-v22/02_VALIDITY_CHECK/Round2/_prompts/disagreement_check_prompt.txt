@@ -1,0 +1,798 @@
+# Disagreement Detection Task
+
+Analyze the 4 critique files and identify TECHNICAL AND BUSINESS CASE DISAGREEMENTS.
+
+## What Counts as Disagreement
+- LLM A says filter exists, LLM B says it doesn't (factual dispute)
+- LLM A says "acres", LLM B says "sqft" for same filter (unit dispute)
+- LLM A says VALID syntax, LLM B says INVALID syntax (technical dispute)
+- LLM A says £n is sufficient, LLM B says it's not (capital feasibility dispute)
+- LLM A says ROI achievable, LLM B says unrealistic (business case dispute)
+- LLM A says deal structure works, LLM B says legally/financially flawed (implementation dispute)
+
+## What Does NOT Count
+- Priority rankings (A ranks #1, B ranks #3 - both valid)
+- Strategic preferences (speed vs certainty - philosophical)
+- Implementation styles (different but both correct)
+
+## Special Note on Precedent-Based Approaches
+For approaches replicating user-provided planning applications:
+- Business case is AUTO-VALID (user requested it)
+- Focus validation on: Do filters actually replicate the precedent correctly?
+- Multiple valid filter implementations are expected and acceptable
+
+## Output Format
+If disagreements exist:
+
+DISAGREEMENTS_FOUND: YES
+
+### Disagreement #1
+**Type:** [Filter existence | Units | Syntax | Capital feasibility | ROI | Deal structure]
+**Approaches:** [Which approaches affected]
+**Positions:**
+- LLM A: [Position]
+- LLM B: [Position]
+- LLM C: [Position]
+- LLM D: [Position]
+
+**Impact:** [Critical | Minor]
+**Requires iteration:** [YES | NO]
+
+---
+
+If no disagreements:
+
+DISAGREEMENTS_FOUND: NO
+
+All LLMs agree on technical and business case facts. Strategic differences are preserved.
+
+
+## CRITIQUES TO ANALYZE
+
+### Critique_Claude
+
+I'll provide the comprehensive validation report directly:
+
+# Comprehensive Technical & Business Case Validation Report
+
+## Executive Summary
+
+I've conducted a thorough validation of all 12 approaches across 4 LLMs, checking filter existence, syntax correctness, unit accuracy, capital feasibility, ROI calculations, and implementation viability.
+
+### Quick Results:
+- **VALID (No changes needed):** 3 approaches ✅
+- **CONDITIONAL (Fixable errors):** 5 approaches ⚠️
+- **INVALID (Critical errors):** 4 approaches ❌
+
+---
+
+## VALIDATION RESULTS BY APPROACH
+
+### ✅ VALID APPROACHES (Technically Flawless)
+
+#### 1. **Gemini Approach A: Precedent-Driven Intensification**
+**Status:** **VALID** ✅
+
+**Technical Assessment:**
+- ✅ All filters exist and syntax correct
+- ✅ Units correct (acres, metres)
+- ✅ Filter values valid
+- ✅ Capital: £65k (within budget, leaves £135k buffer)
+- ✅ ROI: £2M-£3.5M achievable
+- ✅ Strategic fit: Excellent (precedent-based, option strategy)
+
+**No changes needed** - This approach is ready to use immediately.
+
+---
+
+#### 2. **Gemini Approach B: Airspace Development**
+**Status:** **VALID** ✅
+
+**Technical Assessment:**
+- ✅ All filters exist and syntax correct
+- ✅ Innovative capital structure (buy airspace, not land)
+- ✅ Capital: £170k (within budget)
+- ⚠️ ROI: £180k-£580k per site (portfolio of 3-4 sites needed for £2M)
+- ✅ Strategic fit: Innovative, naturally creates mixed-use
+
+**No changes needed** - Note that portfolio approach needed to hit £2M target.
+
+---
+
+#### 3. **Grok Approach B: Derelict Turnaround**
+**Status:** **VALID** (Technically) ✅ / **CONDITIONAL** (Strategically) ⚠️
+
+**Technical Assessment:**
+- ✅ All 10 filters correct (no errors)
+- ✅ Capital: £160k (within budget)
+- ⚠️ ROI: £80k-£120k per property (requires 16-20 properties for £2M)
+- ⚠️ Strategic alignment: Volume trading strategy, not single development
+
+**No technical changes needed**, but note this is a volume strategy (3-5 years, multiple properties).
+
+---
+
+### ⚠️ CONDITIONAL APPROACHES (Fixable Errors)
+
+#### 4. **Claude Approach A: Slough Precedent Replication**
+**Status:** **CONDITIONAL** ⚠️
+
+**Technical Issues:**
+1. **CRITICAL - Filter 2: Invalid OR syntax**
+   ```
+   ❌ Proposal: contains "retail" OR "commercial" OR "Class E"
+   ```
+   **Fix:**
+   ```
+   ✅ Proposal: contains "retail" AND "mixed"
+   ✅ Use class: contains any [E - Commercial Business and Service, C3 - Dwellinghouses]
+   ```
+
+2. **CRITICAL - Filter 2: Invalid "Class E" format**
+   - SearchLand requires full format: "E - Commercial Business and Service"
+
+**After fixes:** Excellent strategy, £53k-£168k capital, £2M-£3.5M ROI achievable.
+
+---
+
+#### 5. **Claude Approach B: Liquidation Arbitrage**
+**Status:** **CONDITIONAL** ⚠️
+
+**Technical Issues:**
+1. **CRITICAL - Filter 2: Verify "Liquidation" value**
+   ```
+   ⚠️ Company status: is one of [Liquidation]
+   ```
+   - Need to check SearchLand UI dropdown for exact value
+   - Possible values: "Liquidation", "In Liquidation", "In Administration"
+
+**Business Case Issue:**
+- ⚠️ Volume strategy required (3-5 sites) to hit £2M
+- Single site profit: £220k-£570k (below target)
+
+**After verification + volume acceptance:** Strong forced-sale strategy, £110k-£176k capital.
+
+---
+
+#### 6. **Claude Approach C: Legacy Holdings Conversion**
+**Status:** **CONDITIONAL** ⚠️
+
+**Technical Issues:**
+1. **CRITICAL - Filter 1: Unclear syntax**
+   ```
+   ❌ No latest sold date
+   ```
+   **Fix:**
+   ```
+   ✅ Latest sold date: is before 1990-01-01
+   ```
+
+2. **CRITICAL - Filter 9: Incomplete syntax**
+   ```
+   ❌ Built up areas
+   ```
+   **Fix:**
+   ```
+   ✅ Planning constraints: contains any [Built up areas]
+   ```
+
+3. **MINOR - Filter 3: Restrictive**
+   ```
+   Applications in the last 5 years: is less than 1
+   ```
+   Consider: `is less than 2` (less restrictive)
+
+**After fixes:** Excellent off-market strategy, £64k-£194k capital, £690k-£1.9M per site ROI.
+
+---
+
+#### 7. **Gemini Approach C: EPC Arbitrage**
+**Status:** **CONDITIONAL** ⚠️
+
+**Technical Assessment:**
+- ✅ NO technical errors (filters perfect)
+- ✅ Capital: £165k (within budget)
+- ❌ ROI: £15k-£35k per property (requires 60-80 properties for £2M)
+- ❌ Strategic alignment: Volume trading (5-10 years), not development
+
+**Issue:** Technically flawless but wrong strategy type for user objective (trading vs development).
+
+---
+
+#### 8. **Grok Approach A: Slough Mid-Rise Intensification**
+**Status:** **CONDITIONAL** ⚠️
+
+**Technical Issues:**
+1. **CRITICAL - Filter 2: Invalid Property type value**
+   ```
+   ❌ Property type: contains any [Mixed Use]
+   ```
+   **Fix:**
+   ```
+   ✅ Building use group: contains any [Mixed Use]
+   OR remove filter entirely
+   ```
+
+2. **CRITICAL - Filter 5: PTAL is London-only**
+   ```
+   ❌ PTAL: contains any [4, 5, 6a, 6b (Best)]
+   ```
+   **Fix:** Remove (already has distance to station filter)
+
+**After fixes:** Good precedent strategy, £100k capital (leaves £100k buffer).
+
+---
+
+### ❌ INVALID APPROACHES (Critical Errors)
+
+#### 9. **Claude Approach D: High-PTAL London**
+**Status:** **INVALID** ❌
+
+**Issues:**
+- ❌ NO technical errors (filters perfect)
+- ❌ Budget violation: Requires £225k vs £200k available
+- ❌ Requires JV partner (not in user requirements)
+- ❌ ROI: Conservative scenario = LOSS; optimistic = £500k (below £2M)
+- ❌ London S106/CIL too high (35-50% affordable housing)
+
+**Conclusion:** Technically correct but financially unviable for £200k solo capital strategy.
+
+---
+
+#### 10. **Codex Approach A: Slough Mid-Rise Intensification**
+**Status:** **INVALID** ❌
+
+**Technical Issues:**
+1. **CRITICAL - Filter 2: "contains all" too restrictive**
+   ```
+   ❌ Use class: contains all [E, C3]
+   ```
+   - Requires BOTH E AND C3 on single title (rare)
+   - **Fix:** `contains any` (EITHER E OR C3)
+
+2. **CRITICAL - Filter 3: Invalid Property type value**
+   ```
+   ❌ Property type: is one of [Mixed Use, Commercial]
+   ```
+   - "Mixed Use" does NOT exist in Property type
+   - **Fix:** `Building use group: contains any [Mixed Use]`
+
+**Conclusion:** Multiple critical filter errors make approach non-viable without major rework.
+
+---
+
+#### 11. **Codex Approach B: HMO Conversion**
+**Status:** **INVALID** ❌
+
+**Technical Issues:**
+- Minor date format issue (fixable)
+- Article 4 filter name needs verification
+
+**Critical Issue:**
+- ❌ **Strategic misalignment:** This is a RENTAL YIELD strategy, not development
+- ❌ ROI: £30k-£90k per property (need 25-30 properties for £2M)
+- ❌ Timeline: 3-5 years with capital recycling
+- ❌ User wants: Development profit (planning uplift), not rental yield
+
+**Conclusion:** Wrong strategy type for user objective (yield vs capital gain).
+
+---
+
+#### 12. **Codex Approach C: Brand Covenant Expiry**
+**Status:** **INVALID** ❌
+
+**Technical Issues:**
+1. **CRITICAL - Filter 8: Wrong units**
+   ```
+   ❌ Title area (sqft): is greater than 7000 AND less than 30000
+   ```
+   - SearchLand ONLY has `Title area (acres)`
+   - **Fix:** Convert to acres (0.16 - 0.69 acres)
+
+2. **MINOR - Filter 2: Value format**
+   - Use class values need exact format
+
+3. **MINOR - Filter 6: Filter name**
+   - Should be "Average footfall count passing title daily"
+
+**Conclusion:** Critical units error (filter doesn't exist) makes approach non-executable.
+
+---
+
+## MOST COMMON ERRORS (Cross-LLM Patterns)
+
+### 1. **Property Type "Mixed Use" ❌**
+**Frequency:** 3 times (Codex A, Codex C implied, Grok A)
+**Error:** "Mixed Use" is NOT a valid Property type value
+**Correct values:** Detached, Semi-Detached, Terraced, Flat, Commercial (only 5)
+**Fix:** Use `Building use group: contains any [Mixed Use]`
+
+### 2. **Title Area Units (sqft vs acres) ❌**
+**Frequency:** 1 time (Codex C)
+**Error:** `Title area (sqft)` doesn't exist - ONLY `Title area (acres)`
+**Fix:** Convert sqft to acres (divide by 43,560)
+
+### 3. **OR Operator Syntax ❌**
+**Frequency:** 1 time (Claude A)
+**Error:** SearchLand does NOT support OR within single filter line
+**Fix:** Use `contains any [value1, value2]` for implicit OR logic
+
+### 4. **Strategic Misalignment (Trading vs Development) ⚠️**
+**Frequency:** 3 times (Codex B HMO, Gemini C EPC, Grok B Derelict)
+**Issue:** Volume trading strategies (15-80 properties) for development objective (single large project)
+
+---
+
+## FINAL RECOMMENDATIONS
+
+### **Immediate Use (No Changes):**
+1. ✅ **Gemini A** - Precedent-driven intensification (£65k, £2M-£3.5M ROI)
+2. ✅ **Gemini B** - Airspace development (£170k, portfolio approach)
+
+### **Quick Fixes (< 5 minutes):**
+1. ⚠️ **Claude A** - Remove OR operators, fix "Class E"
+2. ⚠️ **Grok A** - Remove PTAL, fix Property type
+
+### **Moderate Fixes (Need verification):**
+1. ⚠️ **Claude B** - Verify "Liquidation" value in SearchLand UI
+2. ⚠️ **Claude C** - Fix 3 syntax issues (date, "Built up areas")
+
+### **Reject (Not Viable):**
+1. ❌ **Claude D** - Exceeds budget, requires JV
+2. ❌ **Codex A** - Multiple critical filter errors
+3. ❌ **Codex B** - Wrong strategy (yield not development)
+4. ❌ **Codex C** - Critical units error
+
+### **Conditional (Strategic Decision Needed):**
+1. ⚠️ **Gemini C** - Perfect technically, but is volume trading acceptable? (60-80 properties, 5-10 years)
+2. ⚠️ **Grok B** - Perfect technically, but is volume distressed trading acceptable? (16-20 properties, 3-5 years)
+
+---
+
+## CONFIDENCE ASSESSMENT
+
+### **HIGH CONFIDENCE (Cross-verified):**
+- Filter existence ✅
+- Syntax rules ✅
+- Unit conventions ✅
+- Filter values ✅
+
+### **MEDIUM CONFIDENCE (Need UI check):**
+- "Liquidation" exact value format ⚠️
+- Article 4 filter exact name ⚠️
+- Some LPA names ⚠️
+
+### **USER DECISION REQUIRED:**
+- Strategic alignment: Development vs Trading strategies ❓
+- Volume strategy acceptability ❓
+- Timeline preferences (1-2 years vs 3-5 years) ❓
+
+---
+
+**Validation Complete**
+**Date:** 2025-01-19
+**Validator:** Claude (Independent Review)
+**Approaches Reviewed:** 12
+**Result:** 3 VALID, 5 CONDITIONAL, 4 INVALID
+
+---
+
+### Critique_Codex
+
+Claude - Approach A: CONDITIONAL  
+**Status:** CONDITIONAL  
+**Reasoning:** Filters mostly exist but Filter 2 uses unsupported inline OR syntax and Filter 7 is best split into two lines for reliability; business case fits £200k and ROI is plausible if planning succeeds.  
+**Technical Issues:**  
+- Filter 2 should be `Proposal: contains any [retail, commercial, E - Commercial Business and Service]` (no OR).  
+- Filter 7 range should be split into two filters for parsing reliability.  
+**Suggested Fixes:**  
+- Replace Filter 2 with `contains any` list.  
+- Split the acreage band into two filters.
+
+Claude - Approach B: CONDITIONAL  
+**Status:** CONDITIONAL  
+**Reasoning:** Filters exist/syntax OK; capital is within £200k, but ROI to £2M depends on closing 3–5 sites, not a single deal.  
+**Technical Issues:** None material.  
+**Suggested Fixes:**  
+- Explicitly plan for portfolio volume (3–5 sites) and recycling capital.
+
+Claude - Approach C: CONDITIONAL  
+**Status:** CONDITIONAL  
+**Reasoning:** Business case fits budget, but prompt has missing/invalid filters.  
+**Technical Issues:**  
+- “No latest sold date” needs a real filter (e.g., `Latest sold date: is blank` if supported) or replace with `Latest sold date: is before 19xx-01-01`.  
+- Filter 3 should be `Applications in the last 5 years: is less than 1`.  
+- Filter 9 must be `Planning constraints: contains any [Built up areas]`.  
+**Suggested Fixes:**  
+- Use supported latest-sold syntax; correct Filters 3 and 9.
+
+Claude - Approach D: CONDITIONAL  
+**Status:** CONDITIONAL  
+**Reasoning:** Filters are valid, but base case breaches £200k equity and the pro forma shows tight/negative margin unless JV/co-invest or cheaper site is found.  
+**Technical Issues:** None.  
+**Suggested Fixes:**  
+- Lock JV/partner equity or target sub-£1.5M assets; rework finance so total equity ≤£200k and revisit cost/affordable assumptions.
+
+Codex - Approach A: INVALID  
+**Status:** INVALID  
+**Reasoning:** Prompt is not executable as written.  
+**Technical Issues:**  
+- `Property type: Mixed Use` is not a valid value (allowed: Detached/Semi-Detached/Terraced/Flat/Commercial).  
+- `Use class: contains all [E, C3]` is over-restrictive for single-class titles; use `contains any` or separate filters.  
+
+Codex - Approach B: INVALID  
+**Status:** INVALID  
+**Reasoning:** Multiple filter/name/unit errors; business case also needs volume.  
+**Technical Issues:**  
+- `Property type: Residential` not valid.  
+- Article 4 should be via `Planning constraints`/percentage, not `Article 4 Direction`.  
+- Property floor area unit/filter (`sqft`) not confirmed in Available Filters.
+
+Codex - Approach C: INVALID  
+**Status:** INVALID  
+**Reasoning:** Key filters don’t exist/are in wrong units.  
+**Technical Issues:**  
+- `Property type: Mixed Use` invalid.  
+- `Title area (sqft)` should be `Title area (acres)`.  
+- `Average daily footfall` filter not in the documented filter list.  
+
+Gemini - Approach A: VALID  
+**Status:** VALID  
+**Reasoning:** All filters exist with correct syntax; capital plan (£65k) is within budget and planning-uplift route is viable, though success depends on planning.  
+**Technical Issues (if any):**  
+- Consider splitting the acreage band into two filters for parser reliability.  
+
+Gemini - Approach B: CONDITIONAL  
+**Status:** CONDITIONAL  
+**Reasoning:** Strategy feasible within £200k, but one filter is unverified and ROI to £2M needs volume or bigger schemes.  
+**Technical Issues:**  
+- Confirm `A building in the title has flat roof` exists; if not, swap to `Roof type: Flat` or manual verification.  
+**Suggested Fixes:**  
+- Verify/replace flat-roof filter; model deal count/exit needed for £2M target.
+
+Gemini - Approach C: CONDITIONAL  
+**Status:** CONDITIONAL  
+**Reasoning:** Filters valid; capital fits. Profit per unit is low—£2M requires high deal volume/recycling.  
+**Technical Issues:** None.  
+**Suggested Fixes:**  
+- Set volume target (e.g., 10–15 deals) and secure refurbishment funding lines.
+
+Grok - Approach A: INVALID  
+**Status:** INVALID  
+**Reasoning:** Prompt uses an invalid property type and mixes PTAL (London-only) with a Slough focus.  
+**Technical Issues:**  
+- `Property type: Mixed Use` not allowed.  
+- PTAL returns nothing outside London; combine with train-distance instead if non-London.  
+
+Grok - Approach B: CONDITIONAL  
+**Status:** CONDITIONAL  
+**Reasoning:** Filters exist and capital fits; hitting £2M depends on executing multiple small derelict turnarounds.  
+**Technical Issues:**  
+- Ensure `Use class: does not contain [B2]` is supported; if not, invert with `Use class: contains any [...]` for allowed classes.  
+**Suggested Fixes:**  
+- Plan portfolio throughput (e.g., 5–8 projects) and validate use-class exclusion syntax.
+
+---
+
+### Critique_Gemini
+
+Loaded cached credentials.
+Here is the technical and business case validation for each approach, based on the provided reference materials.
+
+### Claude - Approach A: Slough Precedent Replication - Stalled Mixed-Use with Height Approval
+**Status:** CONDITIONAL
+**Reasoning:** The strategy is coherent and capital-efficient. However, the SearchLand prompt contains three technical syntax errors that would prevent it from running correctly.
+
+**Technical Issues:**
+- **Filter 2 (Proposal):** Uses `OR` operators within a single filter line, which is invalid syntax. It should use separate filter groups or rely on the `Use class` filter.
+- **Filter 8 (Inactive):** Uses `Yes` for a boolean filter. The correct syntax is `is equal to Yes`.
+- **Filter 9 (On Market):** Uses `Yes` for a boolean filter. The correct syntax is `is equal to Yes`.
+
+**Suggested Fixes:**
+- **Filter 2:** Rephrase using the `Use class` filter, such as `Use class: contains any [E(a), E(b), ...]` for more precise targeting than a proposal text search.
+- **Filter 8:** Change to `Building on title is inactive: is equal to Yes`.
+- **Filter 9:** Change to `Sales listing currently on the market: is equal to Yes`.
+
+### Claude - Approach B: Liquidation Arbitrage - Forced Sales with Development Potential
+**Status:** CONDITIONAL
+**Reasoning:** An excellent strategy targeting highly motivated sellers with strong, valid filters. The business case is realistic, noting the need for a volume approach. The prompt has minor, correctable syntax errors.
+
+**Technical Issues:**
+- **Filter 1 (Ownership type):** Uses `is equal to Company`. The correct syntax is `is one of [Company]`.
+- **Filter 6 (Derelict):** Uses `Yes` for a boolean filter. The correct syntax is `is equal to Yes`.
+
+**Suggested Fixes:**
+- **Filter 1:** Change to `Ownership type: is one of [Company]`.
+- **Filter 6:** Change to `Building on title is derelict: is equal to Yes`.
+
+### Claude - Approach C: Legacy Holdings Conversion - Off-Market Mixed-Use Opportunities
+**Status:** CONDITIONAL
+**Reasoning:** A strong, off-market strategy leveraging information asymmetry. The business case is sound. The prompt, however, has several invalid or incomplete filter syntaxes.
+
+**Technical Issues:**
+- **Filter 1 (Sold Date):** `No latest sold date` is a concept, not a valid filter syntax. A workaround, like setting `Latest sold date: is before [very old date]`, is required.
+- **Filter 3 (Applications):** `Less than 1 application in last 5 years` is incomplete. Correct syntax is `Applications in the last 5 years: is less than 1`.
+- **Filter 9 (Built up areas):** This is an incomplete filter. Correct syntax is `Planning constraints: contains any [Built up areas]`.
+
+**Suggested Fixes:**
+- **Filter 1:** Change to `Latest sold date: is before 1995-01-01` (to capture pre-digital records).
+- **Filter 3:** Correct to `Applications in the last 5 years: is less than 1`.
+- **Filter 9:** Correct to `Planning constraints: contains any [Built up areas]`.
+
+### Claude - Approach D: High-PTAL Low-Rise Intensification - London Tall Building Zones
+**Status:** INVALID
+**Reasoning:** The business case is fundamentally flawed as it fails the primary capital constraint. The approach's own analysis shows a required equity of £225k, exceeding the user's £200k budget. While a JV is suggested as a fallback, a valid approach must be feasible with the stated constraints.
+
+**Technical Issues:**
+- **Filter 8 (On Market):** Uses `Yes` for a boolean filter. The correct syntax is `is equal to Yes`.
+
+**Strategic Notes:**
+- The ROI calculations show this is a high-risk strategy with tight margins, even if the capital issue were resolved.
+
+---
+### Codex - Approach A: Slough Mid-Rise Intensification (Precedent Match)
+**Status:** INVALID
+**Reasoning:** The prompt contains multiple critical and non-functional technical errors related to filter values and operators, making it unusable.
+
+**Technical Issues:**
+- **Filter 3 (Property type):** Uses `Mixed Use`, which is not a valid value for the `Property type` filter.
+- **Filter 4 (Tenure):** Uses the operator `is equal to` and omits brackets. Correct syntax is `is one of [Freehold]`.
+- **Filter 9 (Inactive):** Uses `Yes` for a boolean filter. Correct syntax is `is equal to Yes`.
+
+### Codex - Approach B: Large C3 to HMO Conversion (High Yield, Low Capital)
+**Status:** INVALID
+**Reasoning:** The prompt is technically riddled with errors (invalid values, operators, and date formats). Furthermore, the strategy (HMO/rental yield) is fundamentally misaligned with the user's stated goal of achieving a £2M profit from a large-scale development project.
+
+**Technical Issues:**
+- **Filter 1 (Property type):** `Residential` is not a valid value.
+- **Filter 3 (Tenure):** Incorrect operator and missing brackets.
+- **Filter 7 (Ownership type):** Incorrect operator and missing brackets.
+- **Filter 8 (Sold date):** Invalid date format. Must be `YYYY-MM-DD`.
+- **Filter 10 (Article 4):** Incorrect filter name (`Article 4 Direction`). The correct filter is `Article 4` within `Planning constraints`.
+
+**Strategic Notes:**
+- This is a rental yield and volume trading strategy, not a development capital gain strategy. It does not align with the precedent-based objective.
+
+### Codex - Approach C: Brand Covenant Expiry Reposition (QSR/Retail to Mixed Use)
+**Status:** INVALID
+**Reasoning:** The prompt is technically unusable due to multiple critical errors, including a fatal unit mismatch (`sqft` for `Title area`) and several invalid filter names and values.
+
+**Technical Issues:**
+- **Filter 1 (Property type):** Uses `Mixed Use`, an invalid value.
+- **Filter 3 (Tenure):** Incorrect operator and missing brackets.
+- **Filter 5 (Lease end date):** Invalid date format.
+- **Filter 6 (Footfall):** `Average daily footfall` is the wrong filter name. Correct is `Average footfall count passing title daily`.
+- **Filter 8 (Title area):** **CRITICAL ERROR.** Uses `sqft` where the filter only accepts `acres`.
+- **Filter 10 (Constraints):** `Listed building` is an incomplete value.
+
+---
+### Gemini - Approach A: Precedent-Driven Intensification (Option Agreement)
+**Status:** VALID
+**Reasoning:** This approach is technically flawless, with all filters using correct syntax and values. The business case is sound, capital-efficient, and directly aligned with the user's objective of replicating the precedent using an option-based strategy.
+
+**Technical Issues:**
+- None.
+
+### Gemini - Approach B: Airspace Development Over Commercial Hubs
+**Status:** CONDITIONAL
+**Reasoning:** An excellent and creative strategy that is both capital-efficient and strategically sound. The prompt has one minor, easily correctable syntax error.
+
+**Technical Issues:**
+- **Filter 1 (Flat roof):** Uses `Yes` for a boolean filter. The correct syntax is `is equal to Yes`.
+
+**Suggested Fixes:**
+- **Filter 1:** Change to `A building in the title has flat roof: is equal to Yes`.
+
+### Gemini - Approach C: EPC Arbitrage (Regulation-Driven)
+**Status:** VALID (Technically) / CONDITIONAL (Strategically)
+**Reasoning:** The prompt is technically flawless. The business model is sound and viable within the capital constraints. However, it represents a strategic pivot from a single large-scale development to a high-volume trading strategy. While it can achieve the profit target, it is not aligned with the nature of the user's precedent-based request.
+
+**Technical Issues:**
+- None.
+
+**Strategic Notes:**
+- This is a "flipper" or volume trading strategy, which has a different risk, operational, and time-scale profile than the core development objective. Its validity depends on whether the user is open to alternative business models to reach the financial goal.
+
+---
+### Grok - Approach A: Slough Mixed-Use Precedent Replication
+**Status:** INVALID
+**Reasoning:** The prompt contains two critical technical errors that would cause it to fail to produce relevant results. Using the London-specific PTAL filter for a search in Slough is a fatal logical flaw.
+
+**Technical Issues:**
+- **Filter 2 (Property type):** Uses `Mixed Use`, which is not a valid value for the `Property type` filter. `Building use group` should be used instead.
+- **Filter 5 (PTAL):** **CRITICAL ERROR.** PTAL is a London-only filter and cannot be used for a search in Slough. This filter will cause the search to return zero results.
+
+### Grok - Approach B: Low-Capital Derelict Turnaround
+**Status:** VALID (Technically) / CONDITIONAL (Strategically)
+**Reasoning:** The prompt is technically flawless. The business strategy is a viable volume-based approach to reach the profit target. As with Gemini's Approach C, this is a different business model (volume trading) than the user's primary objective (large-scale development).
+
+**Technical Issues:**
+- None.
+
+**Strategic Notes:**
+- This approach is valid but requires executing multiple smaller deals to reach the target, which is a different operational model than the single-project precedent.
+
+---
+
+### Critique_Grok
+
+[94m[1m| [0m[90m Grep     [0mProperty type.*contains any.*Mixed Use
+[94m[1m| [0m[90m Grep     [0mArticle 4 Direction
+[94m[1m| [0m[90m Grep     [0mAverage daily footfall
+[94m[1m| [0m[90m Grep     [0mTitle area.*sqft
+[94m[1m| [0m[90m Grep     [0mNo latest sold date
+[94m[1m| [0m[90m Grep     [0mLease end date.*year
+[94m[1m| [0m[90m Grep     [0mProperty type.*Residential
+[94m[1m| [0m[90m Grep     [0mLatest sold date.*is less than 2004
+[94m[1m| [0m[90m Grep     [0mLatest sold date.*is before 2010
+### Claude - Approach A: Slough Precedent Replication - Stalled Mixed-Use with Height Approval
+**Status:** CONDITIONAL  
+**Reasoning:** Technically sound overall with proven precedent logic and capital/ROI within bounds, but has syntax errors that would prevent proper execution. Strategic diversity preserved as precedent-based stalled planning approach.
+
+**Technical Issues (if any):**
+- Filter 2 uses unsupported OR syntax ("OR") in a single filter line, which SearchLand AI cannot parse
+- Filters 8-9 use incorrect boolean syntax ("Yes" instead of "is equal to Yes")
+
+**Suggested Fixes (if CONDITIONAL):**
+- Change Filter 2 to: `Proposal: contains any ["retail", "commercial", "Class E"]` (but note "Class E" should be "E - Commercial Business and Service")
+- Change Filters 8-9 to: `Building on title is inactive: is equal to Yes` and `Sales listing currently on the market: is equal to Yes`
+
+**Strategic Notes (optional):**
+- Strong for replicating specific local precedents; complements off-market approaches
+
+### Claude - Approach B: Liquidation Arbitrage - Forced Sales with Development Potential
+**Status:** CONDITIONAL  
+**Reasoning:** Excellent motivation signal from liquidation status with viable capital/ROI, but boolean syntax error prevents execution. Preserves strategic diversity as distressed asset approach.
+
+**Technical Issues (if any):**
+- Filter 6 uses incorrect boolean syntax ("Yes" instead of "is equal to Yes")
+
+**Suggested Fixes (if CONDITIONAL):**
+- Change Filter 6 to: `Building on title is derelict: is equal to Yes`
+
+**Strategic Notes (optional):**
+- Unique forced-sale motivation; pairs well with precedent approaches for volume
+
+### Claude - Approach C: Legacy Holdings Conversion - Off-Market Mixed-Use Opportunities
+**Status:** CONDITIONAL  
+**Reasoning:** Strong off-market strategy with low capital and good ROI potential, but critical filter errors would return zero results. Maintains strategic diversity as relationship-based legacy holdings approach.
+
+**Technical Issues (if any):**
+- Filter 1 ("No latest sold date") is non-existent; no such filter in SearchLand
+- Filter 9 ("Built up areas") uses incorrect syntax; should be part of Planning constraints filter
+
+**Suggested Fixes (if CONDITIONAL):**
+- Replace Filter 1 with: `Latest sold date: is before 1980-01-01` (proxy for never sold)
+- Change Filter 9 to: `Planning constraints: contains any [Built up areas]`
+
+**Strategic Notes (optional):**
+- Excellent for patient capital; fills gap between quick flips and long-term development
+
+### Claude - Approach D: High-PTAL Low-Rise Intensification - London Tall Building Zones
+**Status:** INVALID  
+**Reasoning:** Capital exceeds £200k budget (£225k+ required), making it financially infeasible despite technically sound filters and good ROI potential. Violates hard budget constraint.
+
+**Technical Issues (if any):**
+- Filter 8 uses incorrect boolean syntax ("Yes" instead of "is equal to Yes")
+
+**Suggested Fixes (if CONDITIONAL):**
+- N/A (capital violation makes it invalid)
+
+**Strategic Notes (optional):**
+- Strong London-focused policy approach; could be adapted with JV partner to meet budget
+
+### Codex - Approach A: Slough Mid-Rise Intensification (Precedent Match)
+**Status:** CONDITIONAL  
+**Reasoning:** Solid precedent focus with capital/ROI within bounds, but filter value and syntax errors would cause failures. Preserves strategic diversity as geographic precedent replication.
+
+**Technical Issues (if any):**
+- Filter 3 uses invalid Property type value ("Mixed Use" not available; only Detached/Semi-Detached/Terraced/Flat/Commercial)
+- Filter 9 uses incorrect boolean syntax ("Yes" instead of "is equal to Yes")
+
+**Suggested Fixes (if CONDITIONAL):**
+- Change Filter 3 to: `Property type: contains any [Commercial]` (or remove if using Use class)
+- Change Filter 9 to: `Building on title is inactive: is equal to Yes`
+
+**Strategic Notes (optional):**
+- Geographic focus provides planning de-risking; similar to Claude A
+
+### Codex - Approach B: Large C3 to HMO Conversion (High Yield, Low Capital)
+**Status:** INVALID  
+**Reasoning:** Strategic misalignment (yield-focused HMO strategy vs. capital gain development objective) combined with multiple filter errors. Does not meet stated goal of £2M profit from mixed-use development.
+
+**Technical Issues (if any):**
+- Filter 1 uses invalid Property type value ("Residential" not available)
+- Filter 8 uses invalid date format ("is less than 2004" instead of "is before 2004-01-01")
+- Filter 10 uses incorrect filter name ("Article 4 Direction" instead of "Article 4" or "Percentage of title subject to Article 4 Directions")
+
+**Suggested Fixes (if CONDITIONAL):**
+- N/A (strategic misalignment)
+
+**Strategic Notes (optional):**
+- Valid for rental yield strategies but wrong for this development objective
+
+### Codex - Approach C: Brand Covenant Expiry Reposition (QSR/Retail to Mixed Use)
+**Status:** INVALID  
+**Reasoning:** Multiple critical filter errors (units, names, values) would prevent execution, plus strategic misalignment with yield focus. Capital/ROI potentially viable but filters non-functional.
+
+**Technical Issues (if any):**
+- Filter 1 uses invalid Property type value ("Mixed Use" not available)
+- Filter 5 uses invalid date format ("Lease end date (year): is less than 2027" instead of proper date filter)
+- Filter 6 uses incorrect filter name ("Average daily footfall" instead of "Average footfall count passing title daily")
+- Filter 8 uses wrong units ("Title area (sqft)" instead of acres)
+
+**Suggested Fixes (if CONDITIONAL):**
+- N/A (too many critical errors)
+
+**Strategic Notes (optional):**
+- Interesting lease expiry motivation but filters need complete rewrite
+
+### Gemini - Approach A: Precedent-Driven Intensification (Option Agreement)
+**Status:** VALID  
+**Reasoning:** All filters correct with proper syntax, capital within budget, ROI achievable. Excellent strategic diversity as low-capital option-based precedent approach.
+
+**Technical Issues (if any):**
+- None
+
+**Suggested Fixes (if CONDITIONAL):**
+- N/A
+
+**Strategic Notes (optional):**
+- Strong patient capital model; complements aggressive approaches
+
+### Gemini - Approach B: Airspace Development Over Commercial Hubs
+**Status:** CONDITIONAL  
+**Reasoning:** Innovative airspace strategy with viable capital/ROI, but boolean syntax error prevents execution. Preserves strategic diversity as vertical intensification approach.
+
+**Technical Issues (if any):**
+- Filter 1 uses incorrect boolean syntax ("Yes" instead of "is equal to Yes")
+
+**Suggested Fixes (if CONDITIONAL):**
+- Change Filter 1 to: `A building in the title has flat roof: is equal to Yes`
+
+**Strategic Notes (optional):**
+- Unique airspace angle; fills technical diversity gap
+
+### Gemini - Approach C: EPC Arbitrage (Regulation-Driven)
+**Status:** INVALID  
+**Reasoning:** Strategic misalignment (trading/refurb strategy vs. development profit) despite technically sound filters and capital fit. Does not deliver mixed-use development outcomes.
+
+**Technical Issues (if any):**
+- None
+
+**Suggested Fixes (if CONDITIONAL):**
+- N/A (strategic misalignment)
+
+**Strategic Notes (optional):**
+- Valid for volume trading but not development objective
+
+### Grok - Approach A: Slough Mixed-Use Precedent Replication
+**Status:** CONDITIONAL  
+**Reasoning:** Good precedent logic with capital/ROI within bounds, but filter value error and PTAL geographic limitation would reduce results. Maintains strategic diversity as precedent-focused approach.
+
+**Technical Issues (if any):**
+- Filter 2 uses invalid Property type value ("Mixed Use" not available)
+- PTAL filter only works in London (approach appears UK-wide)
+
+**Suggested Fixes (if CONDITIONAL):**
+- Change Filter 2 to: `Property type: contains any [Commercial]` or remove
+- For non-London: Replace PTAL with `Distance to nearest Train Station (m): is less than 1000`
+
+**Strategic Notes (optional):**
+- Similar to Claude A but broader geographic scope
+
+### Grok - Approach B: Low-Capital Derelict Turnaround
+**Status:** CONDITIONAL  
+**Reasoning:** Strong distressed asset strategy with capital/ROI fit, but date format error prevents execution. Preserves strategic diversity as quick-turnaround approach.
+
+**Technical Issues (if any):**
+- Filter 8 uses invalid date format ("is before 2010" instead of "is before 2010-01-01")
+
+**Suggested Fixes (if CONDITIONAL):**
+- Change Filter 8 to: `Latest sold date: is before 2010-01-01`
+
+**Strategic Notes (optional):**
+- Good for volume strategy; pairs with liquidation approaches
+
+---
+

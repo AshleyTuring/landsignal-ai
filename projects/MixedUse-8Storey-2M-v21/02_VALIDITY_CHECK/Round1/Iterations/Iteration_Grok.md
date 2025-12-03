@@ -1,0 +1,19 @@
+### Updated Assessment (Technical & Business Case)
+
+**Approaches I'm changing my assessment on:**
+- Claude - Approach D (Legacy Holdings): Was VALID, now CONDITIONAL because filter 4 ("Less than 1 application in last 5 years: Yes") uses invalid boolean syntax for a numeric filter (should be "Applications in the last 5 years: is less than 1" per AvailableFiltersInSearchLand_ACTUAL.md and LEARNINGS_DATABASE.md); filter 5 ("No latest sold date: Yes") does not exist as a boolean filter (no "No latest sold date" listed; "Latest sold date" exists but requires date-based operators like "is before" for null values).
+- Claude - Approach E (HMO License Expiry): Was VALID, now CONDITIONAL because filter 9 ("Planning constraints: does not contain [Article 4 Directions]") incorrectly treats Article 4 as a value within Planning constraints, but AvailableFiltersInSearchLand_ACTUAL.md lists "Article 4" as a standalone boolean filter (should be "Article 4: No").
+- Codex - Approach C (Unbroken Mixed-Use): Was VALID, now CONDITIONAL because "Property type: is one of [Mixed Use]" uses an invalid value; AvailableFiltersInSearchLand_ACTUAL.md lists Property type values as Detached, Semi-Detached, Terraced, Flat, Commercial (no Mixed Use; should use "Building use group: contains any [Mixed Use]").
+
+**Approaches I'm maintaining my assessment on:**
+- Claude - Approach A (Precedent Replication - Slough): Still CONDITIONAL because filter 2 ("Proposal: contains 'retail' OR 'commercial'") uses unsupported OR syntax within a single filter line (LEARNINGS_DATABASE.md confirms SearchLand does not support OR operators; should be "Proposal: contains any ['retail', 'commercial']" or split filters).
+- Claude - Approach B (Liquidation Arbitrage): Still CONDITIONAL because filter 1 ("Ownership type: is equal to Company") uses incorrect operator for list-based filter; AvailableFiltersInSearchLand_ACTUAL.md specifies "is one of" for Ownership type (should be "Ownership type: is one of [Company]").
+- Claude - Approach C (Airspace Rights): Still VALID because "A building in the title has flat roof: Yes" exists as a boolean filter in AvailableFiltersInSearchLand_ACTUAL.md (disagreement's claim of non-existence is incorrect based on reference documentation).
+- Codex - Approach A (Slough Precedent): Still INVALID because filter 2 ("Decision: is equal to Approved") references a non-existent filter; AvailableFiltersInSearchLand_ACTUAL.md has no "Decision" filter (no direct way to filter by planning approval status).
+- Codex - Approach B (C3 to HMO): Still CONDITIONAL because filter 3 ("Tenure: is equal to Freehold") uses incorrect operator for list-based filter; AvailableFiltersInSearchLand_ACTUAL.md specifies "is one of" for Tenure (should be "Tenure: is one of [Freehold]").
+- Grok - Approach A (Slough Precedent): Still VALID because business case contradiction (option agreements £10k-£20k vs. direct acquisition £150k) is resolved by precedent-based auto-validity per task instructions; technical filters are valid with correct syntax and units.
+- Grok - Approach C (HMO License Exploitation): Still VALID because "EPC rating: is one of [E, F, G]" uses acceptable syntax for list-based filters per LEARNINGS_DATABASE.md examples (disagreement notes it as potentially invalid but minor, with no iteration required).
+
+**Clarifications:**
+- For Claude - Approach C, the disagreement claims "A building in the title has flat roof" likely does not exist, but AvailableFiltersInSearchLand_ACTUAL.md explicitly lists it as available ("A building in the title has flat roof ✓") with no syntax issues noted; maintaining VALID as the reference evidence supports existence.
+- For Grok - Approach A, the capital contradiction is acknowledged but business case remains auto-valid for precedent-based approaches per task focus on filter accuracy over strategic preference.

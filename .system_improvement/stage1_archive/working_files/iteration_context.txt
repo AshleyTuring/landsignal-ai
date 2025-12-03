@@ -1,0 +1,41 @@
+# ITERATION: Reconsider Your Review
+
+You provided an initial review of FILTER_PATTERNS.md. Another reviewer (Gemini/Codex) has also provided their review.
+
+## DISAGREEMENTS IDENTIFIED
+
+[Disagreement analysis will be included below]
+
+## YOUR TASK
+
+For EACH disagreement where you're involved:
+
+1. **Read the other reviewer's position carefully**
+2. **Reconsider your position:**
+   - Were you wrong? (Admit it and update)
+   - Were they wrong? (Explain why you're sticking to your position)
+   - Were you both partially right? (Propose a synthesis)
+3. **Update your position if warranted**
+
+## OUTPUT FORMAT
+
+For each disagreement:
+
+```
+### Disagreement: [Topic]
+
+**My Original Position:** [What I said]
+**Other Reviewer's Position:** [What they said]
+
+**Upon Reconsideration:**
+- [Have I changed my mind? Why/why not?]
+- [Updated position if changed]
+- [If unchanged: Why I'm confident in original position]
+
+**FINAL POSITION:** [Clear statement]
+```
+
+Be intellectually honest. If the other reviewer made a good point you missed, acknowledge it.
+
+---
+

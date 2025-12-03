@@ -1,0 +1,41 @@
+# SYNTHESIS TASK - CHUNK 3 of 4
+
+You are synthesizing improvements from peer reviews by Gemini and Codex.
+
+## YOUR TASK
+Create **Patterns 8-9** of FILTER_PATTERNS.md v2.0:
+
+8. **Pattern 8: Regulation-Driven Opportunities**
+   - Enhance with preset references
+   - Add concrete thresholds
+
+9. **Pattern 9: Green Belt/Constraint Workarounds + Strategic Land** (MERGED)
+   - **CRITICAL CHANGE:** Merge Pattern 11 (Strategic Land) into Pattern 9
+   - Both reviewers agreed on this in iteration
+   - Structure:
+     * Pattern 9A: Grey Belt Exception (existing)
+     * Pattern 9B: Edge of Settlement Promotion (existing, now enhanced with Pattern 11A content)
+     * Pattern 9C: Emerging Allocations (from Pattern 11A)
+     * Pattern 9D: Strategic Employment Land (from Pattern 11B)
+   - Add Local Plan timeline guidance (Codex feedback)
+   - Add SHLAA/edge preset references (Codex feedback)
+
+## KEY MERGER DETAILS (from Iteration files)
+
+**Gemini's Position (Iteration_Gemini.md:16-26):**
+- Pattern 11A redundant with Pattern 9B
+- Both about promoting land for allocation
+- Should merge under "Strategic Land & Green Belt"
+
+**Codex's Position (Iteration_Codex.md:614-619):**
+- Pattern 9B already covers settlement-edge, unallocated land
+- Pattern 11A repeats same logic but tags as "Emerging allocations"
+- Consolidation removes duplication
+- Still wants extra guidance (Local Plan timelines, infra costs) inside merged section
+
+## OUTPUT FORMAT
+Output the full enhanced text for Patterns 8-9 (approximately 3,000-4,000 lines).
+Include all markdown formatting, code blocks, bullet points, etc.
+
+DO NOT output a summary - output the ACTUAL enhanced document text.
+DO NOT repeat front matter - start directly with "## 8. Regulation-Driven Opportunities"

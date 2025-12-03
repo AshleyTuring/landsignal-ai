@@ -1,0 +1,62 @@
+# SYNTHESIS TASK - CHUNK 4 of 4
+
+You are synthesizing improvements from peer reviews by Gemini and Codex.
+
+## YOUR TASK
+Create the **Final Section** of FILTER_PATTERNS.md v2.0:
+
+10. **Pattern 10: Renewable Energy Strategies**
+    - Enhance with preset references
+    - Add EV charging/bioenergy sub-patterns (Codex feedback)
+
+11. **Pattern 11:** DELETED (merged into Pattern 9 - already handled in Chunk 3)
+
+12. **Pattern 12: Commercial Traffic Strategies**
+    - Add competitive context (Codex feedback)
+    - Enhance with quantified demand metrics
+
+13. **8 NEW PATTERNS** (from peer reviews):
+    - **Pattern 14: Legacy Holdings** (Gemini - Part 2, new pattern #1)
+    - **Pattern 15: Portfolio Divestment** (Gemini - Part 2, new pattern #2)
+    - **Pattern 16: Brownfield Demolition** (Gemini - Part 2, new pattern #3)
+    - **Pattern 17: Micro-Infill Service Yards** (Codex - Part 2, new pattern #1)
+    - **Pattern 18: Nutrient Neutrality** (Codex - Part 2, new pattern #2)
+    - **Pattern 19: Digital Infrastructure** (Codex - Part 2, new pattern #3)
+    - **Pattern 20: Brand Covenant Reposition** (Codex - Part 2, new pattern #4)
+    - **Pattern 21: Community Asset** (Codex - Part 2, new pattern #5)
+
+14. **ADVANCED WORKFLOW SECTION** (NEW - relocated Pattern 13):
+    - Title: "## ADVANCED WORKFLOW: Time/Information Arbitrage"
+    - **CRITICAL:** Preserve ALL existing Pattern 13 content
+    - Add prominent note: "This is one of the HIGHEST ROI strategies (Codex ranked #3)"
+    - Explain it's a "force multiplier" that applies to any pattern you monitor
+    - Include cross-references to specific patterns it leverages
+    - Keep all existing sub-patterns: 13A, 13B, 13C, 13D, 13E
+
+## KEY CHANGES TO IMPLEMENT
+
+### New Patterns Format
+Each new pattern should include:
+- Strategy description
+- Source preset references (from PresetFiltersBuiltIntoSearchLand.md)
+- Indicators (specific filters)
+- Strategic Rationale
+- Capital requirement
+- Strengths/Weaknesses
+- Implementation strategy
+
+### Advanced Workflow Repositioning
+**From Gemini (Iteration_Gemini.md:10-12):**
+"The best solution is a synthesis of both positions: I was right about *what* it is (a workflow), but Codex was right about *how valuable* it is. It should be separated structurally, but its importance must be highlighted."
+
+**From Codex (Iteration_Codex.md:600-605):**
+"Time/Information Arbitrage should move out of the 13-pattern list into an 'Advanced Workflow' section that cross-references the underlying filters; it remains strategically vital but should no longer hold a numbered rank."
+
+## OUTPUT FORMAT
+Output the full enhanced text for this final chunk (approximately 4,000-5,000 lines).
+Include all markdown formatting, code blocks, bullet points, etc.
+
+DO NOT output a summary - output the ACTUAL enhanced document text.
+DO NOT repeat front matter - start directly with "## 10. Renewable Energy Strategies"
+
+End with the Advanced Workflow section.

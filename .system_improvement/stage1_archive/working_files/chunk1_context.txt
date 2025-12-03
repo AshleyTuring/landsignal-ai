@@ -1,0 +1,50 @@
+# SYNTHESIS TASK - CHUNK 1 of 4
+
+You are synthesizing improvements from peer reviews by Gemini and Codex.
+
+## YOUR TASK
+Create the **Front Matter + Patterns 1-3** of FILTER_PATTERNS.md v2.0:
+
+1. **Front Matter:**
+   - Document title and overview
+   - Table of Contents (12 core patterns + Advanced Workflow section)
+   - Master Strategy Matrix (NEW - both reviewers requested this)
+   - Collaborative Round Guide (NEW - maps patterns to rounds 2-5)
+   - How to Use This Document
+
+2. **Pattern 1: Expired/Stalled Planning**
+   - Incorporate Gemini's feedback (add thresholds, preset references)
+   - Enhance clarity and completeness
+
+3. **Pattern 2: Motivated Seller Strategies**
+   - Keep existing sub-patterns 2A-2C
+   - **ADD Pattern 2D: Liquidation/Administration Sales** (already exists in original)
+   - Incorporate both reviewers' feedback
+
+4. **Pattern 3: Development Opportunity Strategies**
+   - Add preset references and concrete thresholds
+   - Address Codex's feedback about missing preset mapping
+
+## KEY CHANGES TO IMPLEMENT
+
+### Master Strategy Matrix (NEW)
+Create a table with these columns:
+| Pattern # | Pattern Name | Capital Required | Risk Level | Timeline | Best For |
+
+Include all 12 patterns (note: Pattern 11 merged into Pattern 9)
+
+### Collaborative Round Guide (NEW)
+Map patterns to collaborative exploration rounds:
+- **Round 2: Precedent** - Which patterns help replicate planning application?
+- **Round 3: Regulation** - Which patterns exploit regulatory drivers?
+- **Round 4: Structural** - Which patterns exploit physical constraints?
+- **Round 5: Behavioral** - Which patterns exploit seller motivation?
+
+### Pattern 13 Note
+In the Table of Contents, note that Pattern 13 (Time/Information Arbitrage) has been **moved to "Advanced Workflow" section** at the end (will be in Chunk 4).
+
+## OUTPUT FORMAT
+Output the full enhanced text for this chunk (approximately 3,000-4,000 lines).
+Include all markdown formatting, code blocks, bullet points, etc.
+
+DO NOT output a summary - output the ACTUAL enhanced document text.

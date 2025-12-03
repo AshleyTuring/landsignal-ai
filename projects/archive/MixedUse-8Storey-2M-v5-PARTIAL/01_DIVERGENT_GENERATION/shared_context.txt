@@ -1,0 +1,323 @@
+# SearchLand Filter Generation - Independent Approach
+
+## Your Task
+Generate 1-3 unique property search strategies based on the requirements below.
+
+## Key Constraints
+1. **Work Independently:** Do NOT see other LLM outputs. Generate YOUR unique perspective.
+2. **Reference Materials:** Use FILTER_PATTERNS.md and LEARNINGS_DATABASE.md
+3. **Technical Validity:** All filters MUST exist in AvailableFiltersInSearchLand_ACTUAL.md
+4. **Capital Feasibility:** Approaches MUST meet budget requirements
+5. **Precedent Analysis:** At least ONE approach should be based on reference planning application(s)
+
+## Output Format
+For each approach, provide:
+
+### Approach [Letter]: [Name]
+**Strategic Pattern:** [Which pattern from FILTER_PATTERNS.md]  
+**Capital Required:** [Breakdown]  
+**Expected Results:** [Estimated property count]
+
+**SearchLand AI Prompt:**
+```
+1. [Filter name]: [operator] [value]
+2. [Filter name]: [operator] [value]
+...
+```
+
+**Rationale:**
+[Why this approach works]
+
+**Strengths:**
+- [List]
+
+**Limitations:**
+- [List]
+
+**Implementation Strategy:**
+[How to execute]
+
+---
+
+
+## PROJECT REQUIREMENTS
+
+# Filter Requirements
+
+**Project:** MixedUse-8Storey-2M-v5  
+**Date:** 2025-11-20  
+**Status:** Ready for v5.0 Independent Generation  
+**System Version:** 5.0 (Independent Generation with 4 Real LLM CLIs)
+
+---
+
+## Global Context
+
+**You are an expert UK property analyst.**
+
+You will work **independently** to generate 1-3 unique filter strategies based on the requirements below.
+
+### Available Resources:
+- `/SearchlandContext/AvailableFiltersInSearchLand_ACTUAL.md` - **USE ONLY THIS** - Real filters available
+- `/SearchlandContext/PresetFiltersBuiltIntoSearchLand.md` - 86 expert presets (reference)
+- `/LEARNINGS_DATABASE.md` - Universal implementation behaviors (20+ motivation signals!)
+- `/FILTER_PATTERNS.md` - 23 strategic patterns (v2.1 - peer reviewed by 4 LLMs)
+- `/PRESET_STRATEGY_GUIDE.md` - Comprehensive guide to all 86 presets
+
+### CRITICAL RULES:
+1. **Output Format**: Use STRUCTURED LIST FORMAT ONLY (not prose)
+   - Example: `1. Title area (acres): is greater than 0.198 AND less than 2.47`
+   - NOT: "Look for properties between 8,000-100,000 sqft"
+2. **Units**: Use acres/sqft/metres (as shown in ACTUAL filters)
+3. **Filter Names**: Use EXACT names from AvailableFiltersInSearchLand_ACTUAL.md
+4. **No Assumptions**: If a filter doesn't exist, propose proxy filters
+5. **Independent Generation**: Work independently - do NOT see other LLM outputs
+6. **Diversity**: Generate approaches using DIFFERENT patterns from FILTER_PATTERNS.md
+
+---
+
+## Requirement Type
+
+- [x] **Type 1: Profit & Capital Outlay**
+- [x] **Type 2: Similar Planning Applications**
+
+---
+
+## Type 1: Profit & Capital Outlay
+
+**Target Profit:** £2,000,000
+
+**Capital Outlay:** £200,000
+
+**Additional Context:**
+- Property type preferences: Mixed-use development opportunities, airspace development, stalled planning
+- Geographic preferences: UK-wide, focusing on urban areas with good transport
+- Risk tolerance: Medium - seeking motivated sellers, creative structures
+- Time horizon: 12-24 months to planning/deal completion
+- Other considerations: £200k requires option agreements, airspace rights, joint ventures (not direct purchase)
+
+---
+
+## Type 2: Similar Planning Applications
+
+### Planning Application 1:
+
+**Description:**
+```
+Demolition and construction of an 8-storey mixed-use development comprising 
+flexible retail (class E) and residential (Class C3) use with associated communal 
+terraces, cycle parking, accessible car parking and waste storage
+```
+
+**Location:** Urban UK location (Slough, Birmingham, Manchester, etc.)  
+**Decision:** Approved  
+
+**Key Success Factors to Analyze:**
+- **Development Type:** 8-storey mixed-use (Class E ground + C3 residential above)
+- **Scale:** Substantial height (25-35m), multi-unit residential
+- **Use Class Mix:** Flexible retail/commercial ground floor + residential above
+- **Amenity:** Communal terraces, cycle parking, accessible parking
+- **Policy Support:** Area supporting tall buildings/densification
+
+**Implicit Characteristics to Find (At Least ONE of your approaches should target this):**
+- Title area: Likely 0.2-2 acres (large enough for 8-storey with parking/amenity)
+- Height potential: Building height <15m OR permission for 25-35m additions
+- Use classes: E or previous commercial + permission for residential
+- Transport: Likely <800m train OR PTAL 4+ (supports density)
+- Constraints: Zero flood zone 3, minimal conservation areas
+- Planning policy: Tall building zone OR opportunity area OR HDT
+
+**Implementation Options:**
+1. **Direct precedent:** Find similar 8-storey mixed-use approvals (2020+)
+2. **Site characteristics:** Match area, height, transport, policy
+3. **Adjacency:** Properties near approved 8-storey schemes
+4. **Proxy approach:** Similar height/mixed-use applications
+
+---
+
+## Additional Requirements
+
+**Priority Level:**
+- [x] High - Need precise matches
+- [ ] Medium - Some flexibility acceptable
+- [ ] Low - Exploratory search
+
+**Expected Number of Results:**
+- [x] Narrow (10-50 properties per approach)
+- [ ] Moderate (50-200 properties)
+- [ ] Wide (200+ properties)
+
+**Special Considerations:**
+- £200k capital = option agreements (£10k-£50k), airspace rights (£50k-£150k), or joint ventures
+- Direct purchase at £200k unrealistic for 8-storey developments
+- Motivation signals critical: long hold, derelict/inactive, corporate, expired/stalled planning
+- Multiple diverse strategies preferred (4+ approaches from 4 LLMs)
+- Target £2M profit = 10x ROI (substantial upside required)
+
+---
+
+## Target Geographies
+
+**Primary:**
+- Slough (previous test location)
+
+**Secondary (for testing):**
+- Birmingham (lower prices, more options at £200k)
+- Manchester (mid-range market)
+- London (high PTAL, airspace opportunities, competitive)
+
+**Rationale:** Different approaches may work better in different markets - test empirically
+
+---
+
+## Strategic Guidance (Use Your Unique Lens)
+
+### Your Role in v5.0 System:
+You are ONE of FOUR expert analysts (Gemini, Codex, Grok, Claude). Each analyst brings a different perspective:
+
+- **Gemini:** Strategic, high-level patterns, regulatory opportunities
+- **Codex:** Detailed execution, technical precision, niche opportunities
+- **Grok:** Speed/timing advantages, arbitrage opportunities, innovative angles
+- **Claude:** Risk mitigation, precedent analysis, behavioral signals
+
+**Note:** You don't know which LLM you are - just bring YOUR unique analytical style.
+
+### Pattern Suggestions (Choose 1-3 patterns for your approaches):
+
+**Precedent-Based (At least ONE approach):**
+- Pattern 3A: Similar planning approvals (8-storey mixed-use)
+- Pattern 1A: Stalled planning (expired but resubmittable)
+- Pattern 5A: Low-rise in tall building zones
+
+**Capital-Efficient:**
+- Pattern 4B: Option agreement candidates (£10k-£50k upfront)
+- Pattern 6A: Airspace development (flat roofs, £50k-£150k rights)
+- Pattern 17A: Micro-infill service yards (small plots, £50k-£200k)
+
+**Motivation-Driven:**
+- Pattern 2D: Liquidation/Administration (forced sale)
+- Pattern 2A: Long hold + derelict (estate planning)
+- Pattern 14A: Legacy holdings (never sold, unaware value)
+
+**Regulation-Driven:**
+- Pattern 8A: HMO license expiry (forced sale)
+- Pattern 8B: Lease expiry (income cliff)
+- Pattern 18A: Nutrient neutrality (unblocked by credits)
+
+**Time/Information Arbitrage:**
+- Pattern 13A: Fresh planning consents (24h advantage)
+- Pattern 13B: New allocations (emerging land)
+
+**Niche Opportunities:**
+- Pattern 20A: Brand covenant expiry (QSR swaps)
+- Pattern 22A: HMO conversion (5-8% yields vs. 3-4% BTL)
+- Pattern 23A: Unbroken freehold titles (no assembly risk)
+
+---
+
+## Output Format (Critical)
+
+### For Each Approach:
+
+```markdown
+## Approach [Letter]: [Name]
+
+**Strategic Pattern:** [Which pattern from FILTER_PATTERNS.md]  
+**Capital Required:** [Breakdown]  
+**Expected Results:** [Estimated property count]
+
+**SearchLand AI Prompt (Copy-Paste Ready):**
+```
+1. [Filter name]: [operator] [value]
+2. [Filter name]: [operator] [value]
+3. [Filter name]: [operator] [value]
+...
+```
+
+**Rationale:**
+[Why this approach works - cite patterns/presets/learnings]
+
+**Strengths:**
+- [List 3-5]
+
+**Limitations:**
+- [List 3-5]
+
+**Implementation Strategy:**
+[Step-by-step: how to execute, negotiate, structure deal]
+
+**Capital Breakdown:**
+- [Item]: [Cost]
+- [Item]: [Cost]
+- **Total:** [Amount within £200k]
+```
+
+---
+
+## Key Learnings Applied (Refer to LEARNINGS_DATABASE.md for more)
+
+**Filter Behavior:**
+- "Applications in last 5 years = 0" too restrictive (try "< 3")
+- £200k direct purchase extremely limited (need creative structures)
+- PTAL filters London-only (use "Distance to Train Station" elsewhere)
+- Units: acres (not sqm), sqft (not sqm), metres
+
+**Motivation Signals (20+ in LEARNINGS_DATABASE):**
+- Company status: Liquidation/Administration = forced sale
+- No latest sold date = inherited/legacy holding
+- HMO License Expiry Date = regulatory forced sale
+- EPC rating E-G = cannot rent (compliance sale)
+- Less than 1 application in 5 years = no development intent
+
+**Proven Strategies (23 patterns in FILTER_PATTERNS.md v2.1):**
+- Pattern 13 (Time Arbitrage) = HIGHEST ROI per Grok
+- Pattern 8 (Regulation) = HIGHEST CERTAINTY per Gemini/Codex
+- Pattern 4 (Low Capital) = Enhanced in v2.1 with executable examples
+- Pattern 22 (HMO Conversion) = NEW in v2.1 (Gemini + Grok consensus)
+- Pattern 23 (Unbroken Freehold) = NEW in v2.1 (Gemini + Codex consensus)
+
+---
+
+## System Version History
+
+**v5.0 (current):** Independent generation with 4 real LLM CLIs  
+- ✅ Real Gemini, Codex, Grok, Claude (not simulated)
+- ✅ Independent generation (no forced collaboration)
+- ✅ Natural convergence/divergence
+- ✅ Technical iteration for disagreements
+- ✅ 23 patterns in FILTER_PATTERNS.md (v2.1 peer reviewed)
+
+**v4.0 (archived):** Collaborative angle exploration  
+- ❌ Echo chamber (Claude simulated all agents)
+- ❌ Forced collaboration
+- ⚠️ Deprecated - do not use
+
+**v3.0-3.2 (archived):** Divergent generation experiments  
+**v2.0 (archived):** Convergent refinement  
+**v1.0 (archived):** Initial single approach (0 results)
+
+---
+
+**Next Step:** Run v5.0 independent generation system
+
+```bash
+cd /home/ashsubband/landsignal/projects/MixedUse-8Storey-2M-v5/.agents
+./RUN_ALL_v5.sh
+```
+
+This will execute:
+- Phase 0: Independent Generation (4 LLMs in parallel)
+- Phase 1: Cross-Validation (4 LLMs review all approaches)
+- Phase 1.5: Technical Iteration (if disagreements detected)
+- Phase 2: Synthesis & Extraction (Claude synthesizes)
+
+Expected output: 4+ approaches ready for parallel testing (minimum 1 per LLM)
+
+
+## REFERENCE: FILTER_PATTERNS.md (Top Strategies)
+
+[FILTER_PATTERNS.md not found]
+
+## REFERENCE: LEARNINGS_DATABASE.md (Critical Rules)
+
+[LEARNINGS_DATABASE.md not found]

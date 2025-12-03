@@ -1,0 +1,37 @@
+# SYNTHESIS TASK - CHUNK 2 of 4
+
+You are synthesizing improvements from peer reviews by Gemini and Codex.
+
+## YOUR TASK
+Create **Patterns 4-7** of FILTER_PATTERNS.md v2.0:
+
+4. **Pattern 4: Low Capital Entry**
+   - Add concrete thresholds
+   - Incorporate Codex's feedback about limited preset references
+
+5. **Pattern 5: High-Density/Intensification**
+   - Add PTAL guidance and execution details
+   - Address Gemini's feedback about completeness
+
+6. **Pattern 6: Airspace Development**
+   - Add legal workflow guidance
+   - Incorporate missing preset variants (Codex feedback)
+
+7. **Pattern 7: Permitted Development Strategies**
+   - Already has good preset references
+   - Enhance with additional quantified criteria
+   - Add sub-patterns if suggested by reviewers
+
+## KEY CHANGES TO IMPLEMENT
+
+- Add concrete thresholds (no more "appropriate size")
+- Add preset references throughout
+- Add "Manual Approximation" sections for pre-calculated presets
+- Add cross-references between related patterns
+
+## OUTPUT FORMAT
+Output the full enhanced text for Patterns 4-7 (approximately 3,000-4,000 lines).
+Include all markdown formatting, code blocks, bullet points, etc.
+
+DO NOT output a summary - output the ACTUAL enhanced document text.
+DO NOT repeat front matter - start directly with "## 4. Low Capital Entry"

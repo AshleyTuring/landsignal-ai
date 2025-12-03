@@ -1,0 +1,28 @@
+# CREATE MASTER STRATEGY MATRIX
+
+Based on the peer reviews and existing FILTER_PATTERNS.md, create a "Master Strategy Matrix" table.
+
+## FORMAT
+
+```markdown
+## Master Strategy Matrix 🎯
+
+Quick reference for pattern selection based on constraints:
+
+| Pattern # | Pattern Name | Capital Required | Risk Level | Timeline | Best For |
+|-----------|--------------|------------------|------------|----------|----------|
+| 1 | Expired/Stalled Planning | £50k-£200k | Medium | 12-24 months | Planning expertise |
+| 2 | Motivated Seller | £100k-£500k | Low-Medium | 6-12 months | Negotiation skills |
+| ... | ... | ... | ... | ... | ... |
+```
+
+## PATTERNS TO INCLUDE (12 core + 8 new = 20 total)
+
+**Core Patterns (1-12):** Note that Pattern 11 has been merged into Pattern 9, so there are only 12 core patterns (1-10, 12, plus Pattern 9 now contains former Pattern 11 content). Pattern 13 moved to Advanced Workflow.
+
+**New Patterns (14-21):** From peer review
+
+## OUTPUT
+
+Output ONLY the markdown table, ready to insert into FILTER_PATTERNS.md.
+Include all 20 patterns (1-10, 12, 14-21).
