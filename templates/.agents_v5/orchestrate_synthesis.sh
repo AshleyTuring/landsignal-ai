@@ -3,6 +3,22 @@
 # Synthesis & Extraction - v5.2
 # Claude synthesizes all inputs and extracts ready-to-test approaches
 # Output now references comprehensive Stage 4-6 workflow
+#
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# CLAUDE_LIMIT_HIT WORKFLOW (Manual Generation Mode)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# When CLAUDE_LIMIT_HIT=true:
+#   1. Script PAUSES before running `claude` CLI
+#   2. Script PRINTS full system prompt + task prompt + context inline
+#   3. User COPIES printed text
+#   4. User PASTES to Claude assistant (in chat/IDE)
+#   5. Claude assistant GENERATES the required .md file using write tool
+#   6. User HITS ENTER in terminal
+#   7. Script VERIFIES file exists and continues
+#
+# This enables Claude assistant to act as the `claude` CLI when rate-limited.
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 set -e
 

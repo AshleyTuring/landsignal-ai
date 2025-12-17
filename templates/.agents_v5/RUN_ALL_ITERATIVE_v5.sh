@@ -1,12 +1,17 @@
 #!/bin/bash
 
-# Full Iterative Multi-LLM Pipeline - v5.2
+# Full Iterative Multi-LLM Pipeline - v5.3
 # Loops cross-validation → technical iteration until convergence or max rounds
 #
 # Usage:
 #   ./RUN_ALL_ITERATIVE_v5.sh [max_rounds]
-#   Default: 3 rounds
-#   Example: ./RUN_ALL_ITERATIVE_v5.sh 5
+#   Default: 1 round (fast mode)
+#   Example: ./RUN_ALL_ITERATIVE_v5.sh 3  (thorough mode)
+#
+# v5.3 Features:
+#   - Default 1 iteration (down from 3)
+#   - SKIP_VALIDATION=true env var to skip validation entirely
+#   - Faster execution for commercial use
 
 set -e
 
@@ -14,16 +19,20 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 VALIDITY_DIR="$PROJECT_DIR/02_VALIDITY_CHECK"
 
-MAX_ROUNDS="${1:-3}"  # Default 3 rounds, can override via argument
+# Source config to get SKIP_VALIDATION flag
+source "$SCRIPT_DIR/PROMPTS_CONFIG.sh"
+
+MAX_ROUNDS="${1:-1}"  # v5.3: Default 1 round (fast mode), can override via argument
 ROUND=0
 
 echo ""
 echo "╔══════════════════════════════════════════════════════════════╗"
-echo "║  🚀 Multi-LLM Iterative Pipeline v5.2                        ║"
+echo "║  🚀 Multi-LLM Iterative Pipeline v5.3                        ║"
 echo "╚══════════════════════════════════════════════════════════════╝"
 echo ""
 echo "Configuration:"
 echo "  • Max iteration rounds: $MAX_ROUNDS"
+echo "  • Skip validation: $SKIP_VALIDATION"
 echo "  • Project: $(basename "$PROJECT_DIR")"
 echo ""
 
@@ -37,6 +46,24 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo ""
 
 "$SCRIPT_DIR/orchestrate_independent.sh"
+
+# ═══════════════════════════════════════════════════════════════════
+# v5.3: Check if validation should be skipped
+# ═══════════════════════════════════════════════════════════════════
+if [ "$SKIP_VALIDATION" = "true" ]; then
+  echo ""
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "  ⚡ SKIP_VALIDATION=true - Going straight to synthesis"
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo ""
+  
+  "$SCRIPT_DIR/orchestrate_synthesis.sh"
+  
+  echo ""
+  echo "✅ Pipeline complete (Fast Mode: Generation → Synthesis)"
+  echo ""
+  exit 0
+fi
 
 # ═══════════════════════════════════════════════════════════════════
 # Iterative Loop: Cross-Validation → Technical Iteration

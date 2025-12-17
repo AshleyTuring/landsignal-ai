@@ -1,17 +1,41 @@
 #!/bin/bash
 
-# SearchLand Filter Project Setup Script - v5.2
-# Creates new project with multi-LLM independent generation + iterative convergence
+# ============================================================================
+# SearchLand Filter Project Setup Script - v5.3
+# ============================================================================
+# PURPOSE: Creates new project with multi-LLM independent generation + iterative convergence
+# USAGE:   ./new_project.sh <project_name> [config_file]
+# EXAMPLE: ./new_project.sh Bromley-DemolishRebuild-500k-Arbitrage
+#
+# WHAT THIS SCRIPT DOES:
+# 1. Creates project folder structure (6 stages + orchestration scripts)
+# 2. Copies template files (Requirements.md, iteration logs, etc.)
+# 3. Sets up multi-LLM orchestration scripts (.agents_v5/)
+# 4. Configures prompt system (standard or preset-focused)
+#
+# AFTER RUNNING THIS:
+# 1. Edit 00_REQUIREMENTS/Requirements.md with your specific project details
+# 2. cd into project/.agents_v5/
+# 3. Run ./RUN_ALL_ITERATIVE_v5.sh to start multi-LLM generation
+# ============================================================================
 
-set -e
+set -e  # Exit immediately if any command fails
 
 echo "=========================================="
-echo "  SearchLand Filter Project Setup v5.2"
+echo "  SearchLand Filter Project Setup v5.3"
 echo "  Multi-LLM Independent Generation"
 echo "=========================================="
 echo ""
+echo "Usage: $0 <project_name> [config_file]"
+echo ""
+echo "Config options:"
+echo "  PROMPTS_CONFIG.sh              (default - standard format)"
+echo "  PROMPTS_CONFIG_PRESET_FOCUSED.sh  (shows preset + refinements)"
+echo ""
 
-# Get project name
+# ============================================================================
+# STEP 1: Get project name (from command line or prompt user)
+# ============================================================================
 if [ -z "$1" ]; then
     echo "Project name: "
     read PROJECT_NAME
@@ -23,9 +47,30 @@ else
     PROJECT_NAME="$1"
 fi
 
+# ============================================================================
+# STEP 2: Get configuration file (controls how prompts are formatted)
+# ============================================================================
+# Config options:
+# - PROMPTS_CONFIG.sh (default): Standard format, clean prompts
+# - PROMPTS_CONFIG_PRESET_FOCUSED.sh: Shows SearchLand presets + refinements
+PROMPTS_CONFIG="${2:-PROMPTS_CONFIG.sh}"
+
+# Validate config file exists
+if [ ! -f "templates/.agents_v5/$PROMPTS_CONFIG" ]; then
+    echo "❌ Config file 'templates/.agents_v5/$PROMPTS_CONFIG' not found!"
+    echo ""
+    echo "Available configs:"
+    ls templates/.agents_v5/PROMPTS_CONFIG*.sh 2>/dev/null || echo "  (none found)"
+    exit 1
+fi
+
+echo "Using config: $PROMPTS_CONFIG"
+
 cd /home/ashsubband/landsignal
 
-# Check if project already exists
+# ============================================================================
+# STEP 3: Check if project already exists (prevent accidental overwrite)
+# ============================================================================
 if [ -d "projects/$PROJECT_NAME" ]; then
     echo "❌ Project 'projects/$PROJECT_NAME' already exists!"
     echo ""
@@ -35,7 +80,16 @@ if [ -d "projects/$PROJECT_NAME" ]; then
     exit 1
 fi
 
-# Create project structure
+# ============================================================================
+# STEP 4: Create project folder structure (6-stage workflow)
+# ============================================================================
+# Stage 0: Requirements - Define project goals, capital, geography, constraints
+# Stage 1: Divergent Generation - 4 LLMs generate 4-6 independent approaches
+# Stage 2: Validity Check - Cross-validation + iterative refinement
+# Stage 3: Parallel Testing - Test valid approaches in SearchLand
+# Stage 4: Refinement - Refine winning approach, capture learnings
+# Stage 5: Site Validation - Screen properties for red/amber/green flags
+# Stage 6: Deep Research - Deep dive on top 3-5 candidate properties
 echo "Creating project structure..."
 mkdir -p "projects/$PROJECT_NAME/00_REQUIREMENTS"
 mkdir -p "projects/$PROJECT_NAME/01_DIVERGENT_GENERATION"
@@ -45,11 +99,31 @@ mkdir -p "projects/$PROJECT_NAME/04_REFINEMENT"
 mkdir -p "projects/$PROJECT_NAME/05_SITE_VALIDATION"
 mkdir -p "projects/$PROJECT_NAME/06_DEEP_RESEARCH"
 
-# Copy orchestration scripts (v5.2)
+# ============================================================================
+# STEP 5: Copy orchestration scripts (multi-LLM automation system)
+# ============================================================================
+# These scripts automate the multi-LLM generation and validation process:
+# - RUN_ALL_ITERATIVE_v5.sh: Main script (loops until convergence)
+# - RUN_ALL_v5.sh: Single-pass version (faster for testing)
+# - orchestrate_independent.sh: Parallel LLM generation
+# - orchestrate_crossvalidation.sh: Each LLM critiques others
+# - orchestrate_technical_iteration.sh: Refine based on critiques
+# - orchestrate_synthesis.sh: Create final executive summary
 echo "Copying v5.2 orchestration scripts..."
 cp -r templates/.agents_v5 "projects/$PROJECT_NAME/.agents_v5"
 
-# Copy templates
+# ============================================================================
+# STEP 6: Apply chosen configuration (prompt formatting style)
+# ============================================================================
+# If user specified a non-default config, copy it as the active PROMPTS_CONFIG.sh
+if [ "$PROMPTS_CONFIG" != "PROMPTS_CONFIG.sh" ]; then
+    echo "Using config: $PROMPTS_CONFIG"
+    cp "templates/.agents_v5/$PROMPTS_CONFIG" "projects/$PROJECT_NAME/.agents_v5/PROMPTS_CONFIG.sh"
+fi
+
+# ============================================================================
+# STEP 7: Copy template files (Requirements.md, iteration logs, etc.)
+# ============================================================================
 cp templates/Requirements.md "projects/$PROJECT_NAME/00_REQUIREMENTS/"
 
 # Create IterationLog in divergent generation folder
@@ -600,6 +674,10 @@ cat > "projects/$PROJECT_NAME/PROJECT_INFO.md" << ENDOF
 - **Summary:** \`PROJECT_SUMMARY.md\`
 ENDOF
 
+# ============================================================================
+# PROJECT CREATION COMPLETE - Display next steps
+# ============================================================================
+
 echo "✅ Project created: projects/$PROJECT_NAME/"
 echo ""
 echo "📁 Structure created:"
@@ -615,11 +693,16 @@ echo ""
 echo "🔄 Next steps:"
 echo "1. cd projects/$PROJECT_NAME"
 echo "2. Edit 00_REQUIREMENTS/Requirements.md with full details"
+echo "   - Define target profit, capital, geography, property type"
+echo "   - Specify constraints, risks, success criteria"
+echo "   - Reference similar planning cases if available"
 echo "3. Run multi-LLM system:"
 echo "   cd .agents_v5"
 echo "   ./RUN_ALL_ITERATIVE_v5.sh  (recommended - loops until convergence)"
 echo "   OR"
 echo "   ./RUN_ALL_v5.sh            (single-pass - faster for testing)"
+echo ""
+echo "📝 Active Config: $PROMPTS_CONFIG"
 echo ""
 echo "⚡ System Features (v5.2):"
 echo "   - 4 real LLM CLIs: Gemini, Codex, Grok, Claude"
@@ -634,4 +717,14 @@ echo "   - REPEATABLE_PROPERTY_WORKFLOW.md (10-step process)"
 echo "   - .agents_v5/README_ITERATION.md (when to use each script)"
 echo "   - CHANGELOG.md (version history)"
 echo ""
-echo "🎯 System Version: 5.2 (Independent Generation + Iterative Convergence)"
+echo "🎯 System Version: 5.3 (Independent Generation + Iterative Convergence)"
+echo ""
+echo "💡 WORKFLOW REMINDER:"
+echo "   Stage 0: Define Requirements (00_REQUIREMENTS/Requirements.md)"
+echo "   Stage 1: Generate 4-6 divergent approaches (multi-LLM)"
+echo "   Stage 2: Cross-validate and refine approaches"
+echo "   Stage 3: Test approaches in SearchLand (pick winner)"
+echo "   Stage 4: Refine winner, capture learnings"
+echo "   Stage 5: Screen properties for red flags"
+echo "   Stage 6: Deep research top 3-5 properties"
+echo "   Result: GO/NO-GO/REFINE recommendation"

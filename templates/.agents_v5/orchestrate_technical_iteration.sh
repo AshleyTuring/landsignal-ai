@@ -3,6 +3,22 @@
 # Technical Iteration - v5.2.2
 # Only runs if technical disagreements detected
 # Now with structured folder organization per iteration round
+#
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# CLAUDE_LIMIT_HIT WORKFLOW (Manual Generation Mode)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# When CLAUDE_LIMIT_HIT=true:
+#   1. Script PAUSES before running `claude` CLI
+#   2. Script PRINTS full system prompt + task prompt + context inline
+#   3. User COPIES printed text
+#   4. User PASTES to Claude assistant (in chat/IDE)
+#   5. Claude assistant GENERATES the required .md file using write tool
+#   6. User HITS ENTER in terminal
+#   7. Script VERIFIES file exists and continues
+#
+# This enables Claude assistant to act as the `claude` CLI when rate-limited.
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 set -e
 
@@ -186,7 +202,7 @@ iterate_claude() {
     fi
 }
 
-# Run all in parallel
+# Run all in parallel (except Claude if manual mode)
 iterate_gemini &
 PID_GEMINI=$!
 
@@ -196,15 +212,28 @@ PID_CODEX=$!
 iterate_grok &
 PID_GROK=$!
 
-iterate_claude &
-PID_CLAUDE=$!
-
-# Wait for all
-echo "⏳ Waiting for all iterations to complete..."
-wait $PID_GEMINI
-wait $PID_CODEX
-wait $PID_GROK
-wait $PID_CLAUDE
+# Claude runs in foreground if manual mode (needs stdin for read -p)
+if [ "$CLAUDE_LIMIT_HIT" = true ]; then
+    # Don't background Claude - it needs to interact with terminal
+    echo "⏳ Waiting for all iterations to complete..."
+    
+    wait $PID_GEMINI
+    wait $PID_CODEX
+    wait $PID_GROK
+    
+    # Now run Claude in foreground (after others complete)
+    iterate_claude
+else
+    # Normal mode - run Claude in parallel
+    iterate_claude &
+    PID_CLAUDE=$!
+    
+    echo "⏳ Waiting for all iterations to complete..."
+    wait $PID_GEMINI
+    wait $PID_CODEX
+    wait $PID_GROK
+    wait $PID_CLAUDE
+fi
 
 # Summary
 echo ""
