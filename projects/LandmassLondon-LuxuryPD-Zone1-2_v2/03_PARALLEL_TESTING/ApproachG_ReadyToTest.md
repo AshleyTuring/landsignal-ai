@@ -1,0 +1,115 @@
+# **APPROACH G: Grey Belt Liquidation (High Risk/High Return)**
+
+**Status:** ⚠️ CONDITIONAL  
+**Original LLM:** Claude  
+**Pattern:** Previously Developed Green Belt + Forced Sale  
+**Capital Required:** £5M-£23M (acquisition £3M-£15M + development £2M-£8M)  
+**Expected Results:** 5-12 properties (Zone 2-3 fringe)
+
+## **SearchLand AI Prompt (Copy-Paste Ready)**
+
+**START WITH PRESET:** #7 "Grey Belt"
+
+**THEN ADD THESE REFINEMENT FILTERS:**
+```
+1. Use class: contains any [E - Commercial Business and Service, B2 - General industrial, B8 - Storage or distribution]
+2. Distance to nearest Train Station (m): is less than 1000
+3. Company status: is one of [Liquidation, In Administration]
+4. Title area (acres): is greater than 0.5 AND less than 3
+5. Planning constraints: does not contain [SSSI, Ancient Woodland]
+```
+
+## **Rationale**
+Targets previously developed Green Belt sites (25%+ developed, 10%+ hardstanding) with commercial uses eligible for residential conversion. Liquidation creates forced sale (20-30% discount). <1km train station essential for planning policy support (sustainable transport). 0.5-3 acres = manageable scale for £3M-£15M. Commercial-to-residential conversion aligns with housing policy priorities.
+
+**Critique Integration:** Commercial use classes support conversion rationale; train distance critical for GB planning; liquidation = maximum motivation; excluded SSSI for planning confidence.
+
+## **Strengths**
+- **Lower competition:** Many avoid Green Belt entirely (opportunity)
+- **Previously developed:** Planning exception established in case law
+- **Maximum motivation:** Liquidation = 20-30% discount
+- **Value uplift:** Commercial → residential + planning consent = 25-50% gain
+- **Lower entry:** Zone 2-3 fringe = £3M-£15M acquisition
+
+## **Limitations**
+- **Planning difficulty:** Green Belt still challenging (local opposition)
+- **Long timeline:** 18-24 months for planning (vs 56 days for PD)
+- **Affordable housing:** S106 may require 20-35% affordable units
+- **Higher risk:** Planning refusal risk exists despite precedent
+
+## **Implementation Strategy**
+
+1. **Search execution:** Run in outer Zone 2/Zone 3 LPAs (edge of Greater London)
+2. **Precedent search:** Check planning history for similar approvals on site/nearby
+3. **Liquidator contact:** Immediate approach (speed advantage)
+4. **Pre-app consultation:** Planning consultant desktop + pre-app meeting (£10k-£20k)
+5. **Offer strategy:** 20-30% below market (GB risk + liquidation)
+6. **Full planning application:** Demonstrate housing need, brownfield priority, sustainable transport
+7. **Timeline:** 18-24 months to consent
+8. **Exit options:** Build-out OR sell with planning (25-50% uplift on planning alone)
+
+## **Capital Breakdown**
+- **Acquisition:** £3M-£15M (20-30% discount)
+- **Planning costs:** £200k-£500k (consultant, S106, legal)
+- **Development (if build-out):** £2M-£8M
+- **Total:** £5.2M-£23.5M
+- **Expected margin:** 30-40% (distressed acquisition + planning/development uplift)
+
+## **Next Steps**
+
+**Proceed to Stage 4: Refinement & Validation**
+
+**CONDITIONAL STATUS NOTES:**
+- Test only if appetite for longer timeline (24-36 months)
+- Requires planning expertise in Green Belt policy
+- Best as opportunistic add-on (not core strategy)
+
+---
+
+## EXECUTIVE SUMMARY
+
+**Total Approaches Ready for Testing:** 7  
+**Recommended Testing Priority:**
+
+### Tier 1 (Highest Conviction - Test First):
+1. **Approach A** - Class MA Liquidation (strongest motivation + proven route)
+2. **Approach F** - Office Multi-Motivation (triple stack + immediate possession)
+
+### Tier 2 (High Value - Test Second):
+3. **Approach B** - Airspace Long Hold + Low EPC (capital-efficient + dual motivation)
+4. **Approach E** - QSR/Retail Lease Expiry (good deal flow + dual PD paths)
+
+### Tier 3 (Optionality - Test If Time Permits):
+5. **Approach C** - Airspace Title Simplicity (lower capital entry)
+6. **Approach D** - Airspace Lease + Liquidation (institutional scale)
+7. **Approach G** - Grey Belt Liquidation (opportunistic, high return)
+
+---
+
+## DIVERSITY PRESERVED
+
+The final 7 approaches span:
+- **3 distinct strategic patterns:** PD conversion (A, F), airspace development (B, C, D), lease events (E), edge case (G)
+- **Capital range:** £5M-£85M (from accessible to institutional scale)
+- **Risk profiles:** Low (A, F), medium (B, E), medium-high (C, D), high (G)
+- **Motivation signals:** Liquidation, vacancy, EPC, lease expiry, long hold
+- **Execution timelines:** 12-18 months (PD routes) to 24-36 months (planning routes)
+
+---
+
+## TECHNICAL VALIDATION NOTES
+
+All approaches use:
+- ✅ Verified SearchLand presets (#32, #23, #17, #68, #7)
+- ✅ Valid filter operators (is one of, is greater than, is before, contains any, does not contain)
+- ✅ Realistic thresholds (price bands, size limits, date ranges)
+- ✅ Geographic targeting (PTAL for Zone 1-2, LPA manual selection)
+
+**No invalid filters identified** - all approaches are technically executable in SearchLand AI.
+
+---
+
+**Generated by:** Claude (Synthesis Mode)  
+**Methodology:** Multi-LLM synthesis, pattern clustering, critique integration  
+**Validation:** Cross-referenced against SearchLand filter library + case study learnings  
+**Ready for:** Stage 4 execution in SearchLand AI

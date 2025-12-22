@@ -53,6 +53,47 @@
 
 ---
 
+## 🏷️ Sales Listing Status Values (Defined)
+
+**Filter:** `Sales listing status`
+
+**Important:** This filter uses predefined values from Land Registry and agent data. Understanding these statuses is critical for filtering active vs. historical listings.
+
+| Status | Meaning | Legally Binding? | Notes |
+|--------|---------|------------------|-------|
+| **Available** | Property is actively for sale, open to new offers, and listed publicly. | ❌ No | Best status for finding live opportunities |
+| **Under Offer** | An offer has been made and accepted by the seller, but contracts not yet exchanged. | ❌ No | Property still at risk of falling through. Some agents use this interchangeably with "Sold STC" |
+| **SSTC** (Sold Subject to Contract) | Most common status in England/Wales. Buyer's offer accepted, but legal contract exchange hasn't taken place yet. | ❌ No | Either party can still withdraw until exchange |
+| **SSTCM** (Sold Subject to Conclusion of Missives) | Scottish equivalent of "Sold STC". Offer accepted but formal exchange of legally binding contracts ("conclusion of missives") hasn't happened yet. | ❌ No | Scotland-specific status |
+| **Reserved** | Usually seen in new-build developments. Buyer has put down a reservation fee to hold the property while contracts are drawn up. | ❌ No | Not legally binding, but property taken off open market |
+| **Invisible** | **Property listing is hidden from public portals/websites** (e.g. withdrawn, archived, or not yet marketed). | ❌ No |  |
+| **Sale Completed** | Transaction has been legally finalised, ownership transferred, and confirmed through Land Registry. | ✅ YES | This status comes from Land Registry records (not agents), so it's fully verified. Due to registration delays, this status can lag behind SSTC by weeks/months |
+
+### Usage Examples:
+
+```
+✅ Find only active listings:
+Sales listing status: contains any [Available]
+
+✅ Find active + under-offer properties (broader search):
+Sales listing status: contains any [Available, Under Offer, SSTC]
+
+⚠️ Include off-market opportunities:
+Sales listing status: contains any [Available, Under Offer, Invisible]
+
+```
+
+### ⚠️ Notes: "Invisible" Status
+
+Properties with **"Invisible"** status are often:
+- Withdrawn from market (seller changed mind)
+- Historical listings (sold months/years ago but not yet showing "Sale Completed")
+- Off-market opportunities (not publicly advertised)
+- Archived listings (agent removed from portals)
+
+
+---
+
 ## Title Basic Information
 
 - Tenure [LIST-BASED] - See "Ownership & Tenure" section below

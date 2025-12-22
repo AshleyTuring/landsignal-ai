@@ -34,6 +34,37 @@ SearchLand has **86 pre-configured presets** (`SearchlandContext/PresetFiltersBu
 
 **Lesson:** Presets are 75x more effective for common strategies.
 
+---
+
+## 🚫 CRITICAL: DO NOT FILTER BY LPA (Local Planning Authority)
+
+**LPA filtering is USER-MANAGED, not part of your approach design.**
+
+### Why This Matters:
+
+SearchLand **does not have** a "Local planning authority" filter. Any attempt to use it will fail:
+- ❌ **INVALID:** `Local planning authority: is Brentwood`
+- ❌ **DOES NOT EXIST** in SearchLand's filter system
+
+### Your Job:
+
+Design **universal search strategies** that work across ANY LPA. The user will:
+1. Specify target LPA in `Requirements.md`
+2. Apply LPA filter when executing presets/searches in SearchLand UI
+3. Provide preset result counts already filtered by their target LPA
+
+### Example:
+
+**❌ Bad (LPA in approach):**
+```markdown
+### Approach A: Class MA Opportunities in Brentwood
+1. Local planning authority: is Brentwood  ← INVALID FILTER
+2. Use Preset #4 (Class MA)
+```
+.
+
+---
+
 ### Workflow for LLMs:
 
 1. **Read user requirements**
@@ -41,6 +72,7 @@ SearchLand has **86 pre-configured presets** (`SearchlandContext/PresetFiltersBu
 3. **If preset exists:** Use it directly or adapt it
 4. **If no preset exists:** Create manual filters using patterns below
 5. **Document why preset wasn't suitable** (if applicable)
+6. **NEVER include LPA filters** - user handles this
 
 ### Common Presets by Strategy:
 
@@ -680,6 +712,220 @@ This preset includes more comprehensive filters and achieved **67% viable rate (
 Expected: 2 → 1 property (but that 1 is a winner)
 
 **Lesson:** Low volume (2 properties) ≠ low value. This preset found a £2M profit opportunity that broader presets missed.
+
+---
+
+## 🔬 CASE STUDY: Reverse-Engineering Preset Filters (Class Q Example)
+
+**Source:** Brentwood-ClassMA-Arbitrage (Dec 2025)  
+**Preset:** #6 "Class Q (pre-configured)"  
+**Goal:** Understand what filters SearchLand uses behind the scenes
+
+### ⚠️ CRITICAL CAVEAT
+
+**This is a LEARNING EXERCISE for one specific LPA (Brentwood), not universal guidance.**
+
+- ⚠️ **Small sample:** 44 results in Brentwood only
+- ⚠️ **LPA-specific:** May not generalize to other regions
+- ⚠️ **Statistical insignificance:** Not enough data to draw broad conclusions
+- ⚠️ **Single use case:** Class Q agricultural conversions only
+
+**Do NOT treat these as definitive filters.** This documents an iterative reverse-engineering process to understand preset behavior.
+
+---
+
+### The Challenge
+
+**Preset #6 "Class Q (pre-configured)"** shows:
+- Description: "Agricultural buildings on Grade 1–5 land eligible for Class Q permitted development"
+- Visible filters: `Tenure: Freehold` only
+- Hidden filters: ??? (SearchLand doesn't show them)
+- Results: 44 properties in Brentwood
+
+**Question:** What filters is SearchLand actually using?
+
+---
+
+### The Reverse-Engineering Process
+
+**Goal:** Recreate filters that return ~44 results (matching the preset).
+
+#### **Iteration 1: Direct Translation from Description**
+
+Based on preset description, we tried:
+
+```
+1. Current use: contains any [Agricultural, Farm Buildings, Agricultural Buildings, Barns]
+2. Agricultural land classification: contains any [Grade 3, Grade 3a, Grade 3b, Grade 4, Grade 5]
+3. Building floor area (sqft): is greater than 1000 AND less than 6000
+4. Building on title is derelict: is equal to No
+5. Title size (acres): is greater than 0.5 AND less than 5
+6. Sales listing price: is less than 150000
+7. Planning constraints: does not contain [AONB, National Park, SSSI, Conservation Area]
+8. % of title subject to Article 4 Directions: is equal to 0
+```
+
+**Result:** 0 properties ❌
+
+**Why it failed:** Too many constraints, wrong filter values/operators.
+
+---
+
+#### **Iteration 2-7: Systematic Filter Removal**
+
+We removed filters one by one to identify the blockers:
+
+| Round | Filters Removed | Results | Insight |
+|-------|----------------|---------|---------|
+| 1 | Price cap | 0 | Price wasn't the issue |
+| 2 | Price + Derelict filter | 3 | **"Derelict" filter was blocking** |
+| 3 | Price + Derelict + Article 4 | 3 | Article 4 didn't matter |
+| 4 | Price + Derelict + Article 4 + Current use | 341 | "Current use" text search too restrictive |
+
+**Key Discovery:** 
+- ❌ "Building on title is derelict: is equal to No" → Blocked everything (field may not exist or have null values)
+- ❌ "Current use: contains any [Agricultural, Farm Buildings...]" → Wrong field or wrong values
+
+---
+
+#### **Iteration 8-11: Refining with Property Classification**
+
+SearchLand was auto-converting "Current use" to "Property classification" with additional values:
+- Agricultural ✓
+- Farm / Non-Residential Associated ✓
+- **Horticulture** (auto-added)
+- **Smallholding** (auto-added)
+
+**Working filters (27 results):**
+```
+1. Property classification: contains any [Agricultural, Farm / Non-Residential Associated, Horticulture, Smallholding]
+2. Agricultural land classification: contains any [Grade 3, Grade 3a, Grade 3b, Grade 4, Grade 5]
+3. Title size (acres): is greater than 0.5 AND less than 5
+4. Planning constraints: does not contain [AONB, National Park, SSSI, Conservation Area]
+5. Tenure: is one of [Freehold]
+```
+
+**Still 17 properties short of 44.** What's missing?
+
+---
+
+#### **Iteration 12: The Missing Grades**
+
+**Breakthrough discovery:** Preset description says "Grade 1–5 land" but we were only using Grade 3-5!
+
+**Updated filters (including Grade 1 & 2):**
+```
+1. Property classification: contains any [Agricultural, Farm / Non-Residential Associated, Horticulture, Smallholding]
+2. Agricultural land classification: contains any [Grade 1, Grade 2, Grade 3, Grade 3a, Grade 3b, Grade 4, Grade 5]
+3. Title size (acres): is greater than 0.1 AND less than 15
+4. Planning constraints: does not contain [AONB, National Park, SSSI, Conservation Area]
+5. Tenure: is one of [Freehold]
+```
+
+**Result:** 46 properties ✅ (vs preset's 44)
+
+**Close enough!** 46 vs 44 difference likely due to:
+- Data updates between preset creation and testing
+- Minor filter variations we can't see
+
+---
+
+### What We Learned
+
+#### **1. Preset Descriptions Are Incomplete**
+
+- **Said:** "Agricultural buildings on Grade 1–5 land"
+- **Reality:** Uses 4 property classifications + wider acreage range + constraint filters
+- **Hidden:** Size range (0.1-15 acres), planning constraint exclusions
+
+#### **2. Filter Syntax Matters**
+
+- ❌ "Building on title is derelict: is equal to No" → Blocked everything
+- ✅ Removing this filter opened up results
+- **Lesson:** Some filters have null/missing values that break searches
+
+#### **3. SearchLand Auto-Expands Values**
+
+- We typed: "Agricultural"
+- SearchLand added: "Horticulture", "Smallholding"
+- **Lesson:** UI may add values you didn't explicitly select
+
+#### **4. Read Descriptions Carefully**
+
+- We missed "Grade 1-5" initially (only used 3-5)
+- Cost us 6 iterations to discover
+- **Lesson:** Every word in preset description matters
+
+---
+
+### Working Filters (Brentwood Example)
+
+**These returned 46 results vs preset's 44 in Brentwood (Dec 2025):**
+
+```
+1. Property classification: contains any [Agricultural, Farm / Non-Residential Associated, Horticulture, Smallholding]
+2. Agricultural land classification: contains any [Grade 1, Grade 2, Grade 3, Grade 3a, Grade 3b, Grade 4, Grade 5]
+3. Title size (acres): is greater than 0.1 AND less than 15
+4. Planning constraints: does not contain [AONB, National Park, SSSI, Conservation Area]
+5. Tenure: is one of [Freehold]
+```
+
+**What we removed from original attempt:**
+- ❌ Building floor area constraint (preset doesn't use it)
+- ❌ "Building on title is derelict" filter (broke search)
+- ❌ Price cap (preset doesn't restrict price)
+- ❌ Article 4 Directions filter (preset doesn't use it)
+
+---
+
+### ⚠️ DO NOT Use These Filters Universally
+
+**Why these are NOT universal guidance:**
+
+1. **Sample size:** 44-46 properties in ONE LPA (Brentwood) is statistically insignificant
+2. **Geography:** Agricultural classifications vary by region (Sussex ≠ Yorkshire ≠ East Anglia)
+3. **Preset may use hidden logic:** SearchLand may apply backend calculations we can't replicate
+4. **Market-specific:** What works in Brentwood may not work in Norfolk or Somerset
+
+**If you're working on Class Q in a different LPA:**
+- Start with the preset, not these manual filters
+- Test on small sample (3-6 properties)
+- Add refinements (price, size, for-sale status) based on YOUR requirements
+- Document what works for YOUR geography
+
+---
+
+### Value of This Exercise
+
+**What this reverse-engineering taught us:**
+
+1. ✅ **How to debug "0 results":** Remove filters one by one
+2. ✅ **Preset names ≠ preset filters:** Always check actual filters
+3. ✅ **Some filters break searches:** "Is equal to No" on nullable fields
+4. ✅ **SearchLand UI adds hidden values:** Auto-expands property classifications
+5. ✅ **Read descriptions literally:** "Grade 1-5" means ALL grades, not just 3-5
+
+**But remember:** This is a learning process for ONE preset in ONE LPA, not a universal solution.
+
+---
+
+### Recommended Approach for Other Presets
+
+**If you need to reverse-engineer a preset:**
+
+1. **Start with preset description** (e.g., "Agricultural buildings on Grade 1–5 land")
+2. **Translate to filters literally** (include ALL mentioned criteria)
+3. **If 0 results:** Remove filters one by one (systematic debugging)
+4. **If too many results:** Add refinements (size, price, constraints)
+5. **Test on small sample:** Validate filter behavior
+6. **Document LPA-specific:** Note this is for ONE geography only
+7. **Prefer using preset + refinements** over recreating from scratch
+
+---
+
+**End of Case Study**
+
+**Key Takeaway:** Reverse-engineering presets is a valuable LEARNING EXERCISE, but the results are LPA-specific and should not be treated as universal guidance. Always test and validate for your specific use case.
 
 ---
 
